@@ -7,6 +7,34 @@ import requests
 HEADERS = {"Accept": "application/json", "User-Agent": "TelegramSignalBot/1.0"}
 
 
+def get_trending_hashtags() -> str:
+    """Return top 3 trending coin symbols as Telegram hashtags."""
+    try:
+        r = requests.get(
+            "https://api.coingecko.com/api/v3/search/trending",
+            headers=HEADERS, timeout=10
+        )
+        r.raise_for_status()
+        coins = r.json().get("coins", [])[:3]
+        tags = []
+        for item in coins:
+            symbol = item["item"]["symbol"].upper()
+            # Sanitize: hashtags can't contain special chars
+            symbol = "".join(c for c in symbol if c.isalnum())
+            if symbol:
+                tags.append(f"#{symbol}")
+        # Always include #Crypto as a baseline tag if we have fewer than 3
+        base_tags = ["#Crypto", "#CryptoSignals", "#BTC"]
+        while len(tags) < 3:
+            for t in base_tags:
+                if t not in tags:
+                    tags.append(t)
+                    break
+        return " ".join(tags[:3])
+    except Exception:
+        return "#Crypto #CryptoSignals #BTC"
+
+
 def get_trending():
     """Top 7 trending coins on CoinGecko in last 24h."""
     try:

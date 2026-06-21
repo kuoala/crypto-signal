@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 
 from telegram_poster import send_message, test_connection
 
-from signals.coingecko import get_trending, get_top_movers, get_btc_eth_prices
+from signals.coingecko import get_trending, get_top_movers, get_btc_eth_prices, get_trending_hashtags
 from signals.fear_greed import get_fear_greed
 from signals.binance_rsi import get_rsi_signals, get_volume_spikes
 from signals.coinpaprika import get_global_market, get_top_coins_24h
@@ -115,6 +115,10 @@ def build_message() -> str:
     events = get_upcoming_events()
     if events:
         lines.append(section("📅 <b>Upcoming Events</b>", events))
+
+    # Trending hashtags
+    hashtags = get_trending_hashtags()
+    lines.append(f"\n{hashtags}")
 
     # Footer
     lines.append("━━━━━━━━━━━━━━━━━━━━━━")
