@@ -42,6 +42,12 @@ track record persists across runs — do **not** add `state.json` to `.gitignore
 
 ---
 
+> **Note on data source / GitHub Actions:** Binance blocks US IP addresses (HTTP 451),
+> and GitHub-hosted runners are in the US — so on GitHub the bot automatically falls back
+> to the first reachable exchange in `CONFIG["EXCHANGES"]` (Binance → Bybit → OKX → Gate).
+> All are free and need no API key. Run logs print which exchange was used. When you run
+> locally (outside the US), Binance is used.
+
 ## 1) Requirements
 
 ```bash

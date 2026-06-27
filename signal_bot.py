@@ -36,6 +36,11 @@ CONFIG = {
     "TELEGRAM_BOT_TOKEN": os.getenv("TELEGRAM_BOT_TOKEN", "PUT_YOUR_BOT_TOKEN_HERE"),
     "TELEGRAM_CHAT_ID":   os.getenv("TELEGRAM_CHANNEL_ID") or os.getenv("TELEGRAM_CHAT_ID", "PUT_YOUR_CHANNEL_ID_HERE"),
 
+    # --- Data source ---
+    # Tried in order; the first reachable one is used. Binance is best but returns HTTP 451
+    # from US IPs (e.g. GitHub Actions runners), so reachable fallbacks follow.
+    "EXCHANGES": ["binanceusdm", "bybit", "okx", "gateio"],
+
     # --- Market / scan ---
     "TIMEFRAME": "4h",          # analysis timeframe
     "CANDLES": 200,             # number of candles used for indicators
@@ -120,11 +125,29 @@ def month_key():
     return datetime.now(timezone.utc).strftime("%Y-%m")
 
 # ===================== SIGNAL CORE =====================
+# TradingView symbol prefix per exchange (for the chart link)
+TV_PREFIX = {
+    "binanceusdm": "BINANCE", "binance": "BINANCE",
+    "bybit": "BYBIT", "okx": "OKX", "gateio": "GATEIO",
+}
+EXCHANGE_NAME = "binanceusdm"   # set at runtime to whichever exchange connects
+
 def build_exchange():
-    return ccxt.binanceusdm({
-        "enableRateLimit": True,
-        "options": {"defaultType": "future"},
-    })
+    """Try exchanges in order; return the first one whose markets load."""
+    global EXCHANGE_NAME
+    last_err = None
+    for name in CONFIG["EXCHANGES"]:
+        try:
+            klass = getattr(ccxt, name)
+            ex = klass({"enableRateLimit": True, "options": {"defaultType": "swap"}})
+            ex.load_markets()
+            EXCHANGE_NAME = name
+            print(f"[+] Connected to: {name}")
+            return ex
+        except Exception as e:
+            last_err = e
+            print(f"[!] {name} unreachable ({type(e).__name__}); trying next...")
+    raise RuntimeError(f"No exchange reachable. Last error: {last_err}")
 
 def fetch_markets(ex):
     """List active USDT-Perpetual pairs with high volume."""
@@ -248,7 +271,8 @@ def fmt_price(p):
 
 def tradingview_link(symbol):
     base = symbol.split("/")[0]
-    return f"https://www.tradingview.com/chart/?symbol=BINANCE:{base}USDT.P"
+    prefix = TV_PREFIX.get(EXCHANGE_NAME, "BINANCE")
+    return f"https://www.tradingview.com/chart/?symbol={prefix}:{base}USDT.P"
 
 def format_signal(s):
     base = s["symbol"].split("/")[0]
