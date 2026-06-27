@@ -153,23 +153,33 @@ def fetch_markets(ex):
     """List active USDT-Perpetual pairs with high volume."""
     markets = ex.load_markets()
     tickers = ex.fetch_tickers()
+
+    # Diagnostic counters
+    n_inactive = n_wrong_quote = n_not_deriv = n_inverse = n_no_ticker = n_low_vol = 0
+
     out = []
     for sym, m in markets.items():
         if not m.get("active"):
-            continue
+            n_inactive += 1; continue
         if m.get("quote") != CONFIG["QUOTE"]:
-            continue
+            n_wrong_quote += 1; continue
         if not (m.get("swap") or m.get("future")):
-            continue
-        if m.get("linear") is not True:
-            continue
+            n_not_deriv += 1; continue
+        # Accept linear=True or linear=None (some exchanges don't set it); reject linear=False (inverse)
+        if m.get("linear") is False:
+            n_inverse += 1; continue
         t = tickers.get(sym)
         if not t:
-            continue
+            n_no_ticker += 1; continue
         qvol = t.get("quoteVolume") or 0
         if qvol < CONFIG["MIN_24H_VOLUME_USDT"]:
-            continue
+            n_low_vol += 1; continue
         out.append((sym, qvol))
+
+    print(f"    [dbg] Market filter stats: inactive={n_inactive}, wrong_quote={n_wrong_quote}, "
+          f"not_deriv={n_not_deriv}, inverse={n_inverse}, no_ticker={n_no_ticker}, "
+          f"low_vol={n_low_vol}, passed={len(out)}")
+
     out.sort(key=lambda x: x[1], reverse=True)
     return [s for s, _ in out]
 
