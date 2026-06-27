@@ -62,8 +62,8 @@ CONFIG = {
     "EMA_FAST": 20,
     "EMA_SLOW": 50,
     "RSI_PERIOD": 14,
-    "RSI_LONG_MIN": 50,         # for LONG, RSI must be above this
-    "RSI_SHORT_MAX": 50,        # for SHORT, RSI must be below this
+    "RSI_LONG_MIN": 45,         # for LONG, RSI must be above this
+    "RSI_SHORT_MAX": 55,        # for SHORT, RSI must be below this
 
     # If True, only prints and does NOT send to Telegram or write state (for testing)
     "DRY_RUN": False,
@@ -342,6 +342,25 @@ def send_telegram(text):
     resp.raise_for_status()
     return resp.json()
 
+def check_telegram():
+    """Verify bot token and chat ID are set and working. Prints diagnostics."""
+    token = CONFIG["TELEGRAM_BOT_TOKEN"]
+    chat = CONFIG["TELEGRAM_CHAT_ID"]
+    if "PUT_YOUR" in token or "PUT_YOUR" in chat:
+        print("[!] Telegram credentials are placeholders — set TELEGRAM_BOT_TOKEN and TELEGRAM_CHANNEL_ID secrets.")
+        return False
+    try:
+        r = requests.get(f"https://api.telegram.org/bot{token}/getMe", timeout=10)
+        data = r.json()
+        if not data.get("ok"):
+            print(f"[!] Telegram getMe failed: {data}")
+            return False
+        print(f"[+] Telegram bot OK: @{data['result']['username']} | chat_id={chat}")
+        return True
+    except Exception as e:
+        print(f"[!] Telegram connectivity error: {e}")
+        return False
+
 def post(text):
     print(text + "\n" + "-" * 30)
     if not CONFIG["DRY_RUN"]:
@@ -349,7 +368,7 @@ def post(text):
             send_telegram(text)
             time.sleep(1)  # respect Telegram rate limits
         except Exception as e:
-            print(f"[!] Telegram error: {e}")
+            print(f"[!] Telegram send error: {e}")
 
 # ===================== OUTCOME TRACKER =====================
 def check_outcome(ex, sig):
@@ -398,6 +417,7 @@ STATE = {}
 def run_once():
     global STATE
     STATE = load_state()
+    check_telegram()
     ex = build_exchange()
 
     print("[+] Checking open signals for TP/SL...")
