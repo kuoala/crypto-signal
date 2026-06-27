@@ -1,0 +1,47 @@
+name: Futures Signals (signal_bot)
+
+on:
+  schedule:
+    # Every 4 hours, 1 minute after each 4h candle close (cron is always UTC).
+    - cron: "1 0,4,8,12,16,20 * * *"
+  workflow_dispatch:   # allow manual runs from the Actions tab
+
+# Prevent overlapping runs
+concurrency:
+  group: futures-signals
+  cancel-in-progress: false
+
+# Needed so the job can commit state.json back to the repo
+permissions:
+  contents: write
+
+jobs:
+  post-signals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run signal bot
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        run: python signal_bot.py
+
+      - name: Commit updated state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add state.json
+          git commit -m "chore: update signal state [skip ci]" || echo "no state changes"
+          git push || echo "nothing to push"
