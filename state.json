@@ -1,5 +1,28 @@
 {
-  "next_id": 1,
-  "open": [],
+  "next_id": 3,
+  "open": [
+    {
+      "id": 1,
+      "symbol": "SLX/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.5513,
+      "stop": 0.4494178571428572,
+      "target": 0.7550642857142857,
+      "leverage": 2,
+      "opened_at": "2026-06-27 20:46 UTC",
+      "opened_ms": 1782593210136
+    },
+    {
+      "id": 2,
+      "symbol": "SKYAI/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.25026,
+      "stop": 0.29318892857142853,
+      "target": 0.16440214285714283,
+      "leverage": 2,
+      "opened_at": "2026-06-27 20:46 UTC",
+      "opened_ms": 1782593211581
+    }
+  ],
   "stats": {}
 }
