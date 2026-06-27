@@ -39,13 +39,13 @@ CONFIG = {
     # --- Data source ---
     # Tried in order; the first reachable one is used. Binance is best but returns HTTP 451
     # from US IPs (e.g. GitHub Actions runners), so reachable fallbacks follow.
-    "EXCHANGES": ["binanceusdm", "bybit", "okx", "gateio"],
+    "EXCHANGES": ["binanceusdm", "bybit", "okx", "gateio", "kucoin", "mexc"],
 
     # --- Market / scan ---
     "TIMEFRAME": "4h",          # analysis timeframe
     "CANDLES": 200,             # number of candles used for indicators
     "QUOTE": "USDT",            # USDT pairs only
-    "MIN_24H_VOLUME_USDT": 30_000_000,   # liquidity filter (drop low-volume coins)
+    "MIN_24H_VOLUME_USDT": 5_000_000,    # liquidity filter (drop low-volume coins)
     "MAX_SIGNALS_PER_RUN": 5,   # max NEW signals per run (strongest ones)
 
     # --- State / tracking ---
@@ -129,7 +129,19 @@ def month_key():
 TV_PREFIX = {
     "binanceusdm": "BINANCE", "binance": "BINANCE",
     "bybit": "BYBIT", "okx": "OKX", "gateio": "GATEIO",
+    "kucoin": "KUCOIN", "mexc": "MEXC",
 }
+
+# Per-exchange ccxt constructor options
+EXCHANGE_OPTIONS = {
+    "binanceusdm": {"defaultType": "future"},
+    "bybit":       {"defaultType": "swap"},
+    "okx":         {},          # OKX: no defaultType, load all then filter by type field
+    "gateio":      {"defaultType": "swap"},
+    "kucoin":      {"defaultType": "swap"},
+    "mexc":        {"defaultType": "swap"},
+}
+
 EXCHANGE_NAME = "binanceusdm"   # set at runtime to whichever exchange connects
 
 def build_exchange():
@@ -139,7 +151,11 @@ def build_exchange():
     for name in CONFIG["EXCHANGES"]:
         try:
             klass = getattr(ccxt, name)
-            ex = klass({"enableRateLimit": True, "options": {"defaultType": "swap"}})
+            opts = {"enableRateLimit": True}
+            ex_opts = EXCHANGE_OPTIONS.get(name, {})
+            if ex_opts:
+                opts["options"] = ex_opts
+            ex = klass(opts)
             ex.load_markets()
             EXCHANGE_NAME = name
             print(f"[+] Connected to: {name}")
@@ -163,10 +179,16 @@ def fetch_markets(ex):
             n_inactive += 1; continue
         if m.get("quote") != CONFIG["QUOTE"]:
             n_wrong_quote += 1; continue
-        if not (m.get("swap") or m.get("future")):
+        mtype = m.get("type", "")
+        is_deriv = m.get("swap") or m.get("future") or mtype in ("swap", "future")
+        if not is_deriv:
             n_not_deriv += 1; continue
         # Accept linear=True or linear=None (some exchanges don't set it); reject linear=False (inverse)
+        # Also reject if settle/margined currency is not USDT (inverse contracts)
         if m.get("linear") is False:
+            n_inverse += 1; continue
+        settle = m.get("settle") or m.get("settleId") or ""
+        if settle and settle.upper() not in ("USDT", ""):
             n_inverse += 1; continue
         t = tickers.get(sym)
         if not t:
