@@ -39,7 +39,7 @@ CONFIG = {
     # --- Data source ---
     # Tried in order; the first reachable one is used. Binance is best but returns HTTP 451
     # from US IPs (e.g. GitHub Actions runners), so reachable fallbacks follow.
-    "EXCHANGES": ["binanceusdm", "bybit", "okx", "gateio", "kucoin", "mexc"],
+    "EXCHANGES": ["binanceusdm", "bybit", "okx", "mexc", "gateio", "htx", "phemex"],
 
     # --- Market / scan ---
     "TIMEFRAME": "4h",          # analysis timeframe
@@ -129,17 +129,18 @@ def month_key():
 TV_PREFIX = {
     "binanceusdm": "BINANCE", "binance": "BINANCE",
     "bybit": "BYBIT", "okx": "OKX", "gateio": "GATEIO",
-    "kucoin": "KUCOIN", "mexc": "MEXC",
+    "mexc": "MEXC", "htx": "HTX", "phemex": "PHEMEX",
 }
 
 # Per-exchange ccxt constructor options
 EXCHANGE_OPTIONS = {
     "binanceusdm": {"defaultType": "future"},
     "bybit":       {"defaultType": "swap"},
-    "okx":         {},          # OKX: no defaultType, load all then filter by type field
-    "gateio":      {"defaultType": "swap"},
-    "kucoin":      {"defaultType": "swap"},
+    "okx":         {},          # OKX load_markets has a TypeError bug in this ccxt version
     "mexc":        {"defaultType": "swap"},
+    "gateio":      {"defaultType": "swap"},
+    "htx":         {"defaultType": "swap"},
+    "phemex":      {"defaultType": "swap"},
 }
 
 EXCHANGE_NAME = "binanceusdm"   # set at runtime to whichever exchange connects
