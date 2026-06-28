@@ -434,6 +434,288 @@ def process_open_signals(ex):
         post(format_result(sig, outcome, pct, stats_line()))
     STATE["open"] = still_open
 
+# ===================== FALLBACK SOURCES =====================
+
+def fallback_daily_signals(ex):
+    """Re-scan top 30 pairs on 1d timeframe when 4h scan finds nothing."""
+    try:
+        markets = ex.load_markets()
+        tickers = ex.fetch_tickers()
+        pairs = sorted(
+            [(s, (tickers[s].get("quoteVolume") or 0))
+             for s, m in markets.items()
+             if m.get("active") and m.get("quote") == CONFIG["QUOTE"]
+             and (m.get("swap") or m.get("future") or m.get("type") in ("swap", "future"))
+             and m.get("linear") is not False
+             and s in tickers and (tickers[s].get("quoteVolume") or 0) > 0],
+            key=lambda x: x[1], reverse=True
+        )[:30]
+    except Exception as e:
+        print(f"[!] fallback_daily_signals: market load failed ({e})")
+        return False
+
+    orig_tf = CONFIG["TIMEFRAME"]
+    CONFIG["TIMEFRAME"] = "1d"
+    sigs = []
+    for sym, _ in pairs:
+        s = analyze(ex, sym)
+        if s:
+            sigs.append(s)
+    CONFIG["TIMEFRAME"] = orig_tf
+
+    if not sigs:
+        return False
+
+    sigs.sort(key=lambda x: (x["score"], abs(x["rsi"] - 50)), reverse=True)
+    best = sigs[0]
+    best["id"] = STATE["next_id"]
+    STATE["next_id"] += 1
+    best["opened_at"] = now_utc_str()
+    best["opened_ms"] = int(datetime.now(timezone.utc).timestamp() * 1000)
+    print(f"[+] Fallback: daily signal found for {best['symbol']}")
+    post("⚠️ No 4H signals — posting best Daily signal instead:\n\n" + format_signal(best))
+    STATE["open"].append({
+        "id": best["id"], "symbol": best["symbol"], "direction": best["direction"],
+        "entry": best["entry"], "stop": best["stop"], "target": best["target"],
+        "leverage": best["leverage"], "opened_at": best["opened_at"], "opened_ms": best["opened_ms"],
+    })
+    return True
+
+
+def fallback_trending_coins():
+    """Post CoinGecko trending coins (no API key needed)."""
+    try:
+        r = requests.get(
+            "https://api.coingecko.com/api/v3/search/trending",
+            timeout=15, headers={"Accept": "application/json"}
+        )
+        r.raise_for_status()
+        coins = r.json().get("coins", [])[:7]
+        if not coins:
+            return False
+        lines = []
+        for item in coins:
+            c = item["item"]
+            price = c.get("data", {}).get("price") or ""
+            change = c.get("data", {}).get("price_change_percentage_24h", {})
+            chg_usd = change.get("usd", None) if isinstance(change, dict) else None
+            chg_str = f"  {chg_usd:+.1f}%" if chg_usd is not None else ""
+            price_str = f"  ${price}" if price else ""
+            lines.append(f"#{c['symbol'].upper()}{price_str}{chg_str}")
+        text = (
+            f"🔥 Trending Coins on CoinGecko  |  {now_utc_str()}\n"
+            "─────────────\n" +
+            "\n".join(lines) +
+            "\n\n⚠️ No futures signals this scan — market may be ranging."
+        )
+        print("[+] Fallback: posting CoinGecko trending coins")
+        post(text)
+        return True
+    except Exception as e:
+        print(f"[!] fallback_trending_coins failed: {e}")
+        return False
+
+
+def fallback_top_movers():
+    """Post top 5 gainers and losers from CoinGecko (free tier)."""
+    try:
+        r = requests.get(
+            "https://api.coingecko.com/api/v3/coins/markets",
+            params={
+                "vs_currency": "usd",
+                "order": "market_cap_desc",
+                "per_page": 100,
+                "page": 1,
+                "price_change_percentage": "24h",
+            },
+            timeout=15, headers={"Accept": "application/json"}
+        )
+        r.raise_for_status()
+        coins = r.json()
+        sorted_coins = sorted(
+            [c for c in coins if c.get("price_change_percentage_24h") is not None],
+            key=lambda c: c["price_change_percentage_24h"]
+        )
+        losers = sorted_coins[:5]
+        gainers = sorted_coins[-5:][::-1]
+
+        def fmt_coin(c):
+            chg = c["price_change_percentage_24h"]
+            return f"#{c['symbol'].upper()}  ${c['current_price']:,.4g}  {chg:+.1f}%"
+
+        text = (
+            f"📈 Top Movers (24h)  |  {now_utc_str()}\n"
+            "─────────────\n"
+            "🚀 Gainers:\n" + "\n".join(fmt_coin(c) for c in gainers) + "\n\n"
+            "📉 Losers:\n" + "\n".join(fmt_coin(c) for c in losers) +
+            "\n\n⚠️ No futures signals this scan."
+        )
+        print("[+] Fallback: posting top movers")
+        post(text)
+        return True
+    except Exception as e:
+        print(f"[!] fallback_top_movers failed: {e}")
+        return False
+
+
+def fallback_fear_greed():
+    """Post Crypto Fear & Greed Index (alternative.me)."""
+    try:
+        r = requests.get(
+            "https://api.alternative.me/fng/?limit=3",
+            timeout=15, headers={"Accept": "application/json"}
+        )
+        r.raise_for_status()
+        data = r.json().get("data", [])
+        if not data:
+            return False
+        now_d = data[0]
+        value = int(now_d["value"])
+        label = now_d["value_classification"]
+        emoji_map = {
+            "Extreme Fear": "😱", "Fear": "😨", "Neutral": "😐",
+            "Greed": "😄", "Extreme Greed": "🤑",
+        }
+        em = emoji_map.get(label, "📊")
+        bar_filled = round(value / 10)
+        bar = "█" * bar_filled + "░" * (10 - bar_filled)
+        history = ""
+        if len(data) >= 3:
+            history = (
+                f"\nYesterday: {data[1]['value']} ({data[1]['value_classification']})"
+                f"\nLast week: {data[2]['value']} ({data[2]['value_classification']})"
+            )
+        text = (
+            f"{em} Crypto Fear & Greed Index  |  {now_utc_str()}\n"
+            "─────────────\n"
+            f"Today: {value}/100  —  {label}\n"
+            f"[{bar}]{history}\n\n"
+            "⚠️ No futures signals found this scan — market may be ranging."
+        )
+        print("[+] Fallback: posting Fear & Greed index")
+        post(text)
+        return True
+    except Exception as e:
+        print(f"[!] fallback_fear_greed failed: {e}")
+        return False
+
+
+def fallback_market_summary():
+    """Post BTC/ETH prices + BTC dominance from CoinGecko."""
+    try:
+        r = requests.get(
+            "https://api.coingecko.com/api/v3/coins/markets",
+            params={
+                "vs_currency": "usd",
+                "ids": "bitcoin,ethereum,solana,bnb,xrp",
+                "order": "market_cap_desc",
+                "per_page": 5,
+                "page": 1,
+                "price_change_percentage": "24h",
+            },
+            timeout=15, headers={"Accept": "application/json"}
+        )
+        r.raise_for_status()
+        coins = r.json()
+
+        global_r = requests.get(
+            "https://api.coingecko.com/api/v3/global",
+            timeout=15, headers={"Accept": "application/json"}
+        )
+        global_r.raise_for_status()
+        gdata = global_r.json().get("data", {})
+        btc_dom = gdata.get("market_cap_percentage", {}).get("btc", 0)
+        total_mcap = gdata.get("total_market_cap", {}).get("usd", 0)
+
+        lines = []
+        for c in coins:
+            chg = c.get("price_change_percentage_24h") or 0
+            chg_str = f"{chg:+.2f}%"
+            lines.append(f"#{c['symbol'].upper():<5}  ${c['current_price']:>12,.2f}   {chg_str}")
+
+        mcap_t = f"${total_mcap/1e12:.2f}T" if total_mcap > 1e12 else f"${total_mcap/1e9:.0f}B"
+        text = (
+            f"🌍 Crypto Market Summary  |  {now_utc_str()}\n"
+            "─────────────\n" +
+            "\n".join(lines) +
+            f"\n\nTotal Market Cap: {mcap_t}\n"
+            f"BTC Dominance: {btc_dom:.1f}%\n\n"
+            "⚠️ No futures signals found this scan."
+        )
+        print("[+] Fallback: posting market summary")
+        post(text)
+        return True
+    except Exception as e:
+        print(f"[!] fallback_market_summary failed: {e}")
+        return False
+
+
+def fallback_spot_signals(ex):
+    """Scan top 30 spot pairs with same EMA/RSI/MACD strategy."""
+    try:
+        markets = ex.load_markets()
+        tickers = ex.fetch_tickers()
+        spot_pairs = sorted(
+            [(s, (tickers[s].get("quoteVolume") or 0))
+             for s, m in markets.items()
+             if m.get("active") and m.get("quote") == CONFIG["QUOTE"]
+             and m.get("type") == "spot"
+             and s in tickers and (tickers[s].get("quoteVolume") or 0) > 1_000_000],
+            key=lambda x: x[1], reverse=True
+        )[:30]
+    except Exception as e:
+        print(f"[!] fallback_spot_signals: market load failed ({e})")
+        return False
+
+    if not spot_pairs:
+        return False
+
+    sigs = []
+    for sym, _ in spot_pairs:
+        s = analyze(ex, sym)
+        if s:
+            sigs.append(s)
+
+    if not sigs:
+        return False
+
+    sigs.sort(key=lambda x: (x["score"], abs(x["rsi"] - 50)), reverse=True)
+    best = sigs[0]
+    best["id"] = STATE["next_id"]
+    STATE["next_id"] += 1
+    best["opened_at"] = now_utc_str()
+    best["opened_ms"] = int(datetime.now(timezone.utc).timestamp() * 1000)
+    print(f"[+] Fallback: spot signal found for {best['symbol']}")
+    post("💱 No futures signals — spot market signal:\n\n" + format_signal(best))
+    STATE["open"].append({
+        "id": best["id"], "symbol": best["symbol"], "direction": best["direction"],
+        "entry": best["entry"], "stop": best["stop"], "target": best["target"],
+        "leverage": best["leverage"], "opened_at": best["opened_at"], "opened_ms": best["opened_ms"],
+    })
+    return True
+
+
+def try_fallbacks(ex):
+    """Run fallback sources in order until one posts successfully."""
+    fallbacks = [
+        ("Daily TF signals",   lambda: fallback_daily_signals(ex)),
+        ("Spot signals",       lambda: fallback_spot_signals(ex)),
+        ("Trending coins",     fallback_trending_coins),
+        ("Top movers",         fallback_top_movers),
+        ("Fear & Greed",       fallback_fear_greed),
+        ("Market summary",     fallback_market_summary),
+    ]
+    for name, fn in fallbacks:
+        print(f"    [fallback] Trying: {name}...")
+        try:
+            if fn():
+                print(f"    [fallback] Posted via: {name}")
+                return True
+        except Exception as e:
+            print(f"    [fallback] {name} raised: {e}")
+    return False
+
+
 # ===================== RUN =====================
 STATE = {}
 
@@ -479,7 +761,10 @@ def run_once():
         })
 
     if not top:
-        print("[i] No new signals this run.")
+        print("[i] No new signals this run. Trying fallback sources...")
+        posted = try_fallbacks(ex)
+        if not posted:
+            print("[!] All fallback sources exhausted — nothing posted this run.")
 
     save_state(STATE)
     print("[+] Done. State saved.")
