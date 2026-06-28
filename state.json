@@ -1,5 +1,5 @@
 {
-  "next_id": 3,
+  "next_id": 7,
   "open": [
     {
       "id": 1,
@@ -22,6 +22,50 @@
       "leverage": 2,
       "opened_at": "2026-06-27 20:46 UTC",
       "opened_ms": 1782593211581
+    },
+    {
+      "id": 3,
+      "symbol": "VELVET/USDT:USDT",
+      "direction": "LONG",
+      "entry": 1.5807,
+      "stop": 1.292732142857143,
+      "target": 2.156635714285714,
+      "leverage": 2,
+      "opened_at": "2026-06-28 02:37 UTC",
+      "opened_ms": 1782614262044
+    },
+    {
+      "id": 4,
+      "symbol": "DOT/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.812,
+      "stop": 0.8409285714285715,
+      "target": 0.7541428571428572,
+      "leverage": 3,
+      "opened_at": "2026-06-28 02:37 UTC",
+      "opened_ms": 1782614263506
+    },
+    {
+      "id": 5,
+      "symbol": "ENA/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.07676,
+      "stop": 0.08038571428571428,
+      "target": 0.06950857142857142,
+      "leverage": 2,
+      "opened_at": "2026-06-28 02:37 UTC",
+      "opened_ms": 1782614264975
+    },
+    {
+      "id": 6,
+      "symbol": "HYPE/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 61.886,
+      "stop": 65.12739285714287,
+      "target": 55.40321428571429,
+      "leverage": 2,
+      "opened_at": "2026-06-28 02:37 UTC",
+      "opened_ms": 1782614266444
     }
   ],
   "stats": {}
