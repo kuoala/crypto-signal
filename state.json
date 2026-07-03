@@ -1,72 +1,73 @@
 {
-  "next_id": 7,
+  "next_id": 49,
   "open": [
     {
-      "id": 1,
-      "symbol": "SLX/USDT:USDT",
+      "id": 43,
+      "symbol": "USOIL/USDT:USDT",
+      "market": "futures",
+      "direction": "SHORT",
+      "entry": 69.48,
+      "stop": 70.74107142857143,
+      "target": 66.95785714285714,
+      "leverage": 6,
+      "opened_at": "2026-07-01 08:04 UTC",
+      "opened_ms": 1782893095672,
+      "tp1": 66.95785714285714,
+      "tp2": 66.95785714285714,
+      "tp1_hit": false,
+      "risk": 1.2610714285714266
+    },
+    {
+      "id": 44,
+      "symbol": "UKOIL/USDT:USDT",
+      "market": "futures",
+      "direction": "SHORT",
+      "entry": 72.47,
+      "stop": 73.69892857142857,
+      "target": 70.01214285714286,
+      "leverage": 6,
+      "opened_at": "2026-07-01 14:10 UTC",
+      "opened_ms": 1782915015491,
+      "tp1": 70.01214285714286,
+      "tp2": 70.01214285714286,
+      "tp1_hit": false,
+      "risk": 1.2289285714285683
+    },
+    {
+      "id": 45,
+      "symbol": "JUP/USDT:USDT",
+      "market": "futures",
       "direction": "LONG",
-      "entry": 0.5513,
-      "stop": 0.4494178571428572,
-      "target": 0.7550642857142857,
+      "entry": 0.2347,
+      "stop": 0.22259285714285712,
+      "target": 0.2589142857142857,
       "leverage": 2,
-      "opened_at": "2026-06-27 20:46 UTC",
-      "opened_ms": 1782593210136
-    },
-    {
-      "id": 2,
-      "symbol": "SKYAI/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.25026,
-      "stop": 0.29318892857142853,
-      "target": 0.16440214285714283,
-      "leverage": 2,
-      "opened_at": "2026-06-27 20:46 UTC",
-      "opened_ms": 1782593211581
-    },
-    {
-      "id": 3,
-      "symbol": "VELVET/USDT:USDT",
-      "direction": "LONG",
-      "entry": 1.5807,
-      "stop": 1.292732142857143,
-      "target": 2.156635714285714,
-      "leverage": 2,
-      "opened_at": "2026-06-28 02:37 UTC",
-      "opened_ms": 1782614262044
-    },
-    {
-      "id": 4,
-      "symbol": "DOT/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.812,
-      "stop": 0.8409285714285715,
-      "target": 0.7541428571428572,
-      "leverage": 3,
-      "opened_at": "2026-06-28 02:37 UTC",
-      "opened_ms": 1782614263506
-    },
-    {
-      "id": 5,
-      "symbol": "ENA/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.07676,
-      "stop": 0.08038571428571428,
-      "target": 0.06950857142857142,
-      "leverage": 2,
-      "opened_at": "2026-06-28 02:37 UTC",
-      "opened_ms": 1782614264975
-    },
-    {
-      "id": 6,
-      "symbol": "HYPE/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 61.886,
-      "stop": 65.12739285714287,
-      "target": 55.40321428571429,
-      "leverage": 2,
-      "opened_at": "2026-06-28 02:37 UTC",
-      "opened_ms": 1782614266444
+      "opened_at": "2026-07-01 14:10 UTC",
+      "opened_ms": 1782915016904,
+      "tp1": 0.2589142857142857,
+      "tp2": 0.2589142857142857,
+      "tp1_hit": false,
+      "risk": 0.012107142857142872
     }
   ],
-  "stats": {}
+  "stats": {
+    "2026-06": {
+      "tp": 4,
+      "sl": 11,
+      "tp1": 4,
+      "tp2": 0,
+      "be": 0,
+      "r_sum": 0.0,
+      "r_count": 0
+    },
+    "2026-07": {
+      "tp": 2,
+      "sl": 28,
+      "tp1": 2,
+      "tp2": 0,
+      "be": 0,
+      "r_sum": -3.0,
+      "r_count": 3
+    }
+  }
 }
