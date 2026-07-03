@@ -1,5 +1,5 @@
 {
-  "next_id": 54,
+  "next_id": 61,
   "open": [
     {
       "id": 43,
@@ -103,6 +103,85 @@
       "leverage": 2,
       "opened_at": "2026-07-03 16:04 UTC",
       "opened_ms": 1783094680921
+    },
+    {
+      "id": 54,
+      "symbol": "LTC/USDT:USDT",
+      "direction": "LONG",
+      "entry": 43.95,
+      "stop": 42.785357142857144,
+      "target": 46.27928571428572,
+      "leverage": 4,
+      "opened_at": "2026-07-03 17:14 UTC",
+      "opened_ms": 1783098883469
+    },
+    {
+      "id": 55,
+      "symbol": "MAGMA/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.6832,
+      "stop": 0.5885928571428571,
+      "target": 0.8724142857142857,
+      "leverage": 2,
+      "opened_at": "2026-07-03 17:14 UTC",
+      "opened_ms": 1783098885139
+    },
+    {
+      "id": 56,
+      "symbol": "ARPA/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.01066,
+      "stop": 0.009435357142857143,
+      "target": 0.013109285714285714,
+      "leverage": 2,
+      "opened_at": "2026-07-03 17:14 UTC",
+      "opened_ms": 1783098886750
+    },
+    {
+      "id": 57,
+      "symbol": "PUMPFUN/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.001625,
+      "stop": 0.0015152857142857142,
+      "target": 0.0018444285714285713,
+      "leverage": 2,
+      "opened_at": "2026-07-03 17:14 UTC",
+      "opened_ms": 1783098888378
+    },
+    {
+      "id": 58,
+      "symbol": "LAB/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 6.074,
+      "stop": 7.835857142857143,
+      "target": 2.5502857142857134,
+      "leverage": 2,
+      "opened_at": "2026-07-03 17:14 UTC",
+      "opened_ms": 1783098889968
+    },
+    {
+      "id": 59,
+      "symbol": "POPCAT/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.05136,
+      "stop": 0.04750714285714286,
+      "target": 0.059065714285714284,
+      "leverage": 2,
+      "opened_at": "2026-07-03 17:14 UTC",
+      "opened_ms": 1783098894864,
+      "is_meme": true
+    },
+    {
+      "id": 60,
+      "symbol": "SPX/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.4099,
+      "stop": 0.3770857142857143,
+      "target": 0.4755285714285714,
+      "leverage": 2,
+      "opened_at": "2026-07-03 17:14 UTC",
+      "opened_ms": 1783098896445,
+      "is_meme": true
     }
   ],
   "stats": {
