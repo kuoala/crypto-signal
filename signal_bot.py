@@ -19,6 +19,7 @@ Run:      python signal_bot.py
 """
 
 import os
+import re
 import json
 import time
 import math
@@ -64,6 +65,13 @@ CONFIG = {
     "RSI_PERIOD": 14,
     "RSI_LONG_MIN": 45,         # for LONG, RSI must be above this
     "RSI_SHORT_MAX": 55,        # for SHORT, RSI must be below this
+
+    # --- Memecoin signals ---
+    "MEME_ENABLED": True,
+    "MEME_MIN_24H_VOLUME_USDT": 1_000_000,  # lower floor — memecoins have thinner books
+    "MEME_MAX_SIGNALS_PER_RUN": 2,          # max NEW memecoin signals per run
+    "MEME_MAX_LEVERAGE": 5,                 # cap leverage — memecoins are very volatile
+    "MEME_ATR_SL_MULT": 2.0,                # wider stop to survive memecoin wicks
 
     # If True, only prints and does NOT send to Telegram or write state (for testing)
     "DRY_RUN": False,
@@ -206,7 +214,67 @@ def fetch_markets(ex):
     out.sort(key=lambda x: x[1], reverse=True)
     return [s for s, _ in out]
 
-def analyze(ex, symbol):
+# ===================== MEMECOINS =====================
+# Curated memecoin bases (exchange bases like 1000PEPE are normalized before matching)
+MEME_BASES = {
+    "DOGE", "SHIB", "PEPE", "WIF", "BONK", "FLOKI", "MEME", "BOME", "POPCAT",
+    "MEW", "BRETT", "NEIRO", "DOGS", "TURBO", "PNUT", "GOAT", "MOODENG",
+    "PONKE", "HIPPO", "CHILLGUY", "ACT", "FARTCOIN", "TRUMP", "MELANIA",
+    "SPX", "GIGA", "WOJAK", "LADYS", "BABYDOGE", "CAT", "MOG", "TOSHI",
+    "PENGU", "AIDOGE", "SNEK", "COQ", "MYRO", "SLERF", "DEGEN", "PEOPLE",
+    "BAN", "PIPPIN", "VINE", "ANIME",
+}
+
+def normalize_base(base):
+    """Strip multiplier prefixes exchanges add to tiny-price coins (1000PEPE -> PEPE)."""
+    return re.sub(r"^(1000000|100000|10000|1000|1M)(?=[A-Z])", "", base.upper())
+
+def fetch_coingecko_meme_bases():
+    """Fetch top meme-category coins from CoinGecko to catch new memecoins dynamically."""
+    try:
+        r = requests.get(
+            "https://api.coingecko.com/api/v3/coins/markets",
+            params={"vs_currency": "usd", "category": "meme-token",
+                    "order": "market_cap_desc", "per_page": 250, "page": 1},
+            timeout=15, headers={"Accept": "application/json"},
+        )
+        r.raise_for_status()
+        return {c["symbol"].upper() for c in r.json() if c.get("symbol")}
+    except Exception as e:
+        print(f"[!] CoinGecko meme category fetch failed ({e}); using curated list only.")
+        return set()
+
+def fetch_meme_markets(ex):
+    """List active USDT-Perpetual memecoin pairs, sorted by volume."""
+    meme_bases = MEME_BASES | fetch_coingecko_meme_bases()
+    markets = ex.load_markets()
+    tickers = ex.fetch_tickers()
+    out = []
+    for sym, m in markets.items():
+        if not m.get("active") or m.get("quote") != CONFIG["QUOTE"]:
+            continue
+        mtype = m.get("type", "")
+        if not (m.get("swap") or m.get("future") or mtype in ("swap", "future")):
+            continue
+        if m.get("linear") is False:
+            continue
+        settle = m.get("settle") or m.get("settleId") or ""
+        if settle and settle.upper() not in ("USDT", ""):
+            continue
+        if normalize_base(m.get("base", "")) not in meme_bases:
+            continue
+        t = tickers.get(sym)
+        if not t:
+            continue
+        qvol = t.get("quoteVolume") or 0
+        if qvol < CONFIG["MEME_MIN_24H_VOLUME_USDT"]:
+            continue
+        out.append((sym, qvol))
+    out.sort(key=lambda x: x[1], reverse=True)
+    print(f"    [dbg] Memecoin pairs passing filters: {len(out)}")
+    return [s for s, _ in out]
+
+def analyze(ex, symbol, sl_mult=None, max_lev=None):
     """Analyze one pair; return a signal dict if a signal exists, else None."""
     try:
         ohlcv = ex.fetch_ohlcv(symbol, timeframe=CONFIG["TIMEFRAME"], limit=CONFIG["CANDLES"])
@@ -259,7 +327,7 @@ def analyze(ex, symbol):
         return None
 
     entry = c
-    sl_dist = av * CONFIG["ATR_SL_MULT"]
+    sl_dist = av * (sl_mult if sl_mult is not None else CONFIG["ATR_SL_MULT"])
     if sl_dist <= 0:
         return None
 
@@ -273,7 +341,8 @@ def analyze(ex, symbol):
     sl_pct = abs(entry - stop) / entry * 100
     if sl_pct <= 0:
         return None
-    suggested_lev = max(2, min(CONFIG["MAX_LEVERAGE"], round(10 / max(sl_pct, 1))))
+    lev_cap = max_lev if max_lev is not None else CONFIG["MAX_LEVERAGE"]
+    suggested_lev = max(2, min(lev_cap, round(10 / max(sl_pct, 1))))
 
     # One-line reason
     macd_txt = "crossed up" if direction == "LONG" else "crossed down"
@@ -312,8 +381,11 @@ def format_signal(s):
     arrow = "🟢 LONG" if s["direction"] == "LONG" else "🔴 SHORT"
     rr = f"1:{CONFIG['RR_RATIO']:g}"
     sid = f"{s['id']:04d}"
+    head = "🐸 MEME SIGNAL" if s.get("is_meme") else "📊 SIGNAL"
+    meme_warn = ("\n⚠️ Memecoin — extreme volatility, use small size.\n"
+                 if s.get("is_meme") else "")
     return (
-        f"📊 SIGNAL #{sid} | {CONFIG['TIMEFRAME'].upper()} | {s['opened_at']}\n"
+        f"{head} #{sid} | {CONFIG['TIMEFRAME'].upper()} | {s['opened_at']}\n"
         f"─────────────\n"
         f"#{base}/USDT\n"
         f"Direction: {arrow}\n"
@@ -321,7 +393,8 @@ def format_signal(s):
         f"Stop Loss: {fmt_price(s['stop'])}\n"
         f"Target: {fmt_price(s['target'])}\n"
         f"Leverage: x{s['leverage']}\n"
-        f"Risk/Reward: {rr}\n\n"
+        f"Risk/Reward: {rr}\n"
+        f"{meme_warn}\n"
         f"📈 Why: {s['reason']}\n"
         f"📉 Chart: {tradingview_link(s['symbol'])}"
     )
@@ -329,11 +402,12 @@ def format_signal(s):
 def format_result(s, outcome, pct, stats_line):
     base = s["symbol"].split("/")[0]
     sid = f"{s['id']:04d}"
+    tag = "🐸 MEME " if s.get("is_meme") else ""
     if outcome == "TP":
-        head = f"✅ RESULT — SIGNAL #{sid} (#{base}/USDT {s['direction']})"
+        head = f"✅ RESULT — {tag}SIGNAL #{sid} (#{base}/USDT {s['direction']})"
         line = f"Target hit 🎯 +{pct:.1f}% (x{s['leverage']} = +{pct*s['leverage']:.1f}%)"
     else:
-        head = f"❌ RESULT — SIGNAL #{sid} (#{base}/USDT {s['direction']})"
+        head = f"❌ RESULT — {tag}SIGNAL #{sid} (#{base}/USDT {s['direction']})"
         line = f"Stop loss hit 🛑 -{pct:.1f}% (x{s['leverage']} = -{pct*s['leverage']:.1f}%)"
     return (
         f"{head}\n"
@@ -760,7 +834,41 @@ def run_once():
             "leverage": s["leverage"], "opened_at": s["opened_at"], "opened_ms": s["opened_ms"],
         })
 
-    if not top:
+    # ---- Memecoin scan ----
+    meme_top = []
+    if CONFIG["MEME_ENABLED"]:
+        print("[+] Scanning memecoin pairs...")
+        posted_symbols = open_symbols | {s["symbol"] for s in top}
+        try:
+            meme_symbols = [s for s in fetch_meme_markets(ex) if s not in posted_symbols]
+        except Exception as e:
+            print(f"[!] Memecoin market load failed: {e}")
+            meme_symbols = []
+        meme_signals = []
+        for sym in meme_symbols:
+            s = analyze(ex, sym,
+                        sl_mult=CONFIG["MEME_ATR_SL_MULT"],
+                        max_lev=CONFIG["MEME_MAX_LEVERAGE"])
+            if s:
+                s["is_meme"] = True
+                meme_signals.append(s)
+        meme_signals.sort(key=lambda x: (x["score"], abs(x["rsi"] - 50)), reverse=True)
+        meme_top = meme_signals[:CONFIG["MEME_MAX_SIGNALS_PER_RUN"]]
+        print(f"[+] {len(meme_signals)} memecoin signals found. Posting top {len(meme_top)}.")
+        for s in meme_top:
+            s["id"] = STATE["next_id"]
+            STATE["next_id"] += 1
+            s["opened_at"] = now_utc_str()
+            s["opened_ms"] = int(datetime.now(timezone.utc).timestamp() * 1000)
+            post(format_signal(s))
+            STATE["open"].append({
+                "id": s["id"], "symbol": s["symbol"], "direction": s["direction"],
+                "entry": s["entry"], "stop": s["stop"], "target": s["target"],
+                "leverage": s["leverage"], "opened_at": s["opened_at"],
+                "opened_ms": s["opened_ms"], "is_meme": True,
+            })
+
+    if not top and not meme_top:
         print("[i] No new signals this run. Trying fallback sources...")
         posted = try_fallbacks(ex)
         if not posted:

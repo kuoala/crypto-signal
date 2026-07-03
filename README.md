@@ -93,7 +93,21 @@ Key settings in `CONFIG`:
 | `ATR_SL_MULT` | stop-loss multiplier | 1.5 |
 | `RR_RATIO` | target-to-risk ratio | 2.0 |
 | `MAX_LEVERAGE` | max suggested leverage | 10 |
+| `MEME_ENABLED` | also scan memecoin perps each run | `True` |
+| `MEME_MIN_24H_VOLUME_USDT` | memecoin volume floor | 1,000,000 |
+| `MEME_MAX_SIGNALS_PER_RUN` | max memecoin signals per run | 2 |
+| `MEME_MAX_LEVERAGE` | leverage cap for memecoins | 5 |
+| `MEME_ATR_SL_MULT` | wider memecoin stop-loss multiplier | 2.0 |
 | `DRY_RUN` | if `True`, prints only, no sending | `False` |
+
+### Memecoin signals
+
+Each run also scans memecoin USDT-perps (DOGE, PEPE, WIF, BONK, FLOKI, …) using the same
+EMA + RSI + MACD strategy. The universe is a curated list merged with CoinGecko's
+`meme-token` category (so new memecoins are picked up automatically); multiplier tickers
+like `1000PEPE` are matched too. Memecoin signals use a lower volume floor, a wider ATR
+stop (2.0×), capped leverage (x5), are posted with a `🐸 MEME SIGNAL` header plus a
+volatility warning, and are tracked for TP/SL results like all other signals.
 
 To add a header/disclaimer above every post, set:
 ```python
