@@ -1,5 +1,5 @@
 {
-  "next_id": 72,
+  "next_id": 74,
   "open": [
     {
       "id": 43,
@@ -83,17 +83,6 @@
       "opened_ms": 1783094679217
     },
     {
-      "id": 53,
-      "symbol": "TIA/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.4041,
-      "stop": 0.387075,
-      "target": 0.43815000000000004,
-      "leverage": 2,
-      "opened_at": "2026-07-03 16:04 UTC",
-      "opened_ms": 1783094680921
-    },
-    {
       "id": 54,
       "symbol": "LTC/USDT:USDT",
       "direction": "LONG",
@@ -171,17 +160,6 @@
       "leverage": 3,
       "opened_at": "2026-07-03 20:54 UTC",
       "opened_ms": 1783112044400
-    },
-    {
-      "id": 62,
-      "symbol": "SUI/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.7743,
-      "stop": 0.7513821428571428,
-      "target": 0.8201357142857143,
-      "leverage": 3,
-      "opened_at": "2026-07-03 20:54 UTC",
-      "opened_ms": 1783112045869
     },
     {
       "id": 63,
@@ -272,6 +250,29 @@
       "leverage": 2,
       "opened_at": "2026-07-04 06:40 UTC",
       "opened_ms": 1783147241502
+    },
+    {
+      "id": 72,
+      "symbol": "HMSTR/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.0003302,
+      "stop": 0.00029600000000000004,
+      "target": 0.0003986,
+      "leverage": 2,
+      "opened_at": "2026-07-04 10:00 UTC",
+      "opened_ms": 1783159248209
+    },
+    {
+      "id": 73,
+      "symbol": "DOGS/USDT:USDT",
+      "direction": "LONG",
+      "entry": 5.05e-05,
+      "stop": 4.712714285714286e-05,
+      "target": 5.724571428571429e-05,
+      "leverage": 2,
+      "opened_at": "2026-07-04 10:00 UTC",
+      "opened_ms": 1783159252471,
+      "is_meme": true
     }
   ],
   "stats": {
@@ -286,7 +287,7 @@
     },
     "2026-07": {
       "tp": 3,
-      "sl": 30,
+      "sl": 32,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
