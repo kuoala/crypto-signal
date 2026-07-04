@@ -1,5 +1,5 @@
 {
-  "next_id": 78,
+  "next_id": 83,
   "open": [
     {
       "id": 43,
@@ -50,17 +50,6 @@
       "risk": 0.012107142857142872
     },
     {
-      "id": 49,
-      "symbol": "ADA/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.1743,
-      "stop": 0.16761428571428572,
-      "target": 0.1876714285714286,
-      "leverage": 3,
-      "opened_at": "2026-07-03 16:04 UTC",
-      "opened_ms": 1783094674482
-    },
-    {
       "id": 51,
       "symbol": "HYPE/USDT:USDT",
       "direction": "LONG",
@@ -92,17 +81,6 @@
       "leverage": 4,
       "opened_at": "2026-07-03 17:14 UTC",
       "opened_ms": 1783098883469
-    },
-    {
-      "id": 55,
-      "symbol": "MAGMA/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.6832,
-      "stop": 0.5885928571428571,
-      "target": 0.8724142857142857,
-      "leverage": 2,
-      "opened_at": "2026-07-03 17:14 UTC",
-      "opened_ms": 1783098885139
     },
     {
       "id": 56,
@@ -285,16 +263,59 @@
       "opened_ms": 1783170154664
     },
     {
-      "id": 77,
-      "symbol": "DOGS/USDT:USDT",
+      "id": 78,
+      "symbol": "TAO/USDT:USDT",
       "direction": "LONG",
-      "entry": 4.887e-05,
-      "stop": 4.532e-05,
-      "target": 5.597e-05,
+      "entry": 216.18,
+      "stop": 210.06321428571428,
+      "target": 228.41357142857143,
+      "leverage": 4,
+      "opened_at": "2026-07-04 16:55 UTC",
+      "opened_ms": 1783184131760
+    },
+    {
+      "id": 79,
+      "symbol": "ETHFI/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.43,
+      "stop": 0.40834642857142855,
+      "target": 0.47330714285714287,
       "leverage": 2,
-      "opened_at": "2026-07-04 13:02 UTC",
-      "opened_ms": 1783170158751,
-      "is_meme": true
+      "opened_at": "2026-07-04 16:55 UTC",
+      "opened_ms": 1783184133191
+    },
+    {
+      "id": 80,
+      "symbol": "ADA/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.1936,
+      "stop": 0.18450357142857143,
+      "target": 0.21179285714285714,
+      "leverage": 2,
+      "opened_at": "2026-07-04 16:55 UTC",
+      "opened_ms": 1783184134651
+    },
+    {
+      "id": 81,
+      "symbol": "XPL/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.11377,
+      "stop": 0.10614464285714285,
+      "target": 0.1290207142857143,
+      "leverage": 2,
+      "opened_at": "2026-07-04 16:55 UTC",
+      "opened_ms": 1783184136158
+    },
+    {
+      "id": 82,
+      "symbol": "TIA/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.4108,
+      "stop": 0.392275,
+      "target": 0.44784999999999997,
+      "leverage": 2,
+      "opened_at": "2026-07-04 16:55 UTC",
+      "opened_ms": 1783184137564
     }
   ],
   "stats": {
@@ -308,8 +329,8 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 4,
-      "sl": 33,
+      "tp": 5,
+      "sl": 35,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
