@@ -1,5 +1,5 @@
 {
-  "next_id": 74,
+  "next_id": 78,
   "open": [
     {
       "id": 43,
@@ -252,26 +252,48 @@
       "opened_ms": 1783147241502
     },
     {
-      "id": 72,
-      "symbol": "HMSTR/USDT:USDT",
+      "id": 74,
+      "symbol": "XMR/USDT:USDT",
       "direction": "LONG",
-      "entry": 0.0003302,
-      "stop": 0.00029600000000000004,
-      "target": 0.0003986,
-      "leverage": 2,
-      "opened_at": "2026-07-04 10:00 UTC",
-      "opened_ms": 1783159248209
+      "entry": 332.48,
+      "stop": 324.16035714285715,
+      "target": 349.11928571428575,
+      "leverage": 4,
+      "opened_at": "2026-07-04 13:02 UTC",
+      "opened_ms": 1783170151836
     },
     {
-      "id": 73,
+      "id": 75,
+      "symbol": "GRAM/USDT:USDT",
+      "direction": "LONG",
+      "entry": 1.8272,
+      "stop": 1.7389892857142857,
+      "target": 2.0036214285714284,
+      "leverage": 2,
+      "opened_at": "2026-07-04 13:02 UTC",
+      "opened_ms": 1783170153264
+    },
+    {
+      "id": 76,
+      "symbol": "ANTHROPIC/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 1650.69,
+      "stop": 1660.9264285714287,
+      "target": 1630.217142857143,
+      "leverage": 10,
+      "opened_at": "2026-07-04 13:02 UTC",
+      "opened_ms": 1783170154664
+    },
+    {
+      "id": 77,
       "symbol": "DOGS/USDT:USDT",
       "direction": "LONG",
-      "entry": 5.05e-05,
-      "stop": 4.712714285714286e-05,
-      "target": 5.724571428571429e-05,
+      "entry": 4.887e-05,
+      "stop": 4.532e-05,
+      "target": 5.597e-05,
       "leverage": 2,
-      "opened_at": "2026-07-04 10:00 UTC",
-      "opened_ms": 1783159252471,
+      "opened_at": "2026-07-04 13:02 UTC",
+      "opened_ms": 1783170158751,
       "is_meme": true
     }
   ],
@@ -286,8 +308,8 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 3,
-      "sl": 32,
+      "tp": 4,
+      "sl": 33,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
