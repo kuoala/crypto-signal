@@ -1,5 +1,5 @@
 {
-  "next_id": 68,
+  "next_id": 71,
   "open": [
     {
       "id": 43,
@@ -249,6 +249,40 @@
       "leverage": 2,
       "opened_at": "2026-07-03 20:54 UTC",
       "opened_ms": 1783112056584,
+      "is_meme": true
+    },
+    {
+      "id": 68,
+      "symbol": "AAVE/USDT:USDT",
+      "direction": "LONG",
+      "entry": 88.52,
+      "stop": 85.07642857142856,
+      "target": 95.40714285714286,
+      "leverage": 3,
+      "opened_at": "2026-07-04 02:00 UTC",
+      "opened_ms": 1783130456352
+    },
+    {
+      "id": 69,
+      "symbol": "XLM/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.20623,
+      "stop": 0.1980142857142857,
+      "target": 0.22266142857142857,
+      "leverage": 3,
+      "opened_at": "2026-07-04 02:00 UTC",
+      "opened_ms": 1783130457805
+    },
+    {
+      "id": 70,
+      "symbol": "FLOKI/USDT:USDT",
+      "direction": "LONG",
+      "entry": 2.387e-05,
+      "stop": 2.2835714285714287e-05,
+      "target": 2.5938571428571427e-05,
+      "leverage": 2,
+      "opened_at": "2026-07-04 02:01 UTC",
+      "opened_ms": 1783130462029,
       "is_meme": true
     }
   ],
