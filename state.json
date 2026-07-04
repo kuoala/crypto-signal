@@ -1,5 +1,5 @@
 {
-  "next_id": 83,
+  "next_id": 85,
   "open": [
     {
       "id": 43,
@@ -316,6 +316,28 @@
       "leverage": 2,
       "opened_at": "2026-07-04 16:55 UTC",
       "opened_ms": 1783184137564
+    },
+    {
+      "id": 83,
+      "symbol": "AVAX/USDT:USDT",
+      "direction": "LONG",
+      "entry": 7.0,
+      "stop": 6.8415357142857145,
+      "target": 7.316928571428571,
+      "leverage": 4,
+      "opened_at": "2026-07-04 20:44 UTC",
+      "opened_ms": 1783197845106
+    },
+    {
+      "id": 84,
+      "symbol": "ONDO/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.3388,
+      "stop": 0.3290821428571428,
+      "target": 0.3582357142857143,
+      "leverage": 3,
+      "opened_at": "2026-07-04 20:44 UTC",
+      "opened_ms": 1783197846792
     }
   ],
   "stats": {
