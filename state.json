@@ -1,5 +1,5 @@
 {
-  "next_id": 71,
+  "next_id": 72,
   "open": [
     {
       "id": 43,
@@ -138,17 +138,6 @@
       "opened_ms": 1783098888378
     },
     {
-      "id": 58,
-      "symbol": "LAB/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 6.074,
-      "stop": 7.835857142857143,
-      "target": 2.5502857142857134,
-      "leverage": 2,
-      "opened_at": "2026-07-03 17:14 UTC",
-      "opened_ms": 1783098889968
-    },
-    {
       "id": 59,
       "symbol": "POPCAT/USDT:USDT",
       "direction": "LONG",
@@ -228,18 +217,6 @@
       "opened_ms": 1783112050239
     },
     {
-      "id": 66,
-      "symbol": "1000BONK/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.004597,
-      "stop": 0.004374857142857143,
-      "target": 0.005041285714285714,
-      "leverage": 2,
-      "opened_at": "2026-07-03 20:54 UTC",
-      "opened_ms": 1783112055159,
-      "is_meme": true
-    },
-    {
       "id": 67,
       "symbol": "WIF/USDT:USDT",
       "direction": "LONG",
@@ -284,6 +261,17 @@
       "opened_at": "2026-07-04 02:01 UTC",
       "opened_ms": 1783130462029,
       "is_meme": true
+    },
+    {
+      "id": 71,
+      "symbol": "TLM/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.002723,
+      "stop": 0.0019938928571428573,
+      "target": 0.004181214285714286,
+      "leverage": 2,
+      "opened_at": "2026-07-04 06:40 UTC",
+      "opened_ms": 1783147241502
     }
   ],
   "stats": {
@@ -297,8 +285,8 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 2,
-      "sl": 29,
+      "tp": 3,
+      "sl": 30,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
