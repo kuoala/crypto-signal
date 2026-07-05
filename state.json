@@ -1,5 +1,5 @@
 {
-  "next_id": 85,
+  "next_id": 88,
   "open": [
     {
       "id": 43,
@@ -296,28 +296,6 @@
       "opened_ms": 1783184134651
     },
     {
-      "id": 81,
-      "symbol": "XPL/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.11377,
-      "stop": 0.10614464285714285,
-      "target": 0.1290207142857143,
-      "leverage": 2,
-      "opened_at": "2026-07-04 16:55 UTC",
-      "opened_ms": 1783184136158
-    },
-    {
-      "id": 82,
-      "symbol": "TIA/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.4108,
-      "stop": 0.392275,
-      "target": 0.44784999999999997,
-      "leverage": 2,
-      "opened_at": "2026-07-04 16:55 UTC",
-      "opened_ms": 1783184137564
-    },
-    {
       "id": 83,
       "symbol": "AVAX/USDT:USDT",
       "direction": "LONG",
@@ -338,6 +316,39 @@
       "leverage": 3,
       "opened_at": "2026-07-04 20:44 UTC",
       "opened_ms": 1783197846792
+    },
+    {
+      "id": 85,
+      "symbol": "SLX/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.2654,
+      "stop": 0.3254,
+      "target": 0.14539999999999997,
+      "leverage": 2,
+      "opened_at": "2026-07-05 02:09 UTC",
+      "opened_ms": 1783217343659
+    },
+    {
+      "id": 86,
+      "symbol": "BCH/USDT:USDT",
+      "direction": "LONG",
+      "entry": 237.64,
+      "stop": 230.8225,
+      "target": 251.27499999999998,
+      "leverage": 3,
+      "opened_at": "2026-07-05 02:09 UTC",
+      "opened_ms": 1783217345197
+    },
+    {
+      "id": 87,
+      "symbol": "O/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.5954,
+      "stop": 0.521675,
+      "target": 0.7428500000000001,
+      "leverage": 2,
+      "opened_at": "2026-07-05 02:09 UTC",
+      "opened_ms": 1783217346748
     }
   ],
   "stats": {
@@ -352,7 +363,7 @@
     },
     "2026-07": {
       "tp": 5,
-      "sl": 35,
+      "sl": 37,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
