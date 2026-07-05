@@ -1,5 +1,5 @@
 {
-  "next_id": 96,
+  "next_id": 98,
   "open": [
     {
       "id": 43,
@@ -349,6 +349,29 @@
       "leverage": 4,
       "opened_at": "2026-07-05 13:10 UTC",
       "opened_ms": 1783257029650
+    },
+    {
+      "id": 96,
+      "symbol": "NAS100/USDT:USDT",
+      "direction": "LONG",
+      "entry": 29689.0,
+      "stop": 29587.85714285714,
+      "target": 29891.285714285714,
+      "leverage": 10,
+      "opened_at": "2026-07-05 16:57 UTC",
+      "opened_ms": 1783270649784
+    },
+    {
+      "id": 97,
+      "symbol": "ORDI/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 3.244,
+      "stop": 3.402,
+      "target": 2.9280000000000004,
+      "leverage": 2,
+      "opened_at": "2026-07-05 16:57 UTC",
+      "opened_ms": 1783270653900,
+      "is_meme": true
     }
   ],
   "stats": {
