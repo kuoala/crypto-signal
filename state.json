@@ -1,5 +1,5 @@
 {
-  "next_id": 91,
+  "next_id": 96,
   "open": [
     {
       "id": 43,
@@ -294,6 +294,61 @@
       "leverage": 3,
       "opened_at": "2026-07-05 10:04 UTC",
       "opened_ms": 1783245883769
+    },
+    {
+      "id": 91,
+      "symbol": "EIGEN/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.2347,
+      "stop": 0.2218,
+      "target": 0.26049999999999995,
+      "leverage": 2,
+      "opened_at": "2026-07-05 13:10 UTC",
+      "opened_ms": 1783257023279
+    },
+    {
+      "id": 92,
+      "symbol": "VANRY/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.005768,
+      "stop": 0.0048822499999999994,
+      "target": 0.007539499999999999,
+      "leverage": 2,
+      "opened_at": "2026-07-05 13:10 UTC",
+      "opened_ms": 1783257024869
+    },
+    {
+      "id": 93,
+      "symbol": "BNB/USDT:USDT",
+      "direction": "LONG",
+      "entry": 587.8,
+      "stop": 578.1035714285714,
+      "target": 607.1928571428571,
+      "leverage": 6,
+      "opened_at": "2026-07-05 13:10 UTC",
+      "opened_ms": 1783257026561
+    },
+    {
+      "id": 94,
+      "symbol": "LIT/USDT:USDT",
+      "direction": "LONG",
+      "entry": 2.385,
+      "stop": 2.2438821428571423,
+      "target": 2.6672357142857144,
+      "leverage": 2,
+      "opened_at": "2026-07-05 13:10 UTC",
+      "opened_ms": 1783257028109
+    },
+    {
+      "id": 95,
+      "symbol": "XMR/USDT:USDT",
+      "direction": "LONG",
+      "entry": 329.88,
+      "stop": 320.65392857142854,
+      "target": 348.33214285714286,
+      "leverage": 4,
+      "opened_at": "2026-07-05 13:10 UTC",
+      "opened_ms": 1783257029650
     }
   ],
   "stats": {
