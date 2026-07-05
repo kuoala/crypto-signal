@@ -1,5 +1,5 @@
 {
-  "next_id": 88,
+  "next_id": 89,
   "open": [
     {
       "id": 43,
@@ -81,28 +81,6 @@
       "leverage": 4,
       "opened_at": "2026-07-03 17:14 UTC",
       "opened_ms": 1783098883469
-    },
-    {
-      "id": 56,
-      "symbol": "ARPA/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.01066,
-      "stop": 0.009435357142857143,
-      "target": 0.013109285714285714,
-      "leverage": 2,
-      "opened_at": "2026-07-03 17:14 UTC",
-      "opened_ms": 1783098886750
-    },
-    {
-      "id": 57,
-      "symbol": "PUMPFUN/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.001625,
-      "stop": 0.0015152857142857142,
-      "target": 0.0018444285714285713,
-      "leverage": 2,
-      "opened_at": "2026-07-03 17:14 UTC",
-      "opened_ms": 1783098888378
     },
     {
       "id": 59,
@@ -241,17 +219,6 @@
       "opened_ms": 1783170151836
     },
     {
-      "id": 75,
-      "symbol": "GRAM/USDT:USDT",
-      "direction": "LONG",
-      "entry": 1.8272,
-      "stop": 1.7389892857142857,
-      "target": 2.0036214285714284,
-      "leverage": 2,
-      "opened_at": "2026-07-04 13:02 UTC",
-      "opened_ms": 1783170153264
-    },
-    {
       "id": 76,
       "symbol": "ANTHROPIC/USDT:USDT",
       "direction": "SHORT",
@@ -296,28 +263,6 @@
       "opened_ms": 1783184134651
     },
     {
-      "id": 83,
-      "symbol": "AVAX/USDT:USDT",
-      "direction": "LONG",
-      "entry": 7.0,
-      "stop": 6.8415357142857145,
-      "target": 7.316928571428571,
-      "leverage": 4,
-      "opened_at": "2026-07-04 20:44 UTC",
-      "opened_ms": 1783197845106
-    },
-    {
-      "id": 84,
-      "symbol": "ONDO/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.3388,
-      "stop": 0.3290821428571428,
-      "target": 0.3582357142857143,
-      "leverage": 3,
-      "opened_at": "2026-07-04 20:44 UTC",
-      "opened_ms": 1783197846792
-    },
-    {
       "id": 85,
       "symbol": "SLX/USDT:USDT",
       "direction": "SHORT",
@@ -349,6 +294,17 @@
       "leverage": 2,
       "opened_at": "2026-07-05 02:09 UTC",
       "opened_ms": 1783217346748
+    },
+    {
+      "id": 88,
+      "symbol": "TLM/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.002687,
+      "stop": 0.0019943214285714286,
+      "target": 0.004072357142857143,
+      "leverage": 2,
+      "opened_at": "2026-07-05 07:00 UTC",
+      "opened_ms": 1783234851012
     }
   ],
   "stats": {
@@ -363,7 +319,7 @@
     },
     "2026-07": {
       "tp": 5,
-      "sl": 37,
+      "sl": 42,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
