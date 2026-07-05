@@ -1,5 +1,5 @@
 {
-  "next_id": 98,
+  "next_id": 99,
   "open": [
     {
       "id": 43,
@@ -285,17 +285,6 @@
       "opened_ms": 1783245882203
     },
     {
-      "id": 90,
-      "symbol": "ENA/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.07704,
-      "stop": 0.07979785714285714,
-      "target": 0.0715242857142857,
-      "leverage": 3,
-      "opened_at": "2026-07-05 10:04 UTC",
-      "opened_ms": 1783245883769
-    },
-    {
       "id": 91,
       "symbol": "EIGEN/USDT:USDT",
       "direction": "LONG",
@@ -372,6 +361,17 @@
       "opened_at": "2026-07-05 16:57 UTC",
       "opened_ms": 1783270653900,
       "is_meme": true
+    },
+    {
+      "id": 98,
+      "symbol": "ALLO/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.37926,
+      "stop": 0.3518057142857143,
+      "target": 0.43416857142857146,
+      "leverage": 2,
+      "opened_at": "2026-07-05 20:48 UTC",
+      "opened_ms": 1783284512799
     }
   ],
   "stats": {
@@ -386,7 +386,7 @@
     },
     "2026-07": {
       "tp": 5,
-      "sl": 45,
+      "sl": 46,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
