@@ -1,5 +1,5 @@
 {
-  "next_id": 109,
+  "next_id": 110,
   "open": [
     {
       "id": 43,
@@ -118,17 +118,6 @@
       "opened_ms": 1783112047397
     },
     {
-      "id": 68,
-      "symbol": "AAVE/USDT:USDT",
-      "direction": "LONG",
-      "entry": 88.52,
-      "stop": 85.07642857142856,
-      "target": 95.40714285714286,
-      "leverage": 3,
-      "opened_at": "2026-07-04 02:00 UTC",
-      "opened_ms": 1783130456352
-    },
-    {
       "id": 71,
       "symbol": "TLM/USDT:USDT",
       "direction": "LONG",
@@ -195,18 +184,6 @@
       "opened_ms": 1783257024869
     },
     {
-      "id": 97,
-      "symbol": "ORDI/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 3.244,
-      "stop": 3.402,
-      "target": 2.9280000000000004,
-      "leverage": 2,
-      "opened_at": "2026-07-05 16:57 UTC",
-      "opened_ms": 1783270653900,
-      "is_meme": true
-    },
-    {
       "id": 99,
       "symbol": "TRB/USDT:USDT",
       "direction": "LONG",
@@ -262,17 +239,6 @@
       "opened_ms": 1783325487266
     },
     {
-      "id": 105,
-      "symbol": "SEI/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.049,
-      "stop": 0.050386428571428575,
-      "target": 0.04622714285714286,
-      "leverage": 4,
-      "opened_at": "2026-07-06 08:11 UTC",
-      "opened_ms": 1783325488770
-    },
-    {
       "id": 106,
       "symbol": "NAS100/USDT:USDT",
       "direction": "SHORT",
@@ -305,6 +271,17 @@
       "leverage": 2,
       "opened_at": "2026-07-06 15:01 UTC",
       "opened_ms": 1783350065303
+    },
+    {
+      "id": 109,
+      "symbol": "MON/USDT",
+      "direction": "LONG",
+      "entry": 0.02401,
+      "stop": 0.022774642857142858,
+      "target": 0.026480714285714285,
+      "leverage": 2,
+      "opened_at": "2026-07-06 18:05 UTC",
+      "opened_ms": 1783361143518
     }
   ],
   "stats": {
@@ -318,8 +295,8 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 7,
-      "sl": 60,
+      "tp": 8,
+      "sl": 62,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
