@@ -1,5 +1,5 @@
 {
-  "next_id": 110,
+  "next_id": 111,
   "open": [
     {
       "id": 43,
@@ -282,6 +282,17 @@
       "leverage": 2,
       "opened_at": "2026-07-06 18:05 UTC",
       "opened_ms": 1783361143518
+    },
+    {
+      "id": 110,
+      "symbol": "MON/USDT",
+      "direction": "LONG",
+      "entry": 0.02512,
+      "stop": 0.023781785714285714,
+      "target": 0.02779642857142857,
+      "leverage": 2,
+      "opened_at": "2026-07-06 21:22 UTC",
+      "opened_ms": 1783372949646
     }
   ],
   "stats": {
