@@ -1,5 +1,5 @@
 {
-  "next_id": 119,
+  "next_id": 120,
   "open": [
     {
       "id": 43,
@@ -260,6 +260,17 @@
       "leverage": 2,
       "opened_at": "2026-07-07 10:47 UTC",
       "opened_ms": 1783421231414
+    },
+    {
+      "id": 119,
+      "symbol": "BLUR/USDT",
+      "direction": "LONG",
+      "entry": 0.02411,
+      "stop": 0.020920357142857143,
+      "target": 0.030489285714285712,
+      "leverage": 2,
+      "opened_at": "2026-07-07 14:09 UTC",
+      "opened_ms": 1783433367187
     }
   ],
   "stats": {
