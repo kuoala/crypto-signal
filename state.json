@@ -1,5 +1,5 @@
 {
-  "next_id": 118,
+  "next_id": 119,
   "open": [
     {
       "id": 43,
@@ -139,17 +139,6 @@
       "opened_ms": 1783217346748
     },
     {
-      "id": 99,
-      "symbol": "TRB/USDT:USDT",
-      "direction": "LONG",
-      "entry": 17.815,
-      "stop": 16.468428571428575,
-      "target": 20.508142857142857,
-      "leverage": 2,
-      "opened_at": "2026-07-06 02:14 UTC",
-      "opened_ms": 1783304060501
-    },
-    {
       "id": 104,
       "symbol": "FET/USDT:USDT",
       "direction": "SHORT",
@@ -228,28 +217,6 @@
       "opened_ms": 1783409440455
     },
     {
-      "id": 113,
-      "symbol": "ANTHROPIC/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 1629.08,
-      "stop": 1639.9957142857143,
-      "target": 1607.2485714285713,
-      "leverage": 10,
-      "opened_at": "2026-07-07 07:30 UTC",
-      "opened_ms": 1783409441887
-    },
-    {
-      "id": 114,
-      "symbol": "OPENAI/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 1302.2,
-      "stop": 1310.9857142857143,
-      "target": 1284.6285714285716,
-      "leverage": 10,
-      "opened_at": "2026-07-07 07:30 UTC",
-      "opened_ms": 1783409443335
-    },
-    {
       "id": 115,
       "symbol": "SNDKSTOCK/USDT:USDT",
       "direction": "SHORT",
@@ -282,6 +249,17 @@
       "opened_at": "2026-07-07 07:30 UTC",
       "opened_ms": 1783409451794,
       "is_meme": true
+    },
+    {
+      "id": 118,
+      "symbol": "BLUR/USDT",
+      "direction": "LONG",
+      "entry": 0.02309,
+      "stop": 0.020340714285714285,
+      "target": 0.02858857142857143,
+      "leverage": 2,
+      "opened_at": "2026-07-07 10:47 UTC",
+      "opened_ms": 1783421231414
     }
   ],
   "stats": {
@@ -295,8 +273,8 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 13,
-      "sl": 65,
+      "tp": 15,
+      "sl": 66,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
