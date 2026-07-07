@@ -1,5 +1,5 @@
 {
-  "next_id": 120,
+  "next_id": 121,
   "open": [
     {
       "id": 43,
@@ -162,17 +162,6 @@
       "is_meme": true
     },
     {
-      "id": 108,
-      "symbol": "MON/USDT",
-      "direction": "LONG",
-      "entry": 0.02345,
-      "stop": 0.022408571428571427,
-      "target": 0.025532857142857142,
-      "leverage": 2,
-      "opened_at": "2026-07-06 15:01 UTC",
-      "opened_ms": 1783350065303
-    },
-    {
       "id": 109,
       "symbol": "MON/USDT",
       "direction": "LONG",
@@ -204,17 +193,6 @@
       "leverage": 2,
       "opened_at": "2026-07-07 02:09 UTC",
       "opened_ms": 1783390186882
-    },
-    {
-      "id": 112,
-      "symbol": "JTO/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.7962,
-      "stop": 0.7580142857142858,
-      "target": 0.8725714285714286,
-      "leverage": 2,
-      "opened_at": "2026-07-07 07:30 UTC",
-      "opened_ms": 1783409440455
     },
     {
       "id": 115,
@@ -262,15 +240,15 @@
       "opened_ms": 1783421231414
     },
     {
-      "id": 119,
-      "symbol": "BLUR/USDT",
+      "id": 120,
+      "symbol": "EDGE/USDT",
       "direction": "LONG",
-      "entry": 0.02411,
-      "stop": 0.020920357142857143,
-      "target": 0.030489285714285712,
+      "entry": 0.4068,
+      "stop": 0.37218214285714285,
+      "target": 0.4760357142857143,
       "leverage": 2,
-      "opened_at": "2026-07-07 14:09 UTC",
-      "opened_ms": 1783433367187
+      "opened_at": "2026-07-07 17:52 UTC",
+      "opened_ms": 1783446774159
     }
   ],
   "stats": {
@@ -284,8 +262,8 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 15,
-      "sl": 66,
+      "tp": 16,
+      "sl": 68,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
