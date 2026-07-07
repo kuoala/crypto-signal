@@ -1,5 +1,5 @@
 {
-  "next_id": 112,
+  "next_id": 118,
   "open": [
     {
       "id": 43,
@@ -84,18 +84,6 @@
       "is_meme": true
     },
     {
-      "id": 60,
-      "symbol": "SPX/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.4099,
-      "stop": 0.3770857142857143,
-      "target": 0.4755285714285714,
-      "leverage": 2,
-      "opened_at": "2026-07-03 17:14 UTC",
-      "opened_ms": 1783098896445,
-      "is_meme": true
-    },
-    {
       "id": 61,
       "symbol": "PEPE/USDT:USDT",
       "direction": "LONG",
@@ -116,17 +104,6 @@
       "leverage": 4,
       "opened_at": "2026-07-03 20:54 UTC",
       "opened_ms": 1783112047397
-    },
-    {
-      "id": 71,
-      "symbol": "TLM/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.002723,
-      "stop": 0.0019938928571428573,
-      "target": 0.004181214285714286,
-      "leverage": 2,
-      "opened_at": "2026-07-04 06:40 UTC",
-      "opened_ms": 1783147241502
     },
     {
       "id": 85,
@@ -162,28 +139,6 @@
       "opened_ms": 1783217346748
     },
     {
-      "id": 88,
-      "symbol": "TLM/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.002687,
-      "stop": 0.0019943214285714286,
-      "target": 0.004072357142857143,
-      "leverage": 2,
-      "opened_at": "2026-07-05 07:00 UTC",
-      "opened_ms": 1783234851012
-    },
-    {
-      "id": 92,
-      "symbol": "VANRY/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.005768,
-      "stop": 0.0048822499999999994,
-      "target": 0.007539499999999999,
-      "leverage": 2,
-      "opened_at": "2026-07-05 13:10 UTC",
-      "opened_ms": 1783257024869
-    },
-    {
       "id": 99,
       "symbol": "TRB/USDT:USDT",
       "direction": "LONG",
@@ -195,39 +150,6 @@
       "opened_ms": 1783304060501
     },
     {
-      "id": 100,
-      "symbol": "NVIDIA/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 195.39,
-      "stop": 196.58249999999998,
-      "target": 193.005,
-      "leverage": 10,
-      "opened_at": "2026-07-06 02:14 UTC",
-      "opened_ms": 1783304061855
-    },
-    {
-      "id": 102,
-      "symbol": "SPCXSTOCK/USDT:USDT",
-      "direction": "LONG",
-      "entry": 163.4,
-      "stop": 162.13678571428574,
-      "target": 165.92642857142857,
-      "leverage": 10,
-      "opened_at": "2026-07-06 08:11 UTC",
-      "opened_ms": 1783325483673
-    },
-    {
-      "id": 103,
-      "symbol": "SKHYNIXSTOCK/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 1540.32,
-      "stop": 1584.9878571428571,
-      "target": 1450.9842857142858,
-      "leverage": 3,
-      "opened_at": "2026-07-06 08:11 UTC",
-      "opened_ms": 1783325485181
-    },
-    {
       "id": 104,
       "symbol": "FET/USDT:USDT",
       "direction": "SHORT",
@@ -237,17 +159,6 @@
       "leverage": 3,
       "opened_at": "2026-07-06 08:11 UTC",
       "opened_ms": 1783325487266
-    },
-    {
-      "id": 106,
-      "symbol": "NAS100/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 29619.0,
-      "stop": 29754.428571428572,
-      "target": 29348.14285714286,
-      "leverage": 10,
-      "opened_at": "2026-07-06 08:11 UTC",
-      "opened_ms": 1783325490231
     },
     {
       "id": 107,
@@ -304,6 +215,73 @@
       "leverage": 2,
       "opened_at": "2026-07-07 02:09 UTC",
       "opened_ms": 1783390186882
+    },
+    {
+      "id": 112,
+      "symbol": "JTO/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.7962,
+      "stop": 0.7580142857142858,
+      "target": 0.8725714285714286,
+      "leverage": 2,
+      "opened_at": "2026-07-07 07:30 UTC",
+      "opened_ms": 1783409440455
+    },
+    {
+      "id": 113,
+      "symbol": "ANTHROPIC/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 1629.08,
+      "stop": 1639.9957142857143,
+      "target": 1607.2485714285713,
+      "leverage": 10,
+      "opened_at": "2026-07-07 07:30 UTC",
+      "opened_ms": 1783409441887
+    },
+    {
+      "id": 114,
+      "symbol": "OPENAI/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 1302.2,
+      "stop": 1310.9857142857143,
+      "target": 1284.6285714285716,
+      "leverage": 10,
+      "opened_at": "2026-07-07 07:30 UTC",
+      "opened_ms": 1783409443335
+    },
+    {
+      "id": 115,
+      "symbol": "SNDKSTOCK/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 1678.13,
+      "stop": 1759.22,
+      "target": 1515.95,
+      "leverage": 2,
+      "opened_at": "2026-07-07 07:30 UTC",
+      "opened_ms": 1783409444818
+    },
+    {
+      "id": 116,
+      "symbol": "MUSTOCK/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 946.61,
+      "stop": 982.4975,
+      "target": 874.835,
+      "leverage": 3,
+      "opened_at": "2026-07-07 07:30 UTC",
+      "opened_ms": 1783409446285
+    },
+    {
+      "id": 117,
+      "symbol": "ORDI/USDT:USDT",
+      "direction": "LONG",
+      "entry": 3.566,
+      "stop": 3.3504285714285715,
+      "target": 3.997142857142857,
+      "leverage": 2,
+      "opened_at": "2026-07-07 07:30 UTC",
+      "opened_ms": 1783409451794,
+      "is_meme": true
     }
   ],
   "stats": {
@@ -317,8 +295,8 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 8,
-      "sl": 62,
+      "tp": 13,
+      "sl": 65,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
