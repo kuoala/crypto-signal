@@ -1,5 +1,5 @@
 {
-  "next_id": 130,
+  "next_id": 131,
   "open": [
     {
       "id": 54,
@@ -33,17 +33,6 @@
       "leverage": 2,
       "opened_at": "2026-07-05 02:09 UTC",
       "opened_ms": 1783217343659
-    },
-    {
-      "id": 86,
-      "symbol": "BCH/USDT:USDT",
-      "direction": "LONG",
-      "entry": 237.64,
-      "stop": 230.8225,
-      "target": 251.27499999999998,
-      "leverage": 3,
-      "opened_at": "2026-07-05 02:09 UTC",
-      "opened_ms": 1783217345197
     },
     {
       "id": 104,
@@ -112,17 +101,6 @@
       "opened_ms": 1783491765343
     },
     {
-      "id": 125,
-      "symbol": "EDGE/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.4611,
-      "stop": 0.41529642857142857,
-      "target": 0.5527071428571428,
-      "leverage": 2,
-      "opened_at": "2026-07-08 06:22 UTC",
-      "opened_ms": 1783491766841
-    },
-    {
       "id": 126,
       "symbol": "DOGE/USDT:USDT",
       "direction": "SHORT",
@@ -166,6 +144,17 @@
       "leverage": 5,
       "opened_at": "2026-07-08 10:08 UTC",
       "opened_ms": 1783505321958
+    },
+    {
+      "id": 130,
+      "symbol": "OKB/USDT",
+      "direction": "SHORT",
+      "entry": 77.66,
+      "stop": 79.19857142857143,
+      "target": 74.58285714285714,
+      "leverage": 5,
+      "opened_at": "2026-07-08 13:42 UTC",
+      "opened_ms": 1783518168106
     }
   ],
   "stats": {
@@ -179,8 +168,8 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 18,
-      "sl": 81,
+      "tp": 19,
+      "sl": 82,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
