@@ -1,22 +1,6 @@
 {
-  "next_id": 129,
+  "next_id": 130,
   "open": [
-    {
-      "id": 45,
-      "symbol": "JUP/USDT:USDT",
-      "market": "futures",
-      "direction": "LONG",
-      "entry": 0.2347,
-      "stop": 0.22259285714285712,
-      "target": 0.2589142857142857,
-      "leverage": 2,
-      "opened_at": "2026-07-01 14:10 UTC",
-      "opened_ms": 1782915016904,
-      "tp1": 0.2589142857142857,
-      "tp2": 0.2589142857142857,
-      "tp1_hit": false,
-      "risk": 0.012107142857142872
-    },
     {
       "id": 54,
       "symbol": "LTC/USDT:USDT",
@@ -62,17 +46,6 @@
       "opened_ms": 1783217345197
     },
     {
-      "id": 87,
-      "symbol": "O/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.5954,
-      "stop": 0.521675,
-      "target": 0.7428500000000001,
-      "leverage": 2,
-      "opened_at": "2026-07-05 02:09 UTC",
-      "opened_ms": 1783217346748
-    },
-    {
       "id": 104,
       "symbol": "FET/USDT:USDT",
       "direction": "SHORT",
@@ -95,17 +68,6 @@
       "opened_ms": 1783361143518
     },
     {
-      "id": 111,
-      "symbol": "MON/USDT",
-      "direction": "LONG",
-      "entry": 0.02506,
-      "stop": 0.023649999999999997,
-      "target": 0.02788,
-      "leverage": 2,
-      "opened_at": "2026-07-07 02:09 UTC",
-      "opened_ms": 1783390186882
-    },
-    {
       "id": 116,
       "symbol": "MUSTOCK/USDT:USDT",
       "direction": "SHORT",
@@ -115,29 +77,6 @@
       "leverage": 3,
       "opened_at": "2026-07-07 07:30 UTC",
       "opened_ms": 1783409446285
-    },
-    {
-      "id": 117,
-      "symbol": "ORDI/USDT:USDT",
-      "direction": "LONG",
-      "entry": 3.566,
-      "stop": 3.3504285714285715,
-      "target": 3.997142857142857,
-      "leverage": 2,
-      "opened_at": "2026-07-07 07:30 UTC",
-      "opened_ms": 1783409451794,
-      "is_meme": true
-    },
-    {
-      "id": 121,
-      "symbol": "EDGE/USDT",
-      "direction": "LONG",
-      "entry": 0.4012,
-      "stop": 0.36553214285714286,
-      "target": 0.4725357142857143,
-      "leverage": 2,
-      "opened_at": "2026-07-07 21:16 UTC",
-      "opened_ms": 1783458976740
     },
     {
       "id": 122,
@@ -216,6 +155,17 @@
       "opened_at": "2026-07-08 06:22 UTC",
       "opened_ms": 1783491774157,
       "is_meme": true
+    },
+    {
+      "id": 129,
+      "symbol": "OKB/USDT",
+      "direction": "SHORT",
+      "entry": 77.26,
+      "stop": 78.80071428571429,
+      "target": 74.17857142857143,
+      "leverage": 5,
+      "opened_at": "2026-07-08 10:08 UTC",
+      "opened_ms": 1783505321958
     }
   ],
   "stats": {
@@ -229,8 +179,8 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 17,
-      "sl": 77,
+      "tp": 18,
+      "sl": 81,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
