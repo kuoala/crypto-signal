@@ -1,5 +1,5 @@
 {
-  "next_id": 131,
+  "next_id": 132,
   "open": [
     {
       "id": 54,
@@ -11,17 +11,6 @@
       "leverage": 4,
       "opened_at": "2026-07-03 17:14 UTC",
       "opened_ms": 1783098883469
-    },
-    {
-      "id": 63,
-      "symbol": "ETH/USDT:USDT",
-      "direction": "LONG",
-      "entry": 1767.7,
-      "stop": 1720.204642857143,
-      "target": 1862.6907142857144,
-      "leverage": 4,
-      "opened_at": "2026-07-03 20:54 UTC",
-      "opened_ms": 1783112047397
     },
     {
       "id": 85,
@@ -135,26 +124,15 @@
       "is_meme": true
     },
     {
-      "id": 129,
-      "symbol": "OKB/USDT",
+      "id": 131,
+      "symbol": "PI/USDT",
       "direction": "SHORT",
-      "entry": 77.26,
-      "stop": 78.80071428571429,
-      "target": 74.17857142857143,
-      "leverage": 5,
-      "opened_at": "2026-07-08 10:08 UTC",
-      "opened_ms": 1783505321958
-    },
-    {
-      "id": 130,
-      "symbol": "OKB/USDT",
-      "direction": "SHORT",
-      "entry": 77.66,
-      "stop": 79.19857142857143,
-      "target": 74.58285714285714,
-      "leverage": 5,
-      "opened_at": "2026-07-08 13:42 UTC",
-      "opened_ms": 1783518168106
+      "entry": 0.1012,
+      "stop": 0.10463928571428571,
+      "target": 0.09432142857142857,
+      "leverage": 3,
+      "opened_at": "2026-07-08 17:20 UTC",
+      "opened_ms": 1783531249690
     }
   ],
   "stats": {
@@ -169,7 +147,7 @@
     },
     "2026-07": {
       "tp": 19,
-      "sl": 82,
+      "sl": 85,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
