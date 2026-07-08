@@ -35,17 +35,6 @@
       "opened_ms": 1783325487266
     },
     {
-      "id": 109,
-      "symbol": "MON/USDT",
-      "direction": "LONG",
-      "entry": 0.02401,
-      "stop": 0.022774642857142858,
-      "target": 0.026480714285714285,
-      "leverage": 2,
-      "opened_at": "2026-07-06 18:05 UTC",
-      "opened_ms": 1783361143518
-    },
-    {
       "id": 116,
       "symbol": "MUSTOCK/USDT:USDT",
       "direction": "SHORT",
@@ -147,7 +136,7 @@
     },
     "2026-07": {
       "tp": 19,
-      "sl": 85,
+      "sl": 86,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
