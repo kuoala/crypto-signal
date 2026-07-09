@@ -1,5 +1,5 @@
 {
-  "next_id": 136,
+  "next_id": 137,
   "open": [
     {
       "id": 54,
@@ -166,6 +166,17 @@
       "leverage": 2,
       "opened_at": "2026-07-09 17:48 UTC",
       "opened_ms": 1783619304095
+    },
+    {
+      "id": 136,
+      "symbol": "ARB/USDT",
+      "direction": "LONG",
+      "entry": 0.0901,
+      "stop": 0.0855925,
+      "target": 0.099115,
+      "leverage": 2,
+      "opened_at": "2026-07-09 21:14 UTC",
+      "opened_ms": 1783631640824
     }
   ],
   "stats": {
