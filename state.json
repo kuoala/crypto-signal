@@ -1,5 +1,5 @@
 {
-  "next_id": 145,
+  "next_id": 151,
   "open": [
     {
       "id": 54,
@@ -124,17 +124,6 @@
       "opened_ms": 1783668489978
     },
     {
-      "id": 140,
-      "symbol": "DEXE/USDT:USDT",
-      "direction": "LONG",
-      "entry": 36.04,
-      "stop": 33.050714285714285,
-      "target": 42.01857142857143,
-      "leverage": 2,
-      "opened_at": "2026-07-10 07:28 UTC",
-      "opened_ms": 1783668491410
-    },
-    {
       "id": 141,
       "symbol": "AAVE/USDT:USDT",
       "direction": "LONG",
@@ -179,6 +168,73 @@
       "opened_at": "2026-07-10 07:28 UTC",
       "opened_ms": 1783668499977,
       "is_meme": true
+    },
+    {
+      "id": 145,
+      "symbol": "LINK/USDT:USDT",
+      "direction": "LONG",
+      "entry": 7.995,
+      "stop": 7.817678571428572,
+      "target": 8.349642857142857,
+      "leverage": 5,
+      "opened_at": "2026-07-10 10:45 UTC",
+      "opened_ms": 1783680321280
+    },
+    {
+      "id": 146,
+      "symbol": "DEXE/USDT:USDT",
+      "direction": "LONG",
+      "entry": 34.12,
+      "stop": 30.791071428571424,
+      "target": 40.777857142857144,
+      "leverage": 2,
+      "opened_at": "2026-07-10 10:45 UTC",
+      "opened_ms": 1783680322931
+    },
+    {
+      "id": 147,
+      "symbol": "INJ/USDT:USDT",
+      "direction": "LONG",
+      "entry": 4.916,
+      "stop": 4.719607142857143,
+      "target": 5.308785714285715,
+      "leverage": 3,
+      "opened_at": "2026-07-10 10:45 UTC",
+      "opened_ms": 1783680324317
+    },
+    {
+      "id": 148,
+      "symbol": "BTC/USDT:USDT",
+      "direction": "LONG",
+      "entry": 64430.8,
+      "stop": 63303.228571428575,
+      "target": 66685.94285714286,
+      "leverage": 6,
+      "opened_at": "2026-07-10 10:45 UTC",
+      "opened_ms": 1783680325718
+    },
+    {
+      "id": 149,
+      "symbol": "ETH/USDT:USDT",
+      "direction": "LONG",
+      "entry": 1798.31,
+      "stop": 1760.6846428571428,
+      "target": 1873.5607142857143,
+      "leverage": 5,
+      "opened_at": "2026-07-10 10:45 UTC",
+      "opened_ms": 1783680327165
+    },
+    {
+      "id": 150,
+      "symbol": "SPX/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.3939,
+      "stop": 0.37115714285714285,
+      "target": 0.43938571428571427,
+      "leverage": 2,
+      "opened_at": "2026-07-10 10:45 UTC",
+      "opened_ms": 1783680330865,
+      "is_meme": true
     }
   ],
   "stats": {
@@ -193,7 +249,7 @@
     },
     "2026-07": {
       "tp": 20,
-      "sl": 93,
+      "sl": 94,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
