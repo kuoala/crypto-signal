@@ -1,5 +1,5 @@
 {
-  "next_id": 152,
+  "next_id": 153,
   "open": [
     {
       "id": 54,
@@ -158,18 +158,6 @@
       "is_meme": true
     },
     {
-      "id": 144,
-      "symbol": "PEPE/USDT:USDT",
-      "direction": "LONG",
-      "entry": 2.6518e-06,
-      "stop": 2.5448142857142857e-06,
-      "target": 2.8657714285714286e-06,
-      "leverage": 2,
-      "opened_at": "2026-07-10 07:28 UTC",
-      "opened_ms": 1783668499977,
-      "is_meme": true
-    },
-    {
       "id": 145,
       "symbol": "LINK/USDT:USDT",
       "direction": "LONG",
@@ -246,6 +234,17 @@
       "leverage": 2,
       "opened_at": "2026-07-10 14:02 UTC",
       "opened_ms": 1783692150394
+    },
+    {
+      "id": 152,
+      "symbol": "PEPE/USDT",
+      "direction": "LONG",
+      "entry": 2.751e-06,
+      "stop": 2.664107142857143e-06,
+      "target": 2.9247857142857144e-06,
+      "leverage": 3,
+      "opened_at": "2026-07-10 17:41 UTC",
+      "opened_ms": 1783705305416
     }
   ],
   "stats": {
@@ -259,7 +258,7 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 20,
+      "tp": 21,
       "sl": 94,
       "tp1": 2,
       "tp2": 0,
