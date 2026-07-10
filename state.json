@@ -1,5 +1,5 @@
 {
-  "next_id": 153,
+  "next_id": 154,
   "open": [
     {
       "id": 54,
@@ -213,18 +213,6 @@
       "opened_ms": 1783680327165
     },
     {
-      "id": 150,
-      "symbol": "SPX/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.3939,
-      "stop": 0.37115714285714285,
-      "target": 0.43938571428571427,
-      "leverage": 2,
-      "opened_at": "2026-07-10 10:45 UTC",
-      "opened_ms": 1783680330865,
-      "is_meme": true
-    },
-    {
       "id": 151,
       "symbol": "UNI/USDT",
       "direction": "LONG",
@@ -245,6 +233,17 @@
       "leverage": 3,
       "opened_at": "2026-07-10 17:41 UTC",
       "opened_ms": 1783705305416
+    },
+    {
+      "id": 153,
+      "symbol": "HYPE/USDT",
+      "direction": "SHORT",
+      "entry": 66.962,
+      "stop": 68.90835714285714,
+      "target": 63.06928571428572,
+      "leverage": 3,
+      "opened_at": "2026-07-10 21:00 UTC",
+      "opened_ms": 1783717243253
     }
   ],
   "stats": {
@@ -259,7 +258,7 @@
     },
     "2026-07": {
       "tp": 21,
-      "sl": 94,
+      "sl": 95,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
