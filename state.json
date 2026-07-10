@@ -1,5 +1,5 @@
 {
-  "next_id": 137,
+  "next_id": 138,
   "open": [
     {
       "id": 54,
@@ -57,17 +57,6 @@
       "opened_ms": 1783475429400
     },
     {
-      "id": 123,
-      "symbol": "TAO/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 207.4,
-      "stop": 215.425,
-      "target": 191.35,
-      "leverage": 3,
-      "opened_at": "2026-07-08 06:22 UTC",
-      "opened_ms": 1783491763816
-    },
-    {
       "id": 124,
       "symbol": "EVAA/USDT:USDT",
       "direction": "LONG",
@@ -77,17 +66,6 @@
       "leverage": 2,
       "opened_at": "2026-07-08 06:22 UTC",
       "opened_ms": 1783491765343
-    },
-    {
-      "id": 126,
-      "symbol": "DOGE/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.07185,
-      "stop": 0.07406357142857142,
-      "target": 0.06742285714285713,
-      "leverage": 3,
-      "opened_at": "2026-07-08 06:22 UTC",
-      "opened_ms": 1783491768369
     },
     {
       "id": 127,
@@ -177,6 +155,17 @@
       "leverage": 2,
       "opened_at": "2026-07-09 21:14 UTC",
       "opened_ms": 1783631640824
+    },
+    {
+      "id": 137,
+      "symbol": "OKB/USDT",
+      "direction": "LONG",
+      "entry": 81.16,
+      "stop": 79.03107142857142,
+      "target": 85.41785714285714,
+      "leverage": 4,
+      "opened_at": "2026-07-10 02:01 UTC",
+      "opened_ms": 1783648892048
     }
   ],
   "stats": {
@@ -191,7 +180,7 @@
     },
     "2026-07": {
       "tp": 19,
-      "sl": 86,
+      "sl": 88,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
