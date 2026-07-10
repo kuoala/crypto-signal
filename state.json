@@ -1,5 +1,5 @@
 {
-  "next_id": 151,
+  "next_id": 152,
   "open": [
     {
       "id": 54,
@@ -235,6 +235,17 @@
       "opened_at": "2026-07-10 10:45 UTC",
       "opened_ms": 1783680330865,
       "is_meme": true
+    },
+    {
+      "id": 151,
+      "symbol": "UNI/USDT",
+      "direction": "LONG",
+      "entry": 3.639,
+      "stop": 3.459321428571428,
+      "target": 3.9983571428571425,
+      "leverage": 2,
+      "opened_at": "2026-07-10 14:02 UTC",
+      "opened_ms": 1783692150394
     }
   ],
   "stats": {
