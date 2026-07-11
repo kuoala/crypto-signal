@@ -1,5 +1,5 @@
 {
-  "next_id": 154,
+  "next_id": 155,
   "open": [
     {
       "id": 54,
@@ -244,6 +244,17 @@
       "leverage": 3,
       "opened_at": "2026-07-10 21:00 UTC",
       "opened_ms": 1783717243253
+    },
+    {
+      "id": 154,
+      "symbol": "LIT/USDT",
+      "direction": "LONG",
+      "entry": 2.6575,
+      "stop": 2.487571428571429,
+      "target": 2.997357142857143,
+      "leverage": 2,
+      "opened_at": "2026-07-11 01:49 UTC",
+      "opened_ms": 1783734542853
     }
   ],
   "stats": {
