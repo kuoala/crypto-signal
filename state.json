@@ -1,5 +1,5 @@
 {
-  "next_id": 158,
+  "next_id": 159,
   "open": [
     {
       "id": 54,
@@ -69,28 +69,6 @@
       "opened_ms": 1783582230811
     },
     {
-      "id": 135,
-      "symbol": "ARB/USDT",
-      "direction": "LONG",
-      "entry": 0.08921,
-      "stop": 0.08477214285714285,
-      "target": 0.09808571428571428,
-      "leverage": 2,
-      "opened_at": "2026-07-09 17:48 UTC",
-      "opened_ms": 1783619304095
-    },
-    {
-      "id": 136,
-      "symbol": "ARB/USDT",
-      "direction": "LONG",
-      "entry": 0.0901,
-      "stop": 0.0855925,
-      "target": 0.099115,
-      "leverage": 2,
-      "opened_at": "2026-07-09 21:14 UTC",
-      "opened_ms": 1783631640824
-    },
-    {
       "id": 137,
       "symbol": "OKB/USDT",
       "direction": "LONG",
@@ -122,17 +100,6 @@
       "leverage": 2,
       "opened_at": "2026-07-10 07:28 UTC",
       "opened_ms": 1783668489978
-    },
-    {
-      "id": 141,
-      "symbol": "AAVE/USDT:USDT",
-      "direction": "LONG",
-      "entry": 94.4,
-      "stop": 91.1525,
-      "target": 100.89500000000001,
-      "leverage": 3,
-      "opened_at": "2026-07-10 07:28 UTC",
-      "opened_ms": 1783668492787
     },
     {
       "id": 142,
@@ -246,17 +213,6 @@
       "opened_ms": 1783734542853
     },
     {
-      "id": 155,
-      "symbol": "VIRTUAL/USDT",
-      "direction": "LONG",
-      "entry": 0.63,
-      "stop": 0.6027214285714286,
-      "target": 0.6845571428571429,
-      "leverage": 2,
-      "opened_at": "2026-07-11 06:07 UTC",
-      "opened_ms": 1783750047859
-    },
-    {
       "id": 156,
       "symbol": "SUI/USDT",
       "direction": "LONG",
@@ -277,6 +233,17 @@
       "leverage": 2,
       "opened_at": "2026-07-11 12:57 UTC",
       "opened_ms": 1783774657953
+    },
+    {
+      "id": 158,
+      "symbol": "ETH/USDT",
+      "direction": "LONG",
+      "entry": 1817.98,
+      "stop": 1788.1117857142858,
+      "target": 1877.7164285714284,
+      "leverage": 6,
+      "opened_at": "2026-07-11 16:44 UTC",
+      "opened_ms": 1783788265142
     }
   ],
   "stats": {
@@ -290,8 +257,8 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 21,
-      "sl": 96,
+      "tp": 24,
+      "sl": 97,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
