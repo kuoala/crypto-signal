@@ -1,5 +1,5 @@
 {
-  "next_id": 156,
+  "next_id": 157,
   "open": [
     {
       "id": 54,
@@ -255,6 +255,17 @@
       "leverage": 2,
       "opened_at": "2026-07-11 06:07 UTC",
       "opened_ms": 1783750047859
+    },
+    {
+      "id": 156,
+      "symbol": "SUI/USDT",
+      "direction": "LONG",
+      "entry": 0.747,
+      "stop": 0.729375,
+      "target": 0.78225,
+      "leverage": 4,
+      "opened_at": "2026-07-11 09:18 UTC",
+      "opened_ms": 1783761513565
     }
   ],
   "stats": {
