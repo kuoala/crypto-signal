@@ -1,5 +1,5 @@
 {
-  "next_id": 157,
+  "next_id": 158,
   "open": [
     {
       "id": 54,
@@ -266,6 +266,17 @@
       "leverage": 4,
       "opened_at": "2026-07-11 09:18 UTC",
       "opened_ms": 1783761513565
+    },
+    {
+      "id": 157,
+      "symbol": "UNI/USDT",
+      "direction": "LONG",
+      "entry": 3.641,
+      "stop": 3.4941071428571426,
+      "target": 3.9347857142857143,
+      "leverage": 2,
+      "opened_at": "2026-07-11 12:57 UTC",
+      "opened_ms": 1783774657953
     }
   ],
   "stats": {
