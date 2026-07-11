@@ -1,5 +1,5 @@
 {
-  "next_id": 155,
+  "next_id": 156,
   "open": [
     {
       "id": 54,
@@ -213,17 +213,6 @@
       "opened_ms": 1783680327165
     },
     {
-      "id": 151,
-      "symbol": "UNI/USDT",
-      "direction": "LONG",
-      "entry": 3.639,
-      "stop": 3.459321428571428,
-      "target": 3.9983571428571425,
-      "leverage": 2,
-      "opened_at": "2026-07-10 14:02 UTC",
-      "opened_ms": 1783692150394
-    },
-    {
       "id": 152,
       "symbol": "PEPE/USDT",
       "direction": "LONG",
@@ -255,6 +244,17 @@
       "leverage": 2,
       "opened_at": "2026-07-11 01:49 UTC",
       "opened_ms": 1783734542853
+    },
+    {
+      "id": 155,
+      "symbol": "VIRTUAL/USDT",
+      "direction": "LONG",
+      "entry": 0.63,
+      "stop": 0.6027214285714286,
+      "target": 0.6845571428571429,
+      "leverage": 2,
+      "opened_at": "2026-07-11 06:07 UTC",
+      "opened_ms": 1783750047859
     }
   ],
   "stats": {
@@ -269,7 +269,7 @@
     },
     "2026-07": {
       "tp": 21,
-      "sl": 95,
+      "sl": 96,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
