@@ -1,5 +1,5 @@
 {
-  "next_id": 159,
+  "next_id": 160,
   "open": [
     {
       "id": 54,
@@ -244,6 +244,17 @@
       "leverage": 6,
       "opened_at": "2026-07-11 16:44 UTC",
       "opened_ms": 1783788265142
+    },
+    {
+      "id": 159,
+      "symbol": "ETH/USDT",
+      "direction": "LONG",
+      "entry": 1825.73,
+      "stop": 1796.9953571428573,
+      "target": 1883.1992857142857,
+      "leverage": 6,
+      "opened_at": "2026-07-11 20:39 UTC",
+      "opened_ms": 1783802366622
     }
   ],
   "stats": {
