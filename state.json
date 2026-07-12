@@ -1,5 +1,5 @@
 {
-  "next_id": 165,
+  "next_id": 166,
   "open": [
     {
       "id": 54,
@@ -243,6 +243,17 @@
       "leverage": 3,
       "opened_at": "2026-07-12 16:48 UTC",
       "opened_ms": 1783874919688
+    },
+    {
+      "id": 165,
+      "symbol": "ZEC/USDT",
+      "direction": "LONG",
+      "entry": 537.84,
+      "stop": 517.9575,
+      "target": 577.605,
+      "leverage": 3,
+      "opened_at": "2026-07-12 20:36 UTC",
+      "opened_ms": 1783888560349
     }
   ],
   "stats": {
