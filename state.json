@@ -1,5 +1,5 @@
 {
-  "next_id": 163,
+  "next_id": 164,
   "open": [
     {
       "id": 54,
@@ -243,6 +243,17 @@
       "leverage": 5,
       "opened_at": "2026-07-12 09:44 UTC",
       "opened_ms": 1783849452575
+    },
+    {
+      "id": 163,
+      "symbol": "AVAX/USDT",
+      "direction": "SHORT",
+      "entry": 6.43,
+      "stop": 6.568535714285714,
+      "target": 6.152928571428571,
+      "leverage": 5,
+      "opened_at": "2026-07-12 12:58 UTC",
+      "opened_ms": 1783861103941
     }
   ],
   "stats": {
