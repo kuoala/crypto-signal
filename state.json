@@ -1,5 +1,5 @@
 {
-  "next_id": 161,
+  "next_id": 162,
   "open": [
     {
       "id": 54,
@@ -221,6 +221,17 @@
       "leverage": 2,
       "opened_at": "2026-07-12 01:51 UTC",
       "opened_ms": 1783821082604
+    },
+    {
+      "id": 161,
+      "symbol": "SOL/USDT",
+      "direction": "SHORT",
+      "entry": 75.93,
+      "stop": 77.50928571428572,
+      "target": 72.77142857142857,
+      "leverage": 5,
+      "opened_at": "2026-07-12 06:27 UTC",
+      "opened_ms": 1783837637080
     }
   ],
   "stats": {
