@@ -1,5 +1,5 @@
 {
-  "next_id": 171,
+  "next_id": 172,
   "open": [
     {
       "id": 54,
@@ -80,17 +80,6 @@
       "opened_ms": 1783668489978
     },
     {
-      "id": 145,
-      "symbol": "LINK/USDT:USDT",
-      "direction": "LONG",
-      "entry": 7.995,
-      "stop": 7.817678571428572,
-      "target": 8.349642857142857,
-      "leverage": 5,
-      "opened_at": "2026-07-10 10:45 UTC",
-      "opened_ms": 1783680321280
-    },
-    {
       "id": 146,
       "symbol": "DEXE/USDT:USDT",
       "direction": "LONG",
@@ -100,39 +89,6 @@
       "leverage": 2,
       "opened_at": "2026-07-10 10:45 UTC",
       "opened_ms": 1783680322931
-    },
-    {
-      "id": 149,
-      "symbol": "ETH/USDT:USDT",
-      "direction": "LONG",
-      "entry": 1798.31,
-      "stop": 1760.6846428571428,
-      "target": 1873.5607142857143,
-      "leverage": 5,
-      "opened_at": "2026-07-10 10:45 UTC",
-      "opened_ms": 1783680327165
-    },
-    {
-      "id": 152,
-      "symbol": "PEPE/USDT",
-      "direction": "LONG",
-      "entry": 2.751e-06,
-      "stop": 2.664107142857143e-06,
-      "target": 2.9247857142857144e-06,
-      "leverage": 3,
-      "opened_at": "2026-07-10 17:41 UTC",
-      "opened_ms": 1783705305416
-    },
-    {
-      "id": 153,
-      "symbol": "HYPE/USDT",
-      "direction": "SHORT",
-      "entry": 66.962,
-      "stop": 68.90835714285714,
-      "target": 63.06928571428572,
-      "leverage": 3,
-      "opened_at": "2026-07-10 21:00 UTC",
-      "opened_ms": 1783717243253
     },
     {
       "id": 167,
@@ -177,6 +133,17 @@
       "leverage": 5,
       "opened_at": "2026-07-13 17:49 UTC",
       "opened_ms": 1783964946024
+    },
+    {
+      "id": 171,
+      "symbol": "BNB/USDT",
+      "direction": "SHORT",
+      "entry": 565.0,
+      "stop": 573.5928571428572,
+      "target": 547.8142857142857,
+      "leverage": 7,
+      "opened_at": "2026-07-13 20:50 UTC",
+      "opened_ms": 1783975847268
     }
   ],
   "stats": {
@@ -190,8 +157,8 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 28,
-      "sl": 111,
+      "tp": 29,
+      "sl": 114,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
