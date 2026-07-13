@@ -1,5 +1,5 @@
 {
-  "next_id": 168,
+  "next_id": 169,
   "open": [
     {
       "id": 54,
@@ -135,28 +135,6 @@
       "opened_ms": 1783717243253
     },
     {
-      "id": 163,
-      "symbol": "AVAX/USDT",
-      "direction": "SHORT",
-      "entry": 6.43,
-      "stop": 6.568535714285714,
-      "target": 6.152928571428571,
-      "leverage": 5,
-      "opened_at": "2026-07-12 12:58 UTC",
-      "opened_ms": 1783861103941
-    },
-    {
-      "id": 166,
-      "symbol": "PI/USDT",
-      "direction": "SHORT",
-      "entry": 0.0885,
-      "stop": 0.09168214285714285,
-      "target": 0.08213571428571428,
-      "leverage": 3,
-      "opened_at": "2026-07-13 01:53 UTC",
-      "opened_ms": 1783907624573
-    },
-    {
       "id": 167,
       "symbol": "TAO/USDT",
       "direction": "SHORT",
@@ -166,6 +144,17 @@
       "leverage": 4,
       "opened_at": "2026-07-13 06:46 UTC",
       "opened_ms": 1783925173638
+    },
+    {
+      "id": 168,
+      "symbol": "FIL/USDT",
+      "direction": "SHORT",
+      "entry": 0.7582,
+      "stop": 0.7793178571428572,
+      "target": 0.7159642857142857,
+      "leverage": 4,
+      "opened_at": "2026-07-13 10:51 UTC",
+      "opened_ms": 1783939868164
     }
   ],
   "stats": {
@@ -179,8 +168,8 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 27,
-      "sl": 110,
+      "tp": 28,
+      "sl": 111,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
