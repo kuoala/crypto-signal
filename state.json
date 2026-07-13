@@ -1,5 +1,5 @@
 {
-  "next_id": 169,
+  "next_id": 170,
   "open": [
     {
       "id": 54,
@@ -155,6 +155,17 @@
       "leverage": 4,
       "opened_at": "2026-07-13 10:51 UTC",
       "opened_ms": 1783939868164
+    },
+    {
+      "id": 169,
+      "symbol": "PI/USDT",
+      "direction": "SHORT",
+      "entry": 0.07994,
+      "stop": 0.08438642857142857,
+      "target": 0.07104714285714286,
+      "leverage": 2,
+      "opened_at": "2026-07-13 14:08 UTC",
+      "opened_ms": 1783951686676
     }
   ],
   "stats": {
