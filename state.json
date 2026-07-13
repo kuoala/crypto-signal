@@ -1,5 +1,5 @@
 {
-  "next_id": 166,
+  "next_id": 167,
   "open": [
     {
       "id": 54,
@@ -11,17 +11,6 @@
       "leverage": 4,
       "opened_at": "2026-07-03 17:14 UTC",
       "opened_ms": 1783098883469
-    },
-    {
-      "id": 85,
-      "symbol": "SLX/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.2654,
-      "stop": 0.3254,
-      "target": 0.14539999999999997,
-      "leverage": 2,
-      "opened_at": "2026-07-05 02:09 UTC",
-      "opened_ms": 1783217343659
     },
     {
       "id": 122,
@@ -45,17 +34,6 @@
       "opened_at": "2026-07-08 06:22 UTC",
       "opened_ms": 1783491774157,
       "is_meme": true
-    },
-    {
-      "id": 131,
-      "symbol": "PI/USDT",
-      "direction": "SHORT",
-      "entry": 0.1012,
-      "stop": 0.10463928571428571,
-      "target": 0.09432142857142857,
-      "leverage": 3,
-      "opened_at": "2026-07-08 17:20 UTC",
-      "opened_ms": 1783531249690
     },
     {
       "id": 132,
@@ -212,17 +190,6 @@
       "opened_ms": 1783821082604
     },
     {
-      "id": 162,
-      "symbol": "AVAX/USDT",
-      "direction": "SHORT",
-      "entry": 6.409,
-      "stop": 6.550428571428571,
-      "target": 6.126142857142857,
-      "leverage": 5,
-      "opened_at": "2026-07-12 09:44 UTC",
-      "opened_ms": 1783849452575
-    },
-    {
       "id": 163,
       "symbol": "AVAX/USDT",
       "direction": "SHORT",
@@ -254,6 +221,17 @@
       "leverage": 3,
       "opened_at": "2026-07-12 20:36 UTC",
       "opened_ms": 1783888560349
+    },
+    {
+      "id": 166,
+      "symbol": "PI/USDT",
+      "direction": "SHORT",
+      "entry": 0.0885,
+      "stop": 0.09168214285714285,
+      "target": 0.08213571428571428,
+      "leverage": 3,
+      "opened_at": "2026-07-13 01:53 UTC",
+      "opened_ms": 1783907624573
     }
   ],
   "stats": {
@@ -267,8 +245,8 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 25,
-      "sl": 102,
+      "tp": 27,
+      "sl": 103,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
