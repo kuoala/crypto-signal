@@ -1,5 +1,5 @@
 {
-  "next_id": 174,
+  "next_id": 180,
   "open": [
     {
       "id": 54,
@@ -69,17 +69,6 @@
       "opened_ms": 1783668488589
     },
     {
-      "id": 146,
-      "symbol": "DEXE/USDT:USDT",
-      "direction": "LONG",
-      "entry": 34.12,
-      "stop": 30.791071428571424,
-      "target": 40.777857142857144,
-      "leverage": 2,
-      "opened_at": "2026-07-10 10:45 UTC",
-      "opened_ms": 1783680322931
-    },
-    {
       "id": 167,
       "symbol": "TAO/USDT",
       "direction": "SHORT",
@@ -144,6 +133,73 @@
       "leverage": 2,
       "opened_at": "2026-07-14 06:04 UTC",
       "opened_ms": 1784009081174
+    },
+    {
+      "id": 174,
+      "symbol": "USOIL/USDT:USDT",
+      "direction": "LONG",
+      "entry": 79.8,
+      "stop": 77.68178571428571,
+      "target": 84.03642857142857,
+      "leverage": 4,
+      "opened_at": "2026-07-14 09:47 UTC",
+      "opened_ms": 1784022475033
+    },
+    {
+      "id": 175,
+      "symbol": "UKOIL/USDT:USDT",
+      "direction": "LONG",
+      "entry": 84.91,
+      "stop": 82.75535714285714,
+      "target": 89.21928571428572,
+      "leverage": 4,
+      "opened_at": "2026-07-14 09:47 UTC",
+      "opened_ms": 1784022476446
+    },
+    {
+      "id": 176,
+      "symbol": "TAO/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 196.49,
+      "stop": 202.4182142857143,
+      "target": 184.63357142857143,
+      "leverage": 3,
+      "opened_at": "2026-07-14 09:47 UTC",
+      "opened_ms": 1784022477865
+    },
+    {
+      "id": 177,
+      "symbol": "BILL/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.06487,
+      "stop": 0.05585928571428571,
+      "target": 0.08289142857142857,
+      "leverage": 2,
+      "opened_at": "2026-07-14 09:47 UTC",
+      "opened_ms": 1784022479309
+    },
+    {
+      "id": 178,
+      "symbol": "XLM/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.17791,
+      "stop": 0.18259428571428574,
+      "target": 0.1685414285714286,
+      "leverage": 4,
+      "opened_at": "2026-07-14 09:48 UTC",
+      "opened_ms": 1784022480761
+    },
+    {
+      "id": 179,
+      "symbol": "PENGU/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.005721,
+      "stop": 0.005930142857142858,
+      "target": 0.0053027142857142865,
+      "leverage": 3,
+      "opened_at": "2026-07-14 09:48 UTC",
+      "opened_ms": 1784022486028,
+      "is_meme": true
     }
   ],
   "stats": {
@@ -157,7 +213,7 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 30,
+      "tp": 31,
       "sl": 115,
       "tp1": 2,
       "tp2": 0,
