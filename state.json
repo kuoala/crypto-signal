@@ -1,5 +1,5 @@
 {
-  "next_id": 172,
+  "next_id": 173,
   "open": [
     {
       "id": 54,
@@ -69,17 +69,6 @@
       "opened_ms": 1783668488589
     },
     {
-      "id": 139,
-      "symbol": "ARB/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.09337,
-      "stop": 0.08808785714285713,
-      "target": 0.1039342857142857,
-      "leverage": 2,
-      "opened_at": "2026-07-10 07:28 UTC",
-      "opened_ms": 1783668489978
-    },
-    {
       "id": 146,
       "symbol": "DEXE/USDT:USDT",
       "direction": "LONG",
@@ -144,6 +133,17 @@
       "leverage": 7,
       "opened_at": "2026-07-13 20:50 UTC",
       "opened_ms": 1783975847268
+    },
+    {
+      "id": 172,
+      "symbol": "WLD/USDT",
+      "direction": "SHORT",
+      "entry": 0.3912,
+      "stop": 0.416775,
+      "target": 0.34004999999999996,
+      "leverage": 2,
+      "opened_at": "2026-07-14 01:31 UTC",
+      "opened_ms": 1783992662437
     }
   ],
   "stats": {
@@ -158,7 +158,7 @@
     },
     "2026-07": {
       "tp": 29,
-      "sl": 114,
+      "sl": 115,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
