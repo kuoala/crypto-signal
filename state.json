@@ -1,5 +1,5 @@
 {
-  "next_id": 180,
+  "next_id": 181,
   "open": [
     {
       "id": 54,
@@ -34,17 +34,6 @@
       "opened_at": "2026-07-08 06:22 UTC",
       "opened_ms": 1783491774157,
       "is_meme": true
-    },
-    {
-      "id": 132,
-      "symbol": "USDG/USDT",
-      "direction": "SHORT",
-      "entry": 1.0006,
-      "stop": 1.000910714285714,
-      "target": 0.9999785714285714,
-      "leverage": 10,
-      "opened_at": "2026-07-09 07:30 UTC",
-      "opened_ms": 1783582230811
     },
     {
       "id": 137,
@@ -89,28 +78,6 @@
       "leverage": 4,
       "opened_at": "2026-07-13 10:51 UTC",
       "opened_ms": 1783939868164
-    },
-    {
-      "id": 170,
-      "symbol": "LTC/USDT",
-      "direction": "SHORT",
-      "entry": 43.19,
-      "stop": 44.011785714285715,
-      "target": 41.54642857142857,
-      "leverage": 5,
-      "opened_at": "2026-07-13 17:49 UTC",
-      "opened_ms": 1783964946024
-    },
-    {
-      "id": 171,
-      "symbol": "BNB/USDT",
-      "direction": "SHORT",
-      "entry": 565.0,
-      "stop": 573.5928571428572,
-      "target": 547.8142857142857,
-      "leverage": 7,
-      "opened_at": "2026-07-13 20:50 UTC",
-      "opened_ms": 1783975847268
     },
     {
       "id": 172,
@@ -168,28 +135,6 @@
       "opened_ms": 1784022477865
     },
     {
-      "id": 177,
-      "symbol": "BILL/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.06487,
-      "stop": 0.05585928571428571,
-      "target": 0.08289142857142857,
-      "leverage": 2,
-      "opened_at": "2026-07-14 09:47 UTC",
-      "opened_ms": 1784022479309
-    },
-    {
-      "id": 178,
-      "symbol": "XLM/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.17791,
-      "stop": 0.18259428571428574,
-      "target": 0.1685414285714286,
-      "leverage": 4,
-      "opened_at": "2026-07-14 09:48 UTC",
-      "opened_ms": 1784022480761
-    },
-    {
       "id": 179,
       "symbol": "PENGU/USDT:USDT",
       "direction": "SHORT",
@@ -200,6 +145,17 @@
       "opened_at": "2026-07-14 09:48 UTC",
       "opened_ms": 1784022486028,
       "is_meme": true
+    },
+    {
+      "id": 180,
+      "symbol": "NEAR/USDT",
+      "direction": "LONG",
+      "entry": 2.022,
+      "stop": 1.9427142857142854,
+      "target": 2.1805714285714286,
+      "leverage": 3,
+      "opened_at": "2026-07-14 13:10 UTC",
+      "opened_ms": 1784034652030
     }
   ],
   "stats": {
@@ -214,7 +170,7 @@
     },
     "2026-07": {
       "tp": 31,
-      "sl": 115,
+      "sl": 120,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
