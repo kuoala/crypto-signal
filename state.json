@@ -1,5 +1,5 @@
 {
-  "next_id": 184,
+  "next_id": 189,
   "open": [
     {
       "id": 54,
@@ -11,17 +11,6 @@
       "leverage": 4,
       "opened_at": "2026-07-03 17:14 UTC",
       "opened_ms": 1783098883469
-    },
-    {
-      "id": 122,
-      "symbol": "RE/USDT",
-      "direction": "SHORT",
-      "entry": 0.6187,
-      "stop": 0.6742203571428571,
-      "target": 0.5076592857142858,
-      "leverage": 2,
-      "opened_at": "2026-07-08 01:50 UTC",
-      "opened_ms": 1783475429400
     },
     {
       "id": 128,
@@ -56,39 +45,6 @@
       "leverage": 2,
       "opened_at": "2026-07-10 07:28 UTC",
       "opened_ms": 1783668488589
-    },
-    {
-      "id": 167,
-      "symbol": "TAO/USDT",
-      "direction": "SHORT",
-      "entry": 206.0,
-      "stop": 211.29285714285714,
-      "target": 195.4142857142857,
-      "leverage": 4,
-      "opened_at": "2026-07-13 06:46 UTC",
-      "opened_ms": 1783925173638
-    },
-    {
-      "id": 174,
-      "symbol": "USOIL/USDT:USDT",
-      "direction": "LONG",
-      "entry": 79.8,
-      "stop": 77.68178571428571,
-      "target": 84.03642857142857,
-      "leverage": 4,
-      "opened_at": "2026-07-14 09:47 UTC",
-      "opened_ms": 1784022475033
-    },
-    {
-      "id": 175,
-      "symbol": "UKOIL/USDT:USDT",
-      "direction": "LONG",
-      "entry": 84.91,
-      "stop": 82.75535714285714,
-      "target": 89.21928571428572,
-      "leverage": 4,
-      "opened_at": "2026-07-14 09:47 UTC",
-      "opened_ms": 1784022476446
     },
     {
       "id": 180,
@@ -133,6 +89,61 @@
       "leverage": 2,
       "opened_at": "2026-07-15 01:27 UTC",
       "opened_ms": 1784078828984
+    },
+    {
+      "id": 184,
+      "symbol": "PUMPFUN/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.001638,
+      "stop": 0.0015304285714285713,
+      "target": 0.001853142857142857,
+      "leverage": 2,
+      "opened_at": "2026-07-15 06:08 UTC",
+      "opened_ms": 1784095715179
+    },
+    {
+      "id": 185,
+      "symbol": "NAS100/USDT:USDT",
+      "direction": "LONG",
+      "entry": 29849.0,
+      "stop": 29546.85714285714,
+      "target": 30453.285714285714,
+      "leverage": 10,
+      "opened_at": "2026-07-15 06:08 UTC",
+      "opened_ms": 1784095716549
+    },
+    {
+      "id": 186,
+      "symbol": "QQQSTOCK/USDT:USDT",
+      "direction": "LONG",
+      "entry": 726.19,
+      "stop": 718.9878571428571,
+      "target": 740.5942857142858,
+      "leverage": 10,
+      "opened_at": "2026-07-15 06:08 UTC",
+      "opened_ms": 1784095717963
+    },
+    {
+      "id": 187,
+      "symbol": "LINK/USDT:USDT",
+      "direction": "LONG",
+      "entry": 8.391,
+      "stop": 8.1765,
+      "target": 8.82,
+      "leverage": 4,
+      "opened_at": "2026-07-15 06:08 UTC",
+      "opened_ms": 1784095719365
+    },
+    {
+      "id": 188,
+      "symbol": "LDO/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.3379,
+      "stop": 0.31982499999999997,
+      "target": 0.37404999999999994,
+      "leverage": 2,
+      "opened_at": "2026-07-15 06:08 UTC",
+      "opened_ms": 1784095720742
     }
   ],
   "stats": {
@@ -146,8 +157,8 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 31,
-      "sl": 125,
+      "tp": 33,
+      "sl": 127,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
