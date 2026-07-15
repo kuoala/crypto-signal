@@ -1,5 +1,5 @@
 {
-  "next_id": 194,
+  "next_id": 195,
   "open": [
     {
       "id": 54,
@@ -199,6 +199,17 @@
       "leverage": 2,
       "opened_at": "2026-07-15 09:52 UTC",
       "opened_ms": 1784109139177
+    },
+    {
+      "id": 194,
+      "symbol": "LINK/USDT",
+      "direction": "LONG",
+      "entry": 8.583,
+      "stop": 8.375250000000001,
+      "target": 8.9985,
+      "leverage": 4,
+      "opened_at": "2026-07-15 13:14 UTC",
+      "opened_ms": 1784121296806
     }
   ],
   "stats": {
