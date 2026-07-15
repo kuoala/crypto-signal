@@ -1,5 +1,5 @@
 {
-  "next_id": 195,
+  "next_id": 196,
   "open": [
     {
       "id": 54,
@@ -78,17 +78,6 @@
       "leverage": 5,
       "opened_at": "2026-07-14 20:51 UTC",
       "opened_ms": 1784062266795
-    },
-    {
-      "id": 183,
-      "symbol": "KAITO/USDT",
-      "direction": "LONG",
-      "entry": 0.7849,
-      "stop": 0.7302785714285714,
-      "target": 0.8941428571428572,
-      "leverage": 2,
-      "opened_at": "2026-07-15 01:27 UTC",
-      "opened_ms": 1784078828984
     },
     {
       "id": 184,
@@ -210,6 +199,17 @@
       "leverage": 4,
       "opened_at": "2026-07-15 13:14 UTC",
       "opened_ms": 1784121296806
+    },
+    {
+      "id": 195,
+      "symbol": "ETH/USDT",
+      "direction": "LONG",
+      "entry": 1922.7,
+      "stop": 1874.3014285714287,
+      "target": 2019.497142857143,
+      "leverage": 4,
+      "opened_at": "2026-07-15 17:06 UTC",
+      "opened_ms": 1784135210903
     }
   ],
   "stats": {
@@ -224,7 +224,7 @@
     },
     "2026-07": {
       "tp": 33,
-      "sl": 127,
+      "sl": 128,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
