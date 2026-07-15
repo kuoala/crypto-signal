@@ -1,5 +1,5 @@
 {
-  "next_id": 183,
+  "next_id": 184,
   "open": [
     {
       "id": 54,
@@ -122,6 +122,17 @@
       "leverage": 5,
       "opened_at": "2026-07-14 20:51 UTC",
       "opened_ms": 1784062266795
+    },
+    {
+      "id": 183,
+      "symbol": "KAITO/USDT",
+      "direction": "LONG",
+      "entry": 0.7849,
+      "stop": 0.7302785714285714,
+      "target": 0.8941428571428572,
+      "leverage": 2,
+      "opened_at": "2026-07-15 01:27 UTC",
+      "opened_ms": 1784078828984
     }
   ],
   "stats": {
