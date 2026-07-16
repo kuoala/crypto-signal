@@ -1,5 +1,5 @@
 {
-  "next_id": 198,
+  "next_id": 199,
   "open": [
     {
       "id": 54,
@@ -232,6 +232,17 @@
       "leverage": 3,
       "opened_at": "2026-07-16 01:47 UTC",
       "opened_ms": 1784166457258
+    },
+    {
+      "id": 198,
+      "symbol": "ONDO/USDT",
+      "direction": "LONG",
+      "entry": 0.3707,
+      "stop": 0.35468214285714283,
+      "target": 0.40273571428571425,
+      "leverage": 2,
+      "opened_at": "2026-07-16 06:10 UTC",
+      "opened_ms": 1784182257957
     }
   ],
   "stats": {
