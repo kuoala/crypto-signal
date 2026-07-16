@@ -1,5 +1,5 @@
 {
-  "next_id": 201,
+  "next_id": 202,
   "open": [
     {
       "id": 54,
@@ -124,17 +124,6 @@
       "opened_ms": 1784095719365
     },
     {
-      "id": 188,
-      "symbol": "LDO/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.3379,
-      "stop": 0.31982499999999997,
-      "target": 0.37404999999999994,
-      "leverage": 2,
-      "opened_at": "2026-07-15 06:08 UTC",
-      "opened_ms": 1784095720742
-    },
-    {
       "id": 189,
       "symbol": "AKE/USDT:USDT",
       "direction": "LONG",
@@ -232,6 +221,17 @@
       "leverage": 2,
       "opened_at": "2026-07-16 13:22 UTC",
       "opened_ms": 1784208167569
+    },
+    {
+      "id": 201,
+      "symbol": "PUMP/USDT",
+      "direction": "LONG",
+      "entry": 0.00174,
+      "stop": 0.001614857142857143,
+      "target": 0.0019902857142857144,
+      "leverage": 2,
+      "opened_at": "2026-07-16 17:04 UTC",
+      "opened_ms": 1784221460640
     }
   ],
   "stats": {
@@ -245,7 +245,7 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 34,
+      "tp": 35,
       "sl": 130,
       "tp1": 2,
       "tp2": 0,
