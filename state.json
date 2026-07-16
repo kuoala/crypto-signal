@@ -1,5 +1,5 @@
 {
-  "next_id": 202,
+  "next_id": 203,
   "open": [
     {
       "id": 54,
@@ -232,6 +232,17 @@
       "leverage": 2,
       "opened_at": "2026-07-16 17:04 UTC",
       "opened_ms": 1784221460640
+    },
+    {
+      "id": 202,
+      "symbol": "CRO/USDT",
+      "direction": "LONG",
+      "entry": 0.05996,
+      "stop": 0.057810714285714285,
+      "target": 0.06425857142857143,
+      "leverage": 3,
+      "opened_at": "2026-07-16 20:47 UTC",
+      "opened_ms": 1784234842694
     }
   ],
   "stats": {
