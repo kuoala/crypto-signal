@@ -1,5 +1,5 @@
 {
-  "next_id": 200,
+  "next_id": 201,
   "open": [
     {
       "id": 54,
@@ -190,39 +190,6 @@
       "opened_ms": 1784109139177
     },
     {
-      "id": 194,
-      "symbol": "LINK/USDT",
-      "direction": "LONG",
-      "entry": 8.583,
-      "stop": 8.375250000000001,
-      "target": 8.9985,
-      "leverage": 4,
-      "opened_at": "2026-07-15 13:14 UTC",
-      "opened_ms": 1784121296806
-    },
-    {
-      "id": 195,
-      "symbol": "ETH/USDT",
-      "direction": "LONG",
-      "entry": 1922.7,
-      "stop": 1874.3014285714287,
-      "target": 2019.497142857143,
-      "leverage": 4,
-      "opened_at": "2026-07-15 17:06 UTC",
-      "opened_ms": 1784135210903
-    },
-    {
-      "id": 196,
-      "symbol": "ONDO/USDT",
-      "direction": "LONG",
-      "entry": 0.3574,
-      "stop": 0.34483214285714286,
-      "target": 0.38253571428571426,
-      "leverage": 3,
-      "opened_at": "2026-07-15 20:51 UTC",
-      "opened_ms": 1784148673512
-    },
-    {
       "id": 197,
       "symbol": "ONDO/USDT",
       "direction": "LONG",
@@ -254,6 +221,17 @@
       "leverage": 2,
       "opened_at": "2026-07-16 09:58 UTC",
       "opened_ms": 1784195934233
+    },
+    {
+      "id": 200,
+      "symbol": "ONDO/USDT",
+      "direction": "LONG",
+      "entry": 0.3891,
+      "stop": 0.37121785714285715,
+      "target": 0.4248642857142857,
+      "leverage": 2,
+      "opened_at": "2026-07-16 13:22 UTC",
+      "opened_ms": 1784208167569
     }
   ],
   "stats": {
@@ -267,8 +245,8 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 33,
-      "sl": 128,
+      "tp": 34,
+      "sl": 130,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
