@@ -1,5 +1,5 @@
 {
-  "next_id": 220,
+  "next_id": 221,
   "open": [
     {
       "id": 54,
@@ -280,6 +280,17 @@
       "leverage": 10,
       "opened_at": "2026-07-17 17:01 UTC",
       "opened_ms": 1784307694887
+    },
+    {
+      "id": 220,
+      "symbol": "USDG/USDT",
+      "direction": "LONG",
+      "entry": 1.001,
+      "stop": 1.0007964285714286,
+      "target": 1.0014071428571427,
+      "leverage": 10,
+      "opened_at": "2026-07-17 20:44 UTC",
+      "opened_ms": 1784321041052
     }
   ],
   "stats": {
