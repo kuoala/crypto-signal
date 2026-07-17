@@ -1,5 +1,5 @@
 {
-  "next_id": 211,
+  "next_id": 218,
   "open": [
     {
       "id": 54,
@@ -200,6 +200,85 @@
       "leverage": 2,
       "opened_at": "2026-07-17 06:10 UTC",
       "opened_ms": 1784268621203,
+      "is_meme": true
+    },
+    {
+      "id": 211,
+      "symbol": "BANK/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.07229,
+      "stop": 0.06506214285714285,
+      "target": 0.08674571428571429,
+      "leverage": 2,
+      "opened_at": "2026-07-17 09:48 UTC",
+      "opened_ms": 1784281718262
+    },
+    {
+      "id": 212,
+      "symbol": "NAS100/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 28521.0,
+      "stop": 28852.178571428572,
+      "target": 27858.64285714286,
+      "leverage": 9,
+      "opened_at": "2026-07-17 09:48 UTC",
+      "opened_ms": 1784281719717
+    },
+    {
+      "id": 213,
+      "symbol": "AKE/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.0011541,
+      "stop": 0.0008200285714285713,
+      "target": 0.001822242857142857,
+      "leverage": 2,
+      "opened_at": "2026-07-17 09:48 UTC",
+      "opened_ms": 1784281721260
+    },
+    {
+      "id": 214,
+      "symbol": "FARTCOIN/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.1336,
+      "stop": 0.14021178571428572,
+      "target": 0.12037642857142855,
+      "leverage": 2,
+      "opened_at": "2026-07-17 09:48 UTC",
+      "opened_ms": 1784281722663
+    },
+    {
+      "id": 215,
+      "symbol": "SOL/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 74.69,
+      "stop": 76.31321428571428,
+      "target": 71.44357142857142,
+      "leverage": 5,
+      "opened_at": "2026-07-17 09:48 UTC",
+      "opened_ms": 1784281724079
+    },
+    {
+      "id": 216,
+      "symbol": "SPX/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.3471,
+      "stop": 0.3675428571428571,
+      "target": 0.30621428571428577,
+      "leverage": 2,
+      "opened_at": "2026-07-17 09:48 UTC",
+      "opened_ms": 1784281728055,
+      "is_meme": true
+    },
+    {
+      "id": 217,
+      "symbol": "FLOKI/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 2.156e-05,
+      "stop": 2.213e-05,
+      "target": 2.0419999999999998e-05,
+      "leverage": 4,
+      "opened_at": "2026-07-17 09:48 UTC",
+      "opened_ms": 1784281729460,
       "is_meme": true
     }
   ],
