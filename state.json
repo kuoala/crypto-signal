@@ -1,5 +1,5 @@
 {
-  "next_id": 218,
+  "next_id": 219,
   "open": [
     {
       "id": 54,
@@ -280,6 +280,17 @@
       "opened_at": "2026-07-17 09:48 UTC",
       "opened_ms": 1784281729460,
       "is_meme": true
+    },
+    {
+      "id": 218,
+      "symbol": "WLD/USDT",
+      "direction": "SHORT",
+      "entry": 0.3765,
+      "stop": 0.3918857142857143,
+      "target": 0.3457285714285714,
+      "leverage": 2,
+      "opened_at": "2026-07-17 13:07 UTC",
+      "opened_ms": 1784293627429
     }
   ],
   "stats": {
