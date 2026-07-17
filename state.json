@@ -1,5 +1,5 @@
 {
-  "next_id": 219,
+  "next_id": 220,
   "open": [
     {
       "id": 54,
@@ -102,17 +102,6 @@
       "opened_ms": 1784195934233
     },
     {
-      "id": 201,
-      "symbol": "PUMP/USDT",
-      "direction": "LONG",
-      "entry": 0.00174,
-      "stop": 0.001614857142857143,
-      "target": 0.0019902857142857144,
-      "leverage": 2,
-      "opened_at": "2026-07-16 17:04 UTC",
-      "opened_ms": 1784221460640
-    },
-    {
       "id": 203,
       "symbol": "LIT/USDT",
       "direction": "SHORT",
@@ -166,17 +155,6 @@
       "leverage": 2,
       "opened_at": "2026-07-17 06:10 UTC",
       "opened_ms": 1784268612131
-    },
-    {
-      "id": 208,
-      "symbol": "DRAM/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 49.5,
-      "stop": 52.31785714285714,
-      "target": 43.864285714285714,
-      "leverage": 2,
-      "opened_at": "2026-07-17 06:10 UTC",
-      "opened_ms": 1784268614427
     },
     {
       "id": 209,
@@ -291,6 +269,17 @@
       "leverage": 2,
       "opened_at": "2026-07-17 13:07 UTC",
       "opened_ms": 1784293627429
+    },
+    {
+      "id": 219,
+      "symbol": "USDC/USDT",
+      "direction": "LONG",
+      "entry": 1.0007,
+      "stop": 1.0003892857142858,
+      "target": 1.0013214285714285,
+      "leverage": 10,
+      "opened_at": "2026-07-17 17:01 UTC",
+      "opened_ms": 1784307694887
     }
   ],
   "stats": {
@@ -305,7 +294,7 @@
     },
     "2026-07": {
       "tp": 36,
-      "sl": 141,
+      "sl": 143,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
