@@ -1,5 +1,5 @@
 {
-  "next_id": 226,
+  "next_id": 227,
   "open": [
     {
       "id": 128,
@@ -34,17 +34,6 @@
       "leverage": 2,
       "opened_at": "2026-07-10 07:28 UTC",
       "opened_ms": 1783668488589
-    },
-    {
-      "id": 182,
-      "symbol": "LTC/USDT",
-      "direction": "LONG",
-      "entry": 44.91,
-      "stop": 44.00785714285714,
-      "target": 46.71428571428571,
-      "leverage": 5,
-      "opened_at": "2026-07-14 20:51 UTC",
-      "opened_ms": 1784062266795
     },
     {
       "id": 184,
@@ -291,6 +280,17 @@
       "leverage": 2,
       "opened_at": "2026-07-18 16:45 UTC",
       "opened_ms": 1784393122532
+    },
+    {
+      "id": 226,
+      "symbol": "ALLO/USDT",
+      "direction": "LONG",
+      "entry": 0.4487,
+      "stop": 0.41619392857142856,
+      "target": 0.5137121428571428,
+      "leverage": 2,
+      "opened_at": "2026-07-18 20:38 UTC",
+      "opened_ms": 1784407093129
     }
   ],
   "stats": {
@@ -304,7 +304,7 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 37,
+      "tp": 38,
       "sl": 147,
       "tp1": 2,
       "tp2": 0,
