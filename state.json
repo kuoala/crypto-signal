@@ -1,5 +1,5 @@
 {
-  "next_id": 223,
+  "next_id": 224,
   "open": [
     {
       "id": 54,
@@ -67,39 +67,6 @@
       "leverage": 2,
       "opened_at": "2026-07-15 06:08 UTC",
       "opened_ms": 1784095715179
-    },
-    {
-      "id": 197,
-      "symbol": "ONDO/USDT",
-      "direction": "LONG",
-      "entry": 0.3683,
-      "stop": 0.3539214285714286,
-      "target": 0.3970571428571429,
-      "leverage": 3,
-      "opened_at": "2026-07-16 01:47 UTC",
-      "opened_ms": 1784166457258
-    },
-    {
-      "id": 198,
-      "symbol": "ONDO/USDT",
-      "direction": "LONG",
-      "entry": 0.3707,
-      "stop": 0.35468214285714283,
-      "target": 0.40273571428571425,
-      "leverage": 2,
-      "opened_at": "2026-07-16 06:10 UTC",
-      "opened_ms": 1784182257957
-    },
-    {
-      "id": 199,
-      "symbol": "ONDO/USDT",
-      "direction": "LONG",
-      "entry": 0.3721,
-      "stop": 0.35584642857142856,
-      "target": 0.40460714285714283,
-      "leverage": 2,
-      "opened_at": "2026-07-16 09:58 UTC",
-      "opened_ms": 1784195934233
     },
     {
       "id": 203,
@@ -313,6 +280,17 @@
       "leverage": 2,
       "opened_at": "2026-07-18 05:57 UTC",
       "opened_ms": 1784354241101
+    },
+    {
+      "id": 223,
+      "symbol": "WLD/USDT",
+      "direction": "SHORT",
+      "entry": 0.3779,
+      "stop": 0.3907785714285714,
+      "target": 0.35214285714285715,
+      "leverage": 3,
+      "opened_at": "2026-07-18 09:16 UTC",
+      "opened_ms": 1784366190863
     }
   ],
   "stats": {
@@ -327,7 +305,7 @@
     },
     "2026-07": {
       "tp": 36,
-      "sl": 143,
+      "sl": 146,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
