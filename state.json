@@ -1,17 +1,6 @@
 {
-  "next_id": 225,
+  "next_id": 226,
   "open": [
-    {
-      "id": 54,
-      "symbol": "LTC/USDT:USDT",
-      "direction": "LONG",
-      "entry": 43.95,
-      "stop": 42.785357142857144,
-      "target": 46.27928571428572,
-      "leverage": 4,
-      "opened_at": "2026-07-03 17:14 UTC",
-      "opened_ms": 1783098883469
-    },
     {
       "id": 128,
       "symbol": "WIF/USDT:USDT",
@@ -293,15 +282,15 @@
       "opened_ms": 1784366190863
     },
     {
-      "id": 224,
-      "symbol": "TRUMP/USDT",
-      "direction": "LONG",
-      "entry": 1.689,
-      "stop": 1.625357142857143,
-      "target": 1.8162857142857143,
-      "leverage": 3,
-      "opened_at": "2026-07-18 12:54 UTC",
-      "opened_ms": 1784379259531
+      "id": 225,
+      "symbol": "RE/USDT",
+      "direction": "SHORT",
+      "entry": 0.38775,
+      "stop": 0.4205871428571428,
+      "target": 0.32207571428571424,
+      "leverage": 2,
+      "opened_at": "2026-07-18 16:45 UTC",
+      "opened_ms": 1784393122532
     }
   ],
   "stats": {
@@ -315,8 +304,8 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 36,
-      "sl": 146,
+      "tp": 37,
+      "sl": 147,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
