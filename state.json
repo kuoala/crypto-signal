@@ -1,5 +1,5 @@
 {
-  "next_id": 224,
+  "next_id": 225,
   "open": [
     {
       "id": 54,
@@ -291,6 +291,17 @@
       "leverage": 3,
       "opened_at": "2026-07-18 09:16 UTC",
       "opened_ms": 1784366190863
+    },
+    {
+      "id": 224,
+      "symbol": "TRUMP/USDT",
+      "direction": "LONG",
+      "entry": 1.689,
+      "stop": 1.625357142857143,
+      "target": 1.8162857142857143,
+      "leverage": 3,
+      "opened_at": "2026-07-18 12:54 UTC",
+      "opened_ms": 1784379259531
     }
   ],
   "stats": {
