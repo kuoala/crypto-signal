@@ -1,5 +1,5 @@
 {
-  "next_id": 231,
+  "next_id": 232,
   "open": [
     {
       "id": 128,
@@ -12,17 +12,6 @@
       "opened_at": "2026-07-08 06:22 UTC",
       "opened_ms": 1783491774157,
       "is_meme": true
-    },
-    {
-      "id": 137,
-      "symbol": "OKB/USDT",
-      "direction": "LONG",
-      "entry": 81.16,
-      "stop": 79.03107142857142,
-      "target": 85.41785714285714,
-      "leverage": 4,
-      "opened_at": "2026-07-10 02:01 UTC",
-      "opened_ms": 1783648892048
     },
     {
       "id": 138,
@@ -313,6 +302,17 @@
       "leverage": 8,
       "opened_at": "2026-07-19 12:56 UTC",
       "opened_ms": 1784465780451
+    },
+    {
+      "id": 231,
+      "symbol": "GRAM/USDT",
+      "direction": "SHORT",
+      "entry": 1.433,
+      "stop": 1.4710357142857144,
+      "target": 1.3569285714285715,
+      "leverage": 4,
+      "opened_at": "2026-07-19 16:46 UTC",
+      "opened_ms": 1784479565298
     }
   ],
   "stats": {
@@ -327,7 +327,7 @@
     },
     "2026-07": {
       "tp": 38,
-      "sl": 149,
+      "sl": 150,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
