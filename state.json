@@ -1,5 +1,5 @@
 {
-  "next_id": 228,
+  "next_id": 229,
   "open": [
     {
       "id": 128,
@@ -170,17 +170,6 @@
       "opened_ms": 1784281722663
     },
     {
-      "id": 215,
-      "symbol": "SOL/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 74.69,
-      "stop": 76.31321428571428,
-      "target": 71.44357142857142,
-      "leverage": 5,
-      "opened_at": "2026-07-17 09:48 UTC",
-      "opened_ms": 1784281724079
-    },
-    {
       "id": 216,
       "symbol": "SPX/USDT:USDT",
       "direction": "SHORT",
@@ -271,17 +260,6 @@
       "opened_ms": 1784366190863
     },
     {
-      "id": 225,
-      "symbol": "RE/USDT",
-      "direction": "SHORT",
-      "entry": 0.38775,
-      "stop": 0.4205871428571428,
-      "target": 0.32207571428571424,
-      "leverage": 2,
-      "opened_at": "2026-07-18 16:45 UTC",
-      "opened_ms": 1784393122532
-    },
-    {
       "id": 226,
       "symbol": "ALLO/USDT",
       "direction": "LONG",
@@ -302,6 +280,17 @@
       "leverage": 4,
       "opened_at": "2026-07-19 01:49 UTC",
       "opened_ms": 1784425756744
+    },
+    {
+      "id": 228,
+      "symbol": "ZEC/USDT",
+      "direction": "LONG",
+      "entry": 559.04,
+      "stop": 539.7510714285714,
+      "target": 597.6178571428571,
+      "leverage": 3,
+      "opened_at": "2026-07-19 06:23 UTC",
+      "opened_ms": 1784442229365
     }
   ],
   "stats": {
@@ -316,7 +305,7 @@
     },
     "2026-07": {
       "tp": 38,
-      "sl": 147,
+      "sl": 149,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
