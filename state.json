@@ -1,5 +1,5 @@
 {
-  "next_id": 232,
+  "next_id": 233,
   "open": [
     {
       "id": 128,
@@ -313,6 +313,17 @@
       "leverage": 4,
       "opened_at": "2026-07-19 16:46 UTC",
       "opened_ms": 1784479565298
+    },
+    {
+      "id": 232,
+      "symbol": "FIL/USDT",
+      "direction": "SHORT",
+      "entry": 0.7167,
+      "stop": 0.7305535714285715,
+      "target": 0.6889928571428571,
+      "leverage": 5,
+      "opened_at": "2026-07-19 20:38 UTC",
+      "opened_ms": 1784493522047
     }
   ],
   "stats": {
