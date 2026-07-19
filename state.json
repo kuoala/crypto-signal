@@ -1,5 +1,5 @@
 {
-  "next_id": 227,
+  "next_id": 228,
   "open": [
     {
       "id": 128,
@@ -291,6 +291,17 @@
       "leverage": 2,
       "opened_at": "2026-07-18 20:38 UTC",
       "opened_ms": 1784407093129
+    },
+    {
+      "id": 227,
+      "symbol": "LTC/USDT",
+      "direction": "LONG",
+      "entry": 46.91,
+      "stop": 45.8075,
+      "target": 49.114999999999995,
+      "leverage": 4,
+      "opened_at": "2026-07-19 01:49 UTC",
+      "opened_ms": 1784425756744
     }
   ],
   "stats": {
