@@ -1,5 +1,5 @@
 {
-  "next_id": 248,
+  "next_id": 253,
   "open": [
     {
       "id": 128,
@@ -59,29 +59,6 @@
       "is_meme": true
     },
     {
-      "id": 214,
-      "symbol": "FARTCOIN/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.1336,
-      "stop": 0.14021178571428572,
-      "target": 0.12037642857142855,
-      "leverage": 2,
-      "opened_at": "2026-07-17 09:48 UTC",
-      "opened_ms": 1784281722663
-    },
-    {
-      "id": 216,
-      "symbol": "SPX/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.3471,
-      "stop": 0.3675428571428571,
-      "target": 0.30621428571428577,
-      "leverage": 2,
-      "opened_at": "2026-07-17 09:48 UTC",
-      "opened_ms": 1784281728055,
-      "is_meme": true
-    },
-    {
       "id": 217,
       "symbol": "FLOKI/USDT:USDT",
       "direction": "SHORT",
@@ -125,17 +102,6 @@
       "leverage": 10,
       "opened_at": "2026-07-17 20:44 UTC",
       "opened_ms": 1784321041052
-    },
-    {
-      "id": 221,
-      "symbol": "NIGHT/USDT",
-      "direction": "SHORT",
-      "entry": 0.02751,
-      "stop": 0.028789392857142857,
-      "target": 0.024951214285714285,
-      "leverage": 2,
-      "opened_at": "2026-07-18 01:41 UTC",
-      "opened_ms": 1784338883223
     },
     {
       "id": 222,
@@ -204,17 +170,6 @@
       "opened_ms": 1784479565298
     },
     {
-      "id": 232,
-      "symbol": "FIL/USDT",
-      "direction": "SHORT",
-      "entry": 0.7167,
-      "stop": 0.7305535714285715,
-      "target": 0.6889928571428571,
-      "leverage": 5,
-      "opened_at": "2026-07-19 20:38 UTC",
-      "opened_ms": 1784493522047
-    },
-    {
       "id": 238,
       "symbol": "PUMPFUN/USDT:USDT",
       "direction": "LONG",
@@ -226,17 +181,6 @@
       "opened_ms": 1784529587989
     },
     {
-      "id": 241,
-      "symbol": "ADA/USDT",
-      "direction": "SHORT",
-      "entry": 0.1631,
-      "stop": 0.16679642857142857,
-      "target": 0.15570714285714285,
-      "leverage": 4,
-      "opened_at": "2026-07-20 10:42 UTC",
-      "opened_ms": 1784544153405
-    },
-    {
       "id": 242,
       "symbol": "ADA/USDT:USDT",
       "direction": "SHORT",
@@ -246,17 +190,6 @@
       "leverage": 4,
       "opened_at": "2026-07-20 13:50 UTC",
       "opened_ms": 1784555413330
-    },
-    {
-      "id": 243,
-      "symbol": "PROM/USDT:USDT",
-      "direction": "LONG",
-      "entry": 2.14,
-      "stop": 1.9385714285714286,
-      "target": 2.542857142857143,
-      "leverage": 2,
-      "opened_at": "2026-07-20 13:50 UTC",
-      "opened_ms": 1784555414891
     },
     {
       "id": 244,
@@ -302,6 +235,61 @@
       "opened_at": "2026-07-20 13:50 UTC",
       "opened_ms": 1784555423467,
       "is_meme": true
+    },
+    {
+      "id": 248,
+      "symbol": "PROM/USDT:USDT",
+      "direction": "LONG",
+      "entry": 2.168,
+      "stop": 1.9076428571428572,
+      "target": 2.688714285714286,
+      "leverage": 2,
+      "opened_at": "2026-07-20 17:24 UTC",
+      "opened_ms": 1784568282738
+    },
+    {
+      "id": 249,
+      "symbol": "ETH/USDT:USDT",
+      "direction": "LONG",
+      "entry": 1898.0,
+      "stop": 1863.185,
+      "target": 1967.63,
+      "leverage": 5,
+      "opened_at": "2026-07-20 17:24 UTC",
+      "opened_ms": 1784568284438
+    },
+    {
+      "id": 250,
+      "symbol": "VIRTUAL/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.6516,
+      "stop": 0.6301607142857143,
+      "target": 0.6944785714285714,
+      "leverage": 3,
+      "opened_at": "2026-07-20 17:24 UTC",
+      "opened_ms": 1784568286180
+    },
+    {
+      "id": 251,
+      "symbol": "LINK/USDT:USDT",
+      "direction": "LONG",
+      "entry": 8.53,
+      "stop": 8.360714285714286,
+      "target": 8.868571428571428,
+      "leverage": 5,
+      "opened_at": "2026-07-20 17:24 UTC",
+      "opened_ms": 1784568287913
+    },
+    {
+      "id": 252,
+      "symbol": "XRP/USDT:USDT",
+      "direction": "LONG",
+      "entry": 1.111,
+      "stop": 1.093675,
+      "target": 1.14565,
+      "leverage": 6,
+      "opened_at": "2026-07-20 17:24 UTC",
+      "opened_ms": 1784568289571
     }
   ],
   "stats": {
@@ -315,8 +303,8 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 43,
-      "sl": 162,
+      "tp": 45,
+      "sl": 166,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
