@@ -1,5 +1,5 @@
 {
-  "next_id": 241,
+  "next_id": 242,
   "open": [
     {
       "id": 128,
@@ -304,16 +304,15 @@
       "is_meme": true
     },
     {
-      "id": 240,
-      "symbol": "PENGU/USDT:USDT",
+      "id": 241,
+      "symbol": "ADA/USDT",
       "direction": "SHORT",
-      "entry": 0.005981,
-      "stop": 0.006266571428571429,
-      "target": 0.005409857142857143,
-      "leverage": 2,
-      "opened_at": "2026-07-20 06:39 UTC",
-      "opened_ms": 1784529593348,
-      "is_meme": true
+      "entry": 0.1631,
+      "stop": 0.16679642857142857,
+      "target": 0.15570714285714285,
+      "leverage": 4,
+      "opened_at": "2026-07-20 10:42 UTC",
+      "opened_ms": 1784544153405
     }
   ],
   "stats": {
@@ -328,7 +327,7 @@
     },
     "2026-07": {
       "tp": 42,
-      "sl": 155,
+      "sl": 156,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
