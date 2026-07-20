@@ -1,5 +1,5 @@
 {
-  "next_id": 233,
+  "next_id": 234,
   "open": [
     {
       "id": 128,
@@ -67,17 +67,6 @@
       "leverage": 2,
       "opened_at": "2026-07-17 06:10 UTC",
       "opened_ms": 1784268609311
-    },
-    {
-      "id": 206,
-      "symbol": "XRP/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 1.0812,
-      "stop": 1.1041928571428572,
-      "target": 1.0352142857142856,
-      "leverage": 5,
-      "opened_at": "2026-07-17 06:10 UTC",
-      "opened_ms": 1784268610667
     },
     {
       "id": 207,
@@ -271,17 +260,6 @@
       "opened_ms": 1784425756744
     },
     {
-      "id": 228,
-      "symbol": "ZEC/USDT",
-      "direction": "LONG",
-      "entry": 559.04,
-      "stop": 539.7510714285714,
-      "target": 597.6178571428571,
-      "leverage": 3,
-      "opened_at": "2026-07-19 06:23 UTC",
-      "opened_ms": 1784442229365
-    },
-    {
       "id": 229,
       "symbol": "FIL/USDT",
       "direction": "SHORT",
@@ -324,6 +302,17 @@
       "leverage": 5,
       "opened_at": "2026-07-19 20:38 UTC",
       "opened_ms": 1784493522047
+    },
+    {
+      "id": 233,
+      "symbol": "PUMP/USDT",
+      "direction": "LONG",
+      "entry": 0.002049,
+      "stop": 0.001961142857142857,
+      "target": 0.0022247142857142856,
+      "leverage": 2,
+      "opened_at": "2026-07-20 02:06 UTC",
+      "opened_ms": 1784513198026
     }
   ],
   "stats": {
@@ -338,7 +327,7 @@
     },
     "2026-07": {
       "tp": 38,
-      "sl": 150,
+      "sl": 152,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
