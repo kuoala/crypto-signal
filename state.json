@@ -1,5 +1,5 @@
 {
-  "next_id": 270,
+  "next_id": 271,
   "open": [
     {
       "id": 128,
@@ -357,6 +357,17 @@
       "leverage": 5,
       "opened_at": "2026-07-21 17:07 UTC",
       "opened_ms": 1784653659191
+    },
+    {
+      "id": 270,
+      "symbol": "TRX/USDT",
+      "direction": "LONG",
+      "entry": 0.32958,
+      "stop": 0.3277832142857143,
+      "target": 0.3331735714285714,
+      "leverage": 10,
+      "opened_at": "2026-07-21 20:58 UTC",
+      "opened_ms": 1784667523239
     }
   ],
   "stats": {
