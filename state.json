@@ -1,5 +1,5 @@
 {
-  "next_id": 269,
+  "next_id": 270,
   "open": [
     {
       "id": 128,
@@ -137,17 +137,6 @@
       "opened_ms": 1784425756744
     },
     {
-      "id": 231,
-      "symbol": "GRAM/USDT",
-      "direction": "SHORT",
-      "entry": 1.433,
-      "stop": 1.4710357142857144,
-      "target": 1.3569285714285715,
-      "leverage": 4,
-      "opened_at": "2026-07-19 16:46 UTC",
-      "opened_ms": 1784479565298
-    },
-    {
       "id": 238,
       "symbol": "PUMPFUN/USDT:USDT",
       "direction": "LONG",
@@ -224,17 +213,6 @@
       "leverage": 5,
       "opened_at": "2026-07-20 17:24 UTC",
       "opened_ms": 1784568287913
-    },
-    {
-      "id": 252,
-      "symbol": "XRP/USDT:USDT",
-      "direction": "LONG",
-      "entry": 1.111,
-      "stop": 1.093675,
-      "target": 1.14565,
-      "leverage": 6,
-      "opened_at": "2026-07-20 17:24 UTC",
-      "opened_ms": 1784568289571
     },
     {
       "id": 254,
@@ -368,6 +346,17 @@
       "leverage": 8,
       "opened_at": "2026-07-21 13:18 UTC",
       "opened_ms": 1784639937047
+    },
+    {
+      "id": 269,
+      "symbol": "XRP/USDT",
+      "direction": "LONG",
+      "entry": 1.1496,
+      "stop": 1.127775,
+      "target": 1.19325,
+      "leverage": 5,
+      "opened_at": "2026-07-21 17:07 UTC",
+      "opened_ms": 1784653659191
     }
   ],
   "stats": {
@@ -381,8 +370,8 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 47,
-      "sl": 173,
+      "tp": 48,
+      "sl": 174,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
