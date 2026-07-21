@@ -1,5 +1,5 @@
 {
-  "next_id": 267,
+  "next_id": 268,
   "open": [
     {
       "id": 128,
@@ -148,17 +148,6 @@
       "opened_ms": 1784425756744
     },
     {
-      "id": 229,
-      "symbol": "FIL/USDT",
-      "direction": "SHORT",
-      "entry": 0.732,
-      "stop": 0.748275,
-      "target": 0.6994499999999999,
-      "leverage": 4,
-      "opened_at": "2026-07-19 09:45 UTC",
-      "opened_ms": 1784454317138
-    },
-    {
       "id": 231,
       "symbol": "GRAM/USDT",
       "direction": "SHORT",
@@ -281,17 +270,6 @@
       "opened_ms": 1784581362354
     },
     {
-      "id": 256,
-      "symbol": "ONDO/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.3586,
-      "stop": 0.34543214285714285,
-      "target": 0.38493571428571427,
-      "leverage": 3,
-      "opened_at": "2026-07-20 21:02 UTC",
-      "opened_ms": 1784581363808
-    },
-    {
       "id": 257,
       "symbol": "ENA/USDT:USDT",
       "direction": "LONG",
@@ -348,17 +326,6 @@
       "opened_ms": 1784598575835
     },
     {
-      "id": 262,
-      "symbol": "NEAR/USDT:USDT",
-      "direction": "LONG",
-      "entry": 2.058,
-      "stop": 2.008178571428571,
-      "target": 2.157642857142857,
-      "leverage": 4,
-      "opened_at": "2026-07-21 06:22 UTC",
-      "opened_ms": 1784614957809
-    },
-    {
       "id": 263,
       "symbol": "SOL/USDT:USDT",
       "direction": "LONG",
@@ -401,6 +368,17 @@
       "leverage": 6,
       "opened_at": "2026-07-21 06:22 UTC",
       "opened_ms": 1784614963673
+    },
+    {
+      "id": 267,
+      "symbol": "ONDO/USDT",
+      "direction": "LONG",
+      "entry": 0.403,
+      "stop": 0.38595357142857145,
+      "target": 0.43709285714285717,
+      "leverage": 2,
+      "opened_at": "2026-07-21 10:16 UTC",
+      "opened_ms": 1784629015185
     }
   ],
   "stats": {
@@ -414,8 +392,8 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 45,
-      "sl": 170,
+      "tp": 46,
+      "sl": 172,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
