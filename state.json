@@ -1,5 +1,5 @@
 {
-  "next_id": 268,
+  "next_id": 269,
   "open": [
     {
       "id": 128,
@@ -23,17 +23,6 @@
       "leverage": 2,
       "opened_at": "2026-07-10 07:28 UTC",
       "opened_ms": 1783668488589
-    },
-    {
-      "id": 203,
-      "symbol": "LIT/USDT",
-      "direction": "SHORT",
-      "entry": 2.1747,
-      "stop": 2.340407142857143,
-      "target": 1.8432857142857144,
-      "leverage": 2,
-      "opened_at": "2026-07-17 01:51 UTC",
-      "opened_ms": 1784253068982
     },
     {
       "id": 205,
@@ -270,17 +259,6 @@
       "opened_ms": 1784581362354
     },
     {
-      "id": 257,
-      "symbol": "ENA/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.08303,
-      "stop": 0.08078214285714286,
-      "target": 0.08752571428571429,
-      "leverage": 4,
-      "opened_at": "2026-07-20 21:02 UTC",
-      "opened_ms": 1784581365380
-    },
-    {
       "id": 258,
       "symbol": "ORDI/USDT:USDT",
       "direction": "LONG",
@@ -379,6 +357,17 @@
       "leverage": 2,
       "opened_at": "2026-07-21 10:16 UTC",
       "opened_ms": 1784629015185
+    },
+    {
+      "id": 268,
+      "symbol": "BNB/USDT",
+      "direction": "LONG",
+      "entry": 577.0,
+      "stop": 569.9178571428571,
+      "target": 591.1642857142858,
+      "leverage": 8,
+      "opened_at": "2026-07-21 13:18 UTC",
+      "opened_ms": 1784639937047
     }
   ],
   "stats": {
@@ -392,8 +381,8 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 46,
-      "sl": 172,
+      "tp": 47,
+      "sl": 173,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
