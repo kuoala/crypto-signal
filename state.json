@@ -1,5 +1,5 @@
 {
-  "next_id": 259,
+  "next_id": 262,
   "open": [
     {
       "id": 128,
@@ -192,17 +192,6 @@
       "opened_ms": 1784555416451
     },
     {
-      "id": 245,
-      "symbol": "OP/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.0924,
-      "stop": 0.09451071428571428,
-      "target": 0.08817857142857143,
-      "leverage": 4,
-      "opened_at": "2026-07-20 13:50 UTC",
-      "opened_ms": 1784555418055
-    },
-    {
       "id": 246,
       "symbol": "PEPE/USDT:USDT",
       "direction": "LONG",
@@ -224,17 +213,6 @@
       "opened_at": "2026-07-20 13:50 UTC",
       "opened_ms": 1784555423467,
       "is_meme": true
-    },
-    {
-      "id": 248,
-      "symbol": "PROM/USDT:USDT",
-      "direction": "LONG",
-      "entry": 2.168,
-      "stop": 1.9076428571428572,
-      "target": 2.688714285714286,
-      "leverage": 2,
-      "opened_at": "2026-07-20 17:24 UTC",
-      "opened_ms": 1784568282738
     },
     {
       "id": 249,
@@ -346,6 +324,39 @@
       "opened_at": "2026-07-20 21:02 UTC",
       "opened_ms": 1784581369133,
       "is_meme": true
+    },
+    {
+      "id": 259,
+      "symbol": "LDO/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.3952,
+      "stop": 0.3808321428571429,
+      "target": 0.4239357142857142,
+      "leverage": 3,
+      "opened_at": "2026-07-21 01:49 UTC",
+      "opened_ms": 1784598572748
+    },
+    {
+      "id": 260,
+      "symbol": "ADA/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.1703,
+      "stop": 0.16532857142857144,
+      "target": 0.18024285714285715,
+      "leverage": 3,
+      "opened_at": "2026-07-21 01:49 UTC",
+      "opened_ms": 1784598574291
+    },
+    {
+      "id": 261,
+      "symbol": "ARB/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.09039,
+      "stop": 0.08756571428571427,
+      "target": 0.09603857142857143,
+      "leverage": 3,
+      "opened_at": "2026-07-21 01:49 UTC",
+      "opened_ms": 1784598575835
     }
   ],
   "stats": {
@@ -360,7 +371,7 @@
     },
     "2026-07": {
       "tp": 45,
-      "sl": 167,
+      "sl": 169,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
