@@ -1,5 +1,5 @@
 {
-  "next_id": 271,
+  "next_id": 272,
   "open": [
     {
       "id": 128,
@@ -315,17 +315,6 @@
       "opened_ms": 1784614962232
     },
     {
-      "id": 266,
-      "symbol": "POL/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.08113,
-      "stop": 0.07980464285714285,
-      "target": 0.08378071428571428,
-      "leverage": 6,
-      "opened_at": "2026-07-21 06:22 UTC",
-      "opened_ms": 1784614963673
-    },
-    {
       "id": 267,
       "symbol": "ONDO/USDT",
       "direction": "LONG",
@@ -368,6 +357,17 @@
       "leverage": 10,
       "opened_at": "2026-07-21 20:58 UTC",
       "opened_ms": 1784667523239
+    },
+    {
+      "id": 271,
+      "symbol": "XAUT/USDT",
+      "direction": "LONG",
+      "entry": 4116.7,
+      "stop": 4078.9964285714286,
+      "target": 4192.107142857142,
+      "leverage": 10,
+      "opened_at": "2026-07-22 01:48 UTC",
+      "opened_ms": 1784684889201
     }
   ],
   "stats": {
@@ -382,7 +382,7 @@
     },
     "2026-07": {
       "tp": 48,
-      "sl": 174,
+      "sl": 175,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
