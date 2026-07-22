@@ -1,5 +1,5 @@
 {
-  "next_id": 272,
+  "next_id": 273,
   "open": [
     {
       "id": 128,
@@ -91,17 +91,6 @@
       "leverage": 10,
       "opened_at": "2026-07-17 20:44 UTC",
       "opened_ms": 1784321041052
-    },
-    {
-      "id": 222,
-      "symbol": "RE/USDT",
-      "direction": "SHORT",
-      "entry": 0.41308,
-      "stop": 0.4467046428571429,
-      "target": 0.34583071428571427,
-      "leverage": 2,
-      "opened_at": "2026-07-18 05:57 UTC",
-      "opened_ms": 1784354241101
     },
     {
       "id": 223,
@@ -326,17 +315,6 @@
       "opened_ms": 1784629015185
     },
     {
-      "id": 268,
-      "symbol": "BNB/USDT",
-      "direction": "LONG",
-      "entry": 577.0,
-      "stop": 569.9178571428571,
-      "target": 591.1642857142858,
-      "leverage": 8,
-      "opened_at": "2026-07-21 13:18 UTC",
-      "opened_ms": 1784639937047
-    },
-    {
       "id": 269,
       "symbol": "XRP/USDT",
       "direction": "LONG",
@@ -368,6 +346,17 @@
       "leverage": 10,
       "opened_at": "2026-07-22 01:48 UTC",
       "opened_ms": 1784684889201
+    },
+    {
+      "id": 272,
+      "symbol": "XAUT/USDT",
+      "direction": "LONG",
+      "entry": 4121.2,
+      "stop": 4083.1,
+      "target": 4197.4,
+      "leverage": 10,
+      "opened_at": "2026-07-22 06:22 UTC",
+      "opened_ms": 1784701336380
     }
   ],
   "stats": {
@@ -382,7 +371,7 @@
     },
     "2026-07": {
       "tp": 48,
-      "sl": 175,
+      "sl": 177,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
