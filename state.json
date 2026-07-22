@@ -1,5 +1,5 @@
 {
-  "next_id": 273,
+  "next_id": 274,
   "open": [
     {
       "id": 128,
@@ -204,17 +204,6 @@
       "opened_ms": 1784568287913
     },
     {
-      "id": 254,
-      "symbol": "INJ/USDT:USDT",
-      "direction": "LONG",
-      "entry": 5.388,
-      "stop": 5.231142857142857,
-      "target": 5.701714285714286,
-      "leverage": 3,
-      "opened_at": "2026-07-20 21:02 UTC",
-      "opened_ms": 1784581360798
-    },
-    {
       "id": 255,
       "symbol": "SPCXSTOCK/USDT:USDT",
       "direction": "SHORT",
@@ -357,6 +346,17 @@
       "leverage": 10,
       "opened_at": "2026-07-22 06:22 UTC",
       "opened_ms": 1784701336380
+    },
+    {
+      "id": 273,
+      "symbol": "TRX/USDT",
+      "direction": "LONG",
+      "entry": 0.33017,
+      "stop": 0.32828535714285717,
+      "target": 0.3339392857142857,
+      "leverage": 10,
+      "opened_at": "2026-07-22 10:16 UTC",
+      "opened_ms": 1784715370995
     }
   ],
   "stats": {
@@ -371,7 +371,7 @@
     },
     "2026-07": {
       "tp": 48,
-      "sl": 177,
+      "sl": 178,
       "tp1": 2,
       "tp2": 0,
       "be": 0,
