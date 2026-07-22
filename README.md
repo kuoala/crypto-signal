@@ -2,7 +2,17 @@
 
 `signal_bot.py` scans the entire Binance USDT futures market on the **4-hour** timeframe,
 detects direction with a combined **EMA + RSI + MACD** strategy, sets the stop loss using
-**ATR** and the target using a **risk/reward** ratio, then auto-posts to your Telegram channel.
+**ATR**, then auto-posts to your Telegram channel.
+
+To keep quality high, several **filters** run before any signal is posted: it only trades
+**with the BTC market regime** and the **1-day trend**, requires a **fresh** momentum turn
+(no chasing extended moves), skips **overbought/oversold** exhaustion, and excludes
+**stablecoins / pegged assets** and micro-move (< 1% stop) trades.
+
+Each signal ships **two targets** and a staged, risk-managed exit: **Target 1** at +1R
+(take half off, move the stop to **breakeven**) and **Target 2** at +2R (let the rest run).
+Once Target 1 is reached the trade can no longer become a loss — the worst case is a
+small +0.5R at breakeven.
 
 Signal post format:
 
@@ -13,24 +23,33 @@ Signal post format:
 Direction: 🟢 LONG
 Entry: 64,250.50
 Stop Loss: 62,800.00
-Target: 67,100.00
+Target 1 (½, +1R): 65,700.00
+Target 2 (½, +2R): 67,100.00
 Leverage: x4
 Risk/Reward: 1:2
 
+💡 Plan: take ½ off at Target 1, move stop to breakeven, let the rest run.
 📈 Why: EMA20 > EMA50, RSI 58 (bullish), MACD crossed up — 4h trend confirmed.
 📉 Chart: https://www.tradingview.com/chart/?symbol=BINANCE:BTCUSDT.P
 ```
 
-When a signal later hits its target or stop, the bot auto-posts the result with a
-running monthly win rate — this track record is what builds trust:
+As a trade progresses the bot posts staged updates and, on close, a result with a running
+monthly win rate and **average R** (expectancy) — this track record is what builds trust:
 
 ```
+🎯 TP1 — SIGNAL #0142 (#BTC/USDT LONG)
+First target hit +2.3% (x4 ≈ +9.0%) on ½ the position.
+Stop moved to breakeven — risk-free now, letting the rest run to Target 2 🚀
+
 ✅ RESULT — SIGNAL #0142 (#BTC/USDT LONG)
-Target hit 🎯 +4.4% (x4 = +17.7%)
+Final target hit 🎯 net +1.5R (+3.4%, x4 ≈ +13.5%)
 Closed 2026-06-28 04:00 UTC
 ─────────────
-📊 June: 18 signals · 12 TP ✅ · 6 SL ❌ · Win rate 67%
+📊 June: 18 closed · 10 TP ✅ · 4 BE ⚖️ · 4 SL ❌ · Win 78% · Avg +0.61R
 ```
+
+Closing outcomes: **SL** −1R (stop before TP1), **BE** +0.5R (returned to entry after TP1),
+**TP2** +1.5R (final target after TP1).
 
 ### How tracking works
 
@@ -87,12 +106,16 @@ Key settings in `CONFIG`:
 | Key | Purpose | Default |
 |---|---|---|
 | `TIMEFRAME` | analysis timeframe | `4h` |
-| `MIN_24H_VOLUME_USDT` | drop low-volume coins | 30,000,000 |
+| `MIN_24H_VOLUME_USDT` | drop low-volume coins | 5,000,000 |
 | `MAX_SIGNALS_PER_RUN` | max signals per run | 5 |
-| `POST_HEADER` | optional header on every post | `""` (off) |
 | `ATR_SL_MULT` | stop-loss multiplier | 1.5 |
-| `RR_RATIO` | target-to-risk ratio | 2.0 |
+| `RR_RATIO` | Target 2 (final) reward-to-risk ratio | 2.0 |
 | `MAX_LEVERAGE` | max suggested leverage | 10 |
+| `REGIME_FILTER` | only trade with the BTC market trend | `True` |
+| `HTF_CONFIRM` | require the 1d trend to agree | `True` |
+| `FRESH_BARS` | momentum must have turned within N bars | 3 |
+| `RSI_LONG_MAX` / `RSI_SHORT_MIN` | overbought/oversold exhaustion guard | 72 / 28 |
+| `MIN_SL_PCT` | skip trades whose stop is < this % away | 1.0 |
 | `MEME_ENABLED` | also scan memecoin perps each run | `True` |
 | `MEME_MIN_24H_VOLUME_USDT` | memecoin volume floor | 1,000,000 |
 | `MEME_MAX_SIGNALS_PER_RUN` | max memecoin signals per run | 2 |
@@ -108,11 +131,6 @@ EMA + RSI + MACD strategy. The universe is a curated list merged with CoinGecko'
 like `1000PEPE` are matched too. Memecoin signals use a lower volume floor, a wider ATR
 stop (2.0×), capped leverage (x5), are posted with a `🐸 MEME SIGNAL` header plus a
 volatility warning, and are tracked for TP/SL results like all other signals.
-
-To add a header/disclaimer above every post, set:
-```python
-"POST_HEADER": "📊 New Signal | Timeframe 4H\n⚠️ Informational only — not financial advice\n─────────────\n",
-```
 
 ---
 

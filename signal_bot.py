@@ -6,6 +6,8 @@ Crypto Futures Signal Bot  (Binance USDT-Perpetual)
 - 100% real, free data from Binance (no API key required)
 - Scans the entire USDT futures market
 - Combined strategy: EMA cross + RSI + MACD (direction), ATR (stop loss), R/R (target)
+- Quality filters (raise win rate): BTC-regime + 1d higher-TF alignment, fresh-momentum
+  gate (no chasing), RSI exhaustion guard, and stablecoin/pegged-asset + micro-move exclusion
 - Trust features: sequential signal ID, UTC timestamp, risk/reward, one-line reason,
   TradingView chart link
 - Outcome tracker: watches open signals and auto-posts TP/SL results + monthly win rate
@@ -65,6 +67,15 @@ CONFIG = {
     "RSI_PERIOD": 14,
     "RSI_LONG_MIN": 45,         # for LONG, RSI must be above this
     "RSI_SHORT_MAX": 55,        # for SHORT, RSI must be below this
+
+    # --- Signal quality filters (raise win rate: fewer, higher-quality signals) ---
+    "REGIME_FILTER": True,      # only trade in the direction of the BTC market trend
+    "HTF_CONFIRM": True,        # require the higher timeframe (1d) trend to agree
+    "HTF_TIMEFRAME": "1d",
+    "FRESH_BARS": 3,            # momentum must have turned within the last N bars (no chasing)
+    "RSI_LONG_MAX": 72,         # don't buy into overbought exhaustion
+    "RSI_SHORT_MIN": 28,        # don't sell into oversold exhaustion
+    "MIN_SL_PCT": 1.0,          # skip signals whose stop is < this % away (peg / micro-move noise)
 
     # --- Memecoin signals ---
     "MEME_ENABLED": True,
@@ -180,7 +191,7 @@ def fetch_markets(ex):
     tickers = ex.fetch_tickers()
 
     # Diagnostic counters
-    n_inactive = n_wrong_quote = n_not_deriv = n_inverse = n_no_ticker = n_low_vol = 0
+    n_inactive = n_wrong_quote = n_not_deriv = n_inverse = n_no_ticker = n_low_vol = n_pegged = 0
 
     out = []
     for sym, m in markets.items():
@@ -188,6 +199,8 @@ def fetch_markets(ex):
             n_inactive += 1; continue
         if m.get("quote") != CONFIG["QUOTE"]:
             n_wrong_quote += 1; continue
+        if not is_tradable_base(m.get("base", "")):
+            n_pegged += 1; continue
         mtype = m.get("type", "")
         is_deriv = m.get("swap") or m.get("future") or mtype in ("swap", "future")
         if not is_deriv:
@@ -208,7 +221,7 @@ def fetch_markets(ex):
         out.append((sym, qvol))
 
     print(f"    [dbg] Market filter stats: inactive={n_inactive}, wrong_quote={n_wrong_quote}, "
-          f"not_deriv={n_not_deriv}, inverse={n_inverse}, no_ticker={n_no_ticker}, "
+          f"not_deriv={n_not_deriv}, inverse={n_inverse}, pegged={n_pegged}, no_ticker={n_no_ticker}, "
           f"low_vol={n_low_vol}, passed={len(out)}")
 
     out.sort(key=lambda x: x[1], reverse=True)
@@ -228,6 +241,18 @@ MEME_BASES = {
 def normalize_base(base):
     """Strip multiplier prefixes exchanges add to tiny-price coins (1000PEPE -> PEPE)."""
     return re.sub(r"^(1000000|100000|10000|1000|1M)(?=[A-Z])", "", base.upper())
+
+# Bases that are stablecoins or hard-pegged (gold, fiat) — micro-move noise, not real trends.
+STABLE_PEGGED_BASES = {
+    "USDT", "USDC", "DAI", "TUSD", "FDUSD", "USDG", "USDP", "USDD", "PYUSD",
+    "USDE", "GUSD", "FRAX", "LUSD", "BUSD", "USD1", "SUSD", "CRVUSD",
+    "EURT", "EURC", "EURS", "EURI", "AEUR",
+    "XAU", "XAUT", "PAXG", "XAUT0",
+}
+
+def is_tradable_base(base):
+    """False for stablecoins / hard-pegged assets (peg wobble is noise, not a tradable trend)."""
+    return normalize_base(base) not in STABLE_PEGGED_BASES
 
 def fetch_coingecko_meme_bases():
     """Fetch top meme-category coins from CoinGecko to catch new memecoins dynamically."""
@@ -274,7 +299,71 @@ def fetch_meme_markets(ex):
     print(f"    [dbg] Memecoin pairs passing filters: {len(out)}")
     return [s for s, _ in out]
 
-def analyze(ex, symbol, sl_mult=None, max_lev=None):
+# ===================== REGIME / HIGHER-TF / FRESHNESS =====================
+MARKET_BIAS = "NEUTRAL"     # set per run from the BTC trend: "LONG", "SHORT", or "NEUTRAL"
+_HTF_CACHE = {}             # symbol -> higher-timeframe trend, cached for the run
+
+def _ema_trend_from_ohlcv(ohlcv):
+    """Return 'LONG'/'SHORT'/'NEUTRAL' from EMA20 vs EMA50 (+ price) on a candle list."""
+    if not ohlcv or len(ohlcv) < CONFIG["EMA_SLOW"] + 2:
+        return "NEUTRAL"
+    close = pd.DataFrame(ohlcv, columns=["ts", "open", "high", "low", "close", "volume"])["close"]
+    ef = ema(close, CONFIG["EMA_FAST"]).iloc[-1]
+    es = ema(close, CONFIG["EMA_SLOW"]).iloc[-1]
+    c = close.iloc[-1]
+    if any(isinstance(x, float) and math.isnan(x) for x in (ef, es, c)):
+        return "NEUTRAL"
+    if ef > es and c >= es:
+        return "LONG"
+    if ef < es and c <= es:
+        return "SHORT"
+    return "NEUTRAL"
+
+def compute_market_bias(ex):
+    """BTC higher-TF trend defines the tradable direction for the whole run."""
+    if not CONFIG["REGIME_FILTER"]:
+        return "NEUTRAL"
+    for sym in ("BTC/USDT:USDT", "BTC/USDT"):
+        try:
+            ohlcv = ex.fetch_ohlcv(sym, timeframe=CONFIG["HTF_TIMEFRAME"], limit=CONFIG["CANDLES"])
+        except Exception:
+            continue
+        if ohlcv:
+            bias = _ema_trend_from_ohlcv(ohlcv)
+            print(f"[+] Market regime (BTC {CONFIG['HTF_TIMEFRAME']}): {bias}")
+            return bias
+    print("[!] Could not determine BTC regime; defaulting to NEUTRAL (both directions allowed).")
+    return "NEUTRAL"
+
+def htf_trend(ex, symbol):
+    """Higher-timeframe (1d) trend for one symbol, cached for the run."""
+    if symbol in _HTF_CACHE:
+        return _HTF_CACHE[symbol]
+    try:
+        ohlcv = ex.fetch_ohlcv(symbol, timeframe=CONFIG["HTF_TIMEFRAME"], limit=CONFIG["CANDLES"])
+    except Exception:
+        ohlcv = None
+    trend = _ema_trend_from_ohlcv(ohlcv)
+    _HTF_CACHE[symbol] = trend
+    return trend
+
+def _is_fresh(hist, ema_f, ema_s, direction, bars):
+    """True if MACD histogram flipped sign OR the EMAs crossed within the last `bars` bars.
+
+    Keeps us near the start of a momentum move instead of chasing a mature, extended trend.
+    """
+    if len(hist) < bars + 2:
+        return False
+    rng = range(1, bars + 1)
+    if direction == "LONG":
+        macd_flip = any(hist.iloc[-k] > 0 and hist.iloc[-k - 1] <= 0 for k in rng)
+        ema_cross = any(ema_f.iloc[-k] > ema_s.iloc[-k] and ema_f.iloc[-k - 1] <= ema_s.iloc[-k - 1] for k in rng)
+    else:
+        macd_flip = any(hist.iloc[-k] < 0 and hist.iloc[-k - 1] >= 0 for k in rng)
+        ema_cross = any(ema_f.iloc[-k] < ema_s.iloc[-k] and ema_f.iloc[-k - 1] >= ema_s.iloc[-k - 1] for k in rng)
+    return macd_flip or ema_cross
+
+def analyze(ex, symbol, sl_mult=None, max_lev=None, check_htf=True):
     """Analyze one pair; return a signal dict if a signal exists, else None."""
     try:
         ohlcv = ex.fetch_ohlcv(symbol, timeframe=CONFIG["TIMEFRAME"], limit=CONFIG["CANDLES"])
@@ -326,6 +415,20 @@ def analyze(ex, symbol, sl_mult=None, max_lev=None):
     else:
         return None
 
+    # --- Regime filter: trade only with the BTC market trend ---
+    if CONFIG["REGIME_FILTER"] and MARKET_BIAS in ("LONG", "SHORT") and direction != MARKET_BIAS:
+        return None
+
+    # --- Exhaustion guard: don't chase overbought longs / oversold shorts ---
+    if direction == "LONG" and rv > CONFIG["RSI_LONG_MAX"]:
+        return None
+    if direction == "SHORT" and rv < CONFIG["RSI_SHORT_MIN"]:
+        return None
+
+    # --- Freshness: momentum must have turned within the last N bars (no chasing) ---
+    if not _is_fresh(hist, ema_f, ema_s, direction, CONFIG["FRESH_BARS"]):
+        return None
+
     entry = c
     sl_dist = av * (sl_mult if sl_mult is not None else CONFIG["ATR_SL_MULT"])
     if sl_dist <= 0:
@@ -333,14 +436,23 @@ def analyze(ex, symbol, sl_mult=None, max_lev=None):
 
     if direction == "LONG":
         stop = entry - sl_dist
-        target = entry + sl_dist * CONFIG["RR_RATIO"]
+        target1 = entry + sl_dist                       # 1R — first (partial) target
+        target = entry + sl_dist * CONFIG["RR_RATIO"]   # final target
     else:
         stop = entry + sl_dist
+        target1 = entry - sl_dist
         target = entry - sl_dist * CONFIG["RR_RATIO"]
 
     sl_pct = abs(entry - stop) / entry * 100
-    if sl_pct <= 0:
+    if sl_pct < CONFIG["MIN_SL_PCT"]:
         return None
+
+    # --- Higher-timeframe confirmation (expensive fetch — do it last) ---
+    if check_htf and CONFIG["HTF_CONFIRM"]:
+        ht = htf_trend(ex, symbol)
+        if ht in ("LONG", "SHORT") and ht != direction:
+            return None
+
     lev_cap = max_lev if max_lev is not None else CONFIG["MAX_LEVERAGE"]
     suggested_lev = max(2, min(lev_cap, round(10 / max(sl_pct, 1))))
 
@@ -356,6 +468,7 @@ def analyze(ex, symbol, sl_mult=None, max_lev=None):
         "direction": direction,
         "entry": entry,
         "stop": stop,
+        "target1": target1,
         "target": target,
         "leverage": suggested_lev,
         "score": score,
@@ -384,6 +497,8 @@ def format_signal(s):
     head = "🐸 MEME SIGNAL" if s.get("is_meme") else "📊 SIGNAL"
     meme_warn = ("\n⚠️ Memecoin — extreme volatility, use small size.\n"
                  if s.get("is_meme") else "")
+    t1 = s.get("target1")
+    t1_line = f"Target 1 (½, +1R): {fmt_price(t1)}\n" if t1 is not None else ""
     return (
         f"{head} #{sid} | {CONFIG['TIMEFRAME'].upper()} | {s['opened_at']}\n"
         f"─────────────\n"
@@ -391,24 +506,61 @@ def format_signal(s):
         f"Direction: {arrow}\n"
         f"Entry: {fmt_price(s['entry'])}\n"
         f"Stop Loss: {fmt_price(s['stop'])}\n"
-        f"Target: {fmt_price(s['target'])}\n"
+        f"{t1_line}"
+        f"Target 2 (½, +2R): {fmt_price(s['target'])}\n"
         f"Leverage: x{s['leverage']}\n"
         f"Risk/Reward: {rr}\n"
         f"{meme_warn}\n"
+        f"💡 Plan: take ½ off at Target 1, move stop to breakeven, let the rest run.\n"
         f"📈 Why: {s['reason']}\n"
         f"📉 Chart: {tradingview_link(s['symbol'])}"
     )
 
-def format_result(s, outcome, pct, stats_line):
-    base = s["symbol"].split("/")[0]
-    sid = f"{s['id']:04d}"
-    tag = "🐸 MEME " if s.get("is_meme") else ""
-    if outcome == "TP":
-        head = f"✅ RESULT — {tag}SIGNAL #{sid} (#{base}/USDT {s['direction']})"
-        line = f"Target hit 🎯 +{pct:.1f}% (x{s['leverage']} = +{pct*s['leverage']:.1f}%)"
-    else:
-        head = f"❌ RESULT — {tag}SIGNAL #{sid} (#{base}/USDT {s['direction']})"
-        line = f"Stop loss hit 🛑 -{pct:.1f}% (x{s['leverage']} = -{pct*s['leverage']:.1f}%)"
+def signal_levels(sig):
+    """Return (target1, target2) for a signal, deriving target1 for legacy records."""
+    entry = sig["entry"]
+    t2 = sig["target"]
+    t1 = sig.get("target1")
+    if t1 is None:
+        risk = abs(entry - sig["stop"])
+        t1 = entry + risk if sig["direction"] == "LONG" else entry - risk
+    return t1, t2
+
+def format_tp1(sig):
+    """First-target milestone message (partial booked, stop moved to breakeven — not a close)."""
+    base = sig["symbol"].split("/")[0]
+    sid = f"{sig['id']:04d}"
+    tag = "🐸 MEME " if sig.get("is_meme") else ""
+    t1, _ = signal_levels(sig)
+    pct = abs(t1 - sig["entry"]) / sig["entry"] * 100
+    lev = sig["leverage"]
+    return (
+        f"🎯 TP1 — {tag}SIGNAL #{sid} (#{base}/USDT {sig['direction']})\n"
+        f"First target hit +{pct:.1f}% (x{lev} ≈ +{pct*lev:.1f}%) on ½ the position.\n"
+        f"Stop moved to breakeven — risk-free now, letting the rest run to Target 2 🚀\n"
+        f"{now_utc_str()}"
+    )
+
+# Net realized R per closing outcome (½ booked at +1R, remainder resolves at +2R or breakeven).
+OUTCOME_R = {"SL": -1.0, "BE": 0.5, "TP2": 1.5}
+
+def format_result(sig, outcome, stats_line):
+    base = sig["symbol"].split("/")[0]
+    sid = f"{sig['id']:04d}"
+    tag = "🐸 MEME " if sig.get("is_meme") else ""
+    lev = sig["leverage"]
+    net_r = OUTCOME_R[outcome]
+    one_r_pct = abs(sig["entry"] - sig["stop"]) / sig["entry"] * 100   # 1R in %
+    net_pct = net_r * one_r_pct
+    if outcome == "TP2":
+        head = f"✅ RESULT — {tag}SIGNAL #{sid} (#{base}/USDT {sig['direction']})"
+        line = f"Final target hit 🎯 net +{net_r:g}R (+{net_pct:.1f}%, x{lev} ≈ +{net_pct*lev:.1f}%)"
+    elif outcome == "BE":
+        head = f"⚖️ RESULT — {tag}SIGNAL #{sid} (#{base}/USDT {sig['direction']})"
+        line = f"Closed at breakeven after TP1 🛡️ net +{net_r:g}R (+{net_pct:.1f}%, x{lev} ≈ +{net_pct*lev:.1f}%)"
+    else:  # SL
+        head = f"❌ RESULT — {tag}SIGNAL #{sid} (#{base}/USDT {sig['direction']})"
+        line = f"Stop loss hit 🛑 net {net_r:g}R ({net_pct:.1f}%, x{lev} ≈ {net_pct*lev:.1f}%)"
     return (
         f"{head}\n"
         f"{line}\n"
@@ -419,13 +571,16 @@ def format_result(s, outcome, pct, stats_line):
 
 def stats_line():
     mk = month_key()
-    st = STATE["stats"].get(mk, {"tp": 0, "sl": 0})
-    tp, sl = st["tp"], st["sl"]
-    total = tp + sl
-    wr = (tp / total * 100) if total else 0
+    st = STATE["stats"].get(mk, {})
+    tp = st.get("tp", 0); sl = st.get("sl", 0); be = st.get("be", 0)
+    total = tp + sl + be
+    wins = tp + be                      # BE closes at +0.5R — a small win, not a loss
+    wr = (wins / total * 100) if total else 0
+    r_count = st.get("r_count", 0)
+    avg_r = (st.get("r_sum", 0.0) / r_count) if r_count else 0.0
     month_name = datetime.now(timezone.utc).strftime("%B")
-    return (f"📊 {month_name}: {total} signals · {tp} TP ✅ · {sl} SL ❌ · "
-            f"Win rate {wr:.0f}%")
+    return (f"📊 {month_name}: {total} closed · {tp} TP ✅ · {be} BE ⚖️ · {sl} SL ❌ · "
+            f"Win {wr:.0f}% · Avg {avg_r:+.2f}R")
 
 def send_telegram(text):
     token = CONFIG["TELEGRAM_BOT_TOKEN"]
@@ -469,43 +624,80 @@ def post(text):
 
 # ===================== OUTCOME TRACKER =====================
 def check_outcome(ex, sig):
-    """Return 'TP', 'SL', or None by scanning candles since the signal opened."""
+    """Replay candles since the signal opened and resolve the staged exit.
+
+    Returns one of:
+      "SL"        original stop hit before TP1            -> close, -1R
+      "BE"        after TP1, price returned to breakeven  -> close, +0.5R
+      "TP2"       after TP1, final target reached         -> close, +1.5R
+      "TP1_OPEN"  first target reached, still running     -> stays open (milestone)
+      None        nothing yet                             -> stays open
+
+    The stop is never mutated in state; freshness of the breakeven stop is
+    reconstructed each run by replaying chronologically from the original stop,
+    so an early dip below entry (before TP1) can't be mistaken for a breakeven exit.
+    """
     try:
         ohlcv = ex.fetch_ohlcv(sig["symbol"], timeframe=CONFIG["RESULT_CHECK_TF"], limit=200)
     except Exception:
         return None
     opened_ms = sig.get("opened_ms", 0)
+    entry = sig["entry"]
+    t1, t2 = signal_levels(sig)
+    active_stop = sig["stop"]     # tightens to breakeven only after TP1 is reached
+    tp1_seen = False
+    long = sig["direction"] == "LONG"
     for ts, o, h, l, c, v in ohlcv:
         if ts < opened_ms:
             continue
-        if sig["direction"] == "LONG":
-            if l <= sig["stop"]:
-                return "SL"
-            if h >= sig["target"]:
-                return "TP"
+        if long:
+            if l <= active_stop:
+                return "BE" if tp1_seen else "SL"
+            if not tp1_seen and h >= t1:
+                tp1_seen = True
+                active_stop = entry
+            if tp1_seen and h >= t2:
+                return "TP2"
         else:
-            if h >= sig["stop"]:
-                return "SL"
-            if l <= sig["target"]:
-                return "TP"
-    return None
+            if h >= active_stop:
+                return "BE" if tp1_seen else "SL"
+            if not tp1_seen and l <= t1:
+                tp1_seen = True
+                active_stop = entry
+            if tp1_seen and l <= t2:
+                return "TP2"
+    return "TP1_OPEN" if tp1_seen else None
+
+def _bump_stats(mk, **deltas):
+    """Increment monthly stat counters, tolerating legacy dicts missing keys."""
+    d = STATE["stats"].setdefault(
+        mk, {"tp": 0, "sl": 0, "tp1": 0, "tp2": 0, "be": 0, "r_sum": 0.0, "r_count": 0})
+    for k, v in deltas.items():
+        d[k] = d.get(k, 0) + v
 
 def process_open_signals(ex):
-    """Check open signals, post results, update stats. Returns symbols still open."""
+    """Check open signals, post TP1 milestones and closing results, update stats."""
     still_open = []
+    mk = month_key()
     for sig in STATE["open"]:
         outcome = check_outcome(ex, sig)
-        if outcome is None:
+        if outcome in ("SL", "BE", "TP2"):
+            net_r = OUTCOME_R[outcome]
+            if outcome == "TP2":
+                _bump_stats(mk, tp=1, tp2=1, r_sum=net_r, r_count=1)
+            elif outcome == "BE":
+                _bump_stats(mk, be=1, r_sum=net_r, r_count=1)
+            else:
+                _bump_stats(mk, sl=1, r_sum=net_r, r_count=1)
+            post(format_result(sig, outcome, stats_line()))
+        elif outcome == "TP1_OPEN":
+            if not sig.get("tp1_announced"):
+                sig["tp1_announced"] = True
+                _bump_stats(mk, tp1=1)
+                post(format_tp1(sig))
             still_open.append(sig)
-            continue
-        # update monthly stats
-        mk = month_key()
-        STATE["stats"].setdefault(mk, {"tp": 0, "sl": 0})
-        STATE["stats"][mk]["tp" if outcome == "TP" else "sl"] += 1
-        # compute pct move (entry -> target/stop)
-        ref = sig["target"] if outcome == "TP" else sig["stop"]
-        pct = abs(ref - sig["entry"]) / sig["entry"] * 100
-        post(format_result(sig, outcome, pct, stats_line()))
+        else:
+            still_open.append(sig)
     STATE["open"] = still_open
 
 # ===================== FALLBACK SOURCES =====================
@@ -519,6 +711,7 @@ def fallback_daily_signals(ex):
             [(s, (tickers[s].get("quoteVolume") or 0))
              for s, m in markets.items()
              if m.get("active") and m.get("quote") == CONFIG["QUOTE"]
+             and is_tradable_base(m.get("base", ""))
              and (m.get("swap") or m.get("future") or m.get("type") in ("swap", "future"))
              and m.get("linear") is not False
              and s in tickers and (tickers[s].get("quoteVolume") or 0) > 0],
@@ -532,7 +725,7 @@ def fallback_daily_signals(ex):
     CONFIG["TIMEFRAME"] = "1d"
     sigs = []
     for sym, _ in pairs:
-        s = analyze(ex, sym)
+        s = analyze(ex, sym, check_htf=False)  # already the higher timeframe
         if s:
             sigs.append(s)
     CONFIG["TIMEFRAME"] = orig_tf
@@ -550,7 +743,8 @@ def fallback_daily_signals(ex):
     post("⚠️ No 4H signals — posting best Daily signal instead:\n\n" + format_signal(best))
     STATE["open"].append({
         "id": best["id"], "symbol": best["symbol"], "direction": best["direction"],
-        "entry": best["entry"], "stop": best["stop"], "target": best["target"],
+        "entry": best["entry"], "stop": best["stop"],
+        "target1": best.get("target1"), "target": best["target"],
         "leverage": best["leverage"], "opened_at": best["opened_at"], "opened_ms": best["opened_ms"],
     })
     return True
@@ -734,6 +928,7 @@ def fallback_spot_signals(ex):
              for s, m in markets.items()
              if m.get("active") and m.get("quote") == CONFIG["QUOTE"]
              and m.get("type") == "spot"
+             and is_tradable_base(m.get("base", ""))
              and s in tickers and (tickers[s].get("quoteVolume") or 0) > 1_000_000],
             key=lambda x: x[1], reverse=True
         )[:30]
@@ -763,7 +958,8 @@ def fallback_spot_signals(ex):
     post("💱 No futures signals — spot market signal:\n\n" + format_signal(best))
     STATE["open"].append({
         "id": best["id"], "symbol": best["symbol"], "direction": best["direction"],
-        "entry": best["entry"], "stop": best["stop"], "target": best["target"],
+        "entry": best["entry"], "stop": best["stop"],
+        "target1": best.get("target1"), "target": best["target"],
         "leverage": best["leverage"], "opened_at": best["opened_at"], "opened_ms": best["opened_ms"],
     })
     return True
@@ -794,10 +990,12 @@ def try_fallbacks(ex):
 STATE = {}
 
 def run_once():
-    global STATE
+    global STATE, MARKET_BIAS
     STATE = load_state()
     check_telegram()
     ex = build_exchange()
+
+    MARKET_BIAS = compute_market_bias(ex)
 
     print("[+] Checking open signals for TP/SL...")
     process_open_signals(ex)
@@ -830,7 +1028,8 @@ def run_once():
         # store a compact record for tracking
         STATE["open"].append({
             "id": s["id"], "symbol": s["symbol"], "direction": s["direction"],
-            "entry": s["entry"], "stop": s["stop"], "target": s["target"],
+            "entry": s["entry"], "stop": s["stop"],
+            "target1": s.get("target1"), "target": s["target"],
             "leverage": s["leverage"], "opened_at": s["opened_at"], "opened_ms": s["opened_ms"],
         })
 
@@ -863,7 +1062,8 @@ def run_once():
             post(format_signal(s))
             STATE["open"].append({
                 "id": s["id"], "symbol": s["symbol"], "direction": s["direction"],
-                "entry": s["entry"], "stop": s["stop"], "target": s["target"],
+                "entry": s["entry"], "stop": s["stop"],
+                "target1": s.get("target1"), "target": s["target"],
                 "leverage": s["leverage"], "opened_at": s["opened_at"],
                 "opened_ms": s["opened_ms"], "is_meme": True,
             })
