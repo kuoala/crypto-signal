@@ -198,18 +198,6 @@
       "opened_ms": 1784667523239
     },
     {
-      "id": 271,
-      "symbol": "XAUT/USDT",
-      "direction": "LONG",
-      "entry": 4116.7,
-      "stop": 4078.9964285714286,
-      "target": 4192.107142857142,
-      "leverage": 10,
-      "opened_at": "2026-07-22 01:48 UTC",
-      "opened_ms": 1784684889201,
-      "tp1_announced": true
-    },
-    {
       "id": 272,
       "symbol": "XAUT/USDT",
       "direction": "LONG",
@@ -283,9 +271,9 @@
       "sl": 180,
       "tp1": 8,
       "tp2": 0,
-      "be": 11,
-      "r_sum": 0.5,
-      "r_count": 16
+      "be": 12,
+      "r_sum": 1.0,
+      "r_count": 17
     }
   }
 }
