@@ -1,5 +1,5 @@
 {
-  "next_id": 284,
+  "next_id": 287,
   "open": [
     {
       "id": 128,
@@ -50,17 +50,6 @@
       "opened_ms": 1784321041052
     },
     {
-      "id": 246,
-      "symbol": "PEPE/USDT:USDT",
-      "direction": "LONG",
-      "entry": 2.9053e-06,
-      "stop": 2.8147107142857144e-06,
-      "target": 3.0864785714285715e-06,
-      "leverage": 3,
-      "opened_at": "2026-07-20 13:50 UTC",
-      "opened_ms": 1784555419688
-    },
-    {
       "id": 247,
       "symbol": "PENGU/USDT:USDT",
       "direction": "LONG",
@@ -73,18 +62,6 @@
       "is_meme": true
     },
     {
-      "id": 249,
-      "symbol": "ETH/USDT:USDT",
-      "direction": "LONG",
-      "entry": 1898.0,
-      "stop": 1863.185,
-      "target": 1967.63,
-      "leverage": 5,
-      "opened_at": "2026-07-20 17:24 UTC",
-      "opened_ms": 1784568284438,
-      "tp1_announced": true
-    },
-    {
       "id": 258,
       "symbol": "ORDI/USDT:USDT",
       "direction": "LONG",
@@ -95,39 +72,6 @@
       "opened_at": "2026-07-20 21:02 UTC",
       "opened_ms": 1784581369133,
       "is_meme": true
-    },
-    {
-      "id": 261,
-      "symbol": "ARB/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.09039,
-      "stop": 0.08756571428571427,
-      "target": 0.09603857142857143,
-      "leverage": 3,
-      "opened_at": "2026-07-21 01:49 UTC",
-      "opened_ms": 1784598575835
-    },
-    {
-      "id": 263,
-      "symbol": "SOL/USDT:USDT",
-      "direction": "LONG",
-      "entry": 78.36,
-      "stop": 76.755,
-      "target": 81.57,
-      "leverage": 5,
-      "opened_at": "2026-07-21 06:22 UTC",
-      "opened_ms": 1784614959300
-    },
-    {
-      "id": 269,
-      "symbol": "XRP/USDT",
-      "direction": "LONG",
-      "entry": 1.1496,
-      "stop": 1.127775,
-      "target": 1.19325,
-      "leverage": 5,
-      "opened_at": "2026-07-21 17:07 UTC",
-      "opened_ms": 1784653659191
     },
     {
       "id": 272,
@@ -161,7 +105,8 @@
       "target": 0.070145,
       "leverage": 5,
       "opened_at": "2026-07-22 16:27 UTC",
-      "opened_ms": 1784737638879
+      "opened_ms": 1784737638879,
+      "tp1_announced": true
     },
     {
       "id": 277,
@@ -173,7 +118,8 @@
       "target": 0.06993071428571429,
       "leverage": 5,
       "opened_at": "2026-07-22 20:56 UTC",
-      "opened_ms": 1784753775545
+      "opened_ms": 1784753775545,
+      "tp1_announced": true
     },
     {
       "id": 278,
@@ -185,7 +131,8 @@
       "target": 342.8414285714286,
       "leverage": 5,
       "opened_at": "2026-07-23 06:24 UTC",
-      "opened_ms": 1784787893302
+      "opened_ms": 1784787893302,
+      "tp1_announced": true
     },
     {
       "id": 280,
@@ -234,6 +181,43 @@
       "leverage": 2,
       "opened_at": "2026-07-23 10:12 UTC",
       "opened_ms": 1784801573112
+    },
+    {
+      "id": 284,
+      "symbol": "QQQSTOCK/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 695.4,
+      "stop": 702.5967857142857,
+      "target1": 688.2032142857142,
+      "target": 681.0064285714286,
+      "leverage": 10,
+      "opened_at": "2026-07-23 13:26 UTC",
+      "opened_ms": 1784813185541
+    },
+    {
+      "id": 285,
+      "symbol": "NAS100/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 28561.0,
+      "stop": 28860.678571428572,
+      "target1": 28261.321428571428,
+      "target": 27961.64285714286,
+      "leverage": 10,
+      "opened_at": "2026-07-23 13:26 UTC",
+      "opened_ms": 1784813187138
+    },
+    {
+      "id": 286,
+      "symbol": "SPX/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.3537,
+      "stop": 0.3736714285714286,
+      "target1": 0.33372857142857143,
+      "target": 0.3137571428571429,
+      "leverage": 2,
+      "opened_at": "2026-07-23 13:26 UTC",
+      "opened_ms": 1784813191087,
+      "is_meme": true
     }
   ],
   "stats": {
@@ -248,12 +232,12 @@
     },
     "2026-07": {
       "tp": 48,
-      "sl": 184,
-      "tp1": 8,
+      "sl": 188,
+      "tp1": 11,
       "tp2": 0,
-      "be": 16,
-      "r_sum": -1.0,
-      "r_count": 25
+      "be": 17,
+      "r_sum": -4.5,
+      "r_count": 30
     }
   }
 }
