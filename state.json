@@ -1,5 +1,5 @@
 {
-  "next_id": 297,
+  "next_id": 298,
   "open": [
     {
       "id": 128,
@@ -60,17 +60,6 @@
       "opened_at": "2026-07-20 21:02 UTC",
       "opened_ms": 1784581369133,
       "is_meme": true
-    },
-    {
-      "id": 272,
-      "symbol": "XAUT/USDT",
-      "direction": "LONG",
-      "entry": 4121.2,
-      "stop": 4083.1,
-      "target": 4197.4,
-      "leverage": 10,
-      "opened_at": "2026-07-22 06:22 UTC",
-      "opened_ms": 1784701336380
     },
     {
       "id": 274,
@@ -266,6 +255,18 @@
       "leverage": 2,
       "opened_at": "2026-07-24 06:19 UTC",
       "opened_ms": 1784873981734
+    },
+    {
+      "id": 297,
+      "symbol": "SOL/USDT",
+      "direction": "SHORT",
+      "entry": 75.56,
+      "stop": 77.09642857142858,
+      "target1": 74.02357142857143,
+      "target": 72.48714285714286,
+      "leverage": 5,
+      "opened_at": "2026-07-24 10:08 UTC",
+      "opened_ms": 1784887726519
     }
   ],
   "stats": {
@@ -280,12 +281,12 @@
     },
     "2026-07": {
       "tp": 52,
-      "sl": 189,
+      "sl": 190,
       "tp1": 14,
       "tp2": 4,
       "be": 18,
-      "r_sum": 1.0,
-      "r_count": 36
+      "r_sum": 0.0,
+      "r_count": 37
     }
   }
 }
