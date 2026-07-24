@@ -1,5 +1,5 @@
 {
-  "next_id": 294,
+  "next_id": 297,
   "open": [
     {
       "id": 128,
@@ -96,19 +96,6 @@
       "opened_ms": 1784787896177
     },
     {
-      "id": 281,
-      "symbol": "FET/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.1545,
-      "stop": 0.15791785714285714,
-      "target1": 0.15108214285714286,
-      "target": 0.14766428571428572,
-      "leverage": 5,
-      "opened_at": "2026-07-23 06:24 UTC",
-      "opened_ms": 1784787897628,
-      "tp1_announced": true
-    },
-    {
       "id": 283,
       "symbol": "BANK/USDT:USDT",
       "direction": "LONG",
@@ -155,7 +142,8 @@
       "leverage": 2,
       "opened_at": "2026-07-23 13:26 UTC",
       "opened_ms": 1784813191087,
-      "is_meme": true
+      "is_meme": true,
+      "tp1_announced": true
     },
     {
       "id": 287,
@@ -242,6 +230,42 @@
       "leverage": 2,
       "opened_at": "2026-07-24 01:51 UTC",
       "opened_ms": 1784857895047
+    },
+    {
+      "id": 294,
+      "symbol": "SKHYNIXSTOCK/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 1206.66,
+      "stop": 1280.132142857143,
+      "target1": 1133.1878571428572,
+      "target": 1059.715714285714,
+      "leverage": 2,
+      "opened_at": "2026-07-24 06:19 UTC",
+      "opened_ms": 1784873978747
+    },
+    {
+      "id": 295,
+      "symbol": "INJ/USDT:USDT",
+      "direction": "LONG",
+      "entry": 5.379,
+      "stop": 5.211642857142857,
+      "target1": 5.5463571428571425,
+      "target": 5.713714285714285,
+      "leverage": 3,
+      "opened_at": "2026-07-24 06:19 UTC",
+      "opened_ms": 1784873980347
+    },
+    {
+      "id": 296,
+      "symbol": "ALABSTOCK/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 319.96,
+      "stop": 337.3782142857143,
+      "target1": 302.54178571428565,
+      "target": 285.1235714285714,
+      "leverage": 2,
+      "opened_at": "2026-07-24 06:19 UTC",
+      "opened_ms": 1784873981734
     }
   ],
   "stats": {
@@ -257,11 +281,11 @@
     "2026-07": {
       "tp": 52,
       "sl": 189,
-      "tp1": 13,
+      "tp1": 14,
       "tp2": 4,
-      "be": 17,
-      "r_sum": 0.5,
-      "r_count": 35
+      "be": 18,
+      "r_sum": 1.0,
+      "r_count": 36
     }
   }
 }
