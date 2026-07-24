@@ -1,5 +1,5 @@
 {
-  "next_id": 293,
+  "next_id": 294,
   "open": [
     {
       "id": 128,
@@ -105,7 +105,8 @@
       "target": 0.14766428571428572,
       "leverage": 5,
       "opened_at": "2026-07-23 06:24 UTC",
-      "opened_ms": 1784787897628
+      "opened_ms": 1784787897628,
+      "tp1_announced": true
     },
     {
       "id": 283,
@@ -229,6 +230,18 @@
       "opened_at": "2026-07-23 20:52 UTC",
       "opened_ms": 1784839948080,
       "is_meme": true
+    },
+    {
+      "id": 293,
+      "symbol": "SOL/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 75.78,
+      "stop": 79.1582142857143,
+      "target1": 72.40178571428571,
+      "target": 69.02357142857142,
+      "leverage": 2,
+      "opened_at": "2026-07-24 01:51 UTC",
+      "opened_ms": 1784857895047
     }
   ],
   "stats": {
@@ -244,7 +257,7 @@
     "2026-07": {
       "tp": 52,
       "sl": 189,
-      "tp1": 12,
+      "tp1": 13,
       "tp2": 4,
       "be": 17,
       "r_sum": 0.5,
