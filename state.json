@@ -1,5 +1,5 @@
 {
-  "next_id": 300,
+  "next_id": 301,
   "open": [
     {
       "id": 128,
@@ -36,7 +36,8 @@
       "leverage": 2,
       "opened_at": "2026-07-17 06:10 UTC",
       "opened_ms": 1784268619789,
-      "is_meme": true
+      "is_meme": true,
+      "tp1_announced": true
     },
     {
       "id": 220,
@@ -171,7 +172,8 @@
       "target": 0.3499214285714286,
       "leverage": 3,
       "opened_at": "2026-07-23 17:11 UTC",
-      "opened_ms": 1784826669694
+      "opened_ms": 1784826669694,
+      "tp1_announced": true
     },
     {
       "id": 290,
@@ -284,6 +286,18 @@
       "leverage": 4,
       "opened_at": "2026-07-24 17:21 UTC",
       "opened_ms": 1784913677838
+    },
+    {
+      "id": 300,
+      "symbol": "NEAR/USDT",
+      "direction": "SHORT",
+      "entry": 1.818,
+      "stop": 1.866,
+      "target1": 1.77,
+      "target": 1.722,
+      "leverage": 4,
+      "opened_at": "2026-07-24 20:56 UTC",
+      "opened_ms": 1784926568328
     }
   ],
   "stats": {
@@ -299,7 +313,7 @@
     "2026-07": {
       "tp": 52,
       "sl": 191,
-      "tp1": 19,
+      "tp1": 21,
       "tp2": 4,
       "be": 18,
       "r_sum": -1.0,
