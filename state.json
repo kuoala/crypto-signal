@@ -1,5 +1,5 @@
 {
-  "next_id": 299,
+  "next_id": 300,
   "open": [
     {
       "id": 128,
@@ -237,18 +237,6 @@
       "opened_ms": 1784873978747
     },
     {
-      "id": 295,
-      "symbol": "INJ/USDT:USDT",
-      "direction": "LONG",
-      "entry": 5.379,
-      "stop": 5.211642857142857,
-      "target1": 5.5463571428571425,
-      "target": 5.713714285714285,
-      "leverage": 3,
-      "opened_at": "2026-07-24 06:19 UTC",
-      "opened_ms": 1784873980347
-    },
-    {
       "id": 296,
       "symbol": "ALABSTOCK/USDT:USDT",
       "direction": "SHORT",
@@ -270,7 +258,8 @@
       "target": 72.48714285714286,
       "leverage": 5,
       "opened_at": "2026-07-24 10:08 UTC",
-      "opened_ms": 1784887726519
+      "opened_ms": 1784887726519,
+      "tp1_announced": true
     },
     {
       "id": 298,
@@ -283,6 +272,18 @@
       "leverage": 4,
       "opened_at": "2026-07-24 13:19 UTC",
       "opened_ms": 1784899167512
+    },
+    {
+      "id": 299,
+      "symbol": "NEAR/USDT",
+      "direction": "SHORT",
+      "entry": 1.811,
+      "stop": 1.86125,
+      "target1": 1.7607499999999998,
+      "target": 1.7105,
+      "leverage": 4,
+      "opened_at": "2026-07-24 17:21 UTC",
+      "opened_ms": 1784913677838
     }
   ],
   "stats": {
@@ -297,12 +298,12 @@
     },
     "2026-07": {
       "tp": 52,
-      "sl": 190,
-      "tp1": 18,
+      "sl": 191,
+      "tp1": 19,
       "tp2": 4,
       "be": 18,
-      "r_sum": 0.0,
-      "r_count": 37
+      "r_sum": -1.0,
+      "r_count": 38
     }
   }
 }
