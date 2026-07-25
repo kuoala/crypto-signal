@@ -1,5 +1,5 @@
 {
-  "next_id": 301,
+  "next_id": 302,
   "open": [
     {
       "id": 128,
@@ -12,18 +12,6 @@
       "opened_at": "2026-07-08 06:22 UTC",
       "opened_ms": 1783491774157,
       "is_meme": true,
-      "tp1_announced": true
-    },
-    {
-      "id": 205,
-      "symbol": "TIA/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.3734,
-      "stop": 0.391475,
-      "target": 0.33725000000000005,
-      "leverage": 2,
-      "opened_at": "2026-07-17 06:10 UTC",
-      "opened_ms": 1784268609311,
       "tp1_announced": true
     },
     {
@@ -71,7 +59,8 @@
       "target": 54.93707142857142,
       "leverage": 3,
       "opened_at": "2026-07-22 13:23 UTC",
-      "opened_ms": 1784726607369
+      "opened_ms": 1784726607369,
+      "tp1_announced": true
     },
     {
       "id": 280,
@@ -137,19 +126,6 @@
       "tp1_announced": true
     },
     {
-      "id": 287,
-      "symbol": "SEI/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.04573,
-      "stop": 0.04675642857142857,
-      "target1": 0.04470357142857143,
-      "target": 0.04367714285714286,
-      "leverage": 4,
-      "opened_at": "2026-07-23 17:11 UTC",
-      "opened_ms": 1784826666520,
-      "tp1_announced": true
-    },
-    {
       "id": 288,
       "symbol": "OP/USDT:USDT",
       "direction": "SHORT",
@@ -160,19 +136,6 @@
       "leverage": 4,
       "opened_at": "2026-07-23 17:11 UTC",
       "opened_ms": 1784826668178,
-      "tp1_announced": true
-    },
-    {
-      "id": 289,
-      "symbol": "WLD/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.3769,
-      "stop": 0.3903892857142857,
-      "target1": 0.3634107142857143,
-      "target": 0.3499214285714286,
-      "leverage": 3,
-      "opened_at": "2026-07-23 17:11 UTC",
-      "opened_ms": 1784826669694,
       "tp1_announced": true
     },
     {
@@ -298,6 +261,18 @@
       "leverage": 4,
       "opened_at": "2026-07-24 20:56 UTC",
       "opened_ms": 1784926568328
+    },
+    {
+      "id": 301,
+      "symbol": "HYPE/USDT",
+      "direction": "SHORT",
+      "entry": 57.606,
+      "stop": 59.397000000000006,
+      "target1": 55.815,
+      "target": 54.024,
+      "leverage": 3,
+      "opened_at": "2026-07-25 01:51 UTC",
+      "opened_ms": 1784944272043
     }
   ],
   "stats": {
@@ -311,13 +286,13 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 52,
+      "tp": 55,
       "sl": 191,
-      "tp1": 21,
-      "tp2": 4,
+      "tp1": 22,
+      "tp2": 7,
       "be": 18,
-      "r_sum": -1.0,
-      "r_count": 38
+      "r_sum": 3.5,
+      "r_count": 41
     }
   }
 }
