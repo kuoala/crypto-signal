@@ -51,18 +51,6 @@
       "is_meme": true
     },
     {
-      "id": 274,
-      "symbol": "HYPE/USDT",
-      "direction": "SHORT",
-      "entry": 58.452,
-      "stop": 60.20946428571428,
-      "target": 54.93707142857142,
-      "leverage": 3,
-      "opened_at": "2026-07-22 13:23 UTC",
-      "opened_ms": 1784726607369,
-      "tp1_announced": true
-    },
-    {
       "id": 283,
       "symbol": "BANK/USDT:USDT",
       "direction": "LONG",
@@ -289,9 +277,9 @@
       "sl": 192,
       "tp1": 23,
       "tp2": 7,
-      "be": 19,
-      "r_sum": 3.0,
-      "r_count": 43
+      "be": 20,
+      "r_sum": 3.5,
+      "r_count": 44
     }
   }
 }
