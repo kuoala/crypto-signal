@@ -1,5 +1,5 @@
 {
-  "next_id": 303,
+  "next_id": 304,
   "open": [
     {
       "id": 128,
@@ -236,7 +236,8 @@
       "target": 0.6886,
       "leverage": 4,
       "opened_at": "2026-07-24 13:19 UTC",
-      "opened_ms": 1784899167512
+      "opened_ms": 1784899167512,
+      "tp1_announced": true
     },
     {
       "id": 299,
@@ -285,6 +286,18 @@
       "leverage": 3,
       "opened_at": "2026-07-25 06:10 UTC",
       "opened_ms": 1784959821165
+    },
+    {
+      "id": 303,
+      "symbol": "XPL/USDT",
+      "direction": "SHORT",
+      "entry": 0.08333,
+      "stop": 0.086465,
+      "target1": 0.080195,
+      "target": 0.07705999999999999,
+      "leverage": 3,
+      "opened_at": "2026-07-25 09:29 UTC",
+      "opened_ms": 1784971757924
     }
   ],
   "stats": {
@@ -300,7 +313,7 @@
     "2026-07": {
       "tp": 55,
       "sl": 191,
-      "tp1": 22,
+      "tp1": 23,
       "tp2": 7,
       "be": 18,
       "r_sum": 3.5,
