@@ -1,5 +1,5 @@
 {
-  "next_id": 302,
+  "next_id": 303,
   "open": [
     {
       "id": 128,
@@ -273,6 +273,18 @@
       "leverage": 3,
       "opened_at": "2026-07-25 01:51 UTC",
       "opened_ms": 1784944272043
+    },
+    {
+      "id": 302,
+      "symbol": "HYPE/USDT",
+      "direction": "SHORT",
+      "entry": 57.161,
+      "stop": 58.85482142857143,
+      "target1": 55.467178571428576,
+      "target": 53.773357142857144,
+      "leverage": 3,
+      "opened_at": "2026-07-25 06:10 UTC",
+      "opened_ms": 1784959821165
     }
   ],
   "stats": {
