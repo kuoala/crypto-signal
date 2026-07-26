@@ -2,19 +2,6 @@
   "next_id": 304,
   "open": [
     {
-      "id": 128,
-      "symbol": "WIF/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.1582,
-      "stop": 0.16757142857142857,
-      "target": 0.13945714285714286,
-      "leverage": 2,
-      "opened_at": "2026-07-08 06:22 UTC",
-      "opened_ms": 1783491774157,
-      "is_meme": true,
-      "tp1_announced": true
-    },
-    {
       "id": 209,
       "symbol": "USELESS/USDT:USDT",
       "direction": "SHORT",
@@ -277,9 +264,9 @@
       "sl": 192,
       "tp1": 23,
       "tp2": 7,
-      "be": 20,
-      "r_sum": 3.5,
-      "r_count": 44
+      "be": 21,
+      "r_sum": 4.0,
+      "r_count": 45
     }
   }
 }
