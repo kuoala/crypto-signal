@@ -1,5 +1,5 @@
 {
-  "next_id": 309,
+  "next_id": 310,
   "open": [
     {
       "id": 220,
@@ -85,7 +85,8 @@
       "target": 1.722,
       "leverage": 4,
       "opened_at": "2026-07-24 20:56 UTC",
-      "opened_ms": 1784926568328
+      "opened_ms": 1784926568328,
+      "tp1_announced": true
     },
     {
       "id": 305,
@@ -100,31 +101,6 @@
       "opened_ms": 1785117743733
     },
     {
-      "id": 306,
-      "symbol": "LDO/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.4019,
-      "stop": 0.3891392857142857,
-      "target1": 0.41466071428571427,
-      "target": 0.42742142857142856,
-      "leverage": 3,
-      "opened_at": "2026-07-27 06:55 UTC",
-      "opened_ms": 1785135354448
-    },
-    {
-      "id": 307,
-      "symbol": "ENA/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.09028,
-      "stop": 0.08771928571428571,
-      "target1": 0.09284071428571429,
-      "target": 0.09540142857142857,
-      "leverage": 4,
-      "opened_at": "2026-07-27 06:55 UTC",
-      "opened_ms": 1785135355851,
-      "tp1_announced": true
-    },
-    {
       "id": 308,
       "symbol": "XSKHY/USDT",
       "direction": "SHORT",
@@ -134,7 +110,20 @@
       "target": 135.29500000000002,
       "leverage": 3,
       "opened_at": "2026-07-27 14:12 UTC",
-      "opened_ms": 1785161529555
+      "opened_ms": 1785161529555,
+      "tp1_announced": true
+    },
+    {
+      "id": 309,
+      "symbol": "XSKHY/USDT",
+      "direction": "SHORT",
+      "entry": 140.67,
+      "stop": 146.81464285714284,
+      "target1": 134.52535714285713,
+      "target": 128.3807142857143,
+      "leverage": 2,
+      "opened_at": "2026-07-27 17:36 UTC",
+      "opened_ms": 1785173816758
     }
   ],
   "stats": {
@@ -149,12 +138,12 @@
     },
     "2026-07": {
       "tp": 58,
-      "sl": 197,
-      "tp1": 25,
+      "sl": 198,
+      "tp1": 27,
       "tp2": 10,
-      "be": 27,
-      "r_sum": 6.5,
-      "r_count": 59
+      "be": 28,
+      "r_sum": 6.0,
+      "r_count": 61
     }
   }
 }
