@@ -2,19 +2,6 @@
   "next_id": 308,
   "open": [
     {
-      "id": 209,
-      "symbol": "USELESS/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.06211,
-      "stop": 0.06992714285714285,
-      "target": 0.04647571428571429,
-      "leverage": 2,
-      "opened_at": "2026-07-17 06:10 UTC",
-      "opened_ms": 1784268619789,
-      "is_meme": true,
-      "tp1_announced": true
-    },
-    {
       "id": 220,
       "symbol": "USDG/USDT",
       "direction": "LONG",
@@ -37,19 +24,6 @@
       "opened_at": "2026-07-23 13:26 UTC",
       "opened_ms": 1784813191087,
       "is_meme": true,
-      "tp1_announced": true
-    },
-    {
-      "id": 290,
-      "symbol": "ARB/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.08691,
-      "stop": 0.08967428571428572,
-      "target1": 0.08414571428571428,
-      "target": 0.08138142857142856,
-      "leverage": 3,
-      "opened_at": "2026-07-23 20:52 UTC",
-      "opened_ms": 1784839941725,
       "tp1_announced": true
     },
     {
@@ -161,13 +135,13 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 57,
+      "tp": 58,
       "sl": 197,
       "tp1": 24,
-      "tp2": 9,
-      "be": 26,
-      "r_sum": 4.5,
-      "r_count": 57
+      "tp2": 10,
+      "be": 27,
+      "r_sum": 6.5,
+      "r_count": 59
     }
   }
 }
