@@ -1,5 +1,5 @@
 {
-  "next_id": 305,
+  "next_id": 306,
   "open": [
     {
       "id": 209,
@@ -174,16 +174,16 @@
       "opened_ms": 1784971757924
     },
     {
-      "id": 304,
-      "symbol": "MORPHO/USDT",
-      "direction": "SHORT",
-      "entry": 1.9056,
-      "stop": 2.00205,
-      "target1": 1.80915,
-      "target": 1.7127,
-      "leverage": 2,
-      "opened_at": "2026-07-26 06:29 UTC",
-      "opened_ms": 1785047380721
+      "id": 305,
+      "symbol": "ONDO/USDT",
+      "direction": "LONG",
+      "entry": 0.4128,
+      "stop": 0.3986571428571429,
+      "target1": 0.4269428571428571,
+      "target": 0.4410857142857143,
+      "leverage": 3,
+      "opened_at": "2026-07-27 02:02 UTC",
+      "opened_ms": 1785117743733
     }
   ],
   "stats": {
@@ -198,12 +198,12 @@
     },
     "2026-07": {
       "tp": 56,
-      "sl": 194,
+      "sl": 195,
       "tp1": 23,
       "tp2": 8,
       "be": 24,
-      "r_sum": 5.0,
-      "r_count": 51
+      "r_sum": 4.0,
+      "r_count": 52
     }
   }
 }
