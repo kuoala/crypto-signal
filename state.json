@@ -1,5 +1,5 @@
 {
-  "next_id": 310,
+  "next_id": 311,
   "open": [
     {
       "id": 220,
@@ -73,7 +73,8 @@
       "target": 1.7105,
       "leverage": 4,
       "opened_at": "2026-07-24 17:21 UTC",
-      "opened_ms": 1784913677838
+      "opened_ms": 1784913677838,
+      "tp1_announced": true
     },
     {
       "id": 300,
@@ -89,31 +90,6 @@
       "tp1_announced": true
     },
     {
-      "id": 305,
-      "symbol": "ONDO/USDT",
-      "direction": "LONG",
-      "entry": 0.4128,
-      "stop": 0.3986571428571429,
-      "target1": 0.4269428571428571,
-      "target": 0.4410857142857143,
-      "leverage": 3,
-      "opened_at": "2026-07-27 02:02 UTC",
-      "opened_ms": 1785117743733
-    },
-    {
-      "id": 308,
-      "symbol": "XSKHY/USDT",
-      "direction": "SHORT",
-      "entry": 145.81,
-      "stop": 151.0675,
-      "target1": 140.5525,
-      "target": 135.29500000000002,
-      "leverage": 3,
-      "opened_at": "2026-07-27 14:12 UTC",
-      "opened_ms": 1785161529555,
-      "tp1_announced": true
-    },
-    {
       "id": 309,
       "symbol": "XSKHY/USDT",
       "direction": "SHORT",
@@ -124,6 +100,18 @@
       "leverage": 2,
       "opened_at": "2026-07-27 17:36 UTC",
       "opened_ms": 1785173816758
+    },
+    {
+      "id": 310,
+      "symbol": "ADA/USDT",
+      "direction": "SHORT",
+      "entry": 0.1591,
+      "stop": 0.16241071428571427,
+      "target1": 0.1557892857142857,
+      "target": 0.15247857142857144,
+      "leverage": 5,
+      "opened_at": "2026-07-27 21:03 UTC",
+      "opened_ms": 1785186210336
     }
   ],
   "stats": {
@@ -138,12 +126,12 @@
     },
     "2026-07": {
       "tp": 58,
-      "sl": 198,
-      "tp1": 27,
+      "sl": 199,
+      "tp1": 28,
       "tp2": 10,
-      "be": 28,
-      "r_sum": 6.0,
-      "r_count": 61
+      "be": 29,
+      "r_sum": 5.5,
+      "r_count": 63
     }
   }
 }
