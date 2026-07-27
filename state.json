@@ -1,5 +1,5 @@
 {
-  "next_id": 308,
+  "next_id": 309,
   "open": [
     {
       "id": 220,
@@ -121,7 +121,20 @@
       "target": 0.09540142857142857,
       "leverage": 4,
       "opened_at": "2026-07-27 06:55 UTC",
-      "opened_ms": 1785135355851
+      "opened_ms": 1785135355851,
+      "tp1_announced": true
+    },
+    {
+      "id": 308,
+      "symbol": "XSKHY/USDT",
+      "direction": "SHORT",
+      "entry": 145.81,
+      "stop": 151.0675,
+      "target1": 140.5525,
+      "target": 135.29500000000002,
+      "leverage": 3,
+      "opened_at": "2026-07-27 14:12 UTC",
+      "opened_ms": 1785161529555
     }
   ],
   "stats": {
@@ -137,7 +150,7 @@
     "2026-07": {
       "tp": 58,
       "sl": 197,
-      "tp1": 24,
+      "tp1": 25,
       "tp2": 10,
       "be": 27,
       "r_sum": 6.5,
