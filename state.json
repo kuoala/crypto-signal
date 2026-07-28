@@ -1,5 +1,5 @@
 {
-  "next_id": 311,
+  "next_id": 312,
   "open": [
     {
       "id": 220,
@@ -64,32 +64,6 @@
       "tp1_announced": true
     },
     {
-      "id": 299,
-      "symbol": "NEAR/USDT",
-      "direction": "SHORT",
-      "entry": 1.811,
-      "stop": 1.86125,
-      "target1": 1.7607499999999998,
-      "target": 1.7105,
-      "leverage": 4,
-      "opened_at": "2026-07-24 17:21 UTC",
-      "opened_ms": 1784913677838,
-      "tp1_announced": true
-    },
-    {
-      "id": 300,
-      "symbol": "NEAR/USDT",
-      "direction": "SHORT",
-      "entry": 1.818,
-      "stop": 1.866,
-      "target1": 1.77,
-      "target": 1.722,
-      "leverage": 4,
-      "opened_at": "2026-07-24 20:56 UTC",
-      "opened_ms": 1784926568328,
-      "tp1_announced": true
-    },
-    {
       "id": 309,
       "symbol": "XSKHY/USDT",
       "direction": "SHORT",
@@ -111,7 +85,20 @@
       "target": 0.15247857142857144,
       "leverage": 5,
       "opened_at": "2026-07-27 21:03 UTC",
-      "opened_ms": 1785186210336
+      "opened_ms": 1785186210336,
+      "tp1_announced": true
+    },
+    {
+      "id": 311,
+      "symbol": "XMU/USDT",
+      "direction": "SHORT",
+      "entry": 875.16,
+      "stop": 905.8564285714285,
+      "target1": 844.4635714285714,
+      "target": 813.7671428571429,
+      "leverage": 3,
+      "opened_at": "2026-07-28 01:45 UTC",
+      "opened_ms": 1785203102128
     }
   ],
   "stats": {
@@ -125,13 +112,13 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 58,
+      "tp": 60,
       "sl": 199,
-      "tp1": 28,
-      "tp2": 10,
+      "tp1": 29,
+      "tp2": 12,
       "be": 29,
-      "r_sum": 5.5,
-      "r_count": 63
+      "r_sum": 8.5,
+      "r_count": 65
     }
   }
 }
