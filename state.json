@@ -1,5 +1,5 @@
 {
-  "next_id": 323,
+  "next_id": 325,
   "open": [
     {
       "id": 220,
@@ -36,7 +36,8 @@
       "target": 69.02357142857142,
       "leverage": 2,
       "opened_at": "2026-07-24 01:51 UTC",
-      "opened_ms": 1784857895047
+      "opened_ms": 1784857895047,
+      "tp1_announced": true
     },
     {
       "id": 309,
@@ -195,7 +196,8 @@
       "target": 0.6083857142857143,
       "leverage": 9,
       "opened_at": "2026-07-28 10:26 UTC",
-      "opened_ms": 1785234366263
+      "opened_ms": 1785234366263,
+      "tp1_announced": true
     },
     {
       "id": 322,
@@ -208,6 +210,30 @@
       "leverage": 8,
       "opened_at": "2026-07-28 10:26 UTC",
       "opened_ms": 1785234368077
+    },
+    {
+      "id": 323,
+      "symbol": "ENA/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.08262,
+      "stop": 0.08653928571428571,
+      "target1": 0.07870071428571429,
+      "target": 0.07478142857142857,
+      "leverage": 2,
+      "opened_at": "2026-07-28 13:41 UTC",
+      "opened_ms": 1785246100224
+    },
+    {
+      "id": 324,
+      "symbol": "SPCXSTOCK/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 107.61,
+      "stop": 111.015,
+      "target1": 104.205,
+      "target": 100.8,
+      "leverage": 3,
+      "opened_at": "2026-07-28 13:41 UTC",
+      "opened_ms": 1785246101658
     }
   ],
   "stats": {
@@ -223,7 +249,7 @@
     "2026-07": {
       "tp": 62,
       "sl": 199,
-      "tp1": 30,
+      "tp1": 32,
       "tp2": 14,
       "be": 29,
       "r_sum": 11.5,
