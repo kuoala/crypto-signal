@@ -1,5 +1,5 @@
 {
-  "next_id": 326,
+  "next_id": 327,
   "open": [
     {
       "id": 220,
@@ -197,6 +197,18 @@
       "leverage": 2,
       "opened_at": "2026-07-28 17:20 UTC",
       "opened_ms": 1785259210416
+    },
+    {
+      "id": 326,
+      "symbol": "SKHYNIXSTOCK/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 1074.31,
+      "stop": 1235.1260714285713,
+      "target1": 913.4939285714285,
+      "target": 752.677857142857,
+      "leverage": 2,
+      "opened_at": "2026-07-28 20:59 UTC",
+      "opened_ms": 1785272398039
     }
   ],
   "stats": {
