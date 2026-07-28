@@ -1,5 +1,5 @@
 {
-  "next_id": 319,
+  "next_id": 323,
   "open": [
     {
       "id": 220,
@@ -37,19 +37,6 @@
       "leverage": 2,
       "opened_at": "2026-07-24 01:51 UTC",
       "opened_ms": 1784857895047
-    },
-    {
-      "id": 294,
-      "symbol": "SKHYNIXSTOCK/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 1206.66,
-      "stop": 1280.132142857143,
-      "target1": 1133.1878571428572,
-      "target": 1059.715714285714,
-      "leverage": 2,
-      "opened_at": "2026-07-24 06:19 UTC",
-      "opened_ms": 1784873978747,
-      "tp1_announced": true
     },
     {
       "id": 309,
@@ -173,6 +160,54 @@
       "opened_at": "2026-07-28 06:19 UTC",
       "opened_ms": 1785219599557,
       "is_meme": true
+    },
+    {
+      "id": 319,
+      "symbol": "APT/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.5861,
+      "stop": 0.6034035714285714,
+      "target1": 0.5687964285714285,
+      "target": 0.5514928571428571,
+      "leverage": 3,
+      "opened_at": "2026-07-28 10:26 UTC",
+      "opened_ms": 1785234362868
+    },
+    {
+      "id": 320,
+      "symbol": "ZEC/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 468.38,
+      "stop": 485.2592857142857,
+      "target1": 451.5007142857143,
+      "target": 434.62142857142857,
+      "leverage": 3,
+      "opened_at": "2026-07-28 10:26 UTC",
+      "opened_ms": 1785234364595
+    },
+    {
+      "id": 321,
+      "symbol": "ASTER/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.6215,
+      "stop": 0.6280571428571429,
+      "target1": 0.6149428571428572,
+      "target": 0.6083857142857143,
+      "leverage": 9,
+      "opened_at": "2026-07-28 10:26 UTC",
+      "opened_ms": 1785234366263
+    },
+    {
+      "id": 322,
+      "symbol": "BNB/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 567.0,
+      "stop": 574.2214285714285,
+      "target1": 559.7785714285715,
+      "target": 552.5571428571428,
+      "leverage": 8,
+      "opened_at": "2026-07-28 10:26 UTC",
+      "opened_ms": 1785234368077
     }
   ],
   "stats": {
@@ -186,13 +221,13 @@
       "r_count": 0
     },
     "2026-07": {
-      "tp": 61,
+      "tp": 62,
       "sl": 199,
       "tp1": 30,
-      "tp2": 13,
+      "tp2": 14,
       "be": 29,
-      "r_sum": 10.0,
-      "r_count": 66
+      "r_sum": 11.5,
+      "r_count": 67
     }
   }
 }
