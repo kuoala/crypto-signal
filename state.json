@@ -1,5 +1,5 @@
 {
-  "next_id": 328,
+  "next_id": 329,
   "open": [
     {
       "id": 220,
@@ -97,7 +97,8 @@
       "target": 0.2892785714285714,
       "leverage": 2,
       "opened_at": "2026-07-28 06:19 UTC",
-      "opened_ms": 1785219592056
+      "opened_ms": 1785219592056,
+      "tp1_announced": true
     },
     {
       "id": 316,
@@ -147,7 +148,8 @@
       "target": 0.5514928571428571,
       "leverage": 3,
       "opened_at": "2026-07-28 10:26 UTC",
-      "opened_ms": 1785234362868
+      "opened_ms": 1785234362868,
+      "tp1_announced": true
     },
     {
       "id": 320,
@@ -183,7 +185,8 @@
       "target": 740.367857142857,
       "leverage": 2,
       "opened_at": "2026-07-28 17:20 UTC",
-      "opened_ms": 1785259210416
+      "opened_ms": 1785259210416,
+      "tp1_announced": true
     },
     {
       "id": 326,
@@ -195,7 +198,8 @@
       "target": 752.677857142857,
       "leverage": 2,
       "opened_at": "2026-07-28 20:59 UTC",
-      "opened_ms": 1785272398039
+      "opened_ms": 1785272398039,
+      "tp1_announced": true
     },
     {
       "id": 327,
@@ -208,6 +212,18 @@
       "leverage": 2,
       "opened_at": "2026-07-29 01:46 UTC",
       "opened_ms": 1785289597862
+    },
+    {
+      "id": 328,
+      "symbol": "AVAX/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 6.43,
+      "stop": 6.624464285714286,
+      "target1": 6.235535714285714,
+      "target": 6.041071428571428,
+      "leverage": 3,
+      "opened_at": "2026-07-29 06:24 UTC",
+      "opened_ms": 1785306299127
     }
   ],
   "stats": {
@@ -223,7 +239,7 @@
     "2026-07": {
       "tp": 63,
       "sl": 201,
-      "tp1": 33,
+      "tp1": 37,
       "tp2": 15,
       "be": 31,
       "r_sum": 12.0,
