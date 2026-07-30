@@ -1,5 +1,5 @@
 {
-  "next_id": 332,
+  "next_id": 333,
   "open": [
     {
       "id": 286,
@@ -191,6 +191,18 @@
       "leverage": 7,
       "opened_at": "2026-07-30 06:20 UTC",
       "opened_ms": 1785392424105
+    },
+    {
+      "id": 332,
+      "symbol": "SPX500/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 7344.9,
+      "stop": 7455.985714285714,
+      "target1": 7233.814285714286,
+      "target": 7122.728571428571,
+      "leverage": 7,
+      "opened_at": "2026-07-30 10:14 UTC",
+      "opened_ms": 1785406474114
     }
   ],
   "stats": {
