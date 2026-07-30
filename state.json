@@ -1,5 +1,5 @@
 {
-  "next_id": 331,
+  "next_id": 332,
   "open": [
     {
       "id": 286,
@@ -64,19 +64,6 @@
       "leverage": 2,
       "opened_at": "2026-07-28 06:19 UTC",
       "opened_ms": 1785219592056,
-      "tp1_announced": true
-    },
-    {
-      "id": 316,
-      "symbol": "PENGU/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.005901,
-      "stop": 0.006132642857142857,
-      "target1": 0.005669357142857143,
-      "target": 0.005437714285714286,
-      "leverage": 3,
-      "opened_at": "2026-07-28 06:19 UTC",
-      "opened_ms": 1785219593502,
       "tp1_announced": true
     },
     {
@@ -192,6 +179,18 @@
       "leverage": 6,
       "opened_at": "2026-07-29 20:43 UTC",
       "opened_ms": 1785357807852
+    },
+    {
+      "id": 331,
+      "symbol": "SPX500/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 7330.6,
+      "stop": 7440.625,
+      "target1": 7220.575000000001,
+      "target": 7110.55,
+      "leverage": 7,
+      "opened_at": "2026-07-30 06:20 UTC",
+      "opened_ms": 1785392424105
     }
   ],
   "stats": {
@@ -209,9 +208,9 @@
       "sl": 201,
       "tp1": 42,
       "tp2": 18,
-      "be": 33,
-      "r_sum": 17.5,
-      "r_count": 77
+      "be": 34,
+      "r_sum": 18.0,
+      "r_count": 78
     }
   }
 }
