@@ -1,5 +1,5 @@
 {
-  "next_id": 333,
+  "next_id": 334,
   "open": [
     {
       "id": 286,
@@ -169,18 +169,6 @@
       "opened_ms": 1785321094205
     },
     {
-      "id": 330,
-      "symbol": "BTC/USDT",
-      "direction": "SHORT",
-      "entry": 63625.6,
-      "stop": 64726.20357142857,
-      "target1": 62524.99642857143,
-      "target": 61424.392857142855,
-      "leverage": 6,
-      "opened_at": "2026-07-29 20:43 UTC",
-      "opened_ms": 1785357807852
-    },
-    {
       "id": 331,
       "symbol": "SPX500/USDT:USDT",
       "direction": "SHORT",
@@ -203,6 +191,18 @@
       "leverage": 7,
       "opened_at": "2026-07-30 10:14 UTC",
       "opened_ms": 1785406474114
+    },
+    {
+      "id": 333,
+      "symbol": "SKHYNIXSTOCK/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 986.51,
+      "stop": 1155.1571428571428,
+      "target1": 817.8628571428571,
+      "target": 649.2157142857142,
+      "leverage": 2,
+      "opened_at": "2026-07-30 13:29 UTC",
+      "opened_ms": 1785418145632
     }
   ],
   "stats": {
@@ -217,12 +217,12 @@
     },
     "2026-07": {
       "tp": 66,
-      "sl": 201,
+      "sl": 202,
       "tp1": 42,
       "tp2": 18,
       "be": 34,
-      "r_sum": 18.0,
-      "r_count": 78
+      "r_sum": 17.0,
+      "r_count": 79
     }
   }
 }
