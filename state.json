@@ -42,18 +42,6 @@
       "tp1_announced": true
     },
     {
-      "id": 314,
-      "symbol": "SUI/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.6804,
-      "stop": 0.6982499999999999,
-      "target1": 0.6625500000000001,
-      "target": 0.6447,
-      "leverage": 4,
-      "opened_at": "2026-07-28 06:19 UTC",
-      "opened_ms": 1785219590633
-    },
-    {
       "id": 315,
       "symbol": "WLD/USDT:USDT",
       "direction": "SHORT",
@@ -91,19 +79,6 @@
       "opened_at": "2026-07-28 06:19 UTC",
       "opened_ms": 1785219599557,
       "is_meme": true,
-      "tp1_announced": true
-    },
-    {
-      "id": 323,
-      "symbol": "ENA/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.08262,
-      "stop": 0.08653928571428571,
-      "target1": 0.07870071428571429,
-      "target": 0.07478142857142857,
-      "leverage": 2,
-      "opened_at": "2026-07-28 13:41 UTC",
-      "opened_ms": 1785246100224,
       "tp1_announced": true
     },
     {
@@ -217,12 +192,12 @@
     },
     "2026-07": {
       "tp": 66,
-      "sl": 202,
+      "sl": 203,
       "tp1": 42,
       "tp2": 18,
-      "be": 34,
-      "r_sum": 17.0,
-      "r_count": 79
+      "be": 35,
+      "r_sum": 16.5,
+      "r_count": 81
     }
   }
 }
