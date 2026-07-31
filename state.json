@@ -1,5 +1,5 @@
 {
-  "next_id": 339,
+  "next_id": 340,
   "open": [
     {
       "id": 286,
@@ -176,7 +176,8 @@
       "target": 104.13999999999999,
       "leverage": 3,
       "opened_at": "2026-07-31 01:56 UTC",
-      "opened_ms": 1785462971000
+      "opened_ms": 1785462971000,
+      "tp1_announced": true
     },
     {
       "id": 336,
@@ -213,6 +214,18 @@
       "leverage": 6,
       "opened_at": "2026-07-31 13:42 UTC",
       "opened_ms": 1785505332805
+    },
+    {
+      "id": 339,
+      "symbol": "XSPCX/USDT",
+      "direction": "SHORT",
+      "entry": 109.16,
+      "stop": 113.59571428571428,
+      "target1": 104.72428571428571,
+      "target": 100.28857142857143,
+      "leverage": 2,
+      "opened_at": "2026-07-31 17:20 UTC",
+      "opened_ms": 1785518434103
     }
   ],
   "stats": {
@@ -228,7 +241,7 @@
     "2026-07": {
       "tp": 66,
       "sl": 204,
-      "tp1": 42,
+      "tp1": 43,
       "tp2": 18,
       "be": 36,
       "r_sum": 16.0,
