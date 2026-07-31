@@ -1,5 +1,5 @@
 {
-  "next_id": 337,
+  "next_id": 338,
   "open": [
     {
       "id": 286,
@@ -189,6 +189,18 @@
       "leverage": 2,
       "opened_at": "2026-07-31 06:37 UTC",
       "opened_ms": 1785479860974
+    },
+    {
+      "id": 337,
+      "symbol": "DOGE/USDT",
+      "direction": "SHORT",
+      "entry": 0.0695,
+      "stop": 0.07082964285714287,
+      "target1": 0.06817035714285714,
+      "target": 0.06684071428571428,
+      "leverage": 5,
+      "opened_at": "2026-07-31 10:29 UTC",
+      "opened_ms": 1785493759582
     }
   ],
   "stats": {
