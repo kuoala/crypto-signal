@@ -1,5 +1,5 @@
 {
-  "next_id": 336,
+  "next_id": 337,
   "open": [
     {
       "id": 286,
@@ -167,18 +167,6 @@
       "opened_ms": 1785418145632
     },
     {
-      "id": 334,
-      "symbol": "XGOOGL/USDT",
-      "direction": "SHORT",
-      "entry": 334.92,
-      "stop": 341.4771428571429,
-      "target1": 328.36285714285714,
-      "target": 321.80571428571426,
-      "leverage": 5,
-      "opened_at": "2026-07-30 20:56 UTC",
-      "opened_ms": 1785445018957
-    },
-    {
       "id": 335,
       "symbol": "XSPCX/USDT",
       "direction": "SHORT",
@@ -189,6 +177,18 @@
       "leverage": 3,
       "opened_at": "2026-07-31 01:56 UTC",
       "opened_ms": 1785462971000
+    },
+    {
+      "id": 336,
+      "symbol": "RE/USDT",
+      "direction": "SHORT",
+      "entry": 0.4423,
+      "stop": 0.488395,
+      "target1": 0.39620500000000003,
+      "target": 0.35011000000000003,
+      "leverage": 2,
+      "opened_at": "2026-07-31 06:37 UTC",
+      "opened_ms": 1785479860974
     }
   ],
   "stats": {
@@ -203,12 +203,12 @@
     },
     "2026-07": {
       "tp": 66,
-      "sl": 203,
+      "sl": 204,
       "tp1": 42,
       "tp2": 18,
       "be": 36,
-      "r_sum": 17.0,
-      "r_count": 82
+      "r_sum": 16.0,
+      "r_count": 83
     }
   }
 }
