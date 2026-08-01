@@ -1,20 +1,6 @@
 {
-  "next_id": 343,
+  "next_id": 344,
   "open": [
-    {
-      "id": 286,
-      "symbol": "SPX/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.3537,
-      "stop": 0.3736714285714286,
-      "target1": 0.33372857142857143,
-      "target": 0.3137571428571429,
-      "leverage": 2,
-      "opened_at": "2026-07-23 13:26 UTC",
-      "opened_ms": 1784813191087,
-      "is_meme": true,
-      "tp1_announced": true
-    },
     {
       "id": 293,
       "symbol": "SOL/USDT:USDT",
@@ -107,18 +93,6 @@
       "opened_ms": 1785289597862
     },
     {
-      "id": 328,
-      "symbol": "AVAX/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 6.43,
-      "stop": 6.624464285714286,
-      "target1": 6.235535714285714,
-      "target": 6.041071428571428,
-      "leverage": 3,
-      "opened_at": "2026-07-29 06:24 UTC",
-      "opened_ms": 1785306299127
-    },
-    {
       "id": 329,
       "symbol": "PEPE/USDT",
       "direction": "SHORT",
@@ -201,7 +175,8 @@
       "target": 0.06684071428571428,
       "leverage": 5,
       "opened_at": "2026-07-31 10:29 UTC",
-      "opened_ms": 1785493759582
+      "opened_ms": 1785493759582,
+      "tp1_announced": true
     },
     {
       "id": 338,
@@ -213,7 +188,8 @@
       "target": 0.06692857142857142,
       "leverage": 6,
       "opened_at": "2026-07-31 13:42 UTC",
-      "opened_ms": 1785505332805
+      "opened_ms": 1785505332805,
+      "tp1_announced": true
     },
     {
       "id": 339,
@@ -262,6 +238,18 @@
       "leverage": 3,
       "opened_at": "2026-08-01 06:21 UTC",
       "opened_ms": 1785565287943
+    },
+    {
+      "id": 343,
+      "symbol": "DOGE/USDT",
+      "direction": "SHORT",
+      "entry": 0.06856,
+      "stop": 0.06987892857142856,
+      "target1": 0.06724107142857143,
+      "target": 0.06592214285714285,
+      "leverage": 5,
+      "opened_at": "2026-08-01 20:41 UTC",
+      "opened_ms": 1785616872091
     }
   ],
   "stats": {
@@ -282,6 +270,15 @@
       "be": 36,
       "r_sum": 16.0,
       "r_count": 83
+    },
+    "2026-08": {
+      "tp": 2,
+      "sl": 0,
+      "tp1": 2,
+      "tp2": 2,
+      "be": 0,
+      "r_sum": 3.0,
+      "r_count": 2
     }
   }
 }
