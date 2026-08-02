@@ -166,32 +166,6 @@
       "opened_ms": 1785479860974
     },
     {
-      "id": 337,
-      "symbol": "DOGE/USDT",
-      "direction": "SHORT",
-      "entry": 0.0695,
-      "stop": 0.07082964285714287,
-      "target1": 0.06817035714285714,
-      "target": 0.06684071428571428,
-      "leverage": 5,
-      "opened_at": "2026-07-31 10:29 UTC",
-      "opened_ms": 1785493759582,
-      "tp1_announced": true
-    },
-    {
-      "id": 338,
-      "symbol": "DOGE/USDT",
-      "direction": "SHORT",
-      "entry": 0.06944,
-      "stop": 0.07069571428571429,
-      "target1": 0.06818428571428571,
-      "target": 0.06692857142857142,
-      "leverage": 6,
-      "opened_at": "2026-07-31 13:42 UTC",
-      "opened_ms": 1785505332805,
-      "tp1_announced": true
-    },
-    {
       "id": 339,
       "symbol": "XSPCX/USDT",
       "direction": "SHORT",
@@ -276,9 +250,9 @@
       "sl": 0,
       "tp1": 2,
       "tp2": 2,
-      "be": 0,
-      "r_sum": 3.0,
-      "r_count": 2
+      "be": 2,
+      "r_sum": 4.0,
+      "r_count": 4
     }
   }
 }
