@@ -116,19 +116,6 @@
       "opened_ms": 1785418145632
     },
     {
-      "id": 335,
-      "symbol": "XSPCX/USDT",
-      "direction": "SHORT",
-      "entry": 113.02,
-      "stop": 117.46,
-      "target1": 108.58,
-      "target": 104.13999999999999,
-      "leverage": 3,
-      "opened_at": "2026-07-31 01:56 UTC",
-      "opened_ms": 1785462971000,
-      "tp1_announced": true
-    },
-    {
       "id": 336,
       "symbol": "RE/USDT",
       "direction": "SHORT",
@@ -140,42 +127,6 @@
       "opened_at": "2026-07-31 06:37 UTC",
       "opened_ms": 1785479860974,
       "tp1_announced": true
-    },
-    {
-      "id": 339,
-      "symbol": "XSPCX/USDT",
-      "direction": "SHORT",
-      "entry": 109.16,
-      "stop": 113.59571428571428,
-      "target1": 104.72428571428571,
-      "target": 100.28857142857143,
-      "leverage": 2,
-      "opened_at": "2026-07-31 17:20 UTC",
-      "opened_ms": 1785518434103
-    },
-    {
-      "id": 344,
-      "symbol": "XSKHY/USDT",
-      "direction": "SHORT",
-      "entry": 139.32,
-      "stop": 144.08464285714285,
-      "target1": 134.55535714285713,
-      "target": 129.79071428571427,
-      "leverage": 3,
-      "opened_at": "2026-08-03 11:13 UTC",
-      "opened_ms": 1785755606262
-    },
-    {
-      "id": 345,
-      "symbol": "XSKHY/USDT",
-      "direction": "SHORT",
-      "entry": 137.96,
-      "stop": 143.33107142857145,
-      "target1": 132.58892857142857,
-      "target": 127.21785714285714,
-      "leverage": 3,
-      "opened_at": "2026-08-03 14:17 UTC",
-      "opened_ms": 1785766655975
     }
   ],
   "stats": {
@@ -199,12 +150,12 @@
     },
     "2026-08": {
       "tp": 2,
-      "sl": 5,
+      "sl": 8,
       "tp1": 3,
       "tp2": 2,
-      "be": 3,
-      "r_sum": -0.5,
-      "r_count": 10
+      "be": 4,
+      "r_sum": -3.0,
+      "r_count": 14
     }
   }
 }
