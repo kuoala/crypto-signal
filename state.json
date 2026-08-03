@@ -1,5 +1,5 @@
 {
-  "next_id": 344,
+  "next_id": 345,
   "open": [
     {
       "id": 293,
@@ -187,6 +187,18 @@
       "leverage": 3,
       "opened_at": "2026-08-01 06:21 UTC",
       "opened_ms": 1785565287943
+    },
+    {
+      "id": 344,
+      "symbol": "XSKHY/USDT",
+      "direction": "SHORT",
+      "entry": 139.32,
+      "stop": 144.08464285714285,
+      "target1": 134.55535714285713,
+      "target": 129.79071428571427,
+      "leverage": 3,
+      "opened_at": "2026-08-03 11:13 UTC",
+      "opened_ms": 1785755606262
     }
   ],
   "stats": {
