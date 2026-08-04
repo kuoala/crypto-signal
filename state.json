@@ -127,18 +127,6 @@
       "opened_at": "2026-07-31 06:37 UTC",
       "opened_ms": 1785479860974,
       "tp1_announced": true
-    },
-    {
-      "id": 346,
-      "symbol": "GRAM/USDT",
-      "direction": "SHORT",
-      "entry": 1.341,
-      "stop": 1.3720714285714286,
-      "target1": 1.3099285714285713,
-      "target": 1.278857142857143,
-      "leverage": 4,
-      "opened_at": "2026-08-04 01:30 UTC",
-      "opened_ms": 1785807048018
     }
   ],
   "stats": {
@@ -162,12 +150,12 @@
     },
     "2026-08": {
       "tp": 2,
-      "sl": 8,
+      "sl": 9,
       "tp1": 3,
       "tp2": 2,
       "be": 4,
-      "r_sum": -3.0,
-      "r_count": 14
+      "r_sum": -4.0,
+      "r_count": 15
     }
   }
 }
