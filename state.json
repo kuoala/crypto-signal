@@ -1,5 +1,5 @@
 {
-  "next_id": 347,
+  "next_id": 348,
   "open": [
     {
       "id": 293,
@@ -127,6 +127,18 @@
       "opened_at": "2026-07-31 06:37 UTC",
       "opened_ms": 1785479860974,
       "tp1_announced": true
+    },
+    {
+      "id": 347,
+      "symbol": "GRAM/USDT",
+      "direction": "SHORT",
+      "entry": 1.386,
+      "stop": 1.4187857142857143,
+      "target1": 1.3532142857142855,
+      "target": 1.3204285714285713,
+      "leverage": 4,
+      "opened_at": "2026-08-04 10:28 UTC",
+      "opened_ms": 1785839290950
     }
   ],
   "stats": {
