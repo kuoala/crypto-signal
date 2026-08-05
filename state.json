@@ -1,5 +1,5 @@
 {
-  "next_id": 351,
+  "next_id": 352,
   "open": [
     {
       "id": 293,
@@ -153,18 +153,6 @@
       "opened_ms": 1785851363741
     },
     {
-      "id": 349,
-      "symbol": "RENDER/USDT",
-      "direction": "SHORT",
-      "entry": 1.338,
-      "stop": 1.365,
-      "target1": 1.3110000000000002,
-      "target": 1.284,
-      "leverage": 5,
-      "opened_at": "2026-08-05 01:44 UTC",
-      "opened_ms": 1785894288762
-    },
-    {
       "id": 350,
       "symbol": "ETC/USDT",
       "direction": "SHORT",
@@ -175,6 +163,18 @@
       "leverage": 6,
       "opened_at": "2026-08-05 06:20 UTC",
       "opened_ms": 1785910828773
+    },
+    {
+      "id": 351,
+      "symbol": "XAMD/USDT",
+      "direction": "SHORT",
+      "entry": 474.22,
+      "stop": 500.3414285714286,
+      "target1": 448.09857142857146,
+      "target": 421.9771428571429,
+      "leverage": 2,
+      "opened_at": "2026-08-05 10:26 UTC",
+      "opened_ms": 1785925606915
     }
   ],
   "stats": {
@@ -198,12 +198,12 @@
     },
     "2026-08": {
       "tp": 2,
-      "sl": 9,
+      "sl": 10,
       "tp1": 3,
       "tp2": 2,
       "be": 4,
-      "r_sum": -4.0,
-      "r_count": 15
+      "r_sum": -5.0,
+      "r_count": 16
     }
   }
 }
