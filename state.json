@@ -1,5 +1,5 @@
 {
-  "next_id": 349,
+  "next_id": 350,
   "open": [
     {
       "id": 293,
@@ -151,6 +151,18 @@
       "leverage": 4,
       "opened_at": "2026-08-04 13:49 UTC",
       "opened_ms": 1785851363741
+    },
+    {
+      "id": 349,
+      "symbol": "RENDER/USDT",
+      "direction": "SHORT",
+      "entry": 1.338,
+      "stop": 1.365,
+      "target1": 1.3110000000000002,
+      "target": 1.284,
+      "leverage": 5,
+      "opened_at": "2026-08-05 01:44 UTC",
+      "opened_ms": 1785894288762
     }
   ],
   "stats": {
