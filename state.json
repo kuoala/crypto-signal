@@ -141,31 +141,6 @@
       "opened_ms": 1785839290950
     },
     {
-      "id": 348,
-      "symbol": "GRAM/USDT",
-      "direction": "SHORT",
-      "entry": 1.378,
-      "stop": 1.4120714285714284,
-      "target1": 1.3439285714285714,
-      "target": 1.3098571428571428,
-      "leverage": 4,
-      "opened_at": "2026-08-04 13:49 UTC",
-      "opened_ms": 1785851363741
-    },
-    {
-      "id": 350,
-      "symbol": "ETC/USDT",
-      "direction": "SHORT",
-      "entry": 6.529,
-      "stop": 6.630571428571429,
-      "target1": 6.427428571428571,
-      "target": 6.325857142857143,
-      "leverage": 6,
-      "opened_at": "2026-08-05 06:20 UTC",
-      "opened_ms": 1785910828773,
-      "tp1_announced": true
-    },
-    {
       "id": 352,
       "symbol": "ETC/USDT",
       "direction": "SHORT",
@@ -199,12 +174,12 @@
     },
     "2026-08": {
       "tp": 2,
-      "sl": 11,
+      "sl": 12,
       "tp1": 4,
       "tp2": 2,
-      "be": 4,
-      "r_sum": -6.0,
-      "r_count": 17
+      "be": 5,
+      "r_sum": -6.5,
+      "r_count": 19
     }
   }
 }
