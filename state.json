@@ -162,19 +162,8 @@
       "target": 6.325857142857143,
       "leverage": 6,
       "opened_at": "2026-08-05 06:20 UTC",
-      "opened_ms": 1785910828773
-    },
-    {
-      "id": 351,
-      "symbol": "XAMD/USDT",
-      "direction": "SHORT",
-      "entry": 474.22,
-      "stop": 500.3414285714286,
-      "target1": 448.09857142857146,
-      "target": 421.9771428571429,
-      "leverage": 2,
-      "opened_at": "2026-08-05 10:26 UTC",
-      "opened_ms": 1785925606915
+      "opened_ms": 1785910828773,
+      "tp1_announced": true
     },
     {
       "id": 352,
@@ -210,12 +199,12 @@
     },
     "2026-08": {
       "tp": 2,
-      "sl": 10,
-      "tp1": 3,
+      "sl": 11,
+      "tp1": 4,
       "tp2": 2,
       "be": 4,
-      "r_sum": -5.0,
-      "r_count": 16
+      "r_sum": -6.0,
+      "r_count": 17
     }
   }
 }
