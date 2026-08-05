@@ -1,5 +1,5 @@
 {
-  "next_id": 350,
+  "next_id": 351,
   "open": [
     {
       "id": 293,
@@ -163,6 +163,18 @@
       "leverage": 5,
       "opened_at": "2026-08-05 01:44 UTC",
       "opened_ms": 1785894288762
+    },
+    {
+      "id": 350,
+      "symbol": "ETC/USDT",
+      "direction": "SHORT",
+      "entry": 6.529,
+      "stop": 6.630571428571429,
+      "target1": 6.427428571428571,
+      "target": 6.325857142857143,
+      "leverage": 6,
+      "opened_at": "2026-08-05 06:20 UTC",
+      "opened_ms": 1785910828773
     }
   ],
   "stats": {
