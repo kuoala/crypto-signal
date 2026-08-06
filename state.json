@@ -1,5 +1,5 @@
 {
-  "next_id": 360,
+  "next_id": 361,
   "open": [
     {
       "id": 293,
@@ -163,6 +163,18 @@
       "opened_at": "2026-08-06 10:30 UTC",
       "opened_ms": 1786012200100,
       "is_meme": true
+    },
+    {
+      "id": 360,
+      "symbol": "XSKHY/USDT",
+      "direction": "SHORT",
+      "entry": 141.65,
+      "stop": 148.8617857142857,
+      "target1": 134.4382142857143,
+      "target": 127.22642857142858,
+      "leverage": 2,
+      "opened_at": "2026-08-06 13:43 UTC",
+      "opened_ms": 1786023792670
     }
   ],
   "stats": {
