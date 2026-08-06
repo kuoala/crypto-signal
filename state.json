@@ -1,5 +1,5 @@
 {
-  "next_id": 353,
+  "next_id": 354,
   "open": [
     {
       "id": 293,
@@ -151,6 +151,18 @@
       "leverage": 6,
       "opened_at": "2026-08-05 13:44 UTC",
       "opened_ms": 1785937483561
+    },
+    {
+      "id": 353,
+      "symbol": "XSPCX/USDT",
+      "direction": "SHORT",
+      "entry": 109.57,
+      "stop": 117.22214285714286,
+      "target1": 101.91785714285713,
+      "target": 94.26571428571428,
+      "leverage": 2,
+      "opened_at": "2026-08-06 01:44 UTC",
+      "opened_ms": 1785980665728
     }
   ],
   "stats": {
