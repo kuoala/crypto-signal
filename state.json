@@ -1,5 +1,5 @@
 {
-  "next_id": 355,
+  "next_id": 360,
   "open": [
     {
       "id": 293,
@@ -42,80 +42,6 @@
       "tp1_announced": true
     },
     {
-      "id": 325,
-      "symbol": "SKHYNIXSTOCK/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 1062.0,
-      "stop": 1222.8160714285714,
-      "target1": 901.1839285714285,
-      "target": 740.367857142857,
-      "leverage": 2,
-      "opened_at": "2026-07-28 17:20 UTC",
-      "opened_ms": 1785259210416,
-      "tp1_announced": true
-    },
-    {
-      "id": 326,
-      "symbol": "SKHYNIXSTOCK/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 1074.31,
-      "stop": 1235.1260714285713,
-      "target1": 913.4939285714285,
-      "target": 752.677857142857,
-      "leverage": 2,
-      "opened_at": "2026-07-28 20:59 UTC",
-      "opened_ms": 1785272398039,
-      "tp1_announced": true
-    },
-    {
-      "id": 327,
-      "symbol": "SNDKSTOCK/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 1072.0,
-      "stop": 1297.6942857142858,
-      "target1": 846.3057142857142,
-      "target": 620.6114285714284,
-      "leverage": 2,
-      "opened_at": "2026-07-29 01:46 UTC",
-      "opened_ms": 1785289597862
-    },
-    {
-      "id": 331,
-      "symbol": "SPX500/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 7330.6,
-      "stop": 7440.625,
-      "target1": 7220.575000000001,
-      "target": 7110.55,
-      "leverage": 7,
-      "opened_at": "2026-07-30 06:20 UTC",
-      "opened_ms": 1785392424105
-    },
-    {
-      "id": 332,
-      "symbol": "SPX500/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 7344.9,
-      "stop": 7455.985714285714,
-      "target1": 7233.814285714286,
-      "target": 7122.728571428571,
-      "leverage": 7,
-      "opened_at": "2026-07-30 10:14 UTC",
-      "opened_ms": 1785406474114
-    },
-    {
-      "id": 333,
-      "symbol": "SKHYNIXSTOCK/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 986.51,
-      "stop": 1155.1571428571428,
-      "target1": 817.8628571428571,
-      "target": 649.2157142857142,
-      "leverage": 2,
-      "opened_at": "2026-07-30 13:29 UTC",
-      "opened_ms": 1785418145632
-    },
-    {
       "id": 336,
       "symbol": "RE/USDT",
       "direction": "SHORT",
@@ -150,7 +76,8 @@
       "target": 6.275214285714286,
       "leverage": 6,
       "opened_at": "2026-08-05 13:44 UTC",
-      "opened_ms": 1785937483561
+      "opened_ms": 1785937483561,
+      "tp1_announced": true
     },
     {
       "id": 353,
@@ -175,6 +102,67 @@
       "leverage": 2,
       "opened_at": "2026-08-06 06:23 UTC",
       "opened_ms": 1785997403046
+    },
+    {
+      "id": 355,
+      "symbol": "SKHYNIXSTOCK/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 1057.77,
+      "stop": 1116.140357142857,
+      "target1": 999.3996428571429,
+      "target": 941.0292857142858,
+      "leverage": 2,
+      "opened_at": "2026-08-06 10:29 UTC",
+      "opened_ms": 1786012190325
+    },
+    {
+      "id": 356,
+      "symbol": "FET/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.1387,
+      "stop": 0.14354285714285714,
+      "target1": 0.13385714285714284,
+      "target": 0.1290142857142857,
+      "leverage": 3,
+      "opened_at": "2026-08-06 10:29 UTC",
+      "opened_ms": 1786012191885
+    },
+    {
+      "id": 357,
+      "symbol": "SNXX/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 9.32,
+      "stop": 10.887500000000001,
+      "target1": 7.7524999999999995,
+      "target": 6.185,
+      "leverage": 2,
+      "opened_at": "2026-08-06 10:29 UTC",
+      "opened_ms": 1786012193408
+    },
+    {
+      "id": 358,
+      "symbol": "LINK/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 8.1,
+      "stop": 8.268642857142856,
+      "target1": 7.931357142857142,
+      "target": 7.762714285714286,
+      "leverage": 5,
+      "opened_at": "2026-08-06 10:29 UTC",
+      "opened_ms": 1786012194921
+    },
+    {
+      "id": 359,
+      "symbol": "1000BONK/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.002773,
+      "stop": 0.002871142857142857,
+      "target1": 0.002674857142857143,
+      "target": 0.0025767142857142855,
+      "leverage": 3,
+      "opened_at": "2026-08-06 10:30 UTC",
+      "opened_ms": 1786012200100,
+      "is_meme": true
     }
   ],
   "stats": {
@@ -198,12 +186,12 @@
     },
     "2026-08": {
       "tp": 2,
-      "sl": 12,
-      "tp1": 4,
+      "sl": 16,
+      "tp1": 5,
       "tp2": 2,
-      "be": 5,
-      "r_sum": -6.5,
-      "r_count": 19
+      "be": 7,
+      "r_sum": -9.5,
+      "r_count": 25
     }
   }
 }
