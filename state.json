@@ -1,5 +1,5 @@
 {
-  "next_id": 370,
+  "next_id": 372,
   "open": [
     {
       "id": 293,
@@ -77,19 +77,6 @@
       "leverage": 2,
       "opened_at": "2026-08-06 06:23 UTC",
       "opened_ms": 1785997403046
-    },
-    {
-      "id": 355,
-      "symbol": "SKHYNIXSTOCK/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 1057.77,
-      "stop": 1116.140357142857,
-      "target1": 999.3996428571429,
-      "target": 941.0292857142858,
-      "leverage": 2,
-      "opened_at": "2026-08-06 10:29 UTC",
-      "opened_ms": 1786012190325,
-      "tp1_announced": true
     },
     {
       "id": 356,
@@ -235,6 +222,31 @@
       "leverage": 3,
       "opened_at": "2026-08-07 12:41 UTC",
       "opened_ms": 1786106501163
+    },
+    {
+      "id": 370,
+      "symbol": "DRAM/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 49.98,
+      "stop": 52.61035714285714,
+      "target1": 47.349642857142854,
+      "target": 44.71928571428571,
+      "leverage": 2,
+      "opened_at": "2026-08-07 16:43 UTC",
+      "opened_ms": 1786120981634
+    },
+    {
+      "id": 371,
+      "symbol": "ORDI/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 3.302,
+      "stop": 3.4374285714285717,
+      "target1": 3.1665714285714284,
+      "target": 3.031142857142857,
+      "leverage": 2,
+      "opened_at": "2026-08-07 16:43 UTC",
+      "opened_ms": 1786120986874,
+      "is_meme": true
     }
   ],
   "stats": {
@@ -261,9 +273,9 @@
       "sl": 18,
       "tp1": 7,
       "tp2": 3,
-      "be": 8,
-      "r_sum": -9.5,
-      "r_count": 29
+      "be": 9,
+      "r_sum": -9.0,
+      "r_count": 30
     }
   }
 }
