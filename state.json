@@ -1,5 +1,5 @@
 {
-  "next_id": 361,
+  "next_id": 365,
   "open": [
     {
       "id": 293,
@@ -67,19 +67,6 @@
       "opened_ms": 1785839290950
     },
     {
-      "id": 352,
-      "symbol": "ETC/USDT",
-      "direction": "SHORT",
-      "entry": 6.488,
-      "stop": 6.594392857142857,
-      "target1": 6.381607142857144,
-      "target": 6.275214285714286,
-      "leverage": 6,
-      "opened_at": "2026-08-05 13:44 UTC",
-      "opened_ms": 1785937483561,
-      "tp1_announced": true
-    },
-    {
       "id": 353,
       "symbol": "XSPCX/USDT",
       "direction": "SHORT",
@@ -140,18 +127,6 @@
       "opened_ms": 1786012193408
     },
     {
-      "id": 358,
-      "symbol": "LINK/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 8.1,
-      "stop": 8.268642857142856,
-      "target1": 7.931357142857142,
-      "target": 7.762714285714286,
-      "leverage": 5,
-      "opened_at": "2026-08-06 10:29 UTC",
-      "opened_ms": 1786012194921
-    },
-    {
       "id": 359,
       "symbol": "1000BONK/USDT:USDT",
       "direction": "SHORT",
@@ -175,6 +150,54 @@
       "leverage": 2,
       "opened_at": "2026-08-06 13:43 UTC",
       "opened_ms": 1786023792670
+    },
+    {
+      "id": 361,
+      "symbol": "VIC/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.02889,
+      "stop": 0.03674357142857143,
+      "target1": 0.02103642857142857,
+      "target": 0.013182857142857142,
+      "leverage": 2,
+      "opened_at": "2026-08-07 00:52 UTC",
+      "opened_ms": 1786063925350
+    },
+    {
+      "id": 362,
+      "symbol": "VANRY/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.0032,
+      "stop": 0.003507071428571429,
+      "target1": 0.0028929285714285715,
+      "target": 0.002585857142857143,
+      "leverage": 2,
+      "opened_at": "2026-08-07 00:52 UTC",
+      "opened_ms": 1786063927203
+    },
+    {
+      "id": 363,
+      "symbol": "GUA/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.04314,
+      "stop": 0.047873571428571425,
+      "target1": 0.03840642857142857,
+      "target": 0.03367285714285714,
+      "leverage": 2,
+      "opened_at": "2026-08-07 00:52 UTC",
+      "opened_ms": 1786063928929
+    },
+    {
+      "id": 364,
+      "symbol": "TLM/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.001627,
+      "stop": 0.00174775,
+      "target1": 0.00150625,
+      "target": 0.0013854999999999998,
+      "leverage": 2,
+      "opened_at": "2026-08-07 00:52 UTC",
+      "opened_ms": 1786063930677
     }
   ],
   "stats": {
@@ -198,12 +221,12 @@
     },
     "2026-08": {
       "tp": 2,
-      "sl": 16,
+      "sl": 17,
       "tp1": 5,
       "tp2": 2,
-      "be": 7,
-      "r_sum": -9.5,
-      "r_count": 25
+      "be": 8,
+      "r_sum": -10.0,
+      "r_count": 27
     }
   }
 }
