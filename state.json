@@ -1,5 +1,5 @@
 {
-  "next_id": 367,
+  "next_id": 370,
   "open": [
     {
       "id": 293,
@@ -199,6 +199,42 @@
       "leverage": 5,
       "opened_at": "2026-08-07 05:28 UTC",
       "opened_ms": 1786080510247
+    },
+    {
+      "id": 367,
+      "symbol": "PENGU/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.006001,
+      "stop": 0.006201142857142857,
+      "target1": 0.005800857142857143,
+      "target": 0.005600714285714286,
+      "leverage": 3,
+      "opened_at": "2026-08-07 12:41 UTC",
+      "opened_ms": 1786106497886
+    },
+    {
+      "id": 368,
+      "symbol": "BTC/USDT:USDT",
+      "direction": "LONG",
+      "entry": 65147.1,
+      "stop": 64398.66428571428,
+      "target1": 65895.53571428571,
+      "target": 66643.97142857143,
+      "leverage": 9,
+      "opened_at": "2026-08-07 12:41 UTC",
+      "opened_ms": 1786106499523
+    },
+    {
+      "id": 369,
+      "symbol": "ENA/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.0948,
+      "stop": 0.09115285714285713,
+      "target1": 0.09844714285714286,
+      "target": 0.1020942857142857,
+      "leverage": 3,
+      "opened_at": "2026-08-07 12:41 UTC",
+      "opened_ms": 1786106501163
     }
   ],
   "stats": {
