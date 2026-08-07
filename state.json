@@ -1,5 +1,5 @@
 {
-  "next_id": 365,
+  "next_id": 367,
   "open": [
     {
       "id": 293,
@@ -55,18 +55,6 @@
       "tp1_announced": true
     },
     {
-      "id": 347,
-      "symbol": "GRAM/USDT",
-      "direction": "SHORT",
-      "entry": 1.386,
-      "stop": 1.4187857142857143,
-      "target1": 1.3532142857142855,
-      "target": 1.3204285714285713,
-      "leverage": 4,
-      "opened_at": "2026-08-04 10:28 UTC",
-      "opened_ms": 1785839290950
-    },
-    {
       "id": 353,
       "symbol": "XSPCX/USDT",
       "direction": "SHORT",
@@ -100,7 +88,8 @@
       "target": 941.0292857142858,
       "leverage": 2,
       "opened_at": "2026-08-06 10:29 UTC",
-      "opened_ms": 1786012190325
+      "opened_ms": 1786012190325,
+      "tp1_announced": true
     },
     {
       "id": 356,
@@ -125,19 +114,6 @@
       "leverage": 2,
       "opened_at": "2026-08-06 10:29 UTC",
       "opened_ms": 1786012193408
-    },
-    {
-      "id": 359,
-      "symbol": "1000BONK/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.002773,
-      "stop": 0.002871142857142857,
-      "target1": 0.002674857142857143,
-      "target": 0.0025767142857142855,
-      "leverage": 3,
-      "opened_at": "2026-08-06 10:30 UTC",
-      "opened_ms": 1786012200100,
-      "is_meme": true
     },
     {
       "id": 360,
@@ -198,6 +174,30 @@
       "leverage": 2,
       "opened_at": "2026-08-07 00:52 UTC",
       "opened_ms": 1786063930677
+    },
+    {
+      "id": 365,
+      "symbol": "TAO/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 190.22,
+      "stop": 194.87964285714284,
+      "target1": 185.56035714285716,
+      "target": 180.9007142857143,
+      "leverage": 4,
+      "opened_at": "2026-08-07 05:28 UTC",
+      "opened_ms": 1786080508830
+    },
+    {
+      "id": 366,
+      "symbol": "SEI/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.04103,
+      "stop": 0.04185392857142857,
+      "target1": 0.040206071428571424,
+      "target": 0.03938214285714286,
+      "leverage": 5,
+      "opened_at": "2026-08-07 05:28 UTC",
+      "opened_ms": 1786080510247
     }
   ],
   "stats": {
@@ -220,13 +220,13 @@
       "r_count": 83
     },
     "2026-08": {
-      "tp": 2,
-      "sl": 17,
-      "tp1": 5,
-      "tp2": 2,
+      "tp": 3,
+      "sl": 18,
+      "tp1": 6,
+      "tp2": 3,
       "be": 8,
-      "r_sum": -10.0,
-      "r_count": 27
+      "r_sum": -9.5,
+      "r_count": 29
     }
   }
 }
