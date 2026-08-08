@@ -1,5 +1,5 @@
 {
-  "next_id": 373,
+  "next_id": 374,
   "open": [
     {
       "id": 293,
@@ -165,18 +165,6 @@
       "opened_ms": 1786063930677
     },
     {
-      "id": 365,
-      "symbol": "TAO/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 190.22,
-      "stop": 194.87964285714284,
-      "target1": 185.56035714285716,
-      "target": 180.9007142857143,
-      "leverage": 4,
-      "opened_at": "2026-08-07 05:28 UTC",
-      "opened_ms": 1786080508830
-    },
-    {
       "id": 366,
       "symbol": "SEI/USDT:USDT",
       "direction": "SHORT",
@@ -211,18 +199,6 @@
       "leverage": 9,
       "opened_at": "2026-08-07 12:41 UTC",
       "opened_ms": 1786106499523
-    },
-    {
-      "id": 369,
-      "symbol": "ENA/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.0948,
-      "stop": 0.09115285714285713,
-      "target1": 0.09844714285714286,
-      "target": 0.1020942857142857,
-      "leverage": 3,
-      "opened_at": "2026-08-07 12:41 UTC",
-      "opened_ms": 1786106501163
     },
     {
       "id": 370,
@@ -260,6 +236,18 @@
       "leverage": 5,
       "opened_at": "2026-08-07 20:30 UTC",
       "opened_ms": 1786134658159
+    },
+    {
+      "id": 373,
+      "symbol": "CYS/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.9549,
+      "stop": 0.7601571428571428,
+      "target1": 1.1496428571428572,
+      "target": 1.3443857142857143,
+      "leverage": 2,
+      "opened_at": "2026-08-08 00:56 UTC",
+      "opened_ms": 1786150615211
     }
   ],
   "stats": {
@@ -283,12 +271,12 @@
     },
     "2026-08": {
       "tp": 3,
-      "sl": 18,
+      "sl": 20,
       "tp1": 8,
       "tp2": 3,
       "be": 9,
-      "r_sum": -9.0,
-      "r_count": 30
+      "r_sum": -11.0,
+      "r_count": 32
     }
   }
 }
