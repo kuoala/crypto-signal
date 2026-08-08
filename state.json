@@ -188,19 +188,6 @@
       "opened_ms": 1786120981634
     },
     {
-      "id": 371,
-      "symbol": "ORDI/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 3.302,
-      "stop": 3.4374285714285717,
-      "target1": 3.1665714285714284,
-      "target": 3.031142857142857,
-      "leverage": 2,
-      "opened_at": "2026-08-07 16:43 UTC",
-      "opened_ms": 1786120986874,
-      "is_meme": true
-    },
-    {
       "id": 372,
       "symbol": "RENDER/USDT:USDT",
       "direction": "SHORT",
@@ -258,12 +245,12 @@
     },
     "2026-08": {
       "tp": 3,
-      "sl": 21,
+      "sl": 22,
       "tp1": 8,
       "tp2": 3,
       "be": 10,
-      "r_sum": -11.5,
-      "r_count": 34
+      "r_sum": -12.5,
+      "r_count": 35
     }
   }
 }
