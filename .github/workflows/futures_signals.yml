@@ -45,7 +45,11 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add state.json
+            # trades.jsonl is the per-trade record the backtest reads back; it
+            # only exists once a trade has closed, so add it opportunistically.
+            if [ -f trades.jsonl ]; then git add trades.jsonl; fi
             git commit -m "chore: update signal state [skip ci]" || echo "no state changes"
+            git pull --rebase --autostash || echo "rebase skipped"
             git push || echo "nothing to push"
           else
             echo "no state.json to commit"

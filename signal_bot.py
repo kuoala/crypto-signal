@@ -4,17 +4,22 @@
 Crypto Futures Signal Bot  (Binance USDT-Perpetual)
 ---------------------------------------------------
 - 100% real, free data from Binance (no API key required)
-- Scans the entire USDT futures market
+- Scans the most liquid USDT futures pairs (MAX_SCAN_SYMBOLS)
 - Combined strategy: EMA cross + RSI + MACD (direction), ATR (stop loss), R/R (target)
-- Quality filters (raise win rate): BTC-regime + 1d higher-TF alignment, fresh-momentum
-  gate (no chasing), RSI exhaustion guard, and stablecoin/pegged-asset + micro-move exclusion
+- Quality filters (raise win rate): ADX trend-strength gate, BTC-regime + 1d higher-TF
+  alignment, fresh-momentum gate (no chasing), RSI exhaustion guard, and stablecoin/
+  pegged-asset + micro-move + blow-off-volatility exclusion
 - Trust features: sequential signal ID, UTC timestamp, risk/reward, one-line reason,
   TradingView chart link
 - Outcome tracker: watches open signals and auto-posts TP/SL results + monthly win rate
 - Auto-posts to a Telegram channel
 - Default timeframe: 4h
 
-State is persisted in state.json (next ID, open signals, monthly stats).
+Filter values are not guesses — see research/ for the backtest harness that chose them,
+and research/verify_parity.py, which checks that harness against analyze() itself.
+
+State is persisted in state.json (next ID, open signals, monthly stats); every closed
+trade is appended to trades.jsonl.
 
 Install:  pip install ccxt pandas numpy requests
 Run:      python signal_bot.py
@@ -49,16 +54,20 @@ CONFIG = {
     "CANDLES": 200,             # number of candles used for indicators
     "QUOTE": "USDT",            # USDT pairs only
     "MIN_24H_VOLUME_USDT": 5_000_000,    # liquidity filter (drop low-volume coins)
+    "MAX_SCAN_SYMBOLS": 40,     # only scan the N most liquid pairs (see note below)
     "MAX_SIGNALS_PER_RUN": 5,   # max NEW signals per run (strongest ones)
 
     # --- State / tracking ---
     "STATE_FILE": "state.json",
+    "TRADE_LOG": "trades.jsonl",  # one line per closed trade, for backtest/audit
     "RESULT_CHECK_TF": "1h",    # finer timeframe used to detect TP/SL hits between runs
+    "MAX_HOLD_DAYS": 10,        # close anything still open after this, at market
 
     # --- Risk management ---
     "ATR_PERIOD": 14,
     "ATR_SL_MULT": 1.5,         # stop loss = ATR × this multiplier
     "RR_RATIO": 2.0,            # target based on risk/reward ratio
+    "TP1_FRACTION": 0.3,        # portion of the position booked at Target 1 (+1R)
     "MAX_LEVERAGE": 10,         # max suggested leverage
 
     # --- Indicators ---
@@ -76,9 +85,14 @@ CONFIG = {
     "RSI_LONG_MAX": 72,         # don't buy into overbought exhaustion
     "RSI_SHORT_MIN": 28,        # don't sell into oversold exhaustion
     "MIN_SL_PCT": 1.0,          # skip signals whose stop is < this % away (peg / micro-move noise)
+    "ADX_PERIOD": 14,
+    "ADX_MIN": 22,              # require a real trend, not a chop-driven EMA/MACD cross
+    "MAX_ATR_PCT": 9.0,         # skip blow-off volatility (stop would be absurdly wide)
 
     # --- Memecoin signals ---
-    "MEME_ENABLED": True,
+    # Off by default: over Sep 2025-Aug 2026 memecoin signals produced -0.15R per
+    # trade out of sample and no filter combination rescued them (see research/).
+    "MEME_ENABLED": False,
     "MEME_MIN_24H_VOLUME_USDT": 1_000_000,  # lower floor — memecoins have thinner books
     "MEME_MAX_SIGNALS_PER_RUN": 2,          # max NEW memecoin signals per run
     "MEME_MAX_LEVERAGE": 5,                 # cap leverage — memecoins are very volatile
@@ -105,15 +119,33 @@ def macd(series, fast=12, slow=26, signal=9):
     hist = macd_line - signal_line
     return macd_line, signal_line, hist
 
-def atr(df, period=14):
+def true_range(df):
     high, low, close = df["high"], df["low"], df["close"]
     prev_close = close.shift(1)
-    tr = pd.concat([
+    return pd.concat([
         high - low,
         (high - prev_close).abs(),
         (low - prev_close).abs(),
     ], axis=1).max(axis=1)
-    return tr.rolling(period).mean()
+
+def atr(df, period=14):
+    return true_range(df).rolling(period).mean()
+
+def adx(df, period=14):
+    """Average Directional Index — trend strength, direction-agnostic.
+
+    Used as a chop filter: EMA/MACD crosses inside a range are the dominant
+    source of losing signals, and those bars have a low ADX.
+    """
+    up = df["high"].diff()
+    down = -df["low"].diff()
+    plus_dm = np.where((up > down) & (up > 0), up, 0.0)
+    minus_dm = np.where((down > up) & (down > 0), down, 0.0)
+    smooth_tr = true_range(df).ewm(alpha=1 / period, adjust=False).mean()
+    pdi = 100 * pd.Series(plus_dm, index=df.index).ewm(alpha=1 / period, adjust=False).mean() / smooth_tr
+    mdi = 100 * pd.Series(minus_dm, index=df.index).ewm(alpha=1 / period, adjust=False).mean() / smooth_tr
+    dx = 100 * (pdi - mdi).abs() / (pdi + mdi).replace(0, np.nan)
+    return dx.ewm(alpha=1 / period, adjust=False).mean()
 
 # ===================== STATE =====================
 def load_state():
@@ -185,6 +217,27 @@ def build_exchange():
             print(f"[!] {name} unreachable ({type(e).__name__}); trying next...")
     raise RuntimeError(f"No exchange reachable. Last error: {last_err}")
 
+def fetch_closed_ohlcv(ex, symbol, timeframe, limit=None, since=None):
+    """Fetch candles and drop the one that is still forming.
+
+    ccxt returns the in-progress candle as the last element, so reading it as
+    "the latest bar" evaluates the whole strategy on a partial candle — at the
+    cron cadence that is about one minute of price action.
+    """
+    kwargs = {"timeframe": timeframe}
+    if limit is not None:
+        kwargs["limit"] = limit
+    if since is not None:
+        kwargs["since"] = since
+    ohlcv = ex.fetch_ohlcv(symbol, **kwargs)
+    if not ohlcv:
+        return ohlcv
+    tf_ms = ex.parse_timeframe(timeframe) * 1000
+    now = ex.milliseconds()
+    while ohlcv and ohlcv[-1][0] + tf_ms > now:
+        ohlcv = ohlcv[:-1]
+    return ohlcv
+
 def fetch_markets(ex):
     """List active USDT-Perpetual pairs with high volume."""
     markets = ex.load_markets()
@@ -225,6 +278,14 @@ def fetch_markets(ex):
           f"low_vol={n_low_vol}, passed={len(out)}")
 
     out.sort(key=lambda x: x[1], reverse=True)
+
+    # Only scan the most liquid names. Expectancy falls off steadily as the
+    # universe widens into thin pairs, and on exchanges that list tokenized
+    # equities the long tail is mostly untradeable noise.
+    cap = CONFIG["MAX_SCAN_SYMBOLS"]
+    if cap and len(out) > cap:
+        print(f"    [dbg] Capping scan universe to the {cap} most liquid of {len(out)} pairs")
+        out = out[:cap]
     return [s for s, _ in out]
 
 # ===================== MEMECOINS =====================
@@ -325,7 +386,7 @@ def compute_market_bias(ex):
         return "NEUTRAL"
     for sym in ("BTC/USDT:USDT", "BTC/USDT"):
         try:
-            ohlcv = ex.fetch_ohlcv(sym, timeframe=CONFIG["HTF_TIMEFRAME"], limit=CONFIG["CANDLES"])
+            ohlcv = fetch_closed_ohlcv(ex, sym, CONFIG["HTF_TIMEFRAME"], limit=CONFIG["CANDLES"])
         except Exception:
             continue
         if ohlcv:
@@ -340,7 +401,7 @@ def htf_trend(ex, symbol):
     if symbol in _HTF_CACHE:
         return _HTF_CACHE[symbol]
     try:
-        ohlcv = ex.fetch_ohlcv(symbol, timeframe=CONFIG["HTF_TIMEFRAME"], limit=CONFIG["CANDLES"])
+        ohlcv = fetch_closed_ohlcv(ex, symbol, CONFIG["HTF_TIMEFRAME"], limit=CONFIG["CANDLES"])
     except Exception:
         ohlcv = None
     trend = _ema_trend_from_ohlcv(ohlcv)
@@ -366,7 +427,7 @@ def _is_fresh(hist, ema_f, ema_s, direction, bars):
 def analyze(ex, symbol, sl_mult=None, max_lev=None, check_htf=True):
     """Analyze one pair; return a signal dict if a signal exists, else None."""
     try:
-        ohlcv = ex.fetch_ohlcv(symbol, timeframe=CONFIG["TIMEFRAME"], limit=CONFIG["CANDLES"])
+        ohlcv = fetch_closed_ohlcv(ex, symbol, CONFIG["TIMEFRAME"], limit=CONFIG["CANDLES"])
     except Exception:
         return None
     if not ohlcv or len(ohlcv) < 60:
@@ -380,14 +441,16 @@ def analyze(ex, symbol, sl_mult=None, max_lev=None, check_htf=True):
     r = rsi(close, CONFIG["RSI_PERIOD"])
     _, _, hist = macd(close)
     a = atr(df, CONFIG["ATR_PERIOD"])
+    adx_series = adx(df, CONFIG["ADX_PERIOD"])
 
-    # latest values
+    # latest values (last CLOSED candle — fetch_closed_ohlcv drops the forming one)
     c = close.iloc[-1]
     ef, es = ema_f.iloc[-1], ema_s.iloc[-1]
     ef_prev, es_prev = ema_f.iloc[-2], ema_s.iloc[-2]
     rv = r.iloc[-1]
     h, h_prev = hist.iloc[-1], hist.iloc[-2]
     av = a.iloc[-1]
+    adx_v = adx_series.iloc[-1]
 
     if any(map(lambda x: x is None or (isinstance(x, float) and math.isnan(x)),
                [c, ef, es, rv, h, av])):
@@ -419,6 +482,11 @@ def analyze(ex, symbol, sl_mult=None, max_lev=None, check_htf=True):
     if CONFIG["REGIME_FILTER"] and MARKET_BIAS in ("LONG", "SHORT") and direction != MARKET_BIAS:
         return None
 
+    # --- Trend-strength gate: an EMA/MACD cross inside a range is the single
+    #     biggest source of losing signals; a low ADX is what those look like ---
+    if CONFIG["ADX_MIN"] and not (adx_v >= CONFIG["ADX_MIN"]):
+        return None
+
     # --- Exhaustion guard: don't chase overbought longs / oversold shorts ---
     if direction == "LONG" and rv > CONFIG["RSI_LONG_MAX"]:
         return None
@@ -446,6 +514,8 @@ def analyze(ex, symbol, sl_mult=None, max_lev=None, check_htf=True):
     sl_pct = abs(entry - stop) / entry * 100
     if sl_pct < CONFIG["MIN_SL_PCT"]:
         return None
+    if CONFIG["MAX_ATR_PCT"] and (av / entry * 100) > CONFIG["MAX_ATR_PCT"]:
+        return None   # blow-off volatility: the stop would be absurdly wide
 
     # --- Higher-timeframe confirmation (expensive fetch — do it last) ---
     if check_htf and CONFIG["HTF_CONFIRM"]:
@@ -461,7 +531,8 @@ def analyze(ex, symbol, sl_mult=None, max_lev=None, check_htf=True):
     bias = "bullish" if direction == "LONG" else "bearish"
     cmp = ">" if direction == "LONG" else "<"
     reason = (f"EMA{CONFIG['EMA_FAST']} {cmp} EMA{CONFIG['EMA_SLOW']}, "
-              f"RSI {rv:.0f} ({bias}), MACD {macd_txt} — {CONFIG['TIMEFRAME']} trend confirmed.")
+              f"RSI {rv:.0f} ({bias}), MACD {macd_txt}, ADX {adx_v:.0f} — "
+              f"{CONFIG['TIMEFRAME']} trend confirmed.")
 
     return {
         "symbol": symbol,
@@ -473,6 +544,7 @@ def analyze(ex, symbol, sl_mult=None, max_lev=None, check_htf=True):
         "leverage": suggested_lev,
         "score": score,
         "rsi": rv,
+        "adx": float(adx_v),
         "sl_pct": sl_pct,
         "reason": reason,
     }
@@ -497,8 +569,10 @@ def format_signal(s):
     head = "🐸 MEME SIGNAL" if s.get("is_meme") else "📊 SIGNAL"
     meme_warn = ("\n⚠️ Memecoin — extreme volatility, use small size.\n"
                  if s.get("is_meme") else "")
+    f1 = CONFIG["TP1_FRACTION"]
+    p1, p2 = f"{f1:.0%}", f"{1 - f1:.0%}"
     t1 = s.get("target1")
-    t1_line = f"Target 1 (½, +1R): {fmt_price(t1)}\n" if t1 is not None else ""
+    t1_line = f"Target 1 ({p1}, +1R): {fmt_price(t1)}\n" if t1 is not None else ""
     return (
         f"{head} #{sid} | {CONFIG['TIMEFRAME'].upper()} | {s['opened_at']}\n"
         f"─────────────\n"
@@ -507,11 +581,11 @@ def format_signal(s):
         f"Entry: {fmt_price(s['entry'])}\n"
         f"Stop Loss: {fmt_price(s['stop'])}\n"
         f"{t1_line}"
-        f"Target 2 (½, +2R): {fmt_price(s['target'])}\n"
+        f"Target 2 ({p2}, +{CONFIG['RR_RATIO']:g}R): {fmt_price(s['target'])}\n"
         f"Leverage: x{s['leverage']}\n"
         f"Risk/Reward: {rr}\n"
         f"{meme_warn}\n"
-        f"💡 Plan: take ½ off at Target 1, move stop to breakeven, let the rest run.\n"
+        f"💡 Plan: take {p1} off at Target 1, move stop to breakeven, let the rest run.\n"
         f"📈 Why: {s['reason']}\n"
         f"📉 Chart: {tradingview_link(s['symbol'])}"
     )
@@ -536,31 +610,53 @@ def format_tp1(sig):
     lev = sig["leverage"]
     return (
         f"🎯 TP1 — {tag}SIGNAL #{sid} (#{base}/USDT {sig['direction']})\n"
-        f"First target hit +{pct:.1f}% (x{lev} ≈ +{pct*lev:.1f}%) on ½ the position.\n"
+        f"First target hit +{pct:.1f}% (x{lev} ≈ +{pct*lev:.1f}%) on "
+        f"{CONFIG['TP1_FRACTION']:.0%} of the position.\n"
         f"Stop moved to breakeven — risk-free now, letting the rest run to Target 2 🚀\n"
         f"{now_utc_str()}"
     )
 
-# Net realized R per closing outcome (½ booked at +1R, remainder resolves at +2R or breakeven).
-OUTCOME_R = {"SL": -1.0, "BE": 0.5, "TP2": 1.5}
+def outcome_r(outcome, close_r=0.0):
+    """Net realized R for a closing outcome.
 
-def format_result(sig, outcome, stats_line):
+    TP1_FRACTION of the position is booked at +1R; the remainder resolves at
+    the final target, at breakeven, or — for a time exit — wherever it is.
+    """
+    f = CONFIG["TP1_FRACTION"]
+    if outcome == "SL":
+        return -1.0
+    if outcome == "BE":
+        return f * 1.0
+    if outcome == "TP2":
+        return f * 1.0 + (1 - f) * CONFIG["RR_RATIO"]
+    if outcome == "TIME_TP1":       # timed out after TP1
+        return f * 1.0 + (1 - f) * close_r
+    if outcome == "TIME":           # timed out before TP1
+        return close_r
+    raise ValueError(f"unknown outcome {outcome}")
+
+CLOSING_OUTCOMES = ("SL", "BE", "TP2", "TIME", "TIME_TP1")
+
+def format_result(sig, outcome, net_r, stats_line):
     base = sig["symbol"].split("/")[0]
     sid = f"{sig['id']:04d}"
     tag = "🐸 MEME " if sig.get("is_meme") else ""
     lev = sig["leverage"]
-    net_r = OUTCOME_R[outcome]
     one_r_pct = abs(sig["entry"] - sig["stop"]) / sig["entry"] * 100   # 1R in %
     net_pct = net_r * one_r_pct
+    icon = {"TP2": "✅", "BE": "⚖️", "SL": "❌"}.get(
+        outcome, "✅" if net_r > 0 else ("❌" if net_r < 0 else "⚖️"))
+    head = f"{icon} RESULT — {tag}SIGNAL #{sid} (#{base}/USDT {sig['direction']})"
+    amounts = f"net {net_r:+.2f}R ({net_pct:+.1f}%, x{lev} ≈ {net_pct*lev:+.1f}%)"
     if outcome == "TP2":
-        head = f"✅ RESULT — {tag}SIGNAL #{sid} (#{base}/USDT {sig['direction']})"
-        line = f"Final target hit 🎯 net +{net_r:g}R (+{net_pct:.1f}%, x{lev} ≈ +{net_pct*lev:.1f}%)"
+        line = f"Final target hit 🎯 {amounts}"
     elif outcome == "BE":
-        head = f"⚖️ RESULT — {tag}SIGNAL #{sid} (#{base}/USDT {sig['direction']})"
-        line = f"Closed at breakeven after TP1 🛡️ net +{net_r:g}R (+{net_pct:.1f}%, x{lev} ≈ +{net_pct*lev:.1f}%)"
+        line = f"Closed at breakeven after TP1 🛡️ {amounts}"
+    elif outcome in ("TIME", "TIME_TP1"):
+        line = (f"Closed at market after {CONFIG['MAX_HOLD_DAYS']} days ⏱️ "
+                f"— trade went nowhere. {amounts}")
     else:  # SL
-        head = f"❌ RESULT — {tag}SIGNAL #{sid} (#{base}/USDT {sig['direction']})"
-        line = f"Stop loss hit 🛑 net {net_r:g}R ({net_pct:.1f}%, x{lev} ≈ {net_pct*lev:.1f}%)"
+        line = f"Stop loss hit 🛑 {amounts}"
     return (
         f"{head}\n"
         f"{line}\n"
@@ -623,50 +719,88 @@ def post(text):
             print(f"[!] Telegram send error: {e}")
 
 # ===================== OUTCOME TRACKER =====================
+def fetch_since(ex, symbol, timeframe, since_ms):
+    """All candles from `since_ms` to now, paginated.
+
+    A plain limit=200 fetch only reaches ~8 days back on 1h candles, so any
+    trade older than that was being replayed from the middle — losing the fact
+    that TP1 had already happened and grading breakeven exits as stop-outs.
+    """
+    tf_ms = ex.parse_timeframe(timeframe) * 1000
+    out = []
+    cursor = since_ms
+    for _ in range(20):     # bounded: 20 * 1000 candles is far beyond MAX_HOLD_DAYS
+        try:
+            batch = ex.fetch_ohlcv(symbol, timeframe=timeframe, since=cursor, limit=1000)
+        except Exception:
+            break
+        if not batch:
+            break
+        out += batch
+        nxt = batch[-1][0] + tf_ms
+        if nxt <= cursor or nxt > ex.milliseconds():
+            break
+        cursor = nxt
+    now = ex.milliseconds()
+    return [c for c in out if c[0] + tf_ms <= now]     # closed candles only
+
 def check_outcome(ex, sig):
     """Replay candles since the signal opened and resolve the staged exit.
 
-    Returns one of:
-      "SL"        original stop hit before TP1            -> close, -1R
-      "BE"        after TP1, price returned to breakeven  -> close, +0.5R
-      "TP2"       after TP1, final target reached         -> close, +1.5R
+    Returns (outcome, net_R) where outcome is one of:
+      "SL"        original stop hit before TP1            -> close
+      "BE"        after TP1, price returned to breakeven  -> close
+      "TP2"       after TP1, final target reached         -> close
+      "TIME"/"TIME_TP1"  held past MAX_HOLD_DAYS          -> close at market
       "TP1_OPEN"  first target reached, still running     -> stays open (milestone)
       None        nothing yet                             -> stays open
 
-    The stop is never mutated in state; freshness of the breakeven stop is
-    reconstructed each run by replaying chronologically from the original stop,
-    so an early dip below entry (before TP1) can't be mistaken for a breakeven exit.
+    The stop is never mutated in state; the breakeven stop is reconstructed each
+    run by replaying chronologically from the original stop, so an early dip
+    below entry (before TP1) can't be mistaken for a breakeven exit. `tp1_hit`
+    is persisted as a backstop in case the replay window ever misses it.
     """
-    try:
-        ohlcv = ex.fetch_ohlcv(sig["symbol"], timeframe=CONFIG["RESULT_CHECK_TF"], limit=200)
-    except Exception:
-        return None
     opened_ms = sig.get("opened_ms", 0)
+    ohlcv = fetch_since(ex, sig["symbol"], CONFIG["RESULT_CHECK_TF"], opened_ms)
+    if not ohlcv:
+        # Delisted, renamed, or unavailable on the current exchange. Without
+        # candles the outcome is unknowable, so drop it rather than leave it in
+        # the book forever — and never invent a number for the track record.
+        age_days = (datetime.now(timezone.utc).timestamp() * 1000 - opened_ms) / 86_400_000
+        if age_days > 2 * CONFIG["MAX_HOLD_DAYS"]:
+            return "UNTRACKABLE", 0.0
+        return None, 0.0
+
     entry = sig["entry"]
+    risk = abs(entry - sig["stop"])
     t1, t2 = signal_levels(sig)
-    active_stop = sig["stop"]     # tightens to breakeven only after TP1 is reached
-    tp1_seen = False
     long = sig["direction"] == "LONG"
+    tp1_seen = bool(sig.get("tp1_hit"))
+    active_stop = entry if tp1_seen else sig["stop"]
+    deadline = opened_ms + CONFIG["MAX_HOLD_DAYS"] * 86_400_000
+
     for ts, o, h, l, c, v in ohlcv:
         if ts < opened_ms:
             continue
-        if long:
-            if l <= active_stop:
-                return "BE" if tp1_seen else "SL"
-            if not tp1_seen and h >= t1:
-                tp1_seen = True
-                active_stop = entry
-            if tp1_seen and h >= t2:
-                return "TP2"
-        else:
-            if h >= active_stop:
-                return "BE" if tp1_seen else "SL"
-            if not tp1_seen and l <= t1:
-                tp1_seen = True
-                active_stop = entry
-            if tp1_seen and l <= t2:
-                return "TP2"
-    return "TP1_OPEN" if tp1_seen else None
+        # Stop is checked before the target: within a single candle we cannot
+        # know the order, so assume the worse of the two.
+        if (long and l <= active_stop) or (not long and h >= active_stop):
+            out = "BE" if tp1_seen else "SL"
+            return out, outcome_r(out)
+        if not tp1_seen and ((long and h >= t1) or (not long and l <= t1)):
+            tp1_seen = True
+            active_stop = entry
+        if tp1_seen and ((long and h >= t2) or (not long and l <= t2)):
+            return "TP2", outcome_r("TP2")
+        if ts >= deadline:
+            close_r = ((c - entry) if long else (entry - c)) / risk
+            out = "TIME_TP1" if tp1_seen else "TIME"
+            return out, outcome_r(out, close_r)
+
+    if tp1_seen:
+        sig["tp1_hit"] = True
+        return "TP1_OPEN", 0.0
+    return None, 0.0
 
 def _bump_stats(mk, **deltas):
     """Increment monthly stat counters, tolerating legacy dicts missing keys."""
@@ -675,21 +809,60 @@ def _bump_stats(mk, **deltas):
     for k, v in deltas.items():
         d[k] = d.get(k, 0) + v
 
+def open_record(s):
+    """Compact tracking record for an opened signal.
+
+    Carries the entry conditions (rsi/adx/sl_pct/exchange) as well as the price
+    levels, so the trade log can later answer which setups actually pay.
+    """
+    return {
+        "id": s["id"], "symbol": s["symbol"], "direction": s["direction"],
+        "entry": s["entry"], "stop": s["stop"],
+        "target1": s.get("target1"), "target": s["target"],
+        "leverage": s["leverage"], "opened_at": s["opened_at"], "opened_ms": s["opened_ms"],
+        "rsi": round(s.get("rsi", 0), 1), "adx": round(s.get("adx", 0), 1),
+        "sl_pct": round(s.get("sl_pct", 0), 2), "exchange": EXCHANGE_NAME,
+        "is_meme": bool(s.get("is_meme")),
+    }
+
+def log_trade(sig, outcome, net_r):
+    """Append a closed trade to the trade log (one JSON object per line).
+
+    The monthly counters alone can't answer "which kind of signal loses money";
+    this log is what makes the strategy auditable and re-backtestable.
+    """
+    if CONFIG["DRY_RUN"]:
+        return
+    rec = dict(sig)
+    rec.update({"outcome": outcome, "net_r": round(net_r, 4), "closed_at": now_utc_str()})
+    try:
+        with open(CONFIG["TRADE_LOG"], "a", encoding="utf-8") as f:
+            f.write(json.dumps(rec) + "\n")
+    except Exception as e:
+        print(f"[!] Could not write trade log: {e}")
+
 def process_open_signals(ex):
     """Check open signals, post TP1 milestones and closing results, update stats."""
     still_open = []
     mk = month_key()
     for sig in STATE["open"]:
-        outcome = check_outcome(ex, sig)
-        if outcome in ("SL", "BE", "TP2"):
-            net_r = OUTCOME_R[outcome]
+        outcome, net_r = check_outcome(ex, sig)
+        if outcome in CLOSING_OUTCOMES:
             if outcome == "TP2":
                 _bump_stats(mk, tp=1, tp2=1, r_sum=net_r, r_count=1)
             elif outcome == "BE":
                 _bump_stats(mk, be=1, r_sum=net_r, r_count=1)
-            else:
+            elif outcome == "SL":
                 _bump_stats(mk, sl=1, r_sum=net_r, r_count=1)
-            post(format_result(sig, outcome, stats_line()))
+            else:   # timed out — bucket by whether it actually made money
+                key = "tp" if net_r > 0 else ("sl" if net_r < 0 else "be")
+                _bump_stats(mk, r_sum=net_r, r_count=1, **{key: 1})
+            post(format_result(sig, outcome, net_r, stats_line()))
+            log_trade(sig, outcome, net_r)
+        elif outcome == "UNTRACKABLE":
+            print(f"[!] #{sig['id']} {sig['symbol']}: no candles available and long "
+                  f"past max hold — dropping from the book, not counted in stats.")
+            log_trade(sig, outcome, 0.0)
         elif outcome == "TP1_OPEN":
             if not sig.get("tp1_announced"):
                 sig["tp1_announced"] = True
@@ -701,54 +874,6 @@ def process_open_signals(ex):
     STATE["open"] = still_open
 
 # ===================== FALLBACK SOURCES =====================
-
-def fallback_daily_signals(ex):
-    """Re-scan top 30 pairs on 1d timeframe when 4h scan finds nothing."""
-    try:
-        markets = ex.load_markets()
-        tickers = ex.fetch_tickers()
-        pairs = sorted(
-            [(s, (tickers[s].get("quoteVolume") or 0))
-             for s, m in markets.items()
-             if m.get("active") and m.get("quote") == CONFIG["QUOTE"]
-             and is_tradable_base(m.get("base", ""))
-             and (m.get("swap") or m.get("future") or m.get("type") in ("swap", "future"))
-             and m.get("linear") is not False
-             and s in tickers and (tickers[s].get("quoteVolume") or 0) > 0],
-            key=lambda x: x[1], reverse=True
-        )[:30]
-    except Exception as e:
-        print(f"[!] fallback_daily_signals: market load failed ({e})")
-        return False
-
-    orig_tf = CONFIG["TIMEFRAME"]
-    CONFIG["TIMEFRAME"] = "1d"
-    sigs = []
-    for sym, _ in pairs:
-        s = analyze(ex, sym, check_htf=False)  # already the higher timeframe
-        if s:
-            sigs.append(s)
-    CONFIG["TIMEFRAME"] = orig_tf
-
-    if not sigs:
-        return False
-
-    sigs.sort(key=lambda x: (x["score"], abs(x["rsi"] - 50)), reverse=True)
-    best = sigs[0]
-    best["id"] = STATE["next_id"]
-    STATE["next_id"] += 1
-    best["opened_at"] = now_utc_str()
-    best["opened_ms"] = int(datetime.now(timezone.utc).timestamp() * 1000)
-    print(f"[+] Fallback: daily signal found for {best['symbol']}")
-    post("⚠️ No 4H signals — posting best Daily signal instead:\n\n" + format_signal(best))
-    STATE["open"].append({
-        "id": best["id"], "symbol": best["symbol"], "direction": best["direction"],
-        "entry": best["entry"], "stop": best["stop"],
-        "target1": best.get("target1"), "target": best["target"],
-        "leverage": best["leverage"], "opened_at": best["opened_at"], "opened_ms": best["opened_ms"],
-    })
-    return True
-
 
 def fallback_trending_coins():
     """Post CoinGecko trending coins (no API key needed)."""
@@ -918,58 +1043,16 @@ def fallback_market_summary():
         return False
 
 
-def fallback_spot_signals(ex):
-    """Scan top 30 spot pairs with same EMA/RSI/MACD strategy."""
-    try:
-        markets = ex.load_markets()
-        tickers = ex.fetch_tickers()
-        spot_pairs = sorted(
-            [(s, (tickers[s].get("quoteVolume") or 0))
-             for s, m in markets.items()
-             if m.get("active") and m.get("quote") == CONFIG["QUOTE"]
-             and m.get("type") == "spot"
-             and is_tradable_base(m.get("base", ""))
-             and s in tickers and (tickers[s].get("quoteVolume") or 0) > 1_000_000],
-            key=lambda x: x[1], reverse=True
-        )[:30]
-    except Exception as e:
-        print(f"[!] fallback_spot_signals: market load failed ({e})")
-        return False
-
-    if not spot_pairs:
-        return False
-
-    sigs = []
-    for sym, _ in spot_pairs:
-        s = analyze(ex, sym)
-        if s:
-            sigs.append(s)
-
-    if not sigs:
-        return False
-
-    sigs.sort(key=lambda x: (x["score"], abs(x["rsi"] - 50)), reverse=True)
-    best = sigs[0]
-    best["id"] = STATE["next_id"]
-    STATE["next_id"] += 1
-    best["opened_at"] = now_utc_str()
-    best["opened_ms"] = int(datetime.now(timezone.utc).timestamp() * 1000)
-    print(f"[+] Fallback: spot signal found for {best['symbol']}")
-    post("💱 No futures signals — spot market signal:\n\n" + format_signal(best))
-    STATE["open"].append({
-        "id": best["id"], "symbol": best["symbol"], "direction": best["direction"],
-        "entry": best["entry"], "stop": best["stop"],
-        "target1": best.get("target1"), "target": best["target"],
-        "leverage": best["leverage"], "opened_at": best["opened_at"], "opened_ms": best["opened_ms"],
-    })
-    return True
-
-
 def try_fallbacks(ex):
-    """Run fallback sources in order until one posts successfully."""
+    """Run fallback sources in order until one posts successfully.
+
+    Deliberately informational only. The daily-timeframe and spot fallbacks used
+    to open real tracked trades whenever the 4h scan found nothing — forcing a
+    position precisely when the strategy says there is no setup. They also
+    skipped the dedup and liquidity checks, which is how the same symbol could
+    be signalled twice and how illiquid tokenized-equity pairs got in.
+    """
     fallbacks = [
-        ("Daily TF signals",   lambda: fallback_daily_signals(ex)),
-        ("Spot signals",       lambda: fallback_spot_signals(ex)),
         ("Trending coins",     fallback_trending_coins),
         ("Top movers",         fallback_top_movers),
         ("Fear & Greed",       fallback_fear_greed),
@@ -1025,13 +1108,7 @@ def run_once():
         s["opened_at"] = now_utc_str()
         s["opened_ms"] = int(datetime.now(timezone.utc).timestamp() * 1000)
         post(format_signal(s))
-        # store a compact record for tracking
-        STATE["open"].append({
-            "id": s["id"], "symbol": s["symbol"], "direction": s["direction"],
-            "entry": s["entry"], "stop": s["stop"],
-            "target1": s.get("target1"), "target": s["target"],
-            "leverage": s["leverage"], "opened_at": s["opened_at"], "opened_ms": s["opened_ms"],
-        })
+        STATE["open"].append(open_record(s))
 
     # ---- Memecoin scan ----
     meme_top = []
@@ -1060,13 +1137,7 @@ def run_once():
             s["opened_at"] = now_utc_str()
             s["opened_ms"] = int(datetime.now(timezone.utc).timestamp() * 1000)
             post(format_signal(s))
-            STATE["open"].append({
-                "id": s["id"], "symbol": s["symbol"], "direction": s["direction"],
-                "entry": s["entry"], "stop": s["stop"],
-                "target1": s.get("target1"), "target": s["target"],
-                "leverage": s["leverage"], "opened_at": s["opened_at"],
-                "opened_ms": s["opened_ms"], "is_meme": True,
-            })
+            STATE["open"].append(open_record(s))
 
     if not top and not meme_top:
         print("[i] No new signals this run. Trying fallback sources...")
