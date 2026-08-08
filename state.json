@@ -2,20 +2,6 @@
   "next_id": 375,
   "open": [
     {
-      "id": 336,
-      "symbol": "RE/USDT",
-      "direction": "SHORT",
-      "entry": 0.4423,
-      "stop": 0.488395,
-      "target1": 0.39620500000000003,
-      "target": 0.35011000000000003,
-      "leverage": 2,
-      "opened_at": "2026-07-31 06:37 UTC",
-      "opened_ms": 1785479860974,
-      "tp1_announced": true,
-      "tp1_hit": true
-    },
-    {
       "id": 353,
       "symbol": "XSPCX/USDT",
       "direction": "SHORT",
@@ -88,20 +74,6 @@
       "opened_ms": 1786063927203
     },
     {
-      "id": 363,
-      "symbol": "GUA/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.04314,
-      "stop": 0.047873571428571425,
-      "target1": 0.03840642857142857,
-      "target": 0.03367285714285714,
-      "leverage": 2,
-      "opened_at": "2026-08-07 00:52 UTC",
-      "opened_ms": 1786063928929,
-      "tp1_announced": true,
-      "tp1_hit": true
-    },
-    {
       "id": 364,
       "symbol": "TLM/USDT:USDT",
       "direction": "SHORT",
@@ -112,18 +84,6 @@
       "leverage": 2,
       "opened_at": "2026-08-07 00:52 UTC",
       "opened_ms": 1786063930677
-    },
-    {
-      "id": 366,
-      "symbol": "SEI/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.04103,
-      "stop": 0.04185392857142857,
-      "target1": 0.040206071428571424,
-      "target": 0.03938214285714286,
-      "leverage": 5,
-      "opened_at": "2026-08-07 05:28 UTC",
-      "opened_ms": 1786080510247
     },
     {
       "id": 368,
@@ -162,18 +122,6 @@
       "opened_ms": 1786134658159
     },
     {
-      "id": 373,
-      "symbol": "CYS/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.9549,
-      "stop": 0.7601571428571428,
-      "target1": 1.1496428571428572,
-      "target": 1.3443857142857143,
-      "leverage": 2,
-      "opened_at": "2026-08-08 00:56 UTC",
-      "opened_ms": 1786150615211
-    },
-    {
       "id": 374,
       "symbol": "PEPE/USDT:USDT",
       "direction": "LONG",
@@ -207,12 +155,12 @@
     },
     "2026-08": {
       "tp": 5,
-      "sl": 23,
+      "sl": 24,
       "tp1": 8,
       "tp2": 3,
-      "be": 10,
-      "r_sum": -10.33121724779248,
-      "r_count": 38
+      "be": 13,
+      "r_sum": -10.431217247792478,
+      "r_count": 42
     }
   }
 }
