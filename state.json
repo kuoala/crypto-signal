@@ -1,5 +1,5 @@
 {
-  "next_id": 374,
+  "next_id": 375,
   "open": [
     {
       "id": 293,
@@ -77,19 +77,6 @@
       "leverage": 2,
       "opened_at": "2026-08-06 06:23 UTC",
       "opened_ms": 1785997403046
-    },
-    {
-      "id": 356,
-      "symbol": "FET/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.1387,
-      "stop": 0.14354285714285714,
-      "target1": 0.13385714285714284,
-      "target": 0.1290142857142857,
-      "leverage": 3,
-      "opened_at": "2026-08-06 10:29 UTC",
-      "opened_ms": 1786012191885,
-      "tp1_announced": true
     },
     {
       "id": 357,
@@ -177,18 +164,6 @@
       "opened_ms": 1786080510247
     },
     {
-      "id": 367,
-      "symbol": "PENGU/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.006001,
-      "stop": 0.006201142857142857,
-      "target1": 0.005800857142857143,
-      "target": 0.005600714285714286,
-      "leverage": 3,
-      "opened_at": "2026-08-07 12:41 UTC",
-      "opened_ms": 1786106497886
-    },
-    {
       "id": 368,
       "symbol": "BTC/USDT:USDT",
       "direction": "LONG",
@@ -248,6 +223,18 @@
       "leverage": 2,
       "opened_at": "2026-08-08 00:56 UTC",
       "opened_ms": 1786150615211
+    },
+    {
+      "id": 374,
+      "symbol": "PEPE/USDT:USDT",
+      "direction": "LONG",
+      "entry": 2.8789e-06,
+      "stop": 2.81245e-06,
+      "target1": 2.94535e-06,
+      "target": 3.0118e-06,
+      "leverage": 4,
+      "opened_at": "2026-08-08 04:47 UTC",
+      "opened_ms": 1786164446984
     }
   ],
   "stats": {
@@ -271,12 +258,12 @@
     },
     "2026-08": {
       "tp": 3,
-      "sl": 20,
+      "sl": 21,
       "tp1": 8,
       "tp2": 3,
-      "be": 9,
-      "r_sum": -11.0,
-      "r_count": 32
+      "be": 10,
+      "r_sum": -11.5,
+      "r_count": 34
     }
   }
 }
