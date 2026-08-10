@@ -119,19 +119,9 @@
       "target": 1.259,
       "leverage": 5,
       "opened_at": "2026-08-07 20:30 UTC",
-      "opened_ms": 1786134658159
-    },
-    {
-      "id": 374,
-      "symbol": "PEPE/USDT:USDT",
-      "direction": "LONG",
-      "entry": 2.8789e-06,
-      "stop": 2.81245e-06,
-      "target1": 2.94535e-06,
-      "target": 3.0118e-06,
-      "leverage": 4,
-      "opened_at": "2026-08-08 04:47 UTC",
-      "opened_ms": 1786164446984
+      "opened_ms": 1786134658159,
+      "tp1_hit": true,
+      "tp1_announced": true
     }
   ],
   "stats": {
@@ -156,11 +146,11 @@
     "2026-08": {
       "tp": 6,
       "sl": 24,
-      "tp1": 8,
+      "tp1": 9,
       "tp2": 4,
-      "be": 13,
-      "r_sum": -8.731217247792479,
-      "r_count": 43
+      "be": 14,
+      "r_sum": -8.431217247792478,
+      "r_count": 44
     }
   }
 }
