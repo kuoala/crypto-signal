@@ -1,5 +1,5 @@
 {
-  "next_id": 376,
+  "next_id": 377,
   "open": [
     {
       "id": 353,
@@ -84,6 +84,23 @@
       "leverage": 2,
       "opened_at": "2026-08-07 16:43 UTC",
       "opened_ms": 1786120981634
+    },
+    {
+      "id": 376,
+      "symbol": "BTC/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 63508.3,
+      "stop": 64244.96071428571,
+      "target1": 62771.63928571429,
+      "target": 62034.978571428575,
+      "leverage": 9,
+      "opened_at": "2026-08-11 20:35 UTC",
+      "opened_ms": 1786480504145,
+      "rsi": 30.4,
+      "adx": 26.3,
+      "sl_pct": 1.16,
+      "exchange": "mexc",
+      "is_meme": false
     }
   ],
   "stats": {
