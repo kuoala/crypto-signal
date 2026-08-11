@@ -62,20 +62,6 @@
       "opened_ms": 1786063925350
     },
     {
-      "id": 362,
-      "symbol": "VANRY/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.0032,
-      "stop": 0.003507071428571429,
-      "target1": 0.0028929285714285715,
-      "target": 0.002585857142857143,
-      "leverage": 2,
-      "opened_at": "2026-08-07 00:52 UTC",
-      "opened_ms": 1786063927203,
-      "tp1_hit": true,
-      "tp1_announced": true
-    },
-    {
       "id": 364,
       "symbol": "TLM/USDT:USDT",
       "direction": "SHORT",
@@ -124,9 +110,9 @@
       "sl": 25,
       "tp1": 10,
       "tp2": 4,
-      "be": 15,
-      "r_sum": -9.131217247792478,
-      "r_count": 46
+      "be": 16,
+      "r_sum": -8.831217247792477,
+      "r_count": 47
     }
   }
 }
