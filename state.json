@@ -74,18 +74,6 @@
       "opened_ms": 1786063930677
     },
     {
-      "id": 370,
-      "symbol": "DRAM/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 49.98,
-      "stop": 52.61035714285714,
-      "target1": 47.349642857142854,
-      "target": 44.71928571428571,
-      "leverage": 2,
-      "opened_at": "2026-08-07 16:43 UTC",
-      "opened_ms": 1786120981634
-    },
-    {
       "id": 376,
       "symbol": "BTC/USDT:USDT",
       "direction": "SHORT",
@@ -124,12 +112,12 @@
     },
     "2026-08": {
       "tp": 6,
-      "sl": 25,
+      "sl": 26,
       "tp1": 10,
       "tp2": 4,
       "be": 16,
-      "r_sum": -8.831217247792477,
-      "r_count": 47
+      "r_sum": -9.831217247792477,
+      "r_count": 48
     }
   }
 }
