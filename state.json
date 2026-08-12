@@ -26,18 +26,6 @@
       "opened_ms": 1785997403046
     },
     {
-      "id": 357,
-      "symbol": "SNXX/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 9.32,
-      "stop": 10.887500000000001,
-      "target1": 7.7524999999999995,
-      "target": 6.185,
-      "leverage": 2,
-      "opened_at": "2026-08-06 10:29 UTC",
-      "opened_ms": 1786012193408
-    },
-    {
       "id": 360,
       "symbol": "XSKHY/USDT",
       "direction": "SHORT",
@@ -60,23 +48,6 @@
       "leverage": 2,
       "opened_at": "2026-08-07 00:52 UTC",
       "opened_ms": 1786063925350
-    },
-    {
-      "id": 376,
-      "symbol": "BTC/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 63508.3,
-      "stop": 64244.96071428571,
-      "target1": 62771.63928571429,
-      "target": 62034.978571428575,
-      "leverage": 9,
-      "opened_at": "2026-08-11 20:35 UTC",
-      "opened_ms": 1786480504145,
-      "rsi": 30.4,
-      "adx": 26.3,
-      "sl_pct": 1.16,
-      "exchange": "mexc",
-      "is_meme": false
     }
   ],
   "stats": {
@@ -100,12 +71,12 @@
     },
     "2026-08": {
       "tp": 6,
-      "sl": 26,
+      "sl": 28,
       "tp1": 11,
       "tp2": 4,
       "be": 17,
-      "r_sum": -9.531217247792476,
-      "r_count": 49
+      "r_sum": -11.531217247792476,
+      "r_count": 51
     }
   }
 }
