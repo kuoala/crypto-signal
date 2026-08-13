@@ -1,5 +1,5 @@
 {
-  "next_id": 379,
+  "next_id": 381,
   "open": [
     {
       "id": 353,
@@ -63,6 +63,40 @@
       "rsi": 40.9,
       "adx": 22.6,
       "sl_pct": 2.4,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 379,
+      "symbol": "XLM/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.15936,
+      "stop": 0.16275964285714287,
+      "target1": 0.15596035714285714,
+      "target": 0.15256071428571427,
+      "leverage": 5,
+      "opened_at": "2026-08-13 16:45 UTC",
+      "opened_ms": 1786639538352,
+      "rsi": 43.7,
+      "adx": 25.7,
+      "sl_pct": 2.13,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 380,
+      "symbol": "XRP/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 1.0023,
+      "stop": 1.0183285714285715,
+      "target1": 0.9862714285714286,
+      "target": 0.9702428571428571,
+      "leverage": 6,
+      "opened_at": "2026-08-13 16:45 UTC",
+      "opened_ms": 1786639539725,
+      "rsi": 48.5,
+      "adx": 34.0,
+      "sl_pct": 1.6,
       "exchange": "mexc",
       "is_meme": false
     }
