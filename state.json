@@ -50,23 +50,6 @@
       "opened_ms": 1786063925350
     },
     {
-      "id": 377,
-      "symbol": "XLM/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.15937,
-      "stop": 0.1624707142857143,
-      "target1": 0.15626928571428572,
-      "target": 0.15316857142857143,
-      "leverage": 5,
-      "opened_at": "2026-08-13 01:09 UTC",
-      "opened_ms": 1786583396635,
-      "rsi": 36.6,
-      "adx": 28.5,
-      "sl_pct": 1.95,
-      "exchange": "mexc",
-      "is_meme": false
-    },
-    {
       "id": 378,
       "symbol": "AAVE/USDT:USDT",
       "direction": "SHORT",
@@ -105,12 +88,12 @@
     },
     "2026-08": {
       "tp": 6,
-      "sl": 28,
+      "sl": 29,
       "tp1": 11,
       "tp2": 4,
       "be": 17,
-      "r_sum": -11.531217247792476,
-      "r_count": 51
+      "r_sum": -12.531217247792476,
+      "r_count": 52
     }
   }
 }
