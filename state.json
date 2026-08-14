@@ -1,5 +1,5 @@
 {
-  "next_id": 382,
+  "next_id": 383,
   "open": [
     {
       "id": 353,
@@ -48,25 +48,6 @@
       "leverage": 2,
       "opened_at": "2026-08-07 00:52 UTC",
       "opened_ms": 1786063925350
-    },
-    {
-      "id": 378,
-      "symbol": "AAVE/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 87.98,
-      "stop": 90.08964285714286,
-      "target1": 85.87035714285715,
-      "target": 83.76071428571429,
-      "leverage": 4,
-      "opened_at": "2026-08-13 01:09 UTC",
-      "opened_ms": 1786583398063,
-      "rsi": 40.9,
-      "adx": 22.6,
-      "sl_pct": 2.4,
-      "exchange": "mexc",
-      "is_meme": false,
-      "tp1_hit": true,
-      "tp1_announced": true
     },
     {
       "id": 379,
@@ -118,6 +99,23 @@
       "sl_pct": 1.84,
       "exchange": "mexc",
       "is_meme": false
+    },
+    {
+      "id": 382,
+      "symbol": "ONDO/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.3238,
+      "stop": 0.3322321428571428,
+      "target1": 0.31536785714285714,
+      "target": 0.30693571428571426,
+      "leverage": 4,
+      "opened_at": "2026-08-14 20:22 UTC",
+      "opened_ms": 1786738963314,
+      "rsi": 29.4,
+      "adx": 25.6,
+      "sl_pct": 2.6,
+      "exchange": "mexc",
+      "is_meme": false
     }
   ],
   "stats": {
@@ -144,9 +142,9 @@
       "sl": 29,
       "tp1": 12,
       "tp2": 4,
-      "be": 17,
-      "r_sum": -12.531217247792476,
-      "r_count": 52
+      "be": 18,
+      "r_sum": -12.231217247792475,
+      "r_count": 53
     }
   }
 }
