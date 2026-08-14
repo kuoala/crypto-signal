@@ -1,5 +1,5 @@
 {
-  "next_id": 381,
+  "next_id": 382,
   "open": [
     {
       "id": 353,
@@ -97,6 +97,23 @@
       "rsi": 48.5,
       "adx": 34.0,
       "sl_pct": 1.6,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 381,
+      "symbol": "DOGE/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.06941,
+      "stop": 0.070685,
+      "target1": 0.068135,
+      "target": 0.06685999999999999,
+      "leverage": 5,
+      "opened_at": "2026-08-14 12:42 UTC",
+      "opened_ms": 1786711372175,
+      "rsi": 28.1,
+      "adx": 22.5,
+      "sl_pct": 1.84,
       "exchange": "mexc",
       "is_meme": false
     }
