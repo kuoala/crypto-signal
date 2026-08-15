@@ -64,7 +64,9 @@
       "adx": 25.7,
       "sl_pct": 2.13,
       "exchange": "mexc",
-      "is_meme": false
+      "is_meme": false,
+      "tp1_hit": true,
+      "tp1_announced": true
     },
     {
       "id": 380,
@@ -81,7 +83,9 @@
       "adx": 34.0,
       "sl_pct": 1.6,
       "exchange": "mexc",
-      "is_meme": false
+      "is_meme": false,
+      "tp1_hit": true,
+      "tp1_announced": true
     },
     {
       "id": 381,
@@ -140,7 +144,7 @@
     "2026-08": {
       "tp": 6,
       "sl": 29,
-      "tp1": 12,
+      "tp1": 14,
       "tp2": 4,
       "be": 18,
       "r_sum": -12.231217247792475,
