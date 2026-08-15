@@ -50,44 +50,6 @@
       "opened_ms": 1786063925350
     },
     {
-      "id": 379,
-      "symbol": "XLM/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.15936,
-      "stop": 0.16275964285714287,
-      "target1": 0.15596035714285714,
-      "target": 0.15256071428571427,
-      "leverage": 5,
-      "opened_at": "2026-08-13 16:45 UTC",
-      "opened_ms": 1786639538352,
-      "rsi": 43.7,
-      "adx": 25.7,
-      "sl_pct": 2.13,
-      "exchange": "mexc",
-      "is_meme": false,
-      "tp1_hit": true,
-      "tp1_announced": true
-    },
-    {
-      "id": 380,
-      "symbol": "XRP/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 1.0023,
-      "stop": 1.0183285714285715,
-      "target1": 0.9862714285714286,
-      "target": 0.9702428571428571,
-      "leverage": 6,
-      "opened_at": "2026-08-13 16:45 UTC",
-      "opened_ms": 1786639539725,
-      "rsi": 48.5,
-      "adx": 34.0,
-      "sl_pct": 1.6,
-      "exchange": "mexc",
-      "is_meme": false,
-      "tp1_hit": true,
-      "tp1_announced": true
-    },
-    {
       "id": 381,
       "symbol": "DOGE/USDT:USDT",
       "direction": "SHORT",
@@ -146,9 +108,9 @@
       "sl": 29,
       "tp1": 14,
       "tp2": 4,
-      "be": 18,
-      "r_sum": -12.231217247792475,
-      "r_count": 53
+      "be": 20,
+      "r_sum": -11.631217247792474,
+      "r_count": 55
     }
   }
 }
