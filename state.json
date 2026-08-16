@@ -65,23 +65,6 @@
       "sl_pct": 1.84,
       "exchange": "mexc",
       "is_meme": false
-    },
-    {
-      "id": 382,
-      "symbol": "ONDO/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.3238,
-      "stop": 0.3322321428571428,
-      "target1": 0.31536785714285714,
-      "target": 0.30693571428571426,
-      "leverage": 4,
-      "opened_at": "2026-08-14 20:22 UTC",
-      "opened_ms": 1786738963314,
-      "rsi": 29.4,
-      "adx": 25.6,
-      "sl_pct": 2.6,
-      "exchange": "mexc",
-      "is_meme": false
     }
   ],
   "stats": {
@@ -105,12 +88,12 @@
     },
     "2026-08": {
       "tp": 6,
-      "sl": 29,
+      "sl": 30,
       "tp1": 14,
       "tp2": 4,
       "be": 20,
-      "r_sum": -11.631217247792474,
-      "r_count": 55
+      "r_sum": -12.631217247792474,
+      "r_count": 56
     }
   }
 }
