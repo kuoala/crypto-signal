@@ -67,23 +67,6 @@
       "is_meme": false
     },
     {
-      "id": 384,
-      "symbol": "XLM/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.15626,
-      "stop": 0.1586525,
-      "target1": 0.15386750000000002,
-      "target": 0.151475,
-      "leverage": 7,
-      "opened_at": "2026-08-17 00:42 UTC",
-      "opened_ms": 1786927336095,
-      "rsi": 29.3,
-      "adx": 24.6,
-      "sl_pct": 1.53,
-      "exchange": "mexc",
-      "is_meme": false
-    },
-    {
       "id": 385,
       "symbol": "FILECOIN/USDT:USDT",
       "direction": "SHORT",
@@ -122,12 +105,12 @@
     },
     "2026-08": {
       "tp": 6,
-      "sl": 31,
+      "sl": 32,
       "tp1": 14,
       "tp2": 4,
       "be": 20,
-      "r_sum": -13.631217247792474,
-      "r_count": 57
+      "r_sum": -14.631217247792474,
+      "r_count": 58
     }
   }
 }
