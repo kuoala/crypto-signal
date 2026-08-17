@@ -67,23 +67,6 @@
       "is_meme": false
     },
     {
-      "id": 383,
-      "symbol": "SOL/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 74.58,
-      "stop": 75.36964285714286,
-      "target1": 73.79035714285713,
-      "target": 73.00071428571428,
-      "leverage": 9,
-      "opened_at": "2026-08-17 00:42 UTC",
-      "opened_ms": 1786927334557,
-      "rsi": 35.5,
-      "adx": 25.9,
-      "sl_pct": 1.06,
-      "exchange": "mexc",
-      "is_meme": false
-    },
-    {
       "id": 384,
       "symbol": "XLM/USDT:USDT",
       "direction": "SHORT",
@@ -139,12 +122,12 @@
     },
     "2026-08": {
       "tp": 6,
-      "sl": 30,
+      "sl": 31,
       "tp1": 14,
       "tp2": 4,
       "be": 20,
-      "r_sum": -12.631217247792474,
-      "r_count": 56
+      "r_sum": -13.631217247792474,
+      "r_count": 57
     }
   }
 }
