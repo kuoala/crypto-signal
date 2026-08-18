@@ -67,23 +67,6 @@
       "is_meme": false
     },
     {
-      "id": 387,
-      "symbol": "ADA/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.1724,
-      "stop": 0.17639642857142857,
-      "target1": 0.16840357142857143,
-      "target": 0.16440714285714286,
-      "leverage": 4,
-      "opened_at": "2026-08-18 04:25 UTC",
-      "opened_ms": 1787027159184,
-      "rsi": 33.3,
-      "adx": 36.4,
-      "sl_pct": 2.32,
-      "exchange": "mexc",
-      "is_meme": false
-    },
-    {
       "id": 388,
       "symbol": "TAO/USDT:USDT",
       "direction": "SHORT",
@@ -139,12 +122,12 @@
     },
     "2026-08": {
       "tp": 7,
-      "sl": 33,
+      "sl": 34,
       "tp1": 14,
       "tp2": 5,
       "be": 20,
-      "r_sum": -13.931217247792475,
-      "r_count": 60
+      "r_sum": -14.931217247792475,
+      "r_count": 61
     }
   }
 }
