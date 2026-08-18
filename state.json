@@ -1,5 +1,5 @@
 {
-  "next_id": 388,
+  "next_id": 389,
   "open": [
     {
       "id": 353,
@@ -80,6 +80,23 @@
       "rsi": 33.3,
       "adx": 36.4,
       "sl_pct": 2.32,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 388,
+      "symbol": "TAO/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 192.8,
+      "stop": 196.67964285714285,
+      "target1": 188.92035714285717,
+      "target": 185.04071428571433,
+      "leverage": 5,
+      "opened_at": "2026-08-18 08:24 UTC",
+      "opened_ms": 1787041487796,
+      "rsi": 35.3,
+      "adx": 26.1,
+      "sl_pct": 2.01,
       "exchange": "mexc",
       "is_meme": false
     }
