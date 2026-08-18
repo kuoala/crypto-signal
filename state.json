@@ -1,5 +1,5 @@
 {
-  "next_id": 386,
+  "next_id": 387,
   "open": [
     {
       "id": 353,
@@ -80,6 +80,23 @@
       "rsi": 46.2,
       "adx": 23.4,
       "sl_pct": 2.27,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 386,
+      "symbol": "MUSTOCK/USDT:USDT",
+      "direction": "LONG",
+      "entry": 1018.09,
+      "stop": 1000.5978571428572,
+      "target1": 1035.5821428571428,
+      "target": 1053.0742857142857,
+      "leverage": 6,
+      "opened_at": "2026-08-18 00:41 UTC",
+      "opened_ms": 1787013689488,
+      "rsi": 70.8,
+      "adx": 57.3,
+      "sl_pct": 1.72,
       "exchange": "mexc",
       "is_meme": false
     }
