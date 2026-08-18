@@ -1,5 +1,5 @@
 {
-  "next_id": 389,
+  "next_id": 390,
   "open": [
     {
       "id": 353,
@@ -97,6 +97,23 @@
       "rsi": 35.3,
       "adx": 26.1,
       "sl_pct": 2.01,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 389,
+      "symbol": "SUI/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.6505,
+      "stop": 0.6653178571428571,
+      "target1": 0.6356821428571429,
+      "target": 0.6208642857142858,
+      "leverage": 4,
+      "opened_at": "2026-08-18 12:25 UTC",
+      "opened_ms": 1787055950430,
+      "rsi": 29.0,
+      "adx": 28.1,
+      "sl_pct": 2.28,
       "exchange": "mexc",
       "is_meme": false
     }
