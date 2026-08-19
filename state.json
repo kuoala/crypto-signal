@@ -1,5 +1,5 @@
 {
-  "next_id": 394,
+  "next_id": 395,
   "open": [
     {
       "id": 353,
@@ -50,38 +50,19 @@
       "opened_ms": 1786063925350
     },
     {
-      "id": 392,
-      "symbol": "LINK/USDT:USDT",
+      "id": 394,
+      "symbol": "SILVER/USDT:USDT",
       "direction": "LONG",
-      "entry": 9.764,
-      "stop": 9.544142857142857,
-      "target1": 9.983857142857142,
-      "target": 10.203714285714286,
-      "leverage": 4,
-      "opened_at": "2026-08-19 12:26 UTC",
-      "opened_ms": 1787142364115,
-      "rsi": 69.1,
-      "adx": 41.8,
-      "sl_pct": 2.25,
-      "exchange": "mexc",
-      "is_meme": false,
-      "tp1_hit": true,
-      "tp1_announced": true
-    },
-    {
-      "id": 393,
-      "symbol": "HYPE/USDT:USDT",
-      "direction": "LONG",
-      "entry": 61.861,
-      "stop": 60.26403571428571,
-      "target1": 63.45796428571428,
-      "target": 65.05492857142858,
-      "leverage": 4,
-      "opened_at": "2026-08-19 16:20 UTC",
-      "opened_ms": 1787156436608,
-      "rsi": 66.7,
-      "adx": 25.4,
-      "sl_pct": 2.58,
+      "entry": 66.47,
+      "stop": 64.99464285714286,
+      "target1": 67.94535714285713,
+      "target": 69.42071428571428,
+      "leverage": 5,
+      "opened_at": "2026-08-19 20:17 UTC",
+      "opened_ms": 1787170625181,
+      "rsi": 54.3,
+      "adx": 27.4,
+      "sl_pct": 2.22,
       "exchange": "mexc",
       "is_meme": false
     }
@@ -106,13 +87,13 @@
       "r_count": 83
     },
     "2026-08": {
-      "tp": 8,
+      "tp": 9,
       "sl": 37,
       "tp1": 16,
-      "tp2": 6,
-      "be": 21,
-      "r_sum": -15.931217247792475,
-      "r_count": 66
+      "tp2": 7,
+      "be": 22,
+      "r_sum": -13.931217247792475,
+      "r_count": 68
     }
   }
 }
