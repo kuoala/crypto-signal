@@ -1,5 +1,5 @@
 {
-  "next_id": 392,
+  "next_id": 393,
   "open": [
     {
       "id": 353,
@@ -67,25 +67,6 @@
       "is_meme": false
     },
     {
-      "id": 388,
-      "symbol": "TAO/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 192.8,
-      "stop": 196.67964285714285,
-      "target1": 188.92035714285717,
-      "target": 185.04071428571433,
-      "leverage": 5,
-      "opened_at": "2026-08-18 08:24 UTC",
-      "opened_ms": 1787041487796,
-      "rsi": 35.3,
-      "adx": 26.1,
-      "sl_pct": 2.01,
-      "exchange": "mexc",
-      "is_meme": false,
-      "tp1_hit": true,
-      "tp1_announced": true
-    },
-    {
       "id": 389,
       "symbol": "SUI/USDT:USDT",
       "direction": "SHORT",
@@ -118,6 +99,23 @@
       "sl_pct": 6.24,
       "exchange": "mexc",
       "is_meme": false
+    },
+    {
+      "id": 392,
+      "symbol": "LINK/USDT:USDT",
+      "direction": "LONG",
+      "entry": 9.764,
+      "stop": 9.544142857142857,
+      "target1": 9.983857142857142,
+      "target": 10.203714285714286,
+      "leverage": 4,
+      "opened_at": "2026-08-19 12:26 UTC",
+      "opened_ms": 1787142364115,
+      "rsi": 69.1,
+      "adx": 41.8,
+      "sl_pct": 2.25,
+      "exchange": "mexc",
+      "is_meme": false
     }
   ],
   "stats": {
@@ -144,9 +142,9 @@
       "sl": 34,
       "tp1": 15,
       "tp2": 6,
-      "be": 20,
-      "r_sum": -13.231217247792475,
-      "r_count": 62
+      "be": 21,
+      "r_sum": -12.931217247792475,
+      "r_count": 63
     }
   }
 }
