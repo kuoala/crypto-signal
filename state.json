@@ -81,7 +81,9 @@
       "adx": 26.1,
       "sl_pct": 2.01,
       "exchange": "mexc",
-      "is_meme": false
+      "is_meme": false,
+      "tp1_hit": true,
+      "tp1_announced": true
     },
     {
       "id": 389,
@@ -140,7 +142,7 @@
     "2026-08": {
       "tp": 8,
       "sl": 34,
-      "tp1": 14,
+      "tp1": 15,
       "tp2": 6,
       "be": 20,
       "r_sum": -13.231217247792475,
