@@ -1,5 +1,5 @@
 {
-  "next_id": 393,
+  "next_id": 394,
   "open": [
     {
       "id": 353,
@@ -50,57 +50,6 @@
       "opened_ms": 1786063925350
     },
     {
-      "id": 381,
-      "symbol": "DOGE/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.06941,
-      "stop": 0.070685,
-      "target1": 0.068135,
-      "target": 0.06685999999999999,
-      "leverage": 5,
-      "opened_at": "2026-08-14 12:42 UTC",
-      "opened_ms": 1786711372175,
-      "rsi": 28.1,
-      "adx": 22.5,
-      "sl_pct": 1.84,
-      "exchange": "mexc",
-      "is_meme": false
-    },
-    {
-      "id": 389,
-      "symbol": "SUI/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.6505,
-      "stop": 0.6653178571428571,
-      "target1": 0.6356821428571429,
-      "target": 0.6208642857142858,
-      "leverage": 4,
-      "opened_at": "2026-08-18 12:25 UTC",
-      "opened_ms": 1787055950430,
-      "rsi": 29.0,
-      "adx": 28.1,
-      "sl_pct": 2.28,
-      "exchange": "mexc",
-      "is_meme": false
-    },
-    {
-      "id": 390,
-      "symbol": "SOXL/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 125.83,
-      "stop": 133.6792857142857,
-      "target1": 117.98071428571428,
-      "target": 110.13142857142857,
-      "leverage": 2,
-      "opened_at": "2026-08-19 00:41 UTC",
-      "opened_ms": 1787100110445,
-      "rsi": 29.2,
-      "adx": 33.5,
-      "sl_pct": 6.24,
-      "exchange": "mexc",
-      "is_meme": false
-    },
-    {
       "id": 392,
       "symbol": "LINK/USDT:USDT",
       "direction": "LONG",
@@ -114,6 +63,25 @@
       "rsi": 69.1,
       "adx": 41.8,
       "sl_pct": 2.25,
+      "exchange": "mexc",
+      "is_meme": false,
+      "tp1_hit": true,
+      "tp1_announced": true
+    },
+    {
+      "id": 393,
+      "symbol": "HYPE/USDT:USDT",
+      "direction": "LONG",
+      "entry": 61.861,
+      "stop": 60.26403571428571,
+      "target1": 63.45796428571428,
+      "target": 65.05492857142858,
+      "leverage": 4,
+      "opened_at": "2026-08-19 16:20 UTC",
+      "opened_ms": 1787156436608,
+      "rsi": 66.7,
+      "adx": 25.4,
+      "sl_pct": 2.58,
       "exchange": "mexc",
       "is_meme": false
     }
@@ -139,12 +107,12 @@
     },
     "2026-08": {
       "tp": 8,
-      "sl": 34,
-      "tp1": 15,
+      "sl": 37,
+      "tp1": 16,
       "tp2": 6,
       "be": 21,
-      "r_sum": -12.931217247792475,
-      "r_count": 63
+      "r_sum": -15.931217247792475,
+      "r_count": 66
     }
   }
 }
