@@ -116,23 +116,6 @@
       "sl_pct": 6.24,
       "exchange": "mexc",
       "is_meme": false
-    },
-    {
-      "id": 391,
-      "symbol": "BTW/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.43335,
-      "stop": 0.37795500000000004,
-      "target1": 0.488745,
-      "target": 0.54414,
-      "leverage": 2,
-      "opened_at": "2026-08-19 00:41 UTC",
-      "opened_ms": 1787100111864,
-      "rsi": 70.7,
-      "adx": 40.5,
-      "sl_pct": 12.78,
-      "exchange": "mexc",
-      "is_meme": false
     }
   ],
   "stats": {
@@ -155,13 +138,13 @@
       "r_count": 83
     },
     "2026-08": {
-      "tp": 7,
+      "tp": 8,
       "sl": 34,
       "tp1": 14,
-      "tp2": 5,
+      "tp2": 6,
       "be": 20,
-      "r_sum": -14.931217247792475,
-      "r_count": 61
+      "r_sum": -13.231217247792475,
+      "r_count": 62
     }
   }
 }
