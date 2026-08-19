@@ -1,5 +1,5 @@
 {
-  "next_id": 390,
+  "next_id": 392,
   "open": [
     {
       "id": 353,
@@ -97,6 +97,40 @@
       "rsi": 29.0,
       "adx": 28.1,
       "sl_pct": 2.28,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 390,
+      "symbol": "SOXL/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 125.83,
+      "stop": 133.6792857142857,
+      "target1": 117.98071428571428,
+      "target": 110.13142857142857,
+      "leverage": 2,
+      "opened_at": "2026-08-19 00:41 UTC",
+      "opened_ms": 1787100110445,
+      "rsi": 29.2,
+      "adx": 33.5,
+      "sl_pct": 6.24,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 391,
+      "symbol": "BTW/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.43335,
+      "stop": 0.37795500000000004,
+      "target1": 0.488745,
+      "target": 0.54414,
+      "leverage": 2,
+      "opened_at": "2026-08-19 00:41 UTC",
+      "opened_ms": 1787100111864,
+      "rsi": 70.7,
+      "adx": 40.5,
+      "sl_pct": 12.78,
       "exchange": "mexc",
       "is_meme": false
     }
