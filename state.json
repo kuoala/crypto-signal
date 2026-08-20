@@ -1,5 +1,5 @@
 {
-  "next_id": 400,
+  "next_id": 401,
   "open": [
     {
       "id": 353,
@@ -64,7 +64,9 @@
       "adx": 27.4,
       "sl_pct": 2.22,
       "exchange": "mexc",
-      "is_meme": false
+      "is_meme": false,
+      "tp1_hit": true,
+      "tp1_announced": true
     },
     {
       "id": 395,
@@ -156,6 +158,23 @@
       "sl_pct": 4.43,
       "exchange": "mexc",
       "is_meme": false
+    },
+    {
+      "id": 400,
+      "symbol": "SKHYSTOCK/USDT:USDT",
+      "direction": "LONG",
+      "entry": 163.32,
+      "stop": 153.90428571428572,
+      "target1": 172.73571428571427,
+      "target": 182.15142857142857,
+      "leverage": 2,
+      "opened_at": "2026-08-20 16:23 UTC",
+      "opened_ms": 1787243013398,
+      "rsi": 46.6,
+      "adx": 25.1,
+      "sl_pct": 5.77,
+      "exchange": "mexc",
+      "is_meme": false
     }
   ],
   "stats": {
@@ -180,7 +199,7 @@
     "2026-08": {
       "tp": 9,
       "sl": 37,
-      "tp1": 19,
+      "tp1": 20,
       "tp2": 7,
       "be": 22,
       "r_sum": -13.931217247792475,
