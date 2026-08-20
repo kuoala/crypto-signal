@@ -1,5 +1,5 @@
 {
-  "next_id": 399,
+  "next_id": 400,
   "open": [
     {
       "id": 353,
@@ -98,7 +98,9 @@
       "adx": 35.3,
       "sl_pct": 2.94,
       "exchange": "mexc",
-      "is_meme": false
+      "is_meme": false,
+      "tp1_hit": true,
+      "tp1_announced": true
     },
     {
       "id": 397,
@@ -115,7 +117,9 @@
       "adx": 38.2,
       "sl_pct": 1.53,
       "exchange": "mexc",
-      "is_meme": false
+      "is_meme": false,
+      "tp1_hit": true,
+      "tp1_announced": true
     },
     {
       "id": 398,
@@ -131,6 +135,25 @@
       "rsi": 64.7,
       "adx": 39.6,
       "sl_pct": 1.75,
+      "exchange": "mexc",
+      "is_meme": false,
+      "tp1_hit": true,
+      "tp1_announced": true
+    },
+    {
+      "id": 399,
+      "symbol": "SAMSUNGSTOCK/USDT:USDT",
+      "direction": "LONG",
+      "entry": 190.34,
+      "stop": 181.90464285714285,
+      "target1": 198.77535714285716,
+      "target": 207.2107142857143,
+      "leverage": 2,
+      "opened_at": "2026-08-20 12:28 UTC",
+      "opened_ms": 1787228889606,
+      "rsi": 47.6,
+      "adx": 27.1,
+      "sl_pct": 4.43,
       "exchange": "mexc",
       "is_meme": false
     }
@@ -157,7 +180,7 @@
     "2026-08": {
       "tp": 9,
       "sl": 37,
-      "tp1": 16,
+      "tp1": 19,
       "tp2": 7,
       "be": 22,
       "r_sum": -13.931217247792475,
