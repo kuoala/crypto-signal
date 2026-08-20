@@ -1,5 +1,5 @@
 {
-  "next_id": 401,
+  "next_id": 402,
   "open": [
     {
       "id": 353,
@@ -48,25 +48,6 @@
       "leverage": 2,
       "opened_at": "2026-08-07 00:52 UTC",
       "opened_ms": 1786063925350
-    },
-    {
-      "id": 394,
-      "symbol": "SILVER/USDT:USDT",
-      "direction": "LONG",
-      "entry": 66.47,
-      "stop": 64.99464285714286,
-      "target1": 67.94535714285713,
-      "target": 69.42071428571428,
-      "leverage": 5,
-      "opened_at": "2026-08-19 20:17 UTC",
-      "opened_ms": 1787170625181,
-      "rsi": 54.3,
-      "adx": 27.4,
-      "sl_pct": 2.22,
-      "exchange": "mexc",
-      "is_meme": false,
-      "tp1_hit": true,
-      "tp1_announced": true
     },
     {
       "id": 395,
@@ -175,6 +156,23 @@
       "sl_pct": 5.77,
       "exchange": "mexc",
       "is_meme": false
+    },
+    {
+      "id": 401,
+      "symbol": "MUSTOCK/USDT:USDT",
+      "direction": "LONG",
+      "entry": 974.42,
+      "stop": 931.1632142857143,
+      "target1": 1017.6767857142856,
+      "target": 1060.9335714285714,
+      "leverage": 2,
+      "opened_at": "2026-08-20 20:18 UTC",
+      "opened_ms": 1787257107481,
+      "rsi": 50.9,
+      "adx": 24.6,
+      "sl_pct": 4.44,
+      "exchange": "mexc",
+      "is_meme": false
     }
   ],
   "stats": {
@@ -201,9 +199,9 @@
       "sl": 37,
       "tp1": 20,
       "tp2": 7,
-      "be": 22,
-      "r_sum": -13.931217247792475,
-      "r_count": 68
+      "be": 23,
+      "r_sum": -13.631217247792474,
+      "r_count": 69
     }
   }
 }
