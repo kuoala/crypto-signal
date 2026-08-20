@@ -1,5 +1,5 @@
 {
-  "next_id": 396,
+  "next_id": 399,
   "open": [
     {
       "id": 353,
@@ -80,6 +80,57 @@
       "rsi": 51.6,
       "adx": 31.1,
       "sl_pct": 5.41,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 396,
+      "symbol": "TAO/USDT:USDT",
+      "direction": "LONG",
+      "entry": 204.29,
+      "stop": 198.27499999999998,
+      "target1": 210.305,
+      "target": 216.32,
+      "leverage": 3,
+      "opened_at": "2026-08-20 08:26 UTC",
+      "opened_ms": 1787214411061,
+      "rsi": 65.8,
+      "adx": 35.3,
+      "sl_pct": 2.94,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 397,
+      "symbol": "UKOIL/USDT:USDT",
+      "direction": "LONG",
+      "entry": 90.84,
+      "stop": 89.45035714285714,
+      "target1": 92.22964285714286,
+      "target": 93.61928571428572,
+      "leverage": 7,
+      "opened_at": "2026-08-20 08:26 UTC",
+      "opened_ms": 1787214412554,
+      "rsi": 66.0,
+      "adx": 38.2,
+      "sl_pct": 1.53,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 398,
+      "symbol": "USOIL/USDT:USDT",
+      "direction": "LONG",
+      "entry": 85.59,
+      "stop": 84.09,
+      "target1": 87.09,
+      "target": 88.59,
+      "leverage": 6,
+      "opened_at": "2026-08-20 08:26 UTC",
+      "opened_ms": 1787214414069,
+      "rsi": 64.7,
+      "adx": 39.6,
+      "sl_pct": 1.75,
       "exchange": "mexc",
       "is_meme": false
     }
