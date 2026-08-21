@@ -50,23 +50,6 @@
       "opened_ms": 1786063925350
     },
     {
-      "id": 395,
-      "symbol": "WLD/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.3635,
-      "stop": 0.3438392857142857,
-      "target1": 0.3831607142857143,
-      "target": 0.40282142857142855,
-      "leverage": 2,
-      "opened_at": "2026-08-20 00:41 UTC",
-      "opened_ms": 1787186488168,
-      "rsi": 51.6,
-      "adx": 31.1,
-      "sl_pct": 5.41,
-      "exchange": "mexc",
-      "is_meme": false
-    },
-    {
       "id": 397,
       "symbol": "UKOIL/USDT:USDT",
       "direction": "LONG",
@@ -178,13 +161,13 @@
       "r_count": 83
     },
     "2026-08": {
-      "tp": 10,
+      "tp": 11,
       "sl": 37,
       "tp1": 21,
-      "tp2": 8,
+      "tp2": 9,
       "be": 23,
-      "r_sum": -11.931217247792475,
-      "r_count": 70
+      "r_sum": -10.231217247792475,
+      "r_count": 71
     }
   }
 }
