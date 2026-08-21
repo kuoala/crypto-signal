@@ -67,25 +67,6 @@
       "is_meme": false
     },
     {
-      "id": 396,
-      "symbol": "TAO/USDT:USDT",
-      "direction": "LONG",
-      "entry": 204.29,
-      "stop": 198.27499999999998,
-      "target1": 210.305,
-      "target": 216.32,
-      "leverage": 3,
-      "opened_at": "2026-08-20 08:26 UTC",
-      "opened_ms": 1787214411061,
-      "rsi": 65.8,
-      "adx": 35.3,
-      "sl_pct": 2.94,
-      "exchange": "mexc",
-      "is_meme": false,
-      "tp1_hit": true,
-      "tp1_announced": true
-    },
-    {
       "id": 397,
       "symbol": "UKOIL/USDT:USDT",
       "direction": "LONG",
@@ -195,13 +176,13 @@
       "r_count": 83
     },
     "2026-08": {
-      "tp": 9,
+      "tp": 10,
       "sl": 37,
       "tp1": 20,
-      "tp2": 7,
+      "tp2": 8,
       "be": 23,
-      "r_sum": -13.631217247792474,
-      "r_count": 69
+      "r_sum": -11.931217247792475,
+      "r_count": 70
     }
   }
 }
