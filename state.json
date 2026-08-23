@@ -1,5 +1,5 @@
 {
-  "next_id": 403,
+  "next_id": 404,
   "open": [
     {
       "id": 353,
@@ -154,6 +154,23 @@
       "rsi": 66.5,
       "adx": 48.7,
       "sl_pct": 8.22,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 403,
+      "symbol": "TAO/USDT:USDT",
+      "direction": "LONG",
+      "entry": 241.21,
+      "stop": 222.92285714285714,
+      "target1": 259.4971428571429,
+      "target": 277.7842857142857,
+      "leverage": 2,
+      "opened_at": "2026-08-23 20:12 UTC",
+      "opened_ms": 1787515928022,
+      "rsi": 57.7,
+      "adx": 46.4,
+      "sl_pct": 7.58,
       "exchange": "mexc",
       "is_meme": false
     }
