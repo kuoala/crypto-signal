@@ -1,5 +1,5 @@
 {
-  "next_id": 404,
+  "next_id": 406,
   "open": [
     {
       "id": 353,
@@ -155,7 +155,9 @@
       "adx": 48.7,
       "sl_pct": 8.22,
       "exchange": "mexc",
-      "is_meme": false
+      "is_meme": false,
+      "tp1_hit": true,
+      "tp1_announced": true
     },
     {
       "id": 403,
@@ -171,6 +173,40 @@
       "rsi": 57.7,
       "adx": 46.4,
       "sl_pct": 7.58,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 404,
+      "symbol": "PENGU/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.009902,
+      "stop": 0.008905357142857142,
+      "target1": 0.010898642857142857,
+      "target": 0.011895285714285714,
+      "leverage": 2,
+      "opened_at": "2026-08-24 00:43 UTC",
+      "opened_ms": 1787532205318,
+      "rsi": 70.9,
+      "adx": 46.3,
+      "sl_pct": 10.07,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 405,
+      "symbol": "SKHYNIXSTOCK/USDT:USDT",
+      "direction": "LONG",
+      "entry": 1284.35,
+      "stop": 1265.5742857142855,
+      "target1": 1303.1257142857144,
+      "target": 1321.9014285714286,
+      "leverage": 7,
+      "opened_at": "2026-08-24 00:43 UTC",
+      "opened_ms": 1787532206713,
+      "rsi": 68.1,
+      "adx": 32.6,
+      "sl_pct": 1.46,
       "exchange": "mexc",
       "is_meme": false
     }
@@ -197,7 +233,7 @@
     "2026-08": {
       "tp": 11,
       "sl": 37,
-      "tp1": 21,
+      "tp1": 22,
       "tp2": 9,
       "be": 23,
       "r_sum": -10.231217247792475,
