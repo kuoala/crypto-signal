@@ -67,42 +67,6 @@
       "is_meme": false
     },
     {
-      "id": 401,
-      "symbol": "MUSTOCK/USDT:USDT",
-      "direction": "LONG",
-      "entry": 974.42,
-      "stop": 931.1632142857143,
-      "target1": 1017.6767857142856,
-      "target": 1060.9335714285714,
-      "leverage": 2,
-      "opened_at": "2026-08-20 20:18 UTC",
-      "opened_ms": 1787257107481,
-      "rsi": 50.9,
-      "adx": 24.6,
-      "sl_pct": 4.44,
-      "exchange": "mexc",
-      "is_meme": false
-    },
-    {
-      "id": 402,
-      "symbol": "UNI/USDT:USDT",
-      "direction": "LONG",
-      "entry": 4.321,
-      "stop": 3.965607142857143,
-      "target1": 4.676392857142857,
-      "target": 5.031785714285713,
-      "leverage": 2,
-      "opened_at": "2026-08-23 12:21 UTC",
-      "opened_ms": 1787487660188,
-      "rsi": 66.5,
-      "adx": 48.7,
-      "sl_pct": 8.22,
-      "exchange": "mexc",
-      "is_meme": false,
-      "tp1_hit": true,
-      "tp1_announced": true
-    },
-    {
       "id": 403,
       "symbol": "TAO/USDT:USDT",
       "direction": "LONG",
@@ -175,12 +139,12 @@
     },
     "2026-08": {
       "tp": 11,
-      "sl": 38,
+      "sl": 39,
       "tp1": 22,
       "tp2": 9,
-      "be": 26,
-      "r_sum": -10.331217247792473,
-      "r_count": 75
+      "be": 27,
+      "r_sum": -11.031217247792473,
+      "r_count": 77
     }
   }
 }
