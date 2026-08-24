@@ -50,63 +50,6 @@
       "opened_ms": 1786063925350
     },
     {
-      "id": 397,
-      "symbol": "UKOIL/USDT:USDT",
-      "direction": "LONG",
-      "entry": 90.84,
-      "stop": 89.45035714285714,
-      "target1": 92.22964285714286,
-      "target": 93.61928571428572,
-      "leverage": 7,
-      "opened_at": "2026-08-20 08:26 UTC",
-      "opened_ms": 1787214412554,
-      "rsi": 66.0,
-      "adx": 38.2,
-      "sl_pct": 1.53,
-      "exchange": "mexc",
-      "is_meme": false,
-      "tp1_hit": true,
-      "tp1_announced": true
-    },
-    {
-      "id": 398,
-      "symbol": "USOIL/USDT:USDT",
-      "direction": "LONG",
-      "entry": 85.59,
-      "stop": 84.09,
-      "target1": 87.09,
-      "target": 88.59,
-      "leverage": 6,
-      "opened_at": "2026-08-20 08:26 UTC",
-      "opened_ms": 1787214414069,
-      "rsi": 64.7,
-      "adx": 39.6,
-      "sl_pct": 1.75,
-      "exchange": "mexc",
-      "is_meme": false,
-      "tp1_hit": true,
-      "tp1_announced": true
-    },
-    {
-      "id": 399,
-      "symbol": "SAMSUNGSTOCK/USDT:USDT",
-      "direction": "LONG",
-      "entry": 190.34,
-      "stop": 181.90464285714285,
-      "target1": 198.77535714285716,
-      "target": 207.2107142857143,
-      "leverage": 2,
-      "opened_at": "2026-08-20 12:28 UTC",
-      "opened_ms": 1787228889606,
-      "rsi": 47.6,
-      "adx": 27.1,
-      "sl_pct": 4.43,
-      "exchange": "mexc",
-      "is_meme": false,
-      "tp1_hit": true,
-      "tp1_announced": true
-    },
-    {
       "id": 400,
       "symbol": "SKHYSTOCK/USDT:USDT",
       "direction": "LONG",
@@ -192,23 +135,6 @@
       "sl_pct": 10.07,
       "exchange": "mexc",
       "is_meme": false
-    },
-    {
-      "id": 405,
-      "symbol": "SKHYNIXSTOCK/USDT:USDT",
-      "direction": "LONG",
-      "entry": 1284.35,
-      "stop": 1265.5742857142855,
-      "target1": 1303.1257142857144,
-      "target": 1321.9014285714286,
-      "leverage": 7,
-      "opened_at": "2026-08-24 00:43 UTC",
-      "opened_ms": 1787532206713,
-      "rsi": 68.1,
-      "adx": 32.6,
-      "sl_pct": 1.46,
-      "exchange": "mexc",
-      "is_meme": false
     }
   ],
   "stats": {
@@ -232,12 +158,12 @@
     },
     "2026-08": {
       "tp": 11,
-      "sl": 37,
+      "sl": 38,
       "tp1": 22,
       "tp2": 9,
-      "be": 23,
-      "r_sum": -10.231217247792475,
-      "r_count": 71
+      "be": 26,
+      "r_sum": -10.331217247792473,
+      "r_count": 75
     }
   }
 }
