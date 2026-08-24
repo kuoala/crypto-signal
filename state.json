@@ -1,5 +1,5 @@
 {
-  "next_id": 406,
+  "next_id": 407,
   "open": [
     {
       "id": 353,
@@ -133,6 +133,23 @@
       "rsi": 70.9,
       "adx": 46.3,
       "sl_pct": 10.07,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 406,
+      "symbol": "NEAR/USDT:USDT",
+      "direction": "LONG",
+      "entry": 2.007,
+      "stop": 1.8148928571428573,
+      "target1": 2.199107142857143,
+      "target": 2.3912142857142857,
+      "leverage": 2,
+      "opened_at": "2026-08-24 08:37 UTC",
+      "opened_ms": 1787560634430,
+      "rsi": 52.5,
+      "adx": 27.2,
+      "sl_pct": 9.57,
       "exchange": "mexc",
       "is_meme": false
     }
