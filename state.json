@@ -1,18 +1,6 @@
 {
-  "next_id": 408,
+  "next_id": 409,
   "open": [
-    {
-      "id": 353,
-      "symbol": "XSPCX/USDT",
-      "direction": "SHORT",
-      "entry": 109.57,
-      "stop": 117.22214285714286,
-      "target1": 101.91785714285713,
-      "target": 94.26571428571428,
-      "leverage": 2,
-      "opened_at": "2026-08-06 01:44 UTC",
-      "opened_ms": 1785980665728
-    },
     {
       "id": 354,
       "symbol": "XSPCX/USDT",
@@ -97,6 +85,23 @@
       "rsi": 52.5,
       "adx": 27.2,
       "sl_pct": 9.57,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 408,
+      "symbol": "FARTCOIN/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.20175,
+      "stop": 0.1849007142857143,
+      "target1": 0.21859928571428572,
+      "target": 0.23544857142857145,
+      "leverage": 2,
+      "opened_at": "2026-08-26 04:31 UTC",
+      "opened_ms": 1787718668930,
+      "rsi": 62.6,
+      "adx": 27.3,
+      "sl_pct": 8.35,
       "exchange": "mexc",
       "is_meme": false
     }
