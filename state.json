@@ -1,5 +1,5 @@
 {
-  "next_id": 409,
+  "next_id": 410,
   "open": [
     {
       "id": 361,
@@ -44,6 +44,23 @@
       "rsi": 62.6,
       "adx": 27.3,
       "sl_pct": 8.35,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 409,
+      "symbol": "SPCXSTOCK/USDT:USDT",
+      "direction": "LONG",
+      "entry": 139.59,
+      "stop": 136.64785714285716,
+      "target1": 142.53214285714284,
+      "target": 145.4742857142857,
+      "leverage": 5,
+      "opened_at": "2026-08-26 22:36 UTC",
+      "opened_ms": 1787783782057,
+      "rsi": 68.0,
+      "adx": 24.4,
+      "sl_pct": 2.11,
       "exchange": "mexc",
       "is_meme": false
     }
