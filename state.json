@@ -99,23 +99,6 @@
       "sl_pct": 9.57,
       "exchange": "mexc",
       "is_meme": false
-    },
-    {
-      "id": 407,
-      "symbol": "SOL/USDT:USDT",
-      "direction": "LONG",
-      "entry": 100.22,
-      "stop": 95.85714285714286,
-      "target1": 104.58285714285714,
-      "target": 108.94571428571427,
-      "leverage": 2,
-      "opened_at": "2026-08-25 08:31 UTC",
-      "opened_ms": 1787646673601,
-      "rsi": 70.0,
-      "adx": 72.9,
-      "sl_pct": 4.35,
-      "exchange": "mexc",
-      "is_meme": false
     }
   ],
   "stats": {
@@ -139,12 +122,12 @@
     },
     "2026-08": {
       "tp": 11,
-      "sl": 40,
+      "sl": 41,
       "tp1": 22,
       "tp2": 9,
       "be": 27,
-      "r_sum": -12.031217247792473,
-      "r_count": 78
+      "r_sum": -13.031217247792473,
+      "r_count": 79
     }
   }
 }
