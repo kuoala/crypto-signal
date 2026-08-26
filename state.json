@@ -2,18 +2,6 @@
   "next_id": 409,
   "open": [
     {
-      "id": 360,
-      "symbol": "XSKHY/USDT",
-      "direction": "SHORT",
-      "entry": 141.65,
-      "stop": 148.8617857142857,
-      "target1": 134.4382142857143,
-      "target": 127.22642857142858,
-      "leverage": 2,
-      "opened_at": "2026-08-06 13:43 UTC",
-      "opened_ms": 1786023792670
-    },
-    {
       "id": 361,
       "symbol": "VIC/USDT:USDT",
       "direction": "SHORT",
@@ -39,40 +27,6 @@
       "rsi": 57.7,
       "adx": 46.4,
       "sl_pct": 7.58,
-      "exchange": "mexc",
-      "is_meme": false
-    },
-    {
-      "id": 404,
-      "symbol": "PENGU/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.009902,
-      "stop": 0.008905357142857142,
-      "target1": 0.010898642857142857,
-      "target": 0.011895285714285714,
-      "leverage": 2,
-      "opened_at": "2026-08-24 00:43 UTC",
-      "opened_ms": 1787532205318,
-      "rsi": 70.9,
-      "adx": 46.3,
-      "sl_pct": 10.07,
-      "exchange": "mexc",
-      "is_meme": false
-    },
-    {
-      "id": 406,
-      "symbol": "NEAR/USDT:USDT",
-      "direction": "LONG",
-      "entry": 2.007,
-      "stop": 1.8148928571428573,
-      "target1": 2.199107142857143,
-      "target": 2.3912142857142857,
-      "leverage": 2,
-      "opened_at": "2026-08-24 08:37 UTC",
-      "opened_ms": 1787560634430,
-      "rsi": 52.5,
-      "adx": 27.2,
-      "sl_pct": 9.57,
       "exchange": "mexc",
       "is_meme": false
     },
@@ -115,12 +69,12 @@
     },
     "2026-08": {
       "tp": 11,
-      "sl": 41,
+      "sl": 43,
       "tp1": 22,
       "tp2": 9,
       "be": 27,
-      "r_sum": -13.031217247792473,
-      "r_count": 79
+      "r_sum": -15.031217247792473,
+      "r_count": 81
     }
   }
 }
