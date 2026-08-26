@@ -2,18 +2,6 @@
   "next_id": 409,
   "open": [
     {
-      "id": 354,
-      "symbol": "XSPCX/USDT",
-      "direction": "SHORT",
-      "entry": 109.86,
-      "stop": 117.38357142857143,
-      "target1": 102.33642857142857,
-      "target": 94.81285714285715,
-      "leverage": 2,
-      "opened_at": "2026-08-06 06:23 UTC",
-      "opened_ms": 1785997403046
-    },
-    {
       "id": 360,
       "symbol": "XSKHY/USDT",
       "direction": "SHORT",
