@@ -1,5 +1,5 @@
 {
-  "next_id": 410,
+  "next_id": 413,
   "open": [
     {
       "id": 403,
@@ -16,7 +16,9 @@
       "adx": 46.4,
       "sl_pct": 7.58,
       "exchange": "mexc",
-      "is_meme": false
+      "is_meme": false,
+      "tp1_hit": true,
+      "tp1_announced": true
     },
     {
       "id": 408,
@@ -33,7 +35,9 @@
       "adx": 27.3,
       "sl_pct": 8.35,
       "exchange": "mexc",
-      "is_meme": false
+      "is_meme": false,
+      "tp1_hit": true,
+      "tp1_announced": true
     },
     {
       "id": 409,
@@ -49,6 +53,57 @@
       "rsi": 68.0,
       "adx": 24.4,
       "sl_pct": 2.11,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 410,
+      "symbol": "SOL/USDT:USDT",
+      "direction": "LONG",
+      "entry": 107.14,
+      "stop": 103.2507142857143,
+      "target1": 111.0292857142857,
+      "target": 114.91857142857143,
+      "leverage": 3,
+      "opened_at": "2026-08-27 18:38 UTC",
+      "opened_ms": 1787855938395,
+      "rsi": 68.6,
+      "adx": 52.3,
+      "sl_pct": 3.63,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 411,
+      "symbol": "TRUMPOFFICIAL/USDT:USDT",
+      "direction": "LONG",
+      "entry": 2.614,
+      "stop": 2.4183571428571424,
+      "target1": 2.8096428571428573,
+      "target": 3.0052857142857143,
+      "leverage": 2,
+      "opened_at": "2026-08-27 18:38 UTC",
+      "opened_ms": 1787855939756,
+      "rsi": 59.9,
+      "adx": 28.6,
+      "sl_pct": 7.48,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 412,
+      "symbol": "ENA/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.16229,
+      "stop": 0.1501517857142857,
+      "target1": 0.17442821428571428,
+      "target": 0.18656642857142855,
+      "leverage": 2,
+      "opened_at": "2026-08-27 18:39 UTC",
+      "opened_ms": 1787855941160,
+      "rsi": 59.3,
+      "adx": 37.5,
+      "sl_pct": 7.48,
       "exchange": "mexc",
       "is_meme": false
     }
@@ -75,7 +130,7 @@
     "2026-08": {
       "tp": 11,
       "sl": 43,
-      "tp1": 22,
+      "tp1": 24,
       "tp2": 9,
       "be": 27,
       "r_sum": -15.031217247792473,
