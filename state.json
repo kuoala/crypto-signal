@@ -2,18 +2,6 @@
   "next_id": 410,
   "open": [
     {
-      "id": 361,
-      "symbol": "VIC/USDT:USDT",
-      "direction": "SHORT",
-      "entry": 0.02889,
-      "stop": 0.03674357142857143,
-      "target1": 0.02103642857142857,
-      "target": 0.013182857142857142,
-      "leverage": 2,
-      "opened_at": "2026-08-07 00:52 UTC",
-      "opened_ms": 1786063925350
-    },
-    {
       "id": 403,
       "symbol": "TAO/USDT:USDT",
       "direction": "LONG",
