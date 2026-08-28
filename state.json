@@ -16,7 +16,9 @@
       "adx": 24.4,
       "sl_pct": 2.11,
       "exchange": "mexc",
-      "is_meme": false
+      "is_meme": false,
+      "tp1_hit": true,
+      "tp1_announced": true
     },
     {
       "id": 410,
@@ -32,76 +34,6 @@
       "rsi": 68.6,
       "adx": 52.3,
       "sl_pct": 3.63,
-      "exchange": "mexc",
-      "is_meme": false
-    },
-    {
-      "id": 411,
-      "symbol": "TRUMPOFFICIAL/USDT:USDT",
-      "direction": "LONG",
-      "entry": 2.614,
-      "stop": 2.4183571428571424,
-      "target1": 2.8096428571428573,
-      "target": 3.0052857142857143,
-      "leverage": 2,
-      "opened_at": "2026-08-27 18:38 UTC",
-      "opened_ms": 1787855939756,
-      "rsi": 59.9,
-      "adx": 28.6,
-      "sl_pct": 7.48,
-      "exchange": "mexc",
-      "is_meme": false,
-      "tp1_hit": true,
-      "tp1_announced": true
-    },
-    {
-      "id": 413,
-      "symbol": "MSTRSTOCK/USDT:USDT",
-      "direction": "LONG",
-      "entry": 139.04,
-      "stop": 133.63785714285714,
-      "target1": 144.44214285714284,
-      "target": 149.84428571428572,
-      "leverage": 3,
-      "opened_at": "2026-08-28 03:56 UTC",
-      "opened_ms": 1787889360936,
-      "rsi": 70.7,
-      "adx": 31.9,
-      "sl_pct": 3.89,
-      "exchange": "mexc",
-      "is_meme": false
-    },
-    {
-      "id": 414,
-      "symbol": "UNI/USDT:USDT",
-      "direction": "LONG",
-      "entry": 4.683,
-      "stop": 4.481142857142857,
-      "target1": 4.884857142857142,
-      "target": 5.086714285714286,
-      "leverage": 2,
-      "opened_at": "2026-08-28 03:56 UTC",
-      "opened_ms": 1787889362481,
-      "rsi": 69.1,
-      "adx": 26.8,
-      "sl_pct": 4.31,
-      "exchange": "mexc",
-      "is_meme": false
-    },
-    {
-      "id": 415,
-      "symbol": "ENA/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.16995,
-      "stop": 0.15685285714285713,
-      "target1": 0.18304714285714285,
-      "target": 0.1961442857142857,
-      "leverage": 2,
-      "opened_at": "2026-08-28 03:56 UTC",
-      "opened_ms": 1787889364087,
-      "rsi": 67.8,
-      "adx": 39.3,
-      "sl_pct": 7.71,
       "exchange": "mexc",
       "is_meme": false
     },
@@ -144,12 +76,12 @@
     },
     "2026-08": {
       "tp": 12,
-      "sl": 43,
-      "tp1": 25,
+      "sl": 46,
+      "tp1": 26,
       "tp2": 10,
-      "be": 29,
-      "r_sum": -12.731217247792472,
-      "r_count": 84
+      "be": 30,
+      "r_sum": -15.431217247792471,
+      "r_count": 88
     }
   }
 }
