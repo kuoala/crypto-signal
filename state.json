@@ -1,5 +1,5 @@
 {
-  "next_id": 418,
+  "next_id": 419,
   "open": [
     {
       "id": 417,
@@ -16,6 +16,23 @@
       "adx": 23.4,
       "sl_pct": 5.43,
       "exchange": "binanceusdm",
+      "is_meme": false
+    },
+    {
+      "id": 418,
+      "symbol": "ZEC/USDT:USDT",
+      "direction": "LONG",
+      "entry": 834.41,
+      "stop": 793.645357142857,
+      "target1": 875.1746428571429,
+      "target": 915.9392857142857,
+      "leverage": 2,
+      "opened_at": "2026-08-29 19:03 UTC",
+      "opened_ms": 1788030217391,
+      "rsi": 67.1,
+      "adx": 25.0,
+      "sl_pct": 4.89,
+      "exchange": "mexc",
       "is_meme": false
     }
   ],
