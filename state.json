@@ -1,5 +1,5 @@
 {
-  "next_id": 417,
+  "next_id": 418,
   "open": [
     {
       "id": 409,
@@ -21,37 +21,20 @@
       "tp1_announced": true
     },
     {
-      "id": 410,
-      "symbol": "SOL/USDT:USDT",
+      "id": 417,
+      "symbol": "SOXS/USDT:USDT",
       "direction": "LONG",
-      "entry": 107.14,
-      "stop": 103.2507142857143,
-      "target1": 111.0292857142857,
-      "target": 114.91857142857143,
-      "leverage": 3,
-      "opened_at": "2026-08-27 18:38 UTC",
-      "opened_ms": 1787855938395,
-      "rsi": 68.6,
-      "adx": 52.3,
-      "sl_pct": 3.63,
-      "exchange": "mexc",
-      "is_meme": false
-    },
-    {
-      "id": 416,
-      "symbol": "HYPE/USDT:USDT",
-      "direction": "LONG",
-      "entry": 84.619,
-      "stop": 81.02725,
-      "target1": 88.21075,
-      "target": 91.80250000000001,
+      "entry": 49.78,
+      "stop": 47.07785714285714,
+      "target1": 52.48214285714286,
+      "target": 55.184285714285714,
       "leverage": 2,
-      "opened_at": "2026-08-28 03:56 UTC",
-      "opened_ms": 1787889365611,
-      "rsi": 61.0,
-      "adx": 35.0,
-      "sl_pct": 4.24,
-      "exchange": "mexc",
+      "opened_at": "2026-08-29 00:15 UTC",
+      "opened_ms": 1787962550632,
+      "rsi": 54.1,
+      "adx": 23.4,
+      "sl_pct": 5.43,
+      "exchange": "binanceusdm",
       "is_meme": false
     }
   ],
@@ -76,12 +59,12 @@
     },
     "2026-08": {
       "tp": 12,
-      "sl": 46,
+      "sl": 48,
       "tp1": 26,
       "tp2": 10,
       "be": 30,
-      "r_sum": -15.431217247792471,
-      "r_count": 88
+      "r_sum": -17.43121724779247,
+      "r_count": 90
     }
   }
 }
