@@ -34,25 +34,6 @@
       "sl_pct": 4.89,
       "exchange": "mexc",
       "is_meme": false
-    },
-    {
-      "id": 419,
-      "symbol": "UNI/USDT:USDT",
-      "direction": "LONG",
-      "entry": 4.677,
-      "stop": 4.477714285714285,
-      "target1": 4.876285714285714,
-      "target": 5.075571428571428,
-      "leverage": 2,
-      "opened_at": "2026-08-30 02:32 UTC",
-      "opened_ms": 1788057173009,
-      "rsi": 58.5,
-      "adx": 28.2,
-      "sl_pct": 4.26,
-      "exchange": "mexc",
-      "is_meme": false,
-      "tp1_hit": true,
-      "tp1_announced": true
     }
   ],
   "stats": {
@@ -75,13 +56,13 @@
       "r_count": 83
     },
     "2026-08": {
-      "tp": 12,
+      "tp": 13,
       "sl": 48,
       "tp1": 27,
-      "tp2": 10,
+      "tp2": 11,
       "be": 31,
-      "r_sum": -17.13121724779247,
-      "r_count": 91
+      "r_sum": -15.431217247792471,
+      "r_count": 92
     }
   }
 }
