@@ -1,5 +1,5 @@
 {
-  "next_id": 420,
+  "next_id": 421,
   "open": [
     {
       "id": 417,
@@ -19,23 +19,21 @@
       "is_meme": false
     },
     {
-      "id": 418,
-      "symbol": "ZEC/USDT:USDT",
+      "id": 420,
+      "symbol": "ETH/USDT:USDT",
       "direction": "LONG",
-      "entry": 834.41,
-      "stop": 793.645357142857,
-      "target1": 875.1746428571429,
-      "target": 915.9392857142857,
-      "leverage": 2,
-      "opened_at": "2026-08-29 19:03 UTC",
-      "opened_ms": 1788030217391,
-      "rsi": 67.1,
-      "adx": 25.0,
-      "sl_pct": 4.89,
+      "entry": 2502.77,
+      "stop": 2465.345,
+      "target1": 2540.195,
+      "target": 2577.62,
+      "leverage": 7,
+      "opened_at": "2026-08-30 22:15 UTC",
+      "opened_ms": 1788128104600,
+      "rsi": 49.6,
+      "adx": 22.2,
+      "sl_pct": 1.5,
       "exchange": "mexc",
-      "is_meme": false,
-      "tp1_hit": true,
-      "tp1_announced": true
+      "is_meme": false
     }
   ],
   "stats": {
@@ -62,9 +60,9 @@
       "sl": 48,
       "tp1": 28,
       "tp2": 11,
-      "be": 31,
-      "r_sum": -15.431217247792471,
-      "r_count": 92
+      "be": 32,
+      "r_sum": -15.13121724779247,
+      "r_count": 93
     }
   }
 }
