@@ -17,23 +17,6 @@
       "sl_pct": 5.43,
       "exchange": "binanceusdm",
       "is_meme": false
-    },
-    {
-      "id": 420,
-      "symbol": "ETH/USDT:USDT",
-      "direction": "LONG",
-      "entry": 2502.77,
-      "stop": 2465.345,
-      "target1": 2540.195,
-      "target": 2577.62,
-      "leverage": 7,
-      "opened_at": "2026-08-30 22:15 UTC",
-      "opened_ms": 1788128104600,
-      "rsi": 49.6,
-      "adx": 22.2,
-      "sl_pct": 1.5,
-      "exchange": "mexc",
-      "is_meme": false
     }
   ],
   "stats": {
@@ -57,12 +40,12 @@
     },
     "2026-08": {
       "tp": 13,
-      "sl": 48,
+      "sl": 49,
       "tp1": 28,
       "tp2": 11,
       "be": 32,
-      "r_sum": -15.13121724779247,
-      "r_count": 93
+      "r_sum": -16.13121724779247,
+      "r_count": 94
     }
   }
 }
