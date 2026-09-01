@@ -1,25 +1,6 @@
 {
-  "next_id": 423,
+  "next_id": 424,
   "open": [
-    {
-      "id": 417,
-      "symbol": "SOXS/USDT:USDT",
-      "direction": "LONG",
-      "entry": 49.78,
-      "stop": 47.07785714285714,
-      "target1": 52.48214285714286,
-      "target": 55.184285714285714,
-      "leverage": 2,
-      "opened_at": "2026-08-29 00:15 UTC",
-      "opened_ms": 1787962550632,
-      "rsi": 54.1,
-      "adx": 23.4,
-      "sl_pct": 5.43,
-      "exchange": "binanceusdm",
-      "is_meme": false,
-      "tp1_hit": true,
-      "tp1_announced": true
-    },
     {
       "id": 421,
       "symbol": "ZEC/USDT:USDT",
@@ -38,19 +19,19 @@
       "is_meme": false
     },
     {
-      "id": 422,
+      "id": 423,
       "symbol": "ENA/USDT:USDT",
       "direction": "LONG",
-      "entry": 0.1653,
-      "stop": 0.15534964285714287,
-      "target1": 0.17525035714285714,
-      "target": 0.18520071428571427,
+      "entry": 0.16245,
+      "stop": 0.15211392857142858,
+      "target1": 0.17278607142857144,
+      "target": 0.18312214285714284,
       "leverage": 2,
-      "opened_at": "2026-09-01 15:47 UTC",
-      "opened_ms": 1788277634421,
-      "rsi": 57.9,
-      "adx": 26.5,
-      "sl_pct": 6.02,
+      "opened_at": "2026-09-01 19:01 UTC",
+      "opened_ms": 1788289273552,
+      "rsi": 52.4,
+      "adx": 27.1,
+      "sl_pct": 6.36,
       "exchange": "mexc",
       "is_meme": false
     }
@@ -85,12 +66,12 @@
     },
     "2026-09": {
       "tp": 0,
-      "sl": 0,
+      "sl": 1,
       "tp1": 1,
       "tp2": 0,
-      "be": 0,
-      "r_sum": 0.0,
-      "r_count": 0
+      "be": 1,
+      "r_sum": -0.7,
+      "r_count": 2
     }
   }
 }
