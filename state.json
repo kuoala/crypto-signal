@@ -1,5 +1,5 @@
 {
-  "next_id": 422,
+  "next_id": 423,
   "open": [
     {
       "id": 417,
@@ -16,7 +16,9 @@
       "adx": 23.4,
       "sl_pct": 5.43,
       "exchange": "binanceusdm",
-      "is_meme": false
+      "is_meme": false,
+      "tp1_hit": true,
+      "tp1_announced": true
     },
     {
       "id": 421,
@@ -32,6 +34,23 @@
       "rsi": 65.6,
       "adx": 27.1,
       "sl_pct": 4.96,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 422,
+      "symbol": "ENA/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.1653,
+      "stop": 0.15534964285714287,
+      "target1": 0.17525035714285714,
+      "target": 0.18520071428571427,
+      "leverage": 2,
+      "opened_at": "2026-09-01 15:47 UTC",
+      "opened_ms": 1788277634421,
+      "rsi": 57.9,
+      "adx": 26.5,
+      "sl_pct": 6.02,
       "exchange": "mexc",
       "is_meme": false
     }
@@ -63,6 +82,15 @@
       "be": 32,
       "r_sum": -16.13121724779247,
       "r_count": 94
+    },
+    "2026-09": {
+      "tp": 0,
+      "sl": 0,
+      "tp1": 1,
+      "tp2": 0,
+      "be": 0,
+      "r_sum": 0.0,
+      "r_count": 0
     }
   }
 }
