@@ -1,6 +1,24 @@
 {
-  "next_id": 424,
-  "open": [],
+  "next_id": 425,
+  "open": [
+    {
+      "id": 424,
+      "symbol": "NVIDIA/USDT:USDT",
+      "direction": "LONG",
+      "entry": 227.6,
+      "stop": 223.6807142857143,
+      "target1": 231.5192857142857,
+      "target": 235.4385714285714,
+      "leverage": 6,
+      "opened_at": "2026-09-02 19:06 UTC",
+      "opened_ms": 1788376004044,
+      "rsi": 69.9,
+      "adx": 29.1,
+      "sl_pct": 1.72,
+      "exchange": "mexc",
+      "is_meme": false
+    }
+  ],
   "stats": {
     "2026-06": {
       "tp": 4,
