@@ -1,5 +1,5 @@
 {
-  "next_id": 430,
+  "next_id": 433,
   "open": [
     {
       "id": 425,
@@ -16,7 +16,9 @@
       "adx": 26.4,
       "sl_pct": 3.8,
       "exchange": "mexc",
-      "is_meme": false
+      "is_meme": false,
+      "tp1_hit": true,
+      "tp1_announced": true
     },
     {
       "id": 426,
@@ -67,7 +69,9 @@
       "adx": 23.3,
       "sl_pct": 2.06,
       "exchange": "mexc",
-      "is_meme": false
+      "is_meme": false,
+      "tp1_hit": true,
+      "tp1_announced": true
     },
     {
       "id": 429,
@@ -83,6 +87,57 @@
       "rsi": 57.9,
       "adx": 24.7,
       "sl_pct": 2.95,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 430,
+      "symbol": "XRP/USDT:USDT",
+      "direction": "LONG",
+      "entry": 1.4709,
+      "stop": 1.4236392857142859,
+      "target1": 1.5181607142857143,
+      "target": 1.5654214285714287,
+      "leverage": 3,
+      "opened_at": "2026-09-03 22:01 UTC",
+      "opened_ms": 1788472885172,
+      "rsi": 71.7,
+      "adx": 22.1,
+      "sl_pct": 3.21,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 431,
+      "symbol": "ZEC/USDT:USDT",
+      "direction": "LONG",
+      "entry": 966.02,
+      "stop": 917.0096428571428,
+      "target1": 1015.0303571428572,
+      "target": 1064.0407142857143,
+      "leverage": 2,
+      "opened_at": "2026-09-03 22:01 UTC",
+      "opened_ms": 1788472886665,
+      "rsi": 71.5,
+      "adx": 22.5,
+      "sl_pct": 5.07,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 432,
+      "symbol": "UNI/USDT:USDT",
+      "direction": "LONG",
+      "entry": 6.23,
+      "stop": 5.808607142857143,
+      "target1": 6.6513928571428576,
+      "target": 7.072785714285715,
+      "leverage": 2,
+      "opened_at": "2026-09-03 22:01 UTC",
+      "opened_ms": 1788472888184,
+      "rsi": 57.4,
+      "adx": 48.8,
+      "sl_pct": 6.76,
       "exchange": "mexc",
       "is_meme": false
     }
@@ -118,7 +173,7 @@
     "2026-09": {
       "tp": 0,
       "sl": 4,
-      "tp1": 1,
+      "tp1": 3,
       "tp2": 0,
       "be": 1,
       "r_sum": -3.7,
