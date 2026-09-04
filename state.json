@@ -1,5 +1,5 @@
 {
-  "next_id": 435,
+  "next_id": 436,
   "open": [
     {
       "id": 425,
@@ -172,6 +172,23 @@
       "rsi": 56.6,
       "adx": 23.2,
       "sl_pct": 6.43,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 435,
+      "symbol": "SNDKSTOCK/USDT:USDT",
+      "direction": "LONG",
+      "entry": 1581.49,
+      "stop": 1541.7367857142858,
+      "target1": 1621.2432142857142,
+      "target": 1660.9964285714286,
+      "leverage": 4,
+      "opened_at": "2026-09-04 08:20 UTC",
+      "opened_ms": 1788510012686,
+      "rsi": 71.4,
+      "adx": 28.7,
+      "sl_pct": 2.51,
       "exchange": "mexc",
       "is_meme": false
     }
