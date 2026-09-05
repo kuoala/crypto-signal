@@ -1,25 +1,6 @@
 {
-  "next_id": 438,
+  "next_id": 439,
   "open": [
-    {
-      "id": 432,
-      "symbol": "UNI/USDT:USDT",
-      "direction": "LONG",
-      "entry": 6.23,
-      "stop": 5.808607142857143,
-      "target1": 6.6513928571428576,
-      "target": 7.072785714285715,
-      "leverage": 2,
-      "opened_at": "2026-09-03 22:01 UTC",
-      "opened_ms": 1788472888184,
-      "rsi": 57.4,
-      "adx": 48.8,
-      "sl_pct": 6.76,
-      "exchange": "mexc",
-      "is_meme": false,
-      "tp1_hit": true,
-      "tp1_announced": true
-    },
     {
       "id": 434,
       "symbol": "ENA/USDT:USDT",
@@ -72,6 +53,23 @@
       "is_meme": false,
       "tp1_hit": true,
       "tp1_announced": true
+    },
+    {
+      "id": 438,
+      "symbol": "DOGE/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.09076,
+      "stop": 0.08721571428571429,
+      "target1": 0.0943042857142857,
+      "target": 0.09784857142857142,
+      "leverage": 3,
+      "opened_at": "2026-09-05 21:48 UTC",
+      "opened_ms": 1788644930790,
+      "rsi": 69.7,
+      "adx": 23.0,
+      "sl_pct": 3.91,
+      "exchange": "mexc",
+      "is_meme": false
     }
   ],
   "stats": {
@@ -107,9 +105,9 @@
       "sl": 9,
       "tp1": 5,
       "tp2": 1,
-      "be": 4,
-      "r_sum": -6.1000000000000005,
-      "r_count": 14
+      "be": 5,
+      "r_sum": -5.800000000000001,
+      "r_count": 15
     }
   }
 }
