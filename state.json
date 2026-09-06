@@ -1,25 +1,6 @@
 {
-  "next_id": 440,
+  "next_id": 441,
   "open": [
-    {
-      "id": 434,
-      "symbol": "ENA/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.16829,
-      "stop": 0.15747714285714287,
-      "target1": 0.17910285714285712,
-      "target": 0.18991571428571427,
-      "leverage": 2,
-      "opened_at": "2026-09-04 02:05 UTC",
-      "opened_ms": 1788487528056,
-      "rsi": 56.6,
-      "adx": 23.2,
-      "sl_pct": 6.43,
-      "exchange": "mexc",
-      "is_meme": false,
-      "tp1_hit": true,
-      "tp1_announced": true
-    },
     {
       "id": 436,
       "symbol": "ASTER/USDT:USDT",
@@ -89,6 +70,23 @@
       "sl_pct": 3.34,
       "exchange": "mexc",
       "is_meme": false
+    },
+    {
+      "id": 440,
+      "symbol": "ENA/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.17542,
+      "stop": 0.165325,
+      "target1": 0.18551499999999999,
+      "target": 0.19560999999999998,
+      "leverage": 2,
+      "opened_at": "2026-09-06 08:13 UTC",
+      "opened_ms": 1788682415272,
+      "rsi": 60.2,
+      "adx": 24.9,
+      "sl_pct": 5.75,
+      "exchange": "mexc",
+      "is_meme": false
     }
   ],
   "stats": {
@@ -124,9 +122,9 @@
       "sl": 9,
       "tp1": 6,
       "tp2": 1,
-      "be": 5,
-      "r_sum": -5.800000000000001,
-      "r_count": 15
+      "be": 6,
+      "r_sum": -5.500000000000001,
+      "r_count": 16
     }
   }
 }
