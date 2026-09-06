@@ -1,5 +1,5 @@
 {
-  "next_id": 439,
+  "next_id": 440,
   "open": [
     {
       "id": 434,
@@ -16,7 +16,9 @@
       "adx": 23.2,
       "sl_pct": 6.43,
       "exchange": "mexc",
-      "is_meme": false
+      "is_meme": false,
+      "tp1_hit": true,
+      "tp1_announced": true
     },
     {
       "id": 436,
@@ -70,6 +72,23 @@
       "sl_pct": 3.91,
       "exchange": "mexc",
       "is_meme": false
+    },
+    {
+      "id": 439,
+      "symbol": "AAVE/USDT:USDT",
+      "direction": "LONG",
+      "entry": 134.35,
+      "stop": 129.85857142857142,
+      "target1": 138.84142857142857,
+      "target": 143.33285714285714,
+      "leverage": 3,
+      "opened_at": "2026-09-06 02:00 UTC",
+      "opened_ms": 1788660059628,
+      "rsi": 50.6,
+      "adx": 33.6,
+      "sl_pct": 3.34,
+      "exchange": "mexc",
+      "is_meme": false
     }
   ],
   "stats": {
@@ -103,7 +122,7 @@
     "2026-09": {
       "tp": 1,
       "sl": 9,
-      "tp1": 5,
+      "tp1": 6,
       "tp2": 1,
       "be": 5,
       "r_sum": -5.800000000000001,
