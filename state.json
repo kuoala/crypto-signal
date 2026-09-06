@@ -2,23 +2,6 @@
   "next_id": 441,
   "open": [
     {
-      "id": 436,
-      "symbol": "ASTER/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.7887,
-      "stop": 0.754692857142857,
-      "target1": 0.8227071428571429,
-      "target": 0.8567142857142857,
-      "leverage": 2,
-      "opened_at": "2026-09-05 14:16 UTC",
-      "opened_ms": 1788617763548,
-      "rsi": 69.8,
-      "adx": 28.8,
-      "sl_pct": 4.31,
-      "exchange": "mexc",
-      "is_meme": false
-    },
-    {
       "id": 437,
       "symbol": "LTC/USDT:USDT",
       "direction": "LONG",
@@ -119,12 +102,12 @@
     },
     "2026-09": {
       "tp": 1,
-      "sl": 9,
+      "sl": 10,
       "tp1": 6,
       "tp2": 1,
       "be": 6,
-      "r_sum": -5.500000000000001,
-      "r_count": 16
+      "r_sum": -6.500000000000001,
+      "r_count": 17
     }
   }
 }
