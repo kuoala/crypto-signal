@@ -51,23 +51,6 @@
       "sl_pct": 5.75,
       "exchange": "mexc",
       "is_meme": false
-    },
-    {
-      "id": 441,
-      "symbol": "ADA/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.2233,
-      "stop": 0.2166357142857143,
-      "target1": 0.2299642857142857,
-      "target": 0.23662857142857144,
-      "leverage": 3,
-      "opened_at": "2026-09-07 01:58 UTC",
-      "opened_ms": 1788746296751,
-      "rsi": 65.6,
-      "adx": 26.2,
-      "sl_pct": 2.98,
-      "exchange": "mexc",
-      "is_meme": false
     }
   ],
   "stats": {
@@ -100,12 +83,12 @@
     },
     "2026-09": {
       "tp": 2,
-      "sl": 10,
+      "sl": 11,
       "tp1": 6,
       "tp2": 2,
       "be": 6,
-      "r_sum": -4.800000000000001,
-      "r_count": 18
+      "r_sum": -5.800000000000001,
+      "r_count": 19
     }
   }
 }
