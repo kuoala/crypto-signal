@@ -34,23 +34,6 @@
       "sl_pct": 3.34,
       "exchange": "mexc",
       "is_meme": false
-    },
-    {
-      "id": 440,
-      "symbol": "ENA/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.17542,
-      "stop": 0.165325,
-      "target1": 0.18551499999999999,
-      "target": 0.19560999999999998,
-      "leverage": 2,
-      "opened_at": "2026-09-06 08:13 UTC",
-      "opened_ms": 1788682415272,
-      "rsi": 60.2,
-      "adx": 24.9,
-      "sl_pct": 5.75,
-      "exchange": "mexc",
-      "is_meme": false
     }
   ],
   "stats": {
@@ -83,12 +66,12 @@
     },
     "2026-09": {
       "tp": 2,
-      "sl": 11,
+      "sl": 12,
       "tp1": 6,
       "tp2": 2,
       "be": 6,
-      "r_sum": -5.800000000000001,
-      "r_count": 19
+      "r_sum": -6.800000000000001,
+      "r_count": 20
     }
   }
 }
