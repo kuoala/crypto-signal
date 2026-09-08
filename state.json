@@ -1,5 +1,5 @@
 {
-  "next_id": 444,
+  "next_id": 445,
   "open": [
     {
       "id": 438,
@@ -15,23 +15,6 @@
       "rsi": 69.7,
       "adx": 23.0,
       "sl_pct": 3.91,
-      "exchange": "mexc",
-      "is_meme": false
-    },
-    {
-      "id": 439,
-      "symbol": "AAVE/USDT:USDT",
-      "direction": "LONG",
-      "entry": 134.35,
-      "stop": 129.85857142857142,
-      "target1": 138.84142857142857,
-      "target": 143.33285714285714,
-      "leverage": 3,
-      "opened_at": "2026-09-06 02:00 UTC",
-      "opened_ms": 1788660059628,
-      "rsi": 50.6,
-      "adx": 33.6,
-      "sl_pct": 3.34,
       "exchange": "mexc",
       "is_meme": false
     },
@@ -53,19 +36,19 @@
       "is_meme": false
     },
     {
-      "id": 443,
+      "id": 444,
       "symbol": "USOIL/USDT:USDT",
       "direction": "LONG",
-      "entry": 94.24,
-      "stop": 92.9992857142857,
-      "target1": 95.48071428571428,
-      "target": 96.72142857142858,
-      "leverage": 8,
-      "opened_at": "2026-09-08 08:26 UTC",
-      "opened_ms": 1788856001437,
-      "rsi": 71.3,
-      "adx": 25.8,
-      "sl_pct": 1.32,
+      "entry": 93.5,
+      "stop": 92.17357142857142,
+      "target1": 94.82642857142858,
+      "target": 96.15285714285714,
+      "leverage": 7,
+      "opened_at": "2026-09-08 15:41 UTC",
+      "opened_ms": 1788882095405,
+      "rsi": 63.1,
+      "adx": 27.4,
+      "sl_pct": 1.42,
       "exchange": "mexc",
       "is_meme": false
     }
@@ -100,12 +83,12 @@
     },
     "2026-09": {
       "tp": 2,
-      "sl": 12,
+      "sl": 14,
       "tp1": 6,
       "tp2": 2,
       "be": 6,
-      "r_sum": -6.800000000000001,
-      "r_count": 20
+      "r_sum": -8.8,
+      "r_count": 22
     }
   }
 }
