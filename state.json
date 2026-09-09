@@ -1,5 +1,5 @@
 {
-  "next_id": 446,
+  "next_id": 448,
   "open": [
     {
       "id": 438,
@@ -36,19 +36,36 @@
       "is_meme": false
     },
     {
-      "id": 445,
-      "symbol": "ADA/USDT:USDT",
+      "id": 446,
+      "symbol": "SPCXSTOCK/USDT:USDT",
       "direction": "LONG",
-      "entry": 0.2292,
-      "stop": 0.21985714285714286,
-      "target1": 0.2385428571428571,
-      "target": 0.24788571428571426,
-      "leverage": 2,
-      "opened_at": "2026-09-08 19:08 UTC",
-      "opened_ms": 1788894524139,
-      "rsi": 62.0,
-      "adx": 28.4,
-      "sl_pct": 4.08,
+      "entry": 152.86,
+      "stop": 150.2714285714286,
+      "target1": 155.44857142857143,
+      "target": 158.03714285714287,
+      "leverage": 6,
+      "opened_at": "2026-09-09 02:13 UTC",
+      "opened_ms": 1788920023796,
+      "rsi": 62.5,
+      "adx": 30.7,
+      "sl_pct": 1.69,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 447,
+      "symbol": "USOIL/USDT:USDT",
+      "direction": "LONG",
+      "entry": 93.86,
+      "stop": 92.1275,
+      "target1": 95.5925,
+      "target": 97.325,
+      "leverage": 5,
+      "opened_at": "2026-09-09 02:13 UTC",
+      "opened_ms": 1788920025303,
+      "rsi": 59.8,
+      "adx": 24.7,
+      "sl_pct": 1.85,
       "exchange": "mexc",
       "is_meme": false
     }
@@ -83,12 +100,12 @@
     },
     "2026-09": {
       "tp": 2,
-      "sl": 15,
+      "sl": 16,
       "tp1": 6,
       "tp2": 2,
       "be": 6,
-      "r_sum": -9.8,
-      "r_count": 23
+      "r_sum": -10.8,
+      "r_count": 24
     }
   }
 }
