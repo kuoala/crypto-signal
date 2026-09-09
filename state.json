@@ -2,23 +2,6 @@
   "next_id": 448,
   "open": [
     {
-      "id": 438,
-      "symbol": "DOGE/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.09076,
-      "stop": 0.08721571428571429,
-      "target1": 0.0943042857142857,
-      "target": 0.09784857142857142,
-      "leverage": 3,
-      "opened_at": "2026-09-05 21:48 UTC",
-      "opened_ms": 1788644930790,
-      "rsi": 69.7,
-      "adx": 23.0,
-      "sl_pct": 3.91,
-      "exchange": "mexc",
-      "is_meme": false
-    },
-    {
       "id": 446,
       "symbol": "SPCXSTOCK/USDT:USDT",
       "direction": "LONG",
@@ -83,12 +66,12 @@
     },
     "2026-09": {
       "tp": 2,
-      "sl": 17,
+      "sl": 18,
       "tp1": 6,
       "tp2": 2,
       "be": 6,
-      "r_sum": -11.8,
-      "r_count": 25
+      "r_sum": -12.8,
+      "r_count": 26
     }
   }
 }
