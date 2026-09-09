@@ -19,23 +19,6 @@
       "is_meme": false
     },
     {
-      "id": 442,
-      "symbol": "SUI/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.8292,
-      "stop": 0.7941857142857143,
-      "target1": 0.8642142857142858,
-      "target": 0.8992285714285715,
-      "leverage": 2,
-      "opened_at": "2026-09-07 22:24 UTC",
-      "opened_ms": 1788819862503,
-      "rsi": 65.3,
-      "adx": 28.6,
-      "sl_pct": 4.22,
-      "exchange": "mexc",
-      "is_meme": false
-    },
-    {
       "id": 446,
       "symbol": "SPCXSTOCK/USDT:USDT",
       "direction": "LONG",
@@ -100,12 +83,12 @@
     },
     "2026-09": {
       "tp": 2,
-      "sl": 16,
+      "sl": 17,
       "tp1": 6,
       "tp2": 2,
       "be": 6,
-      "r_sum": -10.8,
-      "r_count": 24
+      "r_sum": -11.8,
+      "r_count": 25
     }
   }
 }
