@@ -1,6 +1,24 @@
 {
-  "next_id": 448,
-  "open": [],
+  "next_id": 449,
+  "open": [
+    {
+      "id": 448,
+      "symbol": "HBAR/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.09683,
+      "stop": 0.09325678571428572,
+      "target1": 0.10040321428571428,
+      "target": 0.10397642857142857,
+      "leverage": 3,
+      "opened_at": "2026-09-28 10:19 UTC",
+      "opened_ms": 1790590761511,
+      "rsi": 54.1,
+      "adx": 25.8,
+      "sl_pct": 3.69,
+      "exchange": "mexc",
+      "is_meme": false
+    }
+  ],
   "stats": {
     "2026-06": {
       "tp": 4,
