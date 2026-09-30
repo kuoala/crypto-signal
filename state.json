@@ -1,24 +1,6 @@
 {
   "next_id": 450,
-  "open": [
-    {
-      "id": 449,
-      "symbol": "AVAX/USDT:USDT",
-      "direction": "LONG",
-      "entry": 11.452,
-      "stop": 10.82092857142857,
-      "target1": 12.08307142857143,
-      "target": 12.714142857142859,
-      "leverage": 2,
-      "opened_at": "2026-09-29 10:16 UTC",
-      "opened_ms": 1790676981174,
-      "rsi": 59.6,
-      "adx": 26.2,
-      "sl_pct": 5.51,
-      "exchange": "mexc",
-      "is_meme": false
-    }
-  ],
+  "open": [],
   "stats": {
     "2026-06": {
       "tp": 4,
@@ -49,12 +31,12 @@
     },
     "2026-09": {
       "tp": 3,
-      "sl": 19,
+      "sl": 20,
       "tp1": 6,
       "tp2": 3,
       "be": 7,
-      "r_sum": -11.8,
-      "r_count": 29
+      "r_sum": -12.8,
+      "r_count": 30
     }
   }
 }
