@@ -1,0 +1,89 @@
+"""Shared bits for mirroring signal channels: scrape, parse (EN/FA), live-price gate."""
+import html, re
+from datetime import datetime
+import ccxt, requests
+
+def fetch_page(ch, before=None):
+    """Yield (id, utc_ms, text) for one t.me/s page (~20 posts)."""
+    url = f"https://t.me/s/{ch}" + (f"?before={before}" if before else "")
+    for b in requests.get(url, timeout=20).text.split("tgme_widget_message_wrap")[1:]:
+        pid = int(re.search(rf'data-post="{ch}/(\d+)"', b, re.I).group(1))
+        m = re.search(r"js-message_text[^>]*>(.*?)</div>", b, re.S)
+        t = re.search(r'datetime="([^"]+)"', b)
+        if m and t:
+            txt = html.unescape(re.sub(r"<[^>]+>", "", re.sub(r"<br/?>", "\n", m.group(1))))
+            yield pid, int(datetime.fromisoformat(t.group(1)).timestamp() * 1000), txt
+
+NUM = r"\d+(?:\.\d+)?"
+def _nums(s): return [float(x) for x in re.findall(NUM, s.replace(",", "")) ]
+
+def parse_signal(text):
+    """-> dict(symbol, side, entries, stop, targets, lev) or None. Needs side+entry+stop+>=1 TP."""
+    t = text.replace("‏", "")
+    sym = re.search(r"#?([A-Z0-9]{2,15})\s*/\s*USDT", t, re.I) or re.search(r"(?:نام ارز|coin|pair)\s*:?\s*#?([A-Z0-9]{2,15})", t, re.I)
+    side = re.search(r"\b(LONG|SHORT)\b", t, re.I)
+    if not (sym and side):
+        return None
+    def after(*keys):
+        out = []   # every line carrying the label, so "TP1: x / TP2: y" lines all count
+        for ln in t.split("\n"):
+            for k in keys:
+                m = re.search(k + r"[^\n\d]*(.*)", ln, re.I)
+                if m:
+                    out += _nums(re.sub(r"^\d\s*[:=)-]", "", m.group(1)) if re.match(r"\d\s*[:=)-]", m.group(1)) else m.group(1))
+                    break
+        return out
+    ent = after(r"entry", r"نقطه ورود", r"buy zone")
+    stop = after(r"stop[\s-]*loss", r"\bsl\b", r"حد ضرر", r"\bstop\b")
+    tps = after(r"targets?", r"take[\s-]*profit", r"\btps?\d*\b", r"تارگت ها")
+    if not (ent and stop and tps):
+        return None
+    lev = re.search(r"(?:leverage|لورج)[^\n\d]*(\d+)", t, re.I)
+    return dict(symbol=sym.group(1).upper(), side=side.group(1).upper(), entries=ent,
+                stop=stop[0], targets=sorted(set(tps), reverse=side.group(1).upper() == "SHORT"),
+                lev=lev.group(1) if lev else None)
+
+def check(sig, price):
+    """Sanity + freshness vs live price. Returns None if OK else the reason."""
+    long = sig["side"] == "LONG"
+    e = sum(sig["entries"][:2]) / len(sig["entries"][:2])
+    tp1 = sig["targets"][0]
+    if long != (tp1 > e) or long != (sig["stop"] < e):
+        return "stop/targets on wrong side"
+    risk = abs(e - sig["stop"]) / e
+    if not 0.005 <= risk <= 0.08:
+        return f"stop distance {risk:.1%} outside 0.5-8%"
+    if abs(price - e) / e > 0.01 * 1.5:
+        return f"stale: price {price} vs entry {e:.6g}"
+    if (price >= tp1) if long else (price <= tp1):
+        return "TP1 already hit"
+    if (price <= sig["stop"]) if long else (price >= sig["stop"]):
+        return "stop already hit"
+    if abs(tp1 - e) / abs(e - sig["stop"]) < 0.5:
+        return "TP1 reward < 0.5R"
+    return None
+
+_ex = None
+def exchange():
+    global _ex
+    if _ex is None:
+        _ex = ccxt.mexc({"options": {"defaultType": "swap"}}); _ex.load_markets()
+    return _ex
+
+def mexc_symbol(base):
+    for b in (base, "1000" + base):
+        s = f"{b}/USDT:USDT"
+        if s in exchange().markets: return s
+    return None
+
+def self_test():
+    s = parse_signal("نام ارز #NEAR/USDT\n⭕️ حالت معامله = SHORT 🔴\n⚠️لورج :- 5X 10X 20X\n⚡️ نقطه ورود = [ 4.672 & 4.684 ]\n❌ حد ضرر :- 4.850\n✅ تارگت ها = [ 4.634 , 4.580 , 4.535 ]")
+    assert s and s["side"] == "SHORT" and s["stop"] == 4.85 and s["targets"][0] == 4.634 and s["entries"] == [4.672, 4.684], s
+    s = parse_signal("#BTC/USDT LONG\nEntry: 64,250 - 64,000\nSL: 62,800\nTP1: 65,700\nTP2: 67,100")
+    assert s and s["entries"] == [64250, 64000] and s["stop"] == 62800 and s["targets"][0] == 65700, s
+    assert check(s, 64200) is None and "stale" in check(s, 70000)
+    assert parse_signal("join vip LONG now") is None
+    print("ok")
+
+if __name__ == "__main__":
+    self_test()

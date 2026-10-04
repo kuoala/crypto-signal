@@ -1,9 +1,9 @@
 name: Crypto Signal Bot
 
 on:
-  schedule:
+  # schedule disabled: noise removed from channel
     # Runs once daily at 00:00 UTC
-    - cron: "0 0 * * *"
+    # - cron: "0 0 * * *"
   workflow_dispatch:   # Allow manual trigger from GitHub UI
 
 jobs:

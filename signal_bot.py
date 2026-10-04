@@ -1140,10 +1140,7 @@ def run_once():
             STATE["open"].append(open_record(s))
 
     if not top and not meme_top:
-        print("[i] No new signals this run. Trying fallback sources...")
-        posted = try_fallbacks(ex)
-        if not posted:
-            print("[!] All fallback sources exhausted — nothing posted this run.")
+        print("[i] No new signals this run. Nothing posted (no filler posts).")
 
     save_state(STATE)
     print("[+] Done. State saved.")
