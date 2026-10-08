@@ -1,24 +1,6 @@
 {
   "next_id": 451,
-  "open": [
-    {
-      "id": 450,
-      "symbol": "SAND/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.07778,
-      "stop": 0.0710075,
-      "target1": 0.0845525,
-      "target": 0.09132500000000002,
-      "leverage": 2,
-      "opened_at": "2026-10-08 03:38 UTC",
-      "opened_ms": 1791430733463,
-      "rsi": 63.9,
-      "adx": 31.6,
-      "sl_pct": 8.71,
-      "exchange": "mexc",
-      "is_meme": false
-    }
-  ],
+  "open": [],
   "stats": {
     "2026-06": {
       "tp": 4,
@@ -55,6 +37,15 @@
       "be": 7,
       "r_sum": -12.8,
       "r_count": 30
+    },
+    "2026-10": {
+      "tp": 0,
+      "sl": 1,
+      "tp1": 0,
+      "tp2": 0,
+      "be": 0,
+      "r_sum": -1.0,
+      "r_count": 1
     }
   }
 }
