@@ -1,6 +1,24 @@
 {
-  "next_id": 451,
-  "open": [],
+  "next_id": 452,
+  "open": [
+    {
+      "id": 451,
+      "symbol": "OP/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.13855,
+      "stop": 0.12899714285714287,
+      "target1": 0.14810285714285715,
+      "target": 0.1576557142857143,
+      "leverage": 2,
+      "opened_at": "2026-10-10 16:37 UTC",
+      "opened_ms": 1791650258739,
+      "rsi": 69.0,
+      "adx": 27.5,
+      "sl_pct": 6.89,
+      "exchange": "mexc",
+      "is_meme": false
+    }
+  ],
   "stats": {
     "2026-06": {
       "tp": 4,
