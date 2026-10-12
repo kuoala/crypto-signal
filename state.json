@@ -1,5 +1,5 @@
 {
-  "next_id": 453,
+  "next_id": 454,
   "open": [
     {
       "id": 451,
@@ -19,19 +19,19 @@
       "is_meme": false
     },
     {
-      "id": 452,
-      "symbol": "BTW/USDT:USDT",
+      "id": 453,
+      "symbol": "UKOIL/USDT:USDT",
       "direction": "LONG",
-      "entry": 1.6822,
-      "stop": 1.5417035714285714,
-      "target1": 1.8226964285714284,
-      "target": 1.963192857142857,
-      "leverage": 2,
-      "opened_at": "2026-10-11 17:03 UTC",
-      "opened_ms": 1791738199256,
-      "rsi": 66.0,
-      "adx": 26.4,
-      "sl_pct": 8.35,
+      "entry": 103.92,
+      "stop": 102.56571428571428,
+      "target1": 105.27428571428572,
+      "target": 106.62857142857143,
+      "leverage": 8,
+      "opened_at": "2026-10-12 20:37 UTC",
+      "opened_ms": 1791837438102,
+      "rsi": 66.6,
+      "adx": 26.6,
+      "sl_pct": 1.3,
       "exchange": "mexc",
       "is_meme": false
     }
@@ -78,9 +78,9 @@
       "sl": 1,
       "tp1": 0,
       "tp2": 0,
-      "be": 0,
-      "r_sum": -1.0,
-      "r_count": 1
+      "be": 1,
+      "r_sum": -0.7,
+      "r_count": 2
     }
   }
 }
