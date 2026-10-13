@@ -1,5 +1,5 @@
 {
-  "next_id": 455,
+  "next_id": 457,
   "open": [
     {
       "id": 454,
@@ -15,6 +15,42 @@
       "rsi": 58.4,
       "adx": 22.7,
       "sl_pct": 6.76,
+      "exchange": "mexc",
+      "is_meme": false,
+      "tp1_hit": true,
+      "tp1_announced": true
+    },
+    {
+      "id": 455,
+      "symbol": "OP/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.15289,
+      "stop": 0.14382892857142857,
+      "target1": 0.16195107142857143,
+      "target": 0.17101214285714283,
+      "leverage": 2,
+      "opened_at": "2026-10-13 20:54 UTC",
+      "opened_ms": 1791924874229,
+      "rsi": 62.3,
+      "adx": 23.7,
+      "sl_pct": 5.93,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 456,
+      "symbol": "UKOIL/USDT:USDT",
+      "direction": "LONG",
+      "entry": 103.79,
+      "stop": 102.00821428571429,
+      "target1": 105.57178571428572,
+      "target": 107.35357142857144,
+      "leverage": 6,
+      "opened_at": "2026-10-13 20:54 UTC",
+      "opened_ms": 1791924875646,
+      "rsi": 57.7,
+      "adx": 24.1,
+      "sl_pct": 1.72,
       "exchange": "mexc",
       "is_meme": false
     }
@@ -59,7 +95,7 @@
     "2026-10": {
       "tp": 0,
       "sl": 3,
-      "tp1": 0,
+      "tp1": 1,
       "tp2": 0,
       "be": 1,
       "r_sum": -2.7,
