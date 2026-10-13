@@ -1,6 +1,24 @@
 {
-  "next_id": 454,
-  "open": [],
+  "next_id": 455,
+  "open": [
+    {
+      "id": 454,
+      "symbol": "INJ/USDT:USDT",
+      "direction": "LONG",
+      "entry": 7.852,
+      "stop": 7.321000000000001,
+      "target1": 8.383,
+      "target": 8.914,
+      "leverage": 2,
+      "opened_at": "2026-10-13 15:25 UTC",
+      "opened_ms": 1791905135037,
+      "rsi": 58.4,
+      "adx": 22.7,
+      "sl_pct": 6.76,
+      "exchange": "mexc",
+      "is_meme": false
+    }
+  ],
   "stats": {
     "2026-06": {
       "tp": 4,
