@@ -1,5 +1,5 @@
 {
-  "next_id": 459,
+  "next_id": 460,
   "open": [
     {
       "id": 457,
@@ -32,6 +32,23 @@
       "rsi": 68.5,
       "adx": 27.6,
       "sl_pct": 1.65,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 459,
+      "symbol": "TIA/USDT:USDT",
+      "direction": "LONG",
+      "entry": 0.6669,
+      "stop": 0.6124607142857144,
+      "target1": 0.7213392857142857,
+      "target": 0.7757785714285714,
+      "leverage": 2,
+      "opened_at": "2026-10-16 08:37 UTC",
+      "opened_ms": 1792139825018,
+      "rsi": 67.5,
+      "adx": 22.2,
+      "sl_pct": 8.16,
       "exchange": "mexc",
       "is_meme": false
     }
