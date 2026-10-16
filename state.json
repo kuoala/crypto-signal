@@ -17,25 +17,6 @@
       "sl_pct": 1.65,
       "exchange": "mexc",
       "is_meme": false
-    },
-    {
-      "id": 459,
-      "symbol": "TIA/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.6669,
-      "stop": 0.6124607142857144,
-      "target1": 0.7213392857142857,
-      "target": 0.7757785714285714,
-      "leverage": 2,
-      "opened_at": "2026-10-16 08:37 UTC",
-      "opened_ms": 1792139825018,
-      "rsi": 67.5,
-      "adx": 22.2,
-      "sl_pct": 8.16,
-      "exchange": "mexc",
-      "is_meme": false,
-      "tp1_hit": true,
-      "tp1_announced": true
     }
   ],
   "stats": {
@@ -80,9 +61,9 @@
       "sl": 5,
       "tp1": 3,
       "tp2": 0,
-      "be": 3,
-      "r_sum": -4.1000000000000005,
-      "r_count": 8
+      "be": 4,
+      "r_sum": -3.8000000000000007,
+      "r_count": 9
     }
   }
 }
