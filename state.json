@@ -2,23 +2,6 @@
   "next_id": 460,
   "open": [
     {
-      "id": 457,
-      "symbol": "STRK/USDT:USDT",
-      "direction": "LONG",
-      "entry": 0.0866,
-      "stop": 0.0755825,
-      "target1": 0.0976175,
-      "target": 0.10863499999999998,
-      "leverage": 2,
-      "opened_at": "2026-10-15 22:47 UTC",
-      "opened_ms": 1792104448382,
-      "rsi": 46.1,
-      "adx": 25.4,
-      "sl_pct": 12.72,
-      "exchange": "mexc",
-      "is_meme": false
-    },
-    {
       "id": 458,
       "symbol": "USOIL/USDT:USDT",
       "direction": "LONG",
@@ -50,7 +33,9 @@
       "adx": 22.2,
       "sl_pct": 8.16,
       "exchange": "mexc",
-      "is_meme": false
+      "is_meme": false,
+      "tp1_hit": true,
+      "tp1_announced": true
     }
   ],
   "stats": {
@@ -92,12 +77,12 @@
     },
     "2026-10": {
       "tp": 0,
-      "sl": 4,
-      "tp1": 2,
+      "sl": 5,
+      "tp1": 3,
       "tp2": 0,
       "be": 3,
-      "r_sum": -3.1000000000000005,
-      "r_count": 7
+      "r_sum": -4.1000000000000005,
+      "r_count": 8
     }
   }
 }
