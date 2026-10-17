@@ -11,9 +11,9 @@ MIN_LIQ, MIN_VOL24, MIN_AGE_D = 250_000, 500_000, 3
 PROMOTE_N, PROMOTE_R = 40, 0.15      # shadow trades needed / avg R needed before posting
 
 def get(path, **kw):
-    for _ in range(3):
+    for wait in (5, 20, 45, 60):                      # free tier 429s in bursts: back off, don't die
         r = requests.get(f"{API}{path}", params=kw, timeout=20)
-        if r.status_code == 429: time.sleep(5); continue
+        if r.status_code == 429: time.sleep(wait); continue
         r.raise_for_status(); time.sleep(2.2); return r.json()  # free tier ~30 req/min
     raise RuntimeError("rate limited")
 
@@ -44,13 +44,16 @@ def scan():
     seen = {r["pool"] for r in map(json.loads, open(LOG))} if os.path.exists(LOG) else set()
     out = []
     for net in NETS:
-        for p in get(f"/networks/{net}/trending_pools", page=1)["data"]:
+        try: pools = get(f"/networks/{net}/trending_pools", page=1)["data"]
+        except (RuntimeError, requests.RequestException) as e: print(f"{net} skipped:", e); continue
+        for p in pools:
             a, pool = p["attributes"], p["attributes"]["address"]
             age = (time.time() - pd.Timestamp(a["pool_created_at"]).timestamp()) / 86400
             if (pool in seen or float(a["reserve_in_usd"] or 0) < MIN_LIQ
                     or float(a["volume_usd"]["h24"]) < MIN_VOL24 or age < MIN_AGE_D):
                 continue
-            sig = evaluate(candles(net, pool), a)
+            try: sig = evaluate(candles(net, pool), a)
+            except (RuntimeError, requests.RequestException) as e: print(f"{pool} skipped:", e); continue
             if sig:
                 out.append(dict(pool=pool, net=net, name=a["name"], ts=int(time.time() * 1000),
                                 liq=float(a["reserve_in_usd"]), **sig))
@@ -72,7 +75,8 @@ def main():
     recs = [json.loads(l) for l in open(LOG)] if os.path.exists(LOG) else []
     for r in recs:
         if "r" not in r:
-            g = grade(r)
+            try: g = grade(r)
+            except (RuntimeError, requests.RequestException) as e: print("grade skipped:", e); continue
             if g is not None: r["r"] = g
     recs += scan()
     open(LOG, "w").write("".join(json.dumps(r) + "\n" for r in recs))
