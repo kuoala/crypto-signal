@@ -231,3 +231,34 @@ crontab -e
 - Make it clear on your channel that signals are for educational/informational purposes only and are not financial advice.
 - You can change the strategy in the `analyze()` function (e.g. add a volume filter or multi-timeframe confirmation).
 - To reduce weak signals, raise `MIN_24H_VOLUME_USDT` or tighten the `score` condition.
+
+---
+
+# Alt-Breakout pipeline (Hyperliquid, long-only, 4h) — `alt_breakout.py`
+
+Implements the spec in the Alt-Breakout design doc: Rule A (published) and Rule B (BTC-regime
+shadow, log-only) on a 20-alt Hyperliquid universe. Runs by `.github/workflows/alt_breakout.yml`
+every 4h at :02 past the bar close. Uses the same `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHANNEL_ID`
+secrets. **Separate from the Binance/MEXC bot above** — own state, own IDs.
+
+```bash
+python alt_breakout.py --selftest   # offline check: indicators, exits, kill rules
+python alt_breakout.py --dry-run    # live data, prints only, writes nothing
+```
+
+| File | Purpose |
+|---|---|
+| `breakout_state.json` | open + closed trades per rule, next ID, kill-switch status |
+| `breakout_log.jsonl` | append-only log of every signal, exit and kill event (never edited) |
+
+Implemented: closed-bar-only signals, no-lookahead daily EMA200, ADX/CHOP/Donchian per §5,
+2×ATR stop, 3×ATR ratcheting chandelier, 30-bar time stop, gap-aware stop fills, 4-position cap
+with ADX→CHOP→alpha ranking, 0.2% cost + actual hourly funding in net R, data-gap exclusion,
+funding-feed-stale pause, kill rules (rolling-30 PF/avg R, 12% DD → publishing suspended),
+weekly/monthly reports, exit posts, signal IDs.
+
+Deliberate deviations: (1) signals publish up to 60 min after bar close, not 2 min — Actions cron
+lags; later than that the signal is skipped; (2) kill switch has **no auto-resume**: set
+`"suspended": null` in `breakout_state.json` after review; (3) Rule B is only logged, never posted;
+(4) the universe is a fixed list in the file — refresh quarterly and add a line to `UNIVERSE_LOG`.
+Parameters are frozen until 100 live trades; changes ship as a new version with a new track record.
