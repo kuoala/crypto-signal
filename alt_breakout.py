@@ -82,15 +82,16 @@ def regime_at(d_up, T):
 
 # ---------- ingest (README §7.1) ----------
 def hl(body):
-    for i in range(3):
+    for i in range(4):
         try:
             r = requests.post(HL, json=body, timeout=20)
             r.raise_for_status()
+            time.sleep(0.25)   # ~120 calls/run for 61 coins: stay under HL's rate limit
             return r.json()
         except Exception as e:
-            if i == 2:
+            if i == 3:
                 raise
-            time.sleep(2 * (i + 1))
+            time.sleep(3 * (i + 1))
 
 
 def candles(coin, interval, days, now_ms):
