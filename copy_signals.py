@@ -1,7 +1,7 @@
 """Mirror every signal from the source channel(s) into ours, translated to English:
 signals, and every update on them (targets hit / profit) posted as a reply to our copy of the
 original. Channel names, @mentions and links are stripped. If a source post is edited, our copy is edited."""
-import hashlib, json, os, re, sys
+import hashlib, json, os, re, subprocess, sys, time
 from sources import fetch_posts, parse_signal, clean, self_test
 from telegram_poster import send_get_id, edit_message
 
@@ -64,7 +64,28 @@ def main():
             st["last"] = p["id"]
         st["map"] = dict(sorted(st["map"].items(), key=lambda kv: int(kv[0]))[-300:])  # bound state
         state[ch] = st
+    before = open(STATE).read() if os.path.exists(STATE) else ""
     json.dump(state, open(STATE, "w"))
+    return open(STATE).read() != before
+
+def commit_state():
+    """Persist state right away so a killed job never re-posts what it already sent."""
+    run = lambda *a: subprocess.run(a, check=True, capture_output=True)
+    run("git", "add", STATE)
+    if subprocess.run(["git", "diff", "--cached", "--quiet"]).returncode:
+        run("git", "commit", "-m", "chore: update copy state [skip ci]")
+        run("git", "pull", "--rebase", "--autostash")
+        run("git", "push")
+
+def loop(seconds, every=20):
+    """Poll the source channel every `every` s for `seconds` s (GitHub cron alone lags by hours)."""
+    end = time.time() + seconds
+    while time.time() < end:
+        try:
+            if main(): commit_state()
+        except Exception as e:
+            print("poll error:", e)
+        time.sleep(every)
 
 if __name__ == "__main__":
     self_test()
@@ -77,4 +98,6 @@ if __name__ == "__main__":
     assert find_parent(st, "AVAX", 10) == 500        # replies to its exact parent
     assert find_parent(st, "AVAX", 99) is None        # parent never copied -> no wrong reply
     assert find_parent(st, "AVAX", None) == 501       # no link -> latest signal of that coin
-    main() if "--run" in sys.argv else print("ok (use --run to post)")
+    if "--loop" in sys.argv: loop(int(sys.argv[sys.argv.index("--loop") + 1]))
+    elif "--run" in sys.argv: main()
+    else: print("ok (use --run to post)")

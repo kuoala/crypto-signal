@@ -1,8 +1,10 @@
 name: Copy signals (erfann_finance)
 
+# Real-time mirror: one job polls every 20s for ~5h50m, then re-launches itself.
+# The cron is only a safety net in case the chain ever breaks.
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/15 * * * *"
   workflow_dispatch:
 
 concurrency:
@@ -11,11 +13,12 @@ concurrency:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   copy:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 358
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -23,14 +26,17 @@ jobs:
           python-version: "3.11"
           cache: "pip"
       - run: pip install -r requirements.txt
-      - name: Mirror new signals
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
-        run: python copy_signals.py --run
-      - name: Commit state
+      - name: Git identity
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add copy_state.json
-          git diff --cached --quiet || (git commit -m "chore: update copy state [skip ci]" && git pull --rebase && git push)
+      - name: Mirror signals (poll loop)
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        run: python copy_signals.py --loop 21000
+      - name: Relaunch
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: curl -s -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/${{ github.repository }}/actions/workflows/copy_signals.yml/dispatches" -d '{"ref":"main"}'
