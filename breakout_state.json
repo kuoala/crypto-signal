@@ -10,5 +10,11 @@
   "open": [],
   "closed": [],
   "suspended": null
+ },
+ "C": {
+  "next_id": 1,
+  "open": [],
+  "closed": [],
+  "suspended": null
  }
 }
