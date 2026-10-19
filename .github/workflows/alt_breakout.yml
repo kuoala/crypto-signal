@@ -5,6 +5,11 @@ on:
     # 4h bar closes at 00/04/08/12/16/20 UTC; run just after (cron is UTC)
     - cron: "2 0,4,8,12,16,20 * * *"
   workflow_dispatch:
+    inputs:
+      test_post:
+        description: "Send one labelled test message to Telegram (no trade, no state)"
+        type: boolean
+        default: false
 
 concurrency:
   group: alt-breakout
@@ -29,7 +34,7 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
-        run: python alt_breakout.py
+        run: python alt_breakout.py ${{ inputs.test_post && '--test-post' || '' }}
       - name: Commit state + log
         if: always()
         run: |

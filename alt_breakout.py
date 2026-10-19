@@ -356,6 +356,14 @@ def run(now_ms=None):
     print(f"done. A open={len(st['A']['open'])} closed={len(st['A']['closed'])} | B open={len(st['B']['open'])} closed={len(st['B']['closed'])}")
 
 
+def test_post():
+    """Send one clearly-labelled sample through the real formatter + Telegram path. No state, no log."""
+    now = int(time.time() * 1000)
+    t = new_trade("A", 0, "TEST", pd.Series(dict(c=1.0, atr=0.03, adx=30.0, chop=40.0, T=now)))
+    publish("🧪 PIPELINE TEST — not a trade signal. Verifying Telegram delivery for Alt-Breakout Rule A.\n\n"
+            + fmt_signal(t, 1, (now // H4) * H4 - 1, now))
+
+
 # ---------- self-check ----------
 def selftest():
     # indicators: Donchian excludes current bar; breakout bar fires; ADX high in trend
@@ -393,4 +401,4 @@ def selftest():
 
 
 if __name__ == "__main__":
-    selftest() if "--selftest" in sys.argv else run()
+    selftest() if "--selftest" in sys.argv else test_post() if "--test-post" in sys.argv else run()
