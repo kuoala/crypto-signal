@@ -3,16 +3,22 @@ import html, re
 from datetime import datetime
 import ccxt, requests
 
-def fetch_page(ch, before=None):
-    """Yield (id, utc_ms, text) for one t.me/s page (~20 posts)."""
+def fetch_posts(ch, before=None):
+    """Yield dicts(id, ms, text, reply_to) for one t.me/s page (~20 posts); reply_to = source id replied to."""
     url = f"https://t.me/s/{ch}" + (f"?before={before}" if before else "")
     for b in requests.get(url, timeout=20).text.split("tgme_widget_message_wrap")[1:]:
         pid = int(re.search(rf'data-post="{ch}/(\d+)"', b, re.I).group(1))
         m = re.search(r"js-message_text[^>]*>(.*?)</div>", b, re.S)
         t = re.search(r'datetime="([^"]+)"', b)
+        r = re.search(rf'message_reply[^>]*href="https://t\.me/{ch}/(\d+)', b, re.I)
         if m and t:
             txt = html.unescape(re.sub(r"<[^>]+>", "", re.sub(r"<br/?>", "\n", m.group(1))))
-            yield pid, int(datetime.fromisoformat(t.group(1)).timestamp() * 1000), txt
+            yield dict(id=pid, ms=int(datetime.fromisoformat(t.group(1)).timestamp() * 1000),
+                       text=txt, reply_to=int(r.group(1)) if r else None)
+
+def fetch_page(ch, before=None):
+    for p in fetch_posts(ch, before):
+        yield p["id"], p["ms"], p["text"]
 
 NUM = r"\d+(?:\.\d+)?"
 def _nums(s): return [float(x) for x in re.findall(NUM, s.replace(",", "")) ]
@@ -38,10 +44,10 @@ def parse_signal(text):
     tps = after(r"targets?", r"take[\s-]*profit", r"\btps?\d*\b", r"تارگت ها")
     if not (ent and stop and tps):
         return None
-    lev = re.search(r"(?:leverage|لورج)[^\n\d]*(\d+)", t, re.I)
-    return dict(symbol=sym.group(1).upper(), side=side.group(1).upper(), entries=ent,
+    lev = re.search(r"(?:leverage|لورج)\D*([^\n]*\d[^\n]*)", t, re.I)
+    return dict(symbol=sym.group(1).upper(), side=side.group(1).upper(), entries=ent, targets_raw=tps,
                 stop=stop[0], targets=sorted(set(tps), reverse=side.group(1).upper() == "SHORT"),
-                lev=lev.group(1) if lev else None)
+                lev=lev.group(1).strip() if lev else None)
 
 def check(sig, price):
     """Sanity + freshness vs live price. Returns None if OK else the reason."""
@@ -87,3 +93,8 @@ def self_test():
 
 if __name__ == "__main__":
     self_test()
+
+def clean(text):
+    """Drop every line that names a channel/handle/link, then any stray @handle."""
+    keep = [l for l in text.split("\n") if not re.search(r"@\w|t\.me/|telegram\.me/|https?://", l)]
+    return re.sub(r"\n{3,}", "\n\n", re.sub(r"@\w+", "", "\n".join(keep))).strip()

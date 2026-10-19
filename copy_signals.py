@@ -1,39 +1,74 @@
-"""Mirror vetted signal channels into our channel, translated to English.
-Only posts signals that parse fully and pass a live-price gate (fresh, sane stop/targets,
-tradable on MEXC futures). Profit-claim posts, promos and chatter are never copied."""
-import json, os, sys
-from sources import fetch_page, parse_signal, check, mexc_symbol, exchange, self_test
-from telegram_poster import send_message
+"""Mirror every signal from the source channel(s) into ours, translated to English:
+signals, and every update on them (targets hit / profit) posted as a reply to our copy of the
+original. Channel names, @mentions and links are stripped. If a source post is edited, our copy is edited."""
+import hashlib, json, os, re, sys
+from sources import fetch_posts, parse_signal, clean, self_test
+from telegram_poster import send_get_id, edit_message
 
 STATE = "copy_state.json"
 
-def fmt(ch, s):
-    n = lambda xs: " , ".join(f"{x:g}" for x in xs)
-    return (f"#{s['symbol']}/USDT  ({'🟢' if s['side'] == 'LONG' else '🔴'} {s['side']})\n"
-            f"Leverage: {s['lev'] + 'x (max)' if s['lev'] else 'low (≤5x)'}\nEntry: {n(s['entries'])}\n"
-            f"Stop Loss: {s['stop']:g}\nTargets: {n(s['targets'])}\nSource: @{ch}")
+def sig_text(s):
+    f = lambda xs: " , ".join(f"{x:g}" for x in xs)
+    return (f"#{s['symbol']}/USDT\nDirection: {'🟢' if s['side'] == 'LONG' else '🔴'} {s['side']}\n"
+            f"Leverage: {s['lev'] or '-'}\nEntry: {f(s['entries'])}\nStop Loss: {s['stop']:g}\n"
+            f"Targets: {f(s['targets_raw'])}")
+
+def update_text(t):
+    """Profit/target update -> English, else None. Persian template or already-English."""
+    t = t.replace("‏", "")
+    m = re.search(r"نام ارز\s*:?\s*#(\w+)[^\n]*\n.*?تارگت ها\s*:\s*([\d,\s]+?)\s*\n.*?میزان سود\s*:\s*([\d.]+%)", t, re.S)
+    if m:
+        return m.group(1), f"#{m.group(1)}\n✅ Targets hit: {m.group(2).strip()}\n🚀 Profit: {m.group(3)}"
+    m = re.match(r"#(\w+)(?:/USDT)?\s+(?:Take-Profit|Stop)", t, re.I)
+    return (m.group(1), t) if m else (None, None)
+
+def translate(text):
+    """-> (kind, symbol, english) or None for posts we can't translate (promos / free text)."""
+    s = parse_signal(text)
+    if s:
+        return "signal", s["symbol"], clean(sig_text(s))
+    sym, u = update_text(text)
+    return ("update", sym, clean(u)) if u else None
 
 def main():
     state = json.load(open(STATE)) if os.path.exists(STATE) else {}
-    if "last_id" in state:  # migrate old single-channel state
-        state = {"erfann_finance": state["last_id"]}
     for ch in json.load(open("channels.json")):
-        posts = sorted(fetch_page(ch))
+        st = state.get(ch)
+        if not isinstance(st, dict):            # migrate old {"ch": last_id}
+            st = {"last": st, "map": {}, "sym": {}}
+        posts = sorted(fetch_posts(ch), key=lambda p: p["id"])
         if not posts: continue
-        last = state.get(ch, posts[-1][0])  # first run: start from now, never replay stale signals
-        for pid, _, text in posts:
-            if pid <= last: continue
-            s = parse_signal(text)
-            if s:
-                sym = mexc_symbol(s["symbol"])
-                why = "not on MEXC futures" if not sym else check(s, exchange().fetch_ticker(sym)["last"])
-                print(f"{ch}/{pid} {s['symbol']}: {'POST' if not why else 'skip - ' + why}")
-                if not why and not send_message(fmt(ch, s)):
-                    break  # retry next run
-            last = pid
-        state[ch] = last
+        if st["last"] is None:                  # first run: start from now
+            st["last"] = posts[-1]["id"]
+        for p in posts:
+            key, h = str(p["id"]), hashlib.md5(p["text"].encode()).hexdigest()
+            if key in st["map"]:                # already copied: follow edits
+                if st["map"][key][1] != h and (tr := translate(p["text"])) and edit_message(st["map"][key][0], tr[2]):
+                    st["map"][key][1] = h
+                continue
+            if p["id"] <= st["last"]: continue
+            tr = translate(p["text"])
+            if tr:
+                kind, sym, text = tr
+                reply = None
+                if kind == "update":            # reply to the copy of the signal it answers
+                    src = str(p["reply_to"]) if p["reply_to"] else st["sym"].get(sym)
+                    reply = st["map"][src][0] if src in st["map"] else (st["map"].get(st["sym"].get(sym), [None])[0])
+                mid = send_get_id(text, reply)
+                if mid is None: break           # retry next run
+                st["map"][key] = [mid, h]
+                if kind == "signal": st["sym"][sym] = key
+                print(f"{ch}/{p['id']} {kind} {sym} -> {mid}{' (reply)' if reply else ''}")
+            st["last"] = p["id"]
+        st["map"] = dict(sorted(st["map"].items(), key=lambda kv: int(kv[0]))[-300:])  # bound state
+        state[ch] = st
     json.dump(state, open(STATE, "w"))
 
 if __name__ == "__main__":
     self_test()
+    assert translate("نام ارز :#NEAR\n✅تارگت ها : 1, 2\n🚀 میزان سود : 16.39%\n\nفقط یک هفته با من باش👈 @erfann_finance")[2] == "#NEAR\n✅ Targets hit: 1, 2\n🚀 Profit: 16.39%"
+    k, sym, t = translate("نام ارز #MAGIC/USDT\n⭕️ حالت معامله = LONG 🟢\n⚠️لورج :- 5X 10X 20X\n⚡️ نقطه ورود = [ 0.0635 & 0.0615 ]\n❌ حد ضرر :- 0.0595\n✅ تارگت ها = [ 0.0655 , 0.0680 , 0.0735 ]\n\nفقط یک هفته با من باش👈 @erfann_finance")
+    assert k == "signal" and "@" not in t and "Leverage: 5X 10X 20X" in t and t.endswith("Targets: 0.0655 , 0.068 , 0.0735"), t
+    assert translate("#AXS/USDT Take-Profit target 1 ✅\nProfit: 51.28% 📈")[0] == "update"
+    assert translate("خدایا ممنونم") is None
     main() if "--run" in sys.argv else print("ok (use --run to post)")

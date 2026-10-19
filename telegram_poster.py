@@ -76,3 +76,25 @@ def test_connection() -> bool:
     except Exception as e:
         print(f"❌ Connection error: {e}")
         return False
+
+
+def send_get_id(text: str, reply_to=None):
+    """Send plain text (optionally as a reply); return the new message_id or None."""
+    if not BOT_TOKEN or not CHANNEL_ID:
+        print("ERROR: TELEGRAM_BOT_TOKEN or TELEGRAM_CHANNEL_ID not set.")
+        return None
+    payload = {"chat_id": CHANNEL_ID, "text": text, "disable_web_page_preview": True}
+    if reply_to:
+        payload["reply_parameters"] = {"message_id": reply_to, "allow_sending_without_reply": True}
+    r = requests.post(f"{API_BASE}/sendMessage", json=payload, timeout=15)
+    if r.status_code != 200:
+        print(f"❌ send failed: {r.status_code} — {r.text}")
+        return None
+    return r.json()["result"]["message_id"]
+
+
+def edit_message(message_id: int, text: str) -> bool:
+    r = requests.post(f"{API_BASE}/editMessageText", json={
+        "chat_id": CHANNEL_ID, "message_id": message_id, "text": text,
+        "disable_web_page_preview": True}, timeout=15)
+    return r.status_code == 200 or "not modified" in r.text
