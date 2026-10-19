@@ -262,3 +262,8 @@ lags; later than that the signal is skipped; (2) kill switch has **no auto-resum
 `"suspended": null` in `breakout_state.json` after review; (3) Rule B is only logged, never posted;
 (4) the universe is a fixed list in the file — refresh quarterly and add a line to `UNIVERSE_LOG`.
 Parameters are frozen until 100 live trades; changes ship as a new version with a new track record.
+
+**Rule C (shadow, top-60 universe):** same rules as A on the 60 most liquid Hyperliquid perps
+(`UNIVERSE_WIDE`). Logged and graded in `breakout_state.json` / `breakout_log.jsonl`, never posted.
+Backtest (`research/breakout_bt.py`): top-60 PF 0.87 vs 1.31 for the 20-coin universe — widening the
+universe lost money, so A stays on the proven 20 until live Rule C data says otherwise.

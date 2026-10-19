@@ -26,7 +26,9 @@ H4 = 4 * 3600 * 1000
 
 # Universe frozen 2026-10-17 (refresh quarterly by 24h volume; log changes in UNIVERSE_LOG).
 UNIVERSE = ("ZEC NEAR XRP WLD TIA ZRO kPEPE INJ XMR SUI ARB UNI CRV AAVE DOT LINK DOGE FIL PYTH APT").split()
-UNIVERSE_LOG = {"2026-10-17": "initial universe"}
+# Shadow-only Rule C universe: top-60 by volume on 2026-10-19 (union with core). Backtest PF 0.87 -> never published.
+UNIVERSE_WIDE = UNIVERSE + """HYPE PUMP ENA VVV LIT ONDO STRK FARTCOIN XPL TAO BNB MON LTC SAND GRASS ADA AVAX HBAR SPX BCH ASTER FET TRUMP ETHFI MORPHO ICP JUP TRX LDO NIL XLM PENGU kBONK SYRUP SEI STX S W MET""".split()
+UNIVERSE_LOG = {"2026-10-17": "initial universe", "2026-10-19": "added Rule C shadow universe (top-60)"}
 
 P = dict(DONCH=16, ADX_MIN=25, CHOP_MAX=45, SL_ATR=2.0, TRAIL_ATR=3.0, TIME_BARS=30,
          MAX_OPEN=4, RISK_PCT=1.0, COST=0.002, VERSION="v1.0")
@@ -239,7 +241,7 @@ def load_state():
         with open(STATE_FILE) as f:
             return json.load(f)
     except FileNotFoundError:
-        return {r: dict(next_id=1, open=[], closed=[], suspended=None) for r in "AB"}
+        return {r: dict(next_id=1, open=[], closed=[], suspended=None) for r in "ABC"}
 
 
 # ---------- one run ----------
@@ -247,11 +249,12 @@ def run(now_ms=None):
     now_ms = now_ms or int(time.time() * 1000)
     bar_T = (now_ms // H4) * H4 - 1
     st = load_state()
+    st.setdefault("C", dict(next_id=1, open=[], closed=[], suspended=None))   # state files from before Rule C
 
     d1 = {}
     f4 = {}
     excluded = {}
-    for coin in dict.fromkeys(["BTC", *UNIVERSE]):
+    for coin in dict.fromkeys(["BTC", *UNIVERSE_WIDE]):
         try:
             d = candles(coin, "4h", 120, now_ms)
             why = validate_4h(d, now_ms)
@@ -280,7 +283,7 @@ def run(now_ms=None):
         print("funding feed stale/unavailable -> no new signals this run")
 
     btc_up = regime_at(d1["BTC"], bar_T)
-    for rule in "AB":
+    for rule in "ABC":
         s = st[rule]
         # 1) track open trades through every bar closed since last run
         still = []
@@ -309,7 +312,7 @@ def run(now_ms=None):
                 publish(fmt_exit(c, stats(s["closed"])))
         s["open"] = still
 
-        # 2) kill rules (A only; B is a log-only shadow)
+        # 2) kill rules (A only; B and C are log-only shadows)
         if rule == "A" and not s["suspended"]:
             why = kill_reason(s["closed"])
             if why:
@@ -322,7 +325,7 @@ def run(now_ms=None):
             continue
         held = {t["coin"] for t in s["open"]}
         cands = []
-        for coin in UNIVERSE:
+        for coin in (UNIVERSE_WIDE if rule == "C" else UNIVERSE):
             df = f4.get(coin)
             if df is None or coin in held or df["T"].iloc[-1] != bar_T:
                 continue
@@ -353,7 +356,7 @@ def run(now_ms=None):
     if not DRY:
         with open(STATE_FILE, "w") as f:
             json.dump(st, f, indent=1)
-    print(f"done. A open={len(st['A']['open'])} closed={len(st['A']['closed'])} | B open={len(st['B']['open'])} closed={len(st['B']['closed'])}")
+    print(f"done. A open={len(st['A']['open'])} closed={len(st['A']['closed'])} | B open={len(st['B']['open'])} closed={len(st['B']['closed'])} | C open={len(st['C']['open'])} closed={len(st['C']['closed'])}")
 
 
 def test_post():
