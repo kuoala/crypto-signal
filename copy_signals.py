@@ -30,6 +30,11 @@ def translate(text):
     sym, u = update_text(text)
     return ("update", sym, clean(u)) if u else None
 
+def find_parent(st, sym, reply_to):
+    """Our message_id to reply to. A source reply must map exactly; only a link-less update falls back to the coin's latest signal."""
+    src = str(reply_to) if reply_to else st["sym"].get(sym)
+    return st["map"][src][0] if src in st["map"] else None
+
 def main():
     state = json.load(open(STATE)) if os.path.exists(STATE) else {}
     for ch in json.load(open("channels.json")):
@@ -50,10 +55,7 @@ def main():
             tr = translate(p["text"])
             if tr:
                 kind, sym, text = tr
-                reply = None
-                if kind == "update":            # reply to the copy of the signal it answers
-                    src = str(p["reply_to"]) if p["reply_to"] else st["sym"].get(sym)
-                    reply = st["map"][src][0] if src in st["map"] else (st["map"].get(st["sym"].get(sym), [None])[0])
+                reply = find_parent(st, sym, p["reply_to"]) if kind == "update" else None
                 mid = send_get_id(text, reply)
                 if mid is None: break           # retry next run
                 st["map"][key] = [mid, h]
@@ -71,4 +73,8 @@ if __name__ == "__main__":
     assert k == "signal" and "@" not in t and "Leverage: 5X 10X 20X" in t and t.endswith("Targets: 0.0655 , 0.068 , 0.0735"), t
     assert translate("#AXS/USDT Take-Profit target 1 ✅\nProfit: 51.28% 📈")[0] == "update"
     assert translate("خدایا ممنونم") is None
+    st = {"map": {"10": [500, "h"], "11": [501, "h"]}, "sym": {"AVAX": "11"}}
+    assert find_parent(st, "AVAX", 10) == 500        # replies to its exact parent
+    assert find_parent(st, "AVAX", 99) is None        # parent never copied -> no wrong reply
+    assert find_parent(st, "AVAX", None) == 501       # no link -> latest signal of that coin
     main() if "--run" in sys.argv else print("ok (use --run to post)")
