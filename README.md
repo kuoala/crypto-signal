@@ -257,7 +257,7 @@ with ADX→CHOP→alpha ranking, 0.2% cost + actual hourly funding in net R, dat
 funding-feed-stale pause, kill rules (rolling-30 PF/avg R, 12% DD → publishing suspended),
 weekly/monthly reports, exit posts, signal IDs.
 
-Deliberate deviations: (1) signals publish up to 60 min after bar close, not 2 min — Actions cron
+Deliberate deviations: (1) signals publish up to up to 3.9 h after bar close, not 2 min — Actions cron
 lags; later than that the signal is skipped; (2) kill switch has **no auto-resume**: set
 `"suspended": null` in `breakout_state.json` after review; (3) Rule B is only logged, never posted;
 (4) the universe is a fixed list in the file — refresh quarterly and add a line to `UNIVERSE_LOG`.

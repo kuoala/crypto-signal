@@ -31,7 +31,7 @@ UNIVERSE_LOG = {"2026-10-17": "initial universe"}
 P = dict(DONCH=16, ADX_MIN=25, CHOP_MAX=45, SL_ATR=2.0, TRAIL_ATR=3.0, TIME_BARS=30,
          MAX_OPEN=4, RISK_PCT=1.0, COST=0.002, VERSION="v1.0")
 KILL = dict(PF=0.85, AVG_R=-0.15, DD=12.0, WINDOW=30)
-SIGNAL_MAX_DELAY_MS = 60 * 60 * 1000   # Actions cron lags; spec says 2 min, unreachable there
+SIGNAL_MAX_DELAY_MS = 3.9 * 3600 * 1000  # Actions cron lags 1-3h in practice; spec says 2 min. Stays < 1 bar so only the latest bar is ever evaluated
 FUNDING_STALE_MS = 6 * 3600 * 1000
 
 
@@ -187,7 +187,9 @@ def utc(ms):
     return datetime.fromtimestamp(ms / 1000, timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
 
-def fmt_signal(t, n_open, bar_close_ms):
+def fmt_signal(t, n_open, bar_close_ms, now_ms):
+    late = (now_ms - bar_close_ms) // 60000
+    note = f"\n⏱ Posted {late} min after bar close — entry is the 4h close; check price before acting" if late > 30 else ""
     sl_pct = P["SL_ATR"] * t["atr"] / t["entry"] * 100
     return (f"🟢 LONG — {t['coin']}-PERP | Rule {t['rule']} {P['VERSION']} | #{t['id']:04d}\n"
             f"Entry:      {fp(t['entry'])} (4h close, {utc(bar_close_ms + 1)})\n"
@@ -195,7 +197,7 @@ def fmt_signal(t, n_open, bar_close_ms):
             f"Trail:      3×ATR chandelier, ratchets up only\n"
             f"Time stop:  exit at bar {P['TIME_BARS']} if +1R not reached\n"
             f"Take profit: none (trail only)\n"
-            f"Open signals: {n_open}/{P['MAX_OPEN']}")
+            f"Open signals: {n_open}/{P['MAX_OPEN']}{note}")
 
 
 def fmt_exit(c, s):
@@ -339,7 +341,7 @@ def run(now_ms=None):
             s["open"].append(t)
             log({"ev": "signal", **t, "bar_T": bar_T})
             if rule == "A":
-                publish(fmt_signal(t, len(s["open"]), bar_T))
+                publish(fmt_signal(t, len(s["open"]), bar_T, now_ms))
 
     # periodic reports (run at the 00:00 UTC bar)
     d = datetime.fromtimestamp((bar_T + 1) / 1000, timezone.utc)
