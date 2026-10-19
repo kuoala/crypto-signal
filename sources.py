@@ -23,11 +23,13 @@ def fetch_page(ch, before=None):
 NUM = r"\d+(?:\.\d+)?"
 def _nums(s): return [float(x) for x in re.findall(NUM, s.replace(",", "")) ]
 
+SIDE = {"LONG": "LONG", "BUY": "LONG", "SHORT": "SHORT", "SELL": "SHORT"}
+
 def parse_signal(text):
     """-> dict(symbol, side, entries, stop, targets, lev) or None. Needs side+entry+stop+>=1 TP."""
     t = text.replace("‏", "")
     sym = re.search(r"#?([A-Z0-9]{2,15})\s*/\s*USDT", t, re.I) or re.search(r"(?:نام ارز|coin|pair)\s*:?\s*#?([A-Z0-9]{2,15})", t, re.I)
-    side = re.search(r"\b(LONG|SHORT)\b", t, re.I)
+    side = re.search(r"\b(LONG|SHORT|BUY|SELL)\b", t, re.I)
     if not (sym and side):
         return None
     def after(*keys):
@@ -45,8 +47,8 @@ def parse_signal(text):
     if not (ent and stop and tps):
         return None
     lev = re.search(r"(?:leverage|لورج)\D*([^\n]*\d[^\n]*)", t, re.I)
-    return dict(symbol=sym.group(1).upper(), side=side.group(1).upper(), entries=ent, targets_raw=tps,
-                stop=stop[0], targets=sorted(set(tps), reverse=side.group(1).upper() == "SHORT"),
+    return dict(symbol=sym.group(1).upper(), side=SIDE[side.group(1).upper()], entries=ent, targets_raw=tps,
+                stop=stop[0], targets=sorted(set(tps), reverse=SIDE[side.group(1).upper()] == "SHORT"),
                 lev=lev.group(1).strip() if lev else None)
 
 def check(sig, price):
