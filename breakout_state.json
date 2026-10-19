@@ -1,0 +1,14 @@
+{
+ "A": {
+  "next_id": 1,
+  "open": [],
+  "closed": [],
+  "suspended": null
+ },
+ "B": {
+  "next_id": 1,
+  "open": [],
+  "closed": [],
+  "suspended": null
+ }
+}
