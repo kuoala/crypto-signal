@@ -61,6 +61,8 @@ def main():
                 st["map"][key] = [mid, h]
                 if kind == "signal": st["sym"][sym] = key
                 print(f"{ch}/{p['id']} {kind} {sym} -> {mid}{' (reply)' if reply else ''}")
+            elif re.search(r"\b(LONG|SHORT)\b", p["text"]):
+                print(f"WARNING: {ch}/{p['id']} looks like a signal but did not parse - skipped")
             st["last"] = p["id"]
         st["map"] = dict(sorted(st["map"].items(), key=lambda kv: int(kv[0]))[-300:])  # bound state
         state[ch] = st

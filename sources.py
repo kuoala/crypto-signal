@@ -28,7 +28,7 @@ SIDE = {"LONG": "LONG", "BUY": "LONG", "SHORT": "SHORT", "SELL": "SHORT"}
 def parse_signal(text):
     """-> dict(symbol, side, entries, stop, targets, lev) or None. Needs side+entry+stop+>=1 TP."""
     t = text.replace("‏", "")
-    sym = re.search(r"#?([A-Z0-9]{2,15})\s*/\s*USDT", t, re.I) or re.search(r"(?:نام ارز|coin|pair)\s*:?\s*#?([A-Z0-9]{2,15})", t, re.I)
+    sym = re.search(r"#?([A-Z0-9]{1,15})\s*/\s*USDT", t, re.I) or re.search(r"(?:نام ارز|coin|pair)\s*:?\s*#?([A-Z0-9]{1,15})", t, re.I)
     side = re.search(r"\b(LONG|SHORT|BUY|SELL)\b", t, re.I)
     if not (sym and side):
         return None
@@ -90,6 +90,7 @@ def self_test():
     s = parse_signal("#BTC/USDT LONG\nEntry: 64,250 - 64,000\nSL: 62,800\nTP1: 65,700\nTP2: 67,100")
     assert s and s["entries"] == [64250, 64000] and s["stop"] == 62800 and s["targets"][0] == 65700, s
     assert check(s, 64200) is None and "stale" in check(s, 70000)
+    assert parse_signal("نام ارز #Q/USDT\n⭕️ حالت معامله = LONG\nنقطه ورود = [ 0.1210 & 0.1260 ]\nحد ضرر :- 0.1160\nتارگت ها = [ 0.1310 , 0.1380 ]")["symbol"] == "Q"  # 1-letter ticker
     assert parse_signal("join vip LONG now") is None
     print("ok")
 
