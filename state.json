@@ -1,24 +1,6 @@
 {
   "next_id": 460,
-  "open": [
-    {
-      "id": 458,
-      "symbol": "USOIL/USDT:USDT",
-      "direction": "LONG",
-      "entry": 96.18,
-      "stop": 94.5932142857143,
-      "target1": 97.76678571428572,
-      "target": 99.35357142857143,
-      "leverage": 6,
-      "opened_at": "2026-10-16 02:20 UTC",
-      "opened_ms": 1792117214355,
-      "rsi": 68.5,
-      "adx": 27.6,
-      "sl_pct": 1.65,
-      "exchange": "mexc",
-      "is_meme": false
-    }
-  ],
+  "open": [],
   "stats": {
     "2026-06": {
       "tp": 4,
@@ -57,13 +39,13 @@
       "r_count": 30
     },
     "2026-10": {
-      "tp": 0,
+      "tp": 1,
       "sl": 5,
       "tp1": 3,
-      "tp2": 0,
+      "tp2": 1,
       "be": 4,
-      "r_sum": -3.8000000000000007,
-      "r_count": 9
+      "r_sum": -2.1000000000000005,
+      "r_count": 10
     }
   }
 }
