@@ -1,0 +1,10 @@
+name = "erfann-watch"
+main = "index.js"
+compatibility_date = "2026-01-01"
+[triggers]
+crons = ["* * * * *"]
+[vars]
+REPO = "kuoala/crypto-signal"
+[[kv_namespaces]]
+binding = "KV"
+id = "REPLACE_AFTER: npx wrangler kv namespace create KV"
