@@ -1,3 +1,5 @@
 {"trader": "0xf83858e57d9f804f5ca1603bce82558119aeac7b", "coin": "BTC", "side": -1, "entry": 81768.5, "ts": 1792439663105, "notional": 57317}
 {"trader": "0x7451d7dc1570f2be4aa3eca8d482dff117570ab7", "coin": "ENA", "side": 1, "entry": 0.184955, "ts": 1792439663105, "notional": 69005}
 {"trader": "0x8f8d2d2565bfb10608a7ce64b48e2aea7875a344", "coin": "BTC", "side": 1, "entry": 82022.5, "ts": 1792452705347, "notional": 615345}
+{"trader": "0x65d0ab18172c32e37cd7f39d1ad3f9c5de8bdfb0", "coin": "XMR", "side": 1, "entry": 601.735, "ts": 1792461909928, "notional": 79078}
+{"trader": "0x215d41b79d0aa6a8cf5f25377a88b612746af80a", "coin": "SOL", "side": 1, "entry": 104.455, "ts": 1792461909928, "notional": 404891}
