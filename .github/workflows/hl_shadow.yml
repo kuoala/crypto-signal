@@ -2,7 +2,7 @@ name: Hyperliquid leaderboard shadow
 
 on:
   schedule:
-    - cron: "11 */4 * * *"
+    - cron: "11 5 * * *"
   workflow_dispatch:
 
 concurrency:
