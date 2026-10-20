@@ -1,7 +1,7 @@
 """Shared bits for mirroring signal channels: scrape, parse (EN/FA), live-price gate."""
 import html, re
 from datetime import datetime
-import ccxt, requests
+import requests
 
 def fetch_posts(ch, before=None):
     """Yield dicts(id, ms, text, reply_to) for one t.me/s page (~20 posts); reply_to = source id replied to."""
@@ -75,6 +75,7 @@ _ex = None
 def exchange():
     global _ex
     if _ex is None:
+        import ccxt
         _ex = ccxt.mexc({"options": {"defaultType": "swap"}}); _ex.load_markets()
     return _ex
 

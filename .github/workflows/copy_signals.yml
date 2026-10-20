@@ -1,10 +1,9 @@
 name: Copy signals (erfann_finance)
 
-# Real-time mirror: one job polls every 20s for ~5h50m, then re-launches itself.
-# The cron is only a safety net in case the chain ever breaks.
+# One quick pass per run (~1 billed min). A 6h polling loop here burned the whole free quota.
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "7 * * * *"
   workflow_dispatch:
 
 concurrency:
@@ -13,31 +12,23 @@ concurrency:
 
 permissions:
   contents: write
-  actions: write
 
 jobs:
   copy:
     runs-on: ubuntu-latest
-    timeout-minutes: 358
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          cache: "pip"
-      - run: pip install -r requirements.txt
+      - run: pip install requests==2.32.3
       - name: Git identity
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-      - name: Mirror signals (poll loop)
+      - name: Mirror signals 
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
-        run: python copy_signals.py --loop 21000
-      - name: Relaunch
-        if: always()
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          curl -s -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/${{ github.repository }}/actions/workflows/copy_signals.yml/dispatches" -d '{"ref":"main"}'
+        run: python copy_signals.py --run && python -c "import copy_signals as c; c.commit_state()"

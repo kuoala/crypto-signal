@@ -2,7 +2,7 @@ name: DEX memecoin shadow scan
 
 on:
   schedule:
-    - cron: "17 */2 * * *"
+    - cron: "17 */12 * * *"
   workflow_dispatch:
 
 concurrency:
