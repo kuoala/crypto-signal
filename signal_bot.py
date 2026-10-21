@@ -98,6 +98,11 @@ CONFIG = {
     "MEME_MAX_LEVERAGE": 5,                 # cap leverage — memecoins are very volatile
     "MEME_ATR_SL_MULT": 2.0,                # wider stop to survive memecoin wicks
 
+    # Quality gate: new signals are PAPER trades (tracked in trades.jsonl, never posted) until the last
+    # GATE_N closed trades average >= GATE_MIN_R. Signals opened as paper never get channel updates.
+    "GATE_N": 40,
+    "GATE_MIN_R": 0.15,
+
     # If True, only prints and does NOT send to Telegram or write state (for testing)
     "DRY_RUN": False,
 }
@@ -809,6 +814,22 @@ def _bump_stats(mk, **deltas):
     for k, v in deltas.items():
         d[k] = d.get(k, 0) + v
 
+def publish_ok():
+    """True when the last GATE_N closed trades (paper or live) average >= GATE_MIN_R."""
+    try:
+        r = [t["net_r"] for t in map(json.loads, open(CONFIG["TRADE_LOG"], encoding="utf-8"))
+             if t.get("outcome") != "UNTRACKABLE"][-CONFIG["GATE_N"]:]
+    except OSError:
+        r = []
+    return len(r) >= CONFIG["GATE_N"] and sum(r) / len(r) >= CONFIG["GATE_MIN_R"]
+
+def announce(s, text):
+    """Post to the channel unless the signal is a paper trade."""
+    if s.get("paper"):
+        print(f"[paper] #{s['id']} {s['symbol']} not posted")
+    else:
+        post(text)
+
 def open_record(s):
     """Compact tracking record for an opened signal.
 
@@ -819,7 +840,7 @@ def open_record(s):
         "id": s["id"], "symbol": s["symbol"], "direction": s["direction"],
         "entry": s["entry"], "stop": s["stop"],
         "target1": s.get("target1"), "target": s["target"],
-        "leverage": s["leverage"], "opened_at": s["opened_at"], "opened_ms": s["opened_ms"],
+        "leverage": s["leverage"], "paper": bool(s.get("paper")), "opened_at": s["opened_at"], "opened_ms": s["opened_ms"],
         "rsi": round(s.get("rsi", 0), 1), "adx": round(s.get("adx", 0), 1),
         "sl_pct": round(s.get("sl_pct", 0), 2), "exchange": EXCHANGE_NAME,
         "is_meme": bool(s.get("is_meme")),
@@ -857,7 +878,7 @@ def process_open_signals(ex):
             else:   # timed out — bucket by whether it actually made money
                 key = "tp" if net_r > 0 else ("sl" if net_r < 0 else "be")
                 _bump_stats(mk, r_sum=net_r, r_count=1, **{key: 1})
-            post(format_result(sig, outcome, net_r, stats_line()))
+            announce(sig, format_result(sig, outcome, net_r, stats_line()))
             log_trade(sig, outcome, net_r)
         elif outcome == "UNTRACKABLE":
             print(f"[!] #{sig['id']} {sig['symbol']}: no candles available and long "
@@ -867,7 +888,7 @@ def process_open_signals(ex):
             if not sig.get("tp1_announced"):
                 sig["tp1_announced"] = True
                 _bump_stats(mk, tp1=1)
-                post(format_tp1(sig))
+                announce(sig, format_tp1(sig))
             still_open.append(sig)
         else:
             still_open.append(sig)
@@ -1079,6 +1100,8 @@ def run_once():
     ex = build_exchange()
 
     MARKET_BIAS = compute_market_bias(ex)
+    publishing = publish_ok()
+    print(f"[+] Channel publishing {'ON' if publishing else 'OFF (paper only: quality gate not met)'}")
 
     print("[+] Checking open signals for TP/SL...")
     process_open_signals(ex)
@@ -1107,7 +1130,8 @@ def run_once():
         STATE["next_id"] += 1
         s["opened_at"] = now_utc_str()
         s["opened_ms"] = int(datetime.now(timezone.utc).timestamp() * 1000)
-        post(format_signal(s))
+        s["paper"] = not publishing
+        announce(s, format_signal(s))
         STATE["open"].append(open_record(s))
 
     # ---- Memecoin scan ----
@@ -1136,7 +1160,8 @@ def run_once():
             STATE["next_id"] += 1
             s["opened_at"] = now_utc_str()
             s["opened_ms"] = int(datetime.now(timezone.utc).timestamp() * 1000)
-            post(format_signal(s))
+            s["paper"] = not publishing
+            announce(s, format_signal(s))
             STATE["open"].append(open_record(s))
 
     if not top and not meme_top:
