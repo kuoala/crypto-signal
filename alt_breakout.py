@@ -26,9 +26,10 @@ H4 = 4 * 3600 * 1000
 
 # Universe frozen 2026-10-17 (refresh quarterly by 24h volume; log changes in UNIVERSE_LOG).
 UNIVERSE = ("ZEC NEAR XRP WLD TIA ZRO kPEPE INJ XMR SUI ARB UNI CRV AAVE DOT LINK DOGE FIL PYTH APT").split()
-# Shadow-only Rule C universe: top-60 by volume on 2026-10-19 (union with core). Backtest PF 0.87 -> never published.
+# Live universe for Rule A/B: top-60 by volume on 2026-10-19 (core 20 + 40 extended). Extended coins backtested PF 0.87
+# (core 20: PF 1.31) -> their signals are tagged. Rule C = shadow on the validated core 20 only, for comparison.
 UNIVERSE_WIDE = UNIVERSE + """HYPE PUMP ENA VVV LIT ONDO STRK FARTCOIN XPL TAO BNB MON LTC SAND GRASS ADA AVAX HBAR SPX BCH ASTER FET TRUMP ETHFI MORPHO ICP JUP TRX LDO NIL XLM PENGU kBONK SYRUP SEI STX S W MET""".split()
-UNIVERSE_LOG = {"2026-10-17": "initial universe", "2026-10-19": "added Rule C shadow universe (top-60)"}
+UNIVERSE_LOG = {"2026-10-17": "initial universe", "2026-10-19": "added top-60 universe", "2026-10-21": "Rule A/B live on top-60; Rule C = core-20 shadow"}
 
 P = dict(DONCH=16, ADX_MIN=25, CHOP_MAX=45, SL_ATR=2.0, TRAIL_ATR=3.0, TIME_BARS=30,
          MAX_OPEN=4, RISK_PCT=1.0, COST=0.002, VERSION="v1.0")
@@ -192,7 +193,8 @@ def utc(ms):
 
 def fmt_signal(t, n_open, bar_close_ms, now_ms):
     late = (now_ms - bar_close_ms) // 60000
-    note = f"\n⏱ Posted {late} min after bar close — entry is the 4h close; check price before acting" if late > 30 else ""
+    ext = "" if t["coin"] in UNIVERSE else "\n⚠️ Extended universe — outside the validated 20-coin backtest, treat as experimental"
+    note = ext + (f"\n⏱ Posted {late} min after bar close — entry is the 4h close; check price before acting" if late > 30 else "")
     sl_pct = P["SL_ATR"] * t["atr"] / t["entry"] * 100
     return (f"🟢 LONG — {t['coin']}-PERP | Rule {t['rule']} {P['VERSION']} | #{t['id']:04d}\n"
             f"Entry:      {fp(t['entry'])} (4h close, {utc(bar_close_ms + 1)})\n"
@@ -326,7 +328,7 @@ def run(now_ms=None):
             continue
         held = {t["coin"] for t in s["open"]}
         cands = []
-        for coin in (UNIVERSE_WIDE if rule == "C" else UNIVERSE):
+        for coin in (UNIVERSE if rule == "C" else UNIVERSE_WIDE):
             df = f4.get(coin)
             if df is None or coin in held or df["T"].iloc[-1] != bar_T:
                 continue
@@ -349,7 +351,8 @@ def run(now_ms=None):
 
     # periodic reports (run at the 00:00 UTC bar)
     d = datetime.fromtimestamp((bar_T + 1) / 1000, timezone.utc)
-    if d.hour == 0 and not st["A"]["suspended"] and now_ms - bar_T <= SIGNAL_MAX_DELAY_MS:
+    if d.hour == 0 and not st["A"]["suspended"] and now_ms - bar_T <= SIGNAL_MAX_DELAY_MS and st.get("last_report_T") != bar_T:
+        st["last_report_T"] = bar_T   # hourly runs: report once per 00:00 bar
         if d.weekday() == 0:
             publish(fmt_report("Weekly report", st["A"]["closed"], bar_T + 1 - 7 * 86400000))
         if d.day == 1:

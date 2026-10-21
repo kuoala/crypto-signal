@@ -2,8 +2,9 @@ name: Alt-Breakout (Rule A live, Rule B shadow)
 
 on:
   schedule:
-    # 4h bar closes at 00/04/08/12/16/20 UTC; run just after (cron is UTC)
-    - cron: "2 0,4,8,12,16,20 * * *"
+    # Hourly: GitHub drops/delays scheduled runs. Only the latest closed 4h bar is evaluated and a coin
+    # can't be signalled twice (one position per coin), so extra runs are harmless and catch missed bars.
+    - cron: "7 * * * *"
   workflow_dispatch:
     inputs:
       test_post:

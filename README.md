@@ -238,7 +238,7 @@ crontab -e
 
 Implements the spec in the Alt-Breakout design doc: Rule A (published) and Rule B (BTC-regime
 shadow, log-only) on a 20-alt Hyperliquid universe. Runs by `.github/workflows/alt_breakout.yml`
-every 4h at :02 past the bar close. Uses the same `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHANNEL_ID`
+hourly (evaluates the latest closed 4h bar; GitHub drops scheduled runs). Uses the same `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHANNEL_ID`
 secrets. **Separate from the Binance/MEXC bot above** — own state, own IDs.
 
 ```bash
