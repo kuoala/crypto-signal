@@ -1,9 +1,11 @@
 name: Copy signals (erfann_finance)
 
-# One quick pass per run (~1 billed min). A 6h polling loop here burned the whole free quota.
+# Real-time mirror: one job polls the source channel every 10s for ~5h50m, then relaunches itself.
+# GitHub's cron is throttled to one run every few hours, so it is only a backup if the chain breaks.
+# Free because the repo is public (unlimited Actions minutes).
 on:
   schedule:
-    - cron: "7,37 * * * *"
+    - cron: "*/15 * * * *"
   workflow_dispatch:
 
 concurrency:
@@ -12,11 +14,12 @@ concurrency:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   copy:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 358
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -27,8 +30,14 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-      - name: Mirror signals 
+      - name: Mirror signals (10s poll loop)
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
-        run: python copy_signals.py --run && python -c "import copy_signals as c; c.commit_state()"
+        run: python copy_signals.py --loop 21000
+      - name: Relaunch
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl -s -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/${{ github.repository }}/actions/workflows/copy_signals.yml/dispatches" -d '{"ref":"main"}'

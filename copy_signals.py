@@ -79,7 +79,7 @@ def commit_state():
         run("git", "pull", "--rebase", "--autostash")
         run("git", "push")
 
-def loop(seconds, every=20):
+def loop(seconds, every=10):
     """Poll the source channel every `every` s for `seconds` s (GitHub cron alone lags by hours)."""
     end = time.time() + seconds
     while time.time() < end:
