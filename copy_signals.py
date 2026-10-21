@@ -8,9 +8,9 @@ from telegram_poster import send_get_id, edit_message
 STATE = "copy_state.json"
 
 def sig_text(s):
-    f = lambda xs: " , ".join(f"{x:g}" for x in xs)
+    f = lambda xs: " , ".join(f"{x:.10g}" for x in xs)
     return (f"#{s['symbol']}/USDT\nDirection: {'🟢' if s['side'] == 'LONG' else '🔴'} {s['side']}\n"
-            f"Leverage: {s['lev'] or '-'}\nEntry: {f(s['entries'])}\nStop Loss: {s['stop']:g}\n"
+            f"Leverage: {s['lev'] or '-'}\nEntry: {f(s['entries'])}\nStop Loss: {s['stop']:.10g}\n"
             f"Targets: {f(s['targets_raw'])}")
 
 def update_text(t):
@@ -19,8 +19,16 @@ def update_text(t):
     m = re.search(r"نام ارز\s*:?\s*#(\w+)[^\n]*\n.*?تارگت ها\s*:\s*([\d,\s]+?)\s*\n.*?میزان سود\s*:\s*([\d.]+%)", t, re.S)
     if m:
         return m.group(1), f"#{m.group(1)}\n✅ Targets hit: {m.group(2).strip()}\n🚀 Profit: {m.group(3)}"
-    m = re.match(r"#(\w+)(?:/USDT)?\s+(?:Take-Profit|Stop)", t, re.I)
-    return (m.group(1), t) if m else (None, None)
+    m = re.match(r"#(\w+)(?:/USDT)?\s+(?:Take-Profit|Stop|Cancel|Closed)", t, re.I)
+    if m: return m.group(1), t
+    pct = re.search(r"(\d+(?:\.\d+)?)%", t)       # "#X/USDT reached 0.07 ... 45.99% Profit", "#Free_signal 76% Profit"
+    if pct and re.search(r"profit", t, re.I) and len(t) < 300 and not re.search(r"strategy|join|accuracy", t, re.I):
+        sym = re.search(r"#?([A-Z0-9]{1,15})/USDT", t, re.I) or re.search(r"profit in #?([A-Z0-9]{1,15})\b", t, re.I)
+        px = re.search(r"(?:reached|hit|touched|\bat)\s+\$?\s*([\d.]*\d)", t, re.I)
+        tg = re.search(r"targets?\s*([\d, ]*\d)\s*(?:done|hit)", t, re.I)
+        sym = sym.group(1).upper() if sym else None
+        return sym, "\n".join(filter(None, [sym and f"#{sym}/USDT", tg and f"✅ Targets hit: {tg.group(1)}", px and f"🎯 Price: {px.group(1)}", f"🚀 Profit: {pct.group(1)}%"]))
+    return None, None
 
 def translate(text):
     """-> (kind, symbol, english) or None for posts we can't translate (promos / free text)."""
@@ -76,7 +84,7 @@ def backfill(st, ch, sym, upd_ms, per, want_id):
     for p in history(ch):
         if want_id and p["id"] < want_id: break
         if not want_id and p["ms"] < upd_ms - 30 * 86400_000: break
-        if str(p["id"]) in st["map"] or (want_id and p["id"] != want_id): continue
+        if p.get("fwd") or str(p["id"]) in st["map"] or (want_id and p["id"] != want_id): continue
         tr = translate(p["text"])
         if tr and tr[0] == "signal" and tr[1] == sym:
             found.append((p, tr[2]))
@@ -106,7 +114,7 @@ def main():
     for ch in json.load(open("channels.json")):
         st = state.get(ch)
         if not isinstance(st, dict):            # migrate old {"ch": last_id}
-            st = {"last": st, "map": {}, "sym": {}}
+            st = {"last": st, "map": {}, "sym": {}, "sig": {}}
         if "sig" not in st:                     # legacy state: recover post times of already-copied signals
             st["sig"] = {}
             for q in history(ch, 15):
@@ -124,12 +132,15 @@ def main():
                 continue
             if p["id"] <= st["last"]: continue
             tr = translate(p["text"])
-            if tr and tr[0] == "update" and p.get("fwd"):   # forwarded from a VIP channel: cherry-picked wins we can't verify
-                print(f"skip forwarded update {ch}/{p['id']} {tr[1]}")
+            if not tr and p["reply_to"] in map(int, st["map"]) and not p.get("fwd") and 0 < len(clean(p["text"])) <= 160 and not re.search(r"https?://|t\.me", p["text"]):
+                tr = ("update", st["sig"].get(str(p["reply_to"]), [None])[0], clean(p["text"]))   # "Nice Movement", "Cancelled": any short reply on our signal
+            if tr and p.get("fwd"):   # forwarded from a VIP channel: cherry-picked signals/wins we can't verify
+                print(f"skip forwarded {ch}/{p['id']} {tr[1]}")
                 st["last"] = p["id"]
                 continue
             if tr:
                 kind, sym, text = tr
+                sym = sym or st["sig"].get(str(p["reply_to"]), [None])[0]    # "76% Profit" replies carry no symbol: the parent's
                 reply = resolve(st, ch, sym, p["reply_to"], p["ms"], p["text"]) if kind == "update" else None
                 if kind == "update" and reply is None:   # the source never posted this trade's signal: nothing to thread under
                     print(f"ALERT orphan update {ch}/{p['id']} {sym}: original signal not found in source history - not posted")
@@ -175,6 +186,13 @@ if __name__ == "__main__":
     assert k == "signal" and "@" not in t and "Leverage: 5X 10X 20X" in t and t.endswith("Targets: 0.0655 , 0.068 , 0.0735"), t
     assert translate("#AXS/USDT Take-Profit target 1 ✅\nProfit: 51.28% 📈")[0] == "update"
     assert translate("خدایا ممنونم") is None
+    assert translate("#KAVA/USDT Reached 0.070600\n\nWe hope You enjoyed our today  signals 🔥🔥\n\n✅ 45.99% Profit") == ("update", "KAVA", "#KAVA/USDT\n🎯 Price: 0.070600\n🚀 Profit: 45.99%")
+    assert translate("🎯 Target hit!\n\n #IOTA/USDT at 0.046820\n\nKeep enjoying  signals 🚀\n\n✅ 46.06% Profit")[2].endswith("0.046820\n🚀 Profit: 46.06%")
+    assert translate("#Free_signal\n\n76% Profit\n\n👉 VIP : @david_promoter1") == ("update", None, "🚀 Profit: 76%")
+    assert translate("THE/USDT 🔴SHORT\nPrices dropped reached $ 0.06075\n\n🏆 176% Profit 💰 Lev: 20x\n\n🎯 Target 1, 2, 3, 4, 5 done ✅\n\n🌟 Congratulation 🪩🎉\n\n🔲 @CCFIndonesianTrader")[:2] == ("update", "THE")
+    assert translate("HYPE/USDT 🔴SHORT\nENTRY ZONE AREA\n$ 78.6 - $ 79.6\n\nSL : $ 80.961\n\nTP1: $ 77.7\nTP2: $ 76.6\n\nLEVERAGE 1x - 5x")[0] == "signal"
+    assert translate("🎆⤵️ Profit from free ⤵️🎆\n\n   ❗Recover your losses \n   ✅Huge Profit Daily\n   ✅98% accuracy\n   ✅5-7 signals daily\n   ✅ Fast signals (in few minutes)\n\nhttps://t.me/+o-x") is None
+    assert translate("📈#IOST/USDT\n\n💥297.39% profit\n\n✔️ Based on 🥇 Ember Strategy (Price Action)") is None
     st = {"map": {"10": [500, "h"], "11": [501, "h"]}, "sym": {"AVAX": "11"}}
     assert find_parent(st, "AVAX", 10) == 500        # replies to its exact parent
     assert find_parent(st, "AVAX", 99) is None        # parent never copied -> no wrong reply
