@@ -9,6 +9,7 @@ Spec: see "Alt-Breakout" section of README.md. Run every 4h just after bar close
 Files: breakout_state.json (open+closed trades, kill switch), breakout_log.jsonl (append-only
 signal/exit log, never edited).
 """
+import scoreboard
 import json
 import math
 import sys
@@ -283,6 +284,8 @@ def periodic_reports(st, now_ms):
             st[key] = cur
             cs = [c for c in st["A"]["closed"] if lo <= c["exit_T"] + 1 < hi]
             if cs:
+                publish_photo(scoreboard.render(kind, label, [(c["r"] > 0, c["coin"], c["id"], net_pct(c), net_pct(c) * lev_of(c), c["r"]) for c in cs],
+                                                stats(cs), len(st["A"]["open"]), P["RISK_PCT"]), f"{kind} scoreboard · {label}")
                 publish(fmt_report(kind, label, cs, st["A"]["closed"], len(st["A"]["open"])))
 
 
@@ -304,6 +307,18 @@ def publish(text, reply_to=None):
     except Exception as e:
         print("❌ Telegram send failed:", e)
         return None
+
+
+def publish_photo(png, caption):
+    if DRY:
+        return
+    import os
+    tok, chat = os.environ.get("TELEGRAM_BOT_TOKEN", ""), os.environ.get("TELEGRAM_CHANNEL_ID", "")
+    try:
+        requests.post(f"https://api.telegram.org/bot{tok}/sendPhoto", data={"chat_id": chat, "caption": caption},
+                      files={"photo": ("scoreboard.png", png)}, timeout=30).raise_for_status()
+    except Exception as e:
+        print("❌ Telegram photo failed:", e)
 
 
 def log(ev):
@@ -483,6 +498,10 @@ def selftest():
     assert lev_of(dict(entry=100.0, risk=6.0)) == 2 and lev_of(dict(entry=100.0, risk=1.0)) == 10
     cw = close_trade(t, 106.0, "TRAIL", 1, 0.0); cl = close_trade(t, 98.0, "STOP", 1, 0.0)
     assert fmt_exit(cw).startswith("✅") and "Profit" in fmt_exit(cw) and fmt_exit(cl).startswith("❌")
+    import scoreboard
+    png = scoreboard.render("MONTHLY", "October 2026", [(True, "ABC", 1, 6.0, 30.0, 1.5), (False, "XYZ", 2, -2.0, -10.0, -1.0), (True, "DEF", 3, 11.0, 44.0, 2.4), (True, "GHI", 4, 3.0, 15.0, 0.9)], stats([cw, cl]), 1, 1.0)
+    assert png[:4] == b"\x89PNG"
+    open("/tmp/scoreboard_sample.png", "wb").write(png) if "--png" in sys.argv else None
     rep = fmt_report("MONTHLY", "October 2026", [cw, cl], [cw, cl], 1)
     assert "Win rate: 50%" in rep and "Best:" in rep and len(rep) < 4000
     st0 = {"A": {"closed": [], "open": []}}
