@@ -27,10 +27,10 @@ H4 = 4 * 3600 * 1000
 
 # Universe frozen 2026-10-17 (refresh quarterly by 24h volume; log changes in UNIVERSE_LOG).
 UNIVERSE = ("ZEC NEAR XRP WLD TIA ZRO kPEPE INJ XMR SUI ARB UNI CRV AAVE DOT LINK DOGE FIL PYTH APT").split()
-# Live universe for Rule A/B: top-60 by volume on 2026-10-19 (core 20 + 40 extended). Extended coins backtested PF 0.87
+# Universe for Rule B (shadow): top-60 by volume on 2026-10-19 (core 20 + 40 extended). Extended coins backtested PF 0.87
 # (core 20: PF 1.31) -> their signals are tagged. Rule C = shadow on the validated core 20 only, for comparison.
 UNIVERSE_WIDE = UNIVERSE + """HYPE PUMP ENA VVV LIT ONDO STRK FARTCOIN XPL TAO BNB MON LTC SAND GRASS ADA AVAX HBAR SPX BCH ASTER FET TRUMP ETHFI MORPHO ICP JUP TRX LDO NIL XLM PENGU kBONK SYRUP SEI STX S W MET""".split()
-UNIVERSE_LOG = {"2026-10-17": "initial universe", "2026-10-19": "added top-60 universe", "2026-10-21": "Rule A/B live on top-60; Rule C = core-20 shadow"}
+UNIVERSE_LOG = {"2026-10-17": "initial universe", "2026-10-19": "added top-60 universe", "2026-10-21": "Rule A/B live on top-60; Rule C = core-20 shadow", "2026-10-21b": "Rule A restricted to core-20 (wide set PF 0.87); Rule B = top-60 shadow"}
 
 P = dict(DONCH=16, ADX_MIN=25, CHOP_MAX=45, SL_ATR=2.0, TRAIL_ATR=3.0, TIME_BARS=30,
          MAX_OPEN=4, RISK_PCT=1.0, COST=0.002, VERSION="v1.0")
@@ -422,7 +422,7 @@ def run(now_ms=None):
             continue
         held = {t["coin"] for t in s["open"]}
         cands = []
-        for coin in (UNIVERSE if rule == "C" else UNIVERSE_WIDE):
+        for coin in (UNIVERSE if rule in ("A", "C") else UNIVERSE_WIDE):
             df = f4.get(coin)
             if df is None or coin in held or df["T"].iloc[-1] != bar_T:
                 continue
