@@ -13,7 +13,7 @@ import json
 import math
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 import numpy as np
 import pandas as pd
@@ -191,45 +191,119 @@ def utc(ms):
     return datetime.fromtimestamp(ms / 1000, timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
 
-def fmt_signal(t, n_open, bar_close_ms, now_ms):
-    late = (now_ms - bar_close_ms) // 60000
-    ext = "" if t["coin"] in UNIVERSE else "\n⚠️ Extended universe — outside the validated 20-coin backtest, treat as experimental"
-    note = ext + (f"\n⏱ Posted {late} min after bar close — entry is the 4h close; check price before acting" if late > 30 else "")
-    sl_pct = P["SL_ATR"] * t["atr"] / t["entry"] * 100
-    return (f"🟢 LONG — {t['coin']}-PERP | Rule {t['rule']} {P['VERSION']} | #{t['id']:04d}\n"
-            f"Entry:      {fp(t['entry'])} (4h close, {utc(bar_close_ms + 1)})\n"
-            f"Stop:       {fp(t['stop'])}  (2×ATR, {sl_pct:.1f}% away; risk {P['RISK_PCT']:g}% of equity ≈ {P['RISK_PCT'] / sl_pct * 100:.0f}% notional)\n"
-            f"Trail:      3×ATR chandelier, ratchets up only\n"
-            f"Time stop:  exit at bar {P['TIME_BARS']} if +1R not reached\n"
-            f"Take profit: none (trail only)\n"
-            f"Open signals: {n_open}/{P['MAX_OPEN']}{note}")
+def pr(p):
+    if p >= 1000: return f"{p:,.2f}"
+    if p >= 1: return f"{p:.4f}"
+    if p >= 0.01: return f"{p:.5f}"
+    return f"{p:.8f}"
 
 
-def fmt_exit(c, s):
-    icon = "✅" if c["r"] > 0 else "❌"
-    return (f"{icon} CLOSED — {c['coin']}-PERP | Rule {c['rule']} {P['VERSION']} | #{c['id']:04d}\n"
-            f"Exit: {fp(c['exit'])} ({c['reason']}) after {c['bars']} bars\n"
-            f"Result: {c['r']:+.2f}R net (gross {c['gross_r']:+.2f}, costs {c['cost_r']:.2f}, funding {c['funding_r']:+.3f})\n"
-            f"Track record: {s['n']} trades · PF {s['pf']:.2f} · avg {s['avg_r']:+.2f}R · total {s['total_r']:+.1f}R · DD {s['dd']:.1f}%")
+def lev_of(t):
+    """Suggested leverage: same rule as the other channel bot (stop ≈ 10% of margin), 2x..10x."""
+    return max(2, min(10, round(10 / max(t["risk"] / t["entry"] * 100, 1))))
 
 
-def fmt_report(title, closed, since_ms):
-    cs = [c for c in closed if c["exit_T"] >= since_ms]
+def targets(t):
+    return t["entry"] + t["risk"], t["entry"] + 2 * t["risk"]     # +1R / +2R milestones; exit is the trail
+
+
+def fmt_signal(t, n_open=None, bar_close_ms=None, now_ms=None):
+    t1, t2 = targets(t)
+    return (f"📊 SIGNAL #{t['id']:04d} | 4H | {utc(t['entry_T'] + 1)}\n"
+            f"─────────────\n"
+            f"#{t['coin']}/USDT\n"
+            f"Direction: 🟢 LONG\n"
+            f"Entry: {pr(t['entry'])}\n"
+            f"Stop Loss: {pr(t['stop'])}\n"
+            f"Target 1: {pr(t1)}\n"
+            f"Target 2: {pr(t2)}\n"
+            f"Leverage: x{lev_of(t)}")
+
+
+def fmt_target(t, n):
+    pct = n * t["risk"] / t["entry"] * 100
+    return (f"🎯 TARGET {n} HIT — #{t['coin']}/USDT LONG\n"
+            f"+{pct:.1f}% (x{lev_of(t)} ≈ +{pct * lev_of(t):.1f}%) 🚀"
+            + ("\nStop trails up — the rest keeps running." if n == 1 else ""))
+
+
+def net_pct(c):
+    return c["r"] * c["risk"] / c["entry"] * 100
+
+
+def fmt_exit(c, s=None):
+    pct, lev = net_pct(c), lev_of(c)
+    if c["reason"] == "TIME":
+        head, line = ("✅" if pct > 0 else "❌"), "Closed at market ⏱️ (time exit)"
+    elif pct > 0:
+        head, line = "✅", "Trailing stop hit — profit locked 🎯"
+    else:
+        head, line = "❌", "Stop loss hit 🛑"
+    return (f"{head} #{c['coin']}/USDT LONG — SIGNAL #{c['id']:04d}\n"
+            f"{line}\n"
+            f"{'Profit' if pct > 0 else 'Result'}: {pct:+.1f}% (x{lev} ≈ {pct * lev:+.1f}%)")
+
+
+def fmt_report(kind, label, cs, all_closed, n_open):
     s = stats(cs)
-    fund = sum(c["funding_r"] for c in cs)
-    body = "\n".join(f"  #{c['id']:04d} {c['coin']} {c['r']:+.2f}R ({c['reason']})" for c in cs) or "  no closed trades"
+    wins = [c for c in cs if c["r"] > 0]
     pf = "∞" if s["pf"] == float("inf") else f"{s['pf']:.2f}"
-    return (f"📊 {title} — Rule A {P['VERSION']}\n{body}\n"
-            f"Trades {s['n']} · PF {pf} · total {s['total_r']:+.1f}R · funding cost {fund:.2f}R\n"
-            f"All-time: {len(closed)} trades, {stats(closed)['total_r']:+.1f}R")
+    best, worst = max(cs, key=net_pct), min(cs, key=net_pct)
+    rows = "\n".join(f"{'✅' if c['r'] > 0 else '❌'} #{c['id']:04d} {c['coin']}/USDT  {net_pct(c):+.1f}%  (x{lev_of(c)}: {net_pct(c) * lev_of(c):+.0f}%)"
+                     for c in sorted(cs, key=lambda c: c["exit_T"])[:30])
+    more = f"\n… +{len(cs) - 30} more" if len(cs) > 30 else ""
+    bar = "━━━━━━━━━━━━━━━━━━━━"
+    return (f"{'🏆' if kind == 'MONTHLY' else '📈'} {kind} PERFORMANCE REPORT\n📅 {label}\n{bar}\n\n"
+            f"📊 Signals closed: {s['n']}\n"
+            f"✅ Winners: {len(wins)}   ❌ Losers: {s['n'] - len(wins)}\n"
+            f"🎯 Win rate: {len(wins) / s['n'] * 100:.0f}%\n\n"
+            f"💰 Net result: {s['total_r']:+.1f}R  ≈ {s['total_r'] * P['RISK_PCT']:+.1f}% of account at {P['RISK_PCT']:g}% risk/trade\n"
+            f"📐 Profit factor: {pf}   ·   Avg {s['avg_r']:+.2f}R per trade\n\n"
+            f"🥇 Best: {best['coin']}/USDT {net_pct(best):+.1f}%\n"
+            f"🥉 Worst: {worst['coin']}/USDT {net_pct(worst):+.1f}%\n\n"
+            f"{bar}\n{rows}{more}\n{bar}\n"
+            f"📂 Still open: {n_open}   ·   All-time: {len(all_closed)} signals, {stats(all_closed)['total_r']:+.1f}R\n"
+            f"🔎 Every signal is timestamped and never edited — losses included.\n"
+            f"⚠️ Not financial advice.")
 
 
-def publish(text):
+def periodic_reports(st, now_ms):
+    """Weekly (Mon 00:00 UTC, covers prior 7 days) and monthly (1st, covers prior calendar month); once each."""
+    d = datetime.fromtimestamp(now_ms / 1000, timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
+    ms = lambda x: int(x.timestamp() * 1000)
+    mon, first = d - timedelta(days=d.weekday()), d.replace(day=1)
+    prev_first = (first - timedelta(days=1)).replace(day=1)
+    for key, cur, lo, hi, kind, label in (
+            ("last_weekly", ms(mon), ms(mon - timedelta(days=7)), ms(mon), "WEEKLY",
+             f"{(mon - timedelta(days=7)):%d %b} – {(mon - timedelta(days=1)):%d %b %Y}"),
+            ("last_monthly", ms(first), ms(prev_first), ms(first), "MONTHLY", f"{prev_first:%B %Y}")):
+        if key not in st:
+            st[key] = cur            # first run: arm silently, report from the next boundary on
+        elif st[key] != cur:
+            st[key] = cur
+            cs = [c for c in st["A"]["closed"] if lo <= c["exit_T"] + 1 < hi]
+            if cs:
+                publish(fmt_report(kind, label, cs, st["A"]["closed"], len(st["A"]["open"])))
+
+
+def publish(text, reply_to=None):
+    """Post to the channel (plain text). Returns the Telegram message_id, or None."""
     print(text, "\n")
     if DRY:
-        return
-    from telegram_poster import send_message
-    send_message(text, parse_mode="HTML")
+        return None
+    import os
+    tok, chat = os.environ.get("TELEGRAM_BOT_TOKEN", ""), os.environ.get("TELEGRAM_CHANNEL_ID", "")
+    body = {"chat_id": chat, "text": text, "disable_web_page_preview": True}
+    if reply_to:
+        body.update(reply_to_message_id=reply_to, allow_sending_without_reply=True)
+    try:
+        r = requests.post(f"https://api.telegram.org/bot{tok}/sendMessage", json=body, timeout=20)
+        r.raise_for_status()
+        print("✅ Message sent")
+        return r.json()["result"]["message_id"]
+    except Exception as e:
+        print("❌ Telegram send failed:", e)
+        return None
 
 
 def log(ev):
@@ -301,6 +375,11 @@ def run(now_ms=None):
                 res = step(tr, b)
                 if res:
                     break
+                for n, lvl in enumerate(targets(tr), 1):     # milestone replies (+1R / +2R); exit is still the trail
+                    if b.h >= lvl and not tr.get(f"t{n}"):
+                        tr[f"t{n}"] = True
+                        if rule == "A":
+                            publish(fmt_target(tr, n), tr.get("msg_id"))
             if not res:
                 still.append(tr)
                 continue
@@ -312,7 +391,7 @@ def run(now_ms=None):
             s["closed"].append(c)
             log({"ev": "exit", **c})
             if rule == "A":
-                publish(fmt_exit(c, stats(s["closed"])))
+                publish(fmt_exit(c), tr.get("msg_id"))
         s["open"] = still
 
         # 2) kill rules (A only; B and C are log-only shadows)
@@ -345,18 +424,11 @@ def run(now_ms=None):
             t = new_trade(rule, s["next_id"], coin, r)
             s["next_id"] += 1
             s["open"].append(t)
-            log({"ev": "signal", **t, "bar_T": bar_T})
             if rule == "A":
-                publish(fmt_signal(t, len(s["open"]), bar_T, now_ms))
+                t["msg_id"] = publish(fmt_signal(t))
+            log({"ev": "signal", **t, "bar_T": bar_T})
 
-    # periodic reports (run at the 00:00 UTC bar)
-    d = datetime.fromtimestamp((bar_T + 1) / 1000, timezone.utc)
-    if d.hour == 0 and not st["A"]["suspended"] and now_ms - bar_T <= SIGNAL_MAX_DELAY_MS and st.get("last_report_T") != bar_T:
-        st["last_report_T"] = bar_T   # hourly runs: report once per 00:00 bar
-        if d.weekday() == 0:
-            publish(fmt_report("Weekly report", st["A"]["closed"], bar_T + 1 - 7 * 86400000))
-        if d.day == 1:
-            publish(fmt_report("Monthly report", st["A"]["closed"], bar_T + 1 - 28 * 86400000))
+    periodic_reports(st, now_ms)
     if not DRY:
         with open(STATE_FILE, "w") as f:
             json.dump(st, f, indent=1)
@@ -366,9 +438,10 @@ def run(now_ms=None):
 def test_post():
     """Send one clearly-labelled sample through the real formatter + Telegram path. No state, no log."""
     now = int(time.time() * 1000)
-    t = new_trade("A", 0, "TEST", pd.Series(dict(c=1.0, atr=0.03, adx=30.0, chop=40.0, T=now)))
-    publish("🧪 PIPELINE TEST — not a trade signal. Verifying Telegram delivery for Alt-Breakout Rule A.\n\n"
-            + fmt_signal(t, 1, (now // H4) * H4 - 1, now))
+    t = new_trade("A", 0, "TEST", pd.Series(dict(c=1.0, atr=0.03, adx=30.0, chop=40.0, T=(now // H4) * H4 - 1)))
+    mid = publish("🧪 PIPELINE TEST — not a trade signal.\n\n" + fmt_signal(t))
+    publish(fmt_target(t, 1), mid)
+    publish(fmt_exit(close_trade(t, 1.07, "TRAIL", now, 0.0)), mid)
 
 
 # ---------- self-check ----------
@@ -404,6 +477,16 @@ def selftest():
     # validation: gap > 2 bars flagged
     g = df.drop(index=range(40, 44)).reset_index(drop=True)
     assert validate_4h(pd.concat([g] * 2, ignore_index=True), int(g["T"].iloc[-1]) + 1) is not None
+    # messages: clean format, no clutter; report renders
+    m = fmt_signal(t)
+    assert all(k in m for k in ("Direction:", "Leverage:", "Entry:", "Stop Loss:", "Target 1:", "Target 2:")) and "Rule" not in m and "ATR" not in m
+    assert lev_of(dict(entry=100.0, risk=6.0)) == 2 and lev_of(dict(entry=100.0, risk=1.0)) == 10
+    cw = close_trade(t, 106.0, "TRAIL", 1, 0.0); cl = close_trade(t, 98.0, "STOP", 1, 0.0)
+    assert fmt_exit(cw).startswith("✅") and "Profit" in fmt_exit(cw) and fmt_exit(cl).startswith("❌")
+    rep = fmt_report("MONTHLY", "October 2026", [cw, cl], [cw, cl], 1)
+    assert "Win rate: 50%" in rep and "Best:" in rep and len(rep) < 4000
+    st0 = {"A": {"closed": [], "open": []}}
+    periodic_reports(st0, 1792540799999); assert "last_weekly" in st0 and "last_monthly" in st0   # arms silently
     print("selftest ok")
 
 
