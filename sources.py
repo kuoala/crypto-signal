@@ -4,7 +4,7 @@ from datetime import datetime
 import requests
 
 def fetch_posts(ch, before=None):
-    """Yield dicts(id, ms, text, reply_to) for one t.me/s page (~20 posts); reply_to = source id replied to."""
+    """Yield dicts(id, ms, text, reply_to) for one t.me/s page (~20 posts); reply_to = source id replied to; fwd = forwarded from another channel."""
     url = f"https://t.me/s/{ch}" + (f"?before={before}" if before else "")
     for b in requests.get(url, timeout=20).text.split("tgme_widget_message_wrap")[1:]:
         pid = int(re.search(rf'data-post="{ch}/(\d+)"', b, re.I).group(1))
@@ -14,7 +14,8 @@ def fetch_posts(ch, before=None):
         if m and t:
             txt = html.unescape(re.sub(r"<[^>]+>", "", re.sub(r"<br/?>", "\n", m.group(1))))
             yield dict(id=pid, ms=int(datetime.fromisoformat(t.group(1)).timestamp() * 1000),
-                       text=txt, reply_to=int(r.group(1)) if r else None)
+                       text=txt, reply_to=int(r.group(1)) if r else None,
+                       fwd="tgme_widget_message_forwarded_from" in b)
 
 def fetch_page(ch, before=None):
     for p in fetch_posts(ch, before):

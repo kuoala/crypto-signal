@@ -124,6 +124,10 @@ def main():
                 continue
             if p["id"] <= st["last"]: continue
             tr = translate(p["text"])
+            if tr and tr[0] == "update" and p.get("fwd"):   # forwarded from a VIP channel: cherry-picked wins we can't verify
+                print(f"skip forwarded update {ch}/{p['id']} {tr[1]}")
+                st["last"] = p["id"]
+                continue
             if tr:
                 kind, sym, text = tr
                 reply = resolve(st, ch, sym, p["reply_to"], p["ms"], p["text"]) if kind == "update" else None
