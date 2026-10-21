@@ -28,7 +28,73 @@ def translate(text):
     if s:
         return "signal", s["symbol"], clean(sig_text(s))
     sym, u = update_text(text)
-    return ("update", sym, clean(u)) if u else None
+    if u:
+        return "update", sym, clean(u)
+    m = re.search(r"#?([A-Z0-9]{1,15})\s*/\s*USDT", text, re.I)
+    if m and re.search(r"\b(LONG|SHORT)\b", text) and len(re.findall(r"\d", text)) >= 6:
+        return "signal", m.group(1).upper(), clean(text)      # parser missed it: post cleaned original, never drop the main signal
+    return None
+
+def period_ms(text):
+    """'Period: 17 hr 29 min' -> ms (None if absent)."""
+    m = re.search(r"Period:\s*([^\n]*)", text)
+    if not m: return None
+    u = {"d": 86400, "h": 3600, "m": 60}
+    v = [int(n) * u[k[0].lower()] for n, k in re.findall(r"(\d+)\s*(day|d|hr|h|min|m)\w*", m.group(1), re.I)]
+    return sum(v) * 1000 if v else None
+
+def pick(cands, upd_ms, per):
+    """Which candidate signal (key, ms) does an update belong to? Latest before it, or -- when the update states its
+    Period -- the one posted `per` before it (within tolerance). None if nothing fits."""
+    cands = [c for c in cands if c[1] <= upd_ms]
+    if not cands: return None
+    if per is None: return max(cands, key=lambda c: c[1])[0]
+    best = min(cands, key=lambda c: abs(upd_ms - c[1] - per))
+    return best[0] if abs(upd_ms - best[1] - per) <= max(3600_000, per // 2) else None
+
+def history(ch, pages=60):
+    """Source posts newest-first, paging back through t.me/s."""
+    before = None
+    for _ in range(pages):
+        pg = sorted(fetch_posts(ch, before), key=lambda p: -p["id"])
+        if not pg: return
+        yield from pg
+        before = pg[-1]["id"]
+
+def post_signal(st, p, sym, text):
+    mid = send_get_id(text, None)
+    if mid is not None:
+        st["map"][str(p["id"])] = [mid, hashlib.md5(p["text"].encode()).hexdigest()]
+        st["sig"][str(p["id"])] = [sym, p["ms"]]
+        st["sym"][sym] = str(p["id"])
+    return mid
+
+def backfill(st, ch, sym, upd_ms, per, want_id):
+    """The signal an update belongs to was never copied (older than we started, or missed): find it in the source history,
+    post it now, return our message id."""
+    found = []
+    for p in history(ch):
+        if want_id and p["id"] < want_id: break
+        if not want_id and p["ms"] < upd_ms - 30 * 86400_000: break
+        if str(p["id"]) in st["map"] or (want_id and p["id"] != want_id): continue
+        tr = translate(p["text"])
+        if tr and tr[0] == "signal" and tr[1] == sym:
+            found.append((p, tr[2]))
+    k = pick([(i, f[0]["ms"]) for i, f in enumerate(found)], upd_ms, per) if not want_id else (0 if found else None)
+    return post_signal(st, found[k][0], sym, found[k][1]) if k is not None else None
+
+def resolve(st, ch, sym, reply_to, upd_ms, text):
+    """Our message id to thread an update under, posting the original signal first if we never copied it. None = no such signal exists."""
+    if reply_to:
+        mid = find_parent(st, sym, reply_to)
+        return mid or backfill(st, ch, sym, upd_ms, None, reply_to)
+    per = period_ms(text)
+    c = [(k, v[1]) for k, v in st["sig"].items() if v[0] == sym]
+    k = pick(c, upd_ms, per)
+    if k: return st["map"][k][0]
+    if not c and st["sym"].get(sym) in st["map"]:        # signals copied before timestamps were stored
+        return st["map"][st["sym"][sym]][0]
+    return backfill(st, ch, sym, upd_ms, per, None)
 
 def find_parent(st, sym, reply_to):
     """Our message_id to reply to. A source reply must map exactly; only a link-less update falls back to the coin's latest signal."""
@@ -41,6 +107,11 @@ def main():
         st = state.get(ch)
         if not isinstance(st, dict):            # migrate old {"ch": last_id}
             st = {"last": st, "map": {}, "sym": {}}
+        if "sig" not in st:                     # legacy state: recover post times of already-copied signals
+            st["sig"] = {}
+            for q in history(ch, 15):
+                tr = translate(q["text"]) if str(q["id"]) in st["map"] else None
+                if tr and tr[0] == "signal": st["sig"][str(q["id"])] = [tr[1], q["ms"]]
         posts = sorted(fetch_posts(ch), key=lambda p: p["id"])
         if not posts: continue
         if st["last"] is None:                  # first run: start from now
@@ -55,20 +126,20 @@ def main():
             tr = translate(p["text"])
             if tr:
                 kind, sym, text = tr
-                reply = find_parent(st, sym, p["reply_to"]) if kind == "update" else None
-                if kind == "update" and reply is None:   # never post an update without its signal (orphan = confusing)
-                    print(f"SKIP orphan update {ch}/{p['id']} {sym}: no copied signal to reply to")
+                reply = resolve(st, ch, sym, p["reply_to"], p["ms"], p["text"]) if kind == "update" else None
+                if kind == "update" and reply is None:   # the source never posted this trade's signal: nothing to thread under
+                    print(f"ALERT orphan update {ch}/{p['id']} {sym}: original signal not found in source history - not posted")
                     st["last"] = p["id"]
                     continue
-                mid = send_get_id(text, reply)
+                mid = post_signal(st, p, sym, text) if kind == "signal" else send_get_id(text, reply)
                 if mid is None: break           # retry next run
-                st["map"][key] = [mid, h]
-                if kind == "signal": st["sym"][sym] = key
+                if kind == "update": st["map"][key] = [mid, h]
                 print(f"{ch}/{p['id']} {kind} {sym} -> {mid}{' (reply)' if reply else ''}")
             elif re.search(r"\b(LONG|SHORT)\b", p["text"]):
                 print(f"WARNING: {ch}/{p['id']} looks like a signal but did not parse - skipped")
             st["last"] = p["id"]
         st["map"] = dict(sorted(st["map"].items(), key=lambda kv: int(kv[0]))[-300:])  # bound state
+        st["sig"] = {k: v for k, v in st["sig"].items() if k in st["map"]}
         state[ch] = st
     before = open(STATE).read() if os.path.exists(STATE) else ""
     json.dump(state, open(STATE, "w"))
@@ -104,6 +175,11 @@ if __name__ == "__main__":
     assert find_parent(st, "AVAX", 10) == 500        # replies to its exact parent
     assert find_parent(st, "AVAX", 99) is None        # parent never copied -> no wrong reply
     assert find_parent(st, "AVAX", None) == 501       # no link -> latest signal of that coin
+    assert period_ms("Period: 17 hr 29 min ⏰") == (17 * 60 + 29) * 60000 and period_ms("Period: 2 days 3 hr") == 51 * 3600000 and period_ms("x") is None
+    H = 3600000
+    assert pick([("a", 0), ("b", 10 * H)], 12 * H, 2 * H) == "b" and pick([("a", 0), ("b", 10 * H)], 12 * H, 12 * H) == "a"   # Period picks the right trade
+    assert pick([("a", 0)], 12 * H, 2 * H) is None and pick([("a", 0), ("b", 5 * H)], 12 * H, None) == "b" and pick([("a", 20 * H)], 12 * H, None) is None
+    assert translate("نام ارز #XYZ/USDT\nLONG 1.234 حد 1.1 هدف 1.5")[0] == "signal"   # unparseable layout still posted, never dropped
     if "--loop" in sys.argv: loop(int(sys.argv[sys.argv.index("--loop") + 1]))
     elif "--run" in sys.argv: main()
     else: print("ok (use --run to post)")
