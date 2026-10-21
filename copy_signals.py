@@ -56,6 +56,10 @@ def main():
             if tr:
                 kind, sym, text = tr
                 reply = find_parent(st, sym, p["reply_to"]) if kind == "update" else None
+                if kind == "update" and reply is None:   # never post an update without its signal (orphan = confusing)
+                    print(f"SKIP orphan update {ch}/{p['id']} {sym}: no copied signal to reply to")
+                    st["last"] = p["id"]
+                    continue
                 mid = send_get_id(text, reply)
                 if mid is None: break           # retry next run
                 st["map"][key] = [mid, h]
