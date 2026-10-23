@@ -1,5 +1,5 @@
 {
-  "next_id": 461,
+  "next_id": 462,
   "open": [
     {
       "id": 460,
@@ -16,6 +16,26 @@
       "rsi": 45.5,
       "adx": 23.9,
       "sl_pct": 2.54,
+      "exchange": "mexc",
+      "is_meme": false,
+      "tp1_hit": true,
+      "tp1_announced": true
+    },
+    {
+      "id": 461,
+      "symbol": "PEPE/USDT:USDT",
+      "direction": "LONG",
+      "entry": 4.87e-06,
+      "stop": 4.619703571428571e-06,
+      "target1": 5.120296428571429e-06,
+      "target": 5.370592857142857e-06,
+      "leverage": 2,
+      "paper": true,
+      "opened_at": "2026-10-23 16:08 UTC",
+      "opened_ms": 1792771716122,
+      "rsi": 61.8,
+      "adx": 36.5,
+      "sl_pct": 5.14,
       "exchange": "mexc",
       "is_meme": false
     }
@@ -60,7 +80,7 @@
     "2026-10": {
       "tp": 1,
       "sl": 5,
-      "tp1": 3,
+      "tp1": 4,
       "tp2": 1,
       "be": 4,
       "r_sum": -2.1000000000000005,
