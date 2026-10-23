@@ -206,7 +206,14 @@
 {"id": 7296, "ms": 1792592678000, "symbol": "APT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.32512017167381835, "scale_r": 0.14200143061516413, "hit": 2}
 {"id": 7325, "ms": 1792639544000, "symbol": "STX", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0237718120805368, "scale_r": -1.0237718120805368, "hit": 0}
 {"id": 7326, "ms": 1792645680000, "symbol": "TRIA", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0187333333333333, "scale_r": -1.0187333333333333, "hit": 0}
-{"id": 7327, "ms": 1792649838000, "symbol": "XMR", "side": "LONG", "month": "2026-10", "status": "open"}
-{"id": 7329, "ms": 1792655561000, "symbol": "AGT", "side": "LONG", "month": "2026-10", "status": "open"}
-{"id": 7333, "ms": 1792657017000, "symbol": "MAGMA", "side": "LONG", "month": "2026-10", "status": "open"}
+{"id": 7327, "ms": 1792649838000, "symbol": "XMR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0212333333333334, "scale_r": -1.0212333333333334, "hit": 0}
+{"id": 7329, "ms": 1792655561000, "symbol": "AGT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9809999999999977, "scale_r": 1.925444444444442, "hit": 3}
+{"id": 7333, "ms": 1792657017000, "symbol": "MAGMA", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9838333333333351, "scale_r": 0.9282777777777795, "hit": 2}
 {"id": 7337, "ms": 1792658608000, "symbol": "M", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.1103333333333303, "scale_r": 0.35477777777777675, "hit": 1}
+{"id": 7342, "ms": 1792672319000, "symbol": "ASTER", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.3104736842105228, "scale_r": 0.020999999999999443, "hit": 1}
+{"id": 7343, "ms": 1792672335000, "symbol": "ASTER", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.2564782608695624, "scale_r": 0.01734782608695607, "hit": 1}
+{"id": 7344, "ms": 1792675177000, "symbol": "HYPE", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.4332845849802295, "scale_r": 0.037395256916994545, "hit": 1}
+{"id": 7352, "ms": 1792731440000, "symbol": "CHZ", "side": "LONG", "month": "2026-10", "status": "open"}
+{"id": 7353, "ms": 1792731511000, "symbol": "ONDO", "side": "LONG", "month": "2026-10", "status": "open"}
+{"id": 7354, "ms": 1792733136000, "symbol": "BTR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9734444444444474, "scale_r": 0.9364074074074102, "hit": 2}
+{"id": 7357, "ms": 1792746941000, "symbol": "IRYS", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.0723846153846144, "scale_r": 1.4313589743589734, "hit": 3}
