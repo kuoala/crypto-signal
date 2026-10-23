@@ -1,41 +1,21 @@
 {
-  "next_id": 462,
+  "next_id": 463,
   "open": [
     {
-      "id": 460,
-      "symbol": "USOIL/USDT:USDT",
+      "id": 462,
+      "symbol": "ENA/USDT:USDT",
       "direction": "LONG",
-      "entry": 99.44,
-      "stop": 96.91142857142857,
-      "target1": 101.96857142857142,
-      "target": 104.49714285714286,
-      "leverage": 4,
-      "paper": true,
-      "opened_at": "2026-10-22 22:53 UTC",
-      "opened_ms": 1792709584922,
-      "rsi": 45.5,
-      "adx": 23.9,
-      "sl_pct": 2.54,
-      "exchange": "mexc",
-      "is_meme": false,
-      "tp1_hit": true,
-      "tp1_announced": true
-    },
-    {
-      "id": 461,
-      "symbol": "PEPE/USDT:USDT",
-      "direction": "LONG",
-      "entry": 4.87e-06,
-      "stop": 4.619703571428571e-06,
-      "target1": 5.120296428571429e-06,
-      "target": 5.370592857142857e-06,
+      "entry": 0.2084,
+      "stop": 0.19660142857142857,
+      "target1": 0.22019857142857144,
+      "target": 0.23199714285714287,
       "leverage": 2,
       "paper": true,
-      "opened_at": "2026-10-23 16:08 UTC",
-      "opened_ms": 1792771716122,
-      "rsi": 61.8,
-      "adx": 36.5,
-      "sl_pct": 5.14,
+      "opened_at": "2026-10-23 22:45 UTC",
+      "opened_ms": 1792795538264,
+      "rsi": 49.0,
+      "adx": 24.9,
+      "sl_pct": 5.66,
       "exchange": "mexc",
       "is_meme": false
     }
@@ -79,12 +59,12 @@
     },
     "2026-10": {
       "tp": 1,
-      "sl": 5,
+      "sl": 6,
       "tp1": 4,
       "tp2": 1,
-      "be": 4,
-      "r_sum": -2.1000000000000005,
-      "r_count": 10
+      "be": 5,
+      "r_sum": -2.8000000000000007,
+      "r_count": 12
     }
   }
 }
