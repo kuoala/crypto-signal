@@ -38,7 +38,7 @@ jobs:
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
           TELEGRAM_LINK: ${{ secrets.TELEGRAM_LINK }}
         run: |
-          sleep $((RANDOM % 1200))      # 0-20 min jitter
+          [ "${{ github.event_name }}" = schedule ] && sleep $((RANDOM % 1200))   # 0-20 min jitter, scheduled runs only
           if [ -n "${{ inputs.kind }}" ]; then K="${{ inputs.kind }}"; else
             case "$(date -u +%H)" in 07) K=pulse;; 12) K=tip;; 16) K=question;; *) K=record;; esac
           fi
