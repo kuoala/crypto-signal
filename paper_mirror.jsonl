@@ -221,7 +221,17 @@
 {"id": 7361, "ms": 1792760928000, "symbol": "ATOM", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.39017948717948325, "scale_r": 0.041461538461537814, "hit": 1}
 {"id": 7365, "ms": 1792803083000, "symbol": "IRYS", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.9817777777777809, "scale_r": 0.3151111111111121, "hit": 1}
 {"id": 7366, "ms": 1792804347000, "symbol": "BIRB", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0171904761904762, "scale_r": -1.0171904761904762, "hit": 0}
-{"id": 7367, "ms": 1792817237000, "symbol": "TIA", "side": "LONG", "month": "2026-10", "status": "open"}
+{"id": 7367, "ms": 1792817237000, "symbol": "TIA", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.6162961373390572, "scale_r": 0.0833919885550789, "hit": 1}
 {"id": 7370, "ms": 1792822617000, "symbol": "TRX", "side": "LONG", "month": "2026-10", "status": "open"}
 {"id": 7371, "ms": 1792822844000, "symbol": "AGT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.979, "scale_r": 1.0012222222222211, "hit": 2}
-{"id": 7372, "ms": 1792823453000, "symbol": "IRYS", "side": "SHORT", "month": "2026-10", "status": "open"}
+{"id": 7372, "ms": 1792823453000, "symbol": "IRYS", "side": "SHORT", "month": "2026-10", "status": "unfilled"}
+{"id": 7386, "ms": 1792842288000, "symbol": "LIT", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.28280778958017316, "scale_r": 0.12431849603776854, "hit": 2}
+{"id": 7387, "ms": 1792842890000, "symbol": "BIRB", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9780476190476164, "scale_r": 0.9304285714285696, "hit": 2}
+{"id": 7390, "ms": 1792846019000, "symbol": "M", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0176666666666667, "scale_r": -1.0176666666666667, "hit": 0}
+{"id": 7392, "ms": 1792847658000, "symbol": "WLD", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0295759493670886, "scale_r": -1.0295759493670886, "hit": 0}
+{"id": 7397, "ms": 1792875599000, "symbol": "XLM", "side": "SHORT", "month": "2026-10", "status": "open"}
+{"id": 7399, "ms": 1792903567000, "symbol": "TRUMP", "side": "LONG", "month": "2026-10", "status": "bad"}
+{"id": 7400, "ms": 1792905688000, "symbol": "ORDER", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0256666666666667, "scale_r": -1.0256666666666667, "hit": 0}
+{"id": 7401, "ms": 1792908467000, "symbol": "JCT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.979, "scale_r": 1.6456666666666668, "hit": 3}
+{"id": 7405, "ms": 1792917283000, "symbol": "JCT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.3821999999999972, "scale_r": 0.44886666666666575, "hit": 1}
+{"id": 7409, "ms": 1792924354000, "symbol": "SAND", "side": "SHORT", "month": "2026-10", "status": "open"}
