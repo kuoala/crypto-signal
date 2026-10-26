@@ -251,7 +251,8 @@ def fmt_exit(c, s=None):
 
 def channel_trades(st):
     """Every closed signal that was posted to the channel, from all sources -> (closed, n_open).
-    Item: dict(src, tag, coin, pct, lev, r, T). Mirrored signals are scored by replay on real candles
+    Item: dict(src, tag, coin, pct, lev, r, T). Mirrored signals (labelled "Main": subscribers never see the word mirror)
+    are scored by replay on real candles
     (paper_mirror.py), never by the source's own profit claims; signal_bot paper trades were never posted."""
     out = [dict(src="Breakout", tag=f"#{c['id']:04d}", coin=c["coin"], pct=net_pct(c), lev=lev_of(c), r=c["r"], T=c["exit_T"] + 1)
            for c in st["A"]["closed"]]
@@ -268,7 +269,7 @@ def channel_trades(st):
     try:
         for m in map(json.loads, open("paper_mirror.jsonl")):
             if m.get("posted") and m["status"] == "closed":
-                out.append(dict(src="Mirror", tag="Mirror", coin=m["symbol"], pct=m["scale_r"] * m["risk_pct"], lev=lev_pct(m["risk_pct"]),
+                out.append(dict(src="Main", tag="Main", coin=m["symbol"], pct=m["scale_r"] * m["risk_pct"], lev=lev_pct(m["risk_pct"]),
                                 r=m["scale_r"], T=m.get("t", m["ms"])))
             n_open += bool(m.get("posted")) and m["status"] == "open"
     except OSError:
@@ -300,7 +301,7 @@ def fmt_report(kind, label, cs, all_closed, n_open):
             f"🥉 Worst: {worst['coin']}/USDT {worst['pct']:+.1f}%\n\n"
             f"{bar}\n{rows}{more}\n{bar}\n"
             f"📂 Still open: {n_open}   ·   All-time: {len(all_closed)} signals, {stats(all_closed)['total_r']:+.1f}R\n"
-            f"🔎 Every signal is timestamped and never edited — losses included. Mirrored signals are scored on real candles, not on the source's claims.\n"
+            f"🔎 Every signal is timestamped and never edited — losses included. Results scored on real exchange prices.\n"
             f"⚠️ Not financial advice.")
 
 
@@ -537,13 +538,13 @@ def selftest():
     cw = close_trade(t, 106.0, "TRAIL", 1, 0.0); cl = close_trade(t, 98.0, "STOP", 1, 0.0)
     assert fmt_exit(cw).startswith("✅") and "Profit" in fmt_exit(cw) and fmt_exit(cl).startswith("❌")
     import scoreboard
-    png = scoreboard.render("MONTHLY", "October 2026", [(True, "ABC", "#0001", 6.0, 30.0, 1.5), (False, "XYZ", "Mirror", -2.0, -10.0, -1.0), (True, "DEF", "Futures", 11.0, 44.0, 2.4), (True, "GHI", "#0004", 3.0, 15.0, 0.9)], stats([cw, cl]), 1, 1.0)
+    png = scoreboard.render("MONTHLY", "October 2026", [(True, "ABC", "#0001", 6.0, 30.0, 1.5), (False, "XYZ", "Main", -2.0, -10.0, -1.0), (True, "DEF", "Futures", 11.0, 44.0, 2.4), (True, "GHI", "#0004", 3.0, 15.0, 0.9)], stats([cw, cl]), 1, 1.0)
     assert png[:4] == b"\x89PNG"
     open("/tmp/scoreboard_sample.png", "wb").write(png) if "--png" in sys.argv else None
     it = [dict(src="Breakout", tag="#0001", coin="X", pct=net_pct(cw), lev=lev_of(cw), r=cw["r"], T=1),
-          dict(src="Mirror", tag="Mirror", coin="Y", pct=-2.0, lev=5, r=cl["r"], T=2)]
+          dict(src="Main", tag="Main", coin="Y", pct=-2.0, lev=5, r=cl["r"], T=2)]
     rep = fmt_report("MONTHLY", "October 2026", it, it, 1)
-    assert "Win rate: 50%" in rep and "Breakout 1" in rep and "Mirror 1" in rep and "Best:" in rep and len(rep) < 4000
+    assert "Win rate: 50%" in rep and "Breakout 1" in rep and "Main 1" in rep and "irror" not in rep and "Best:" in rep and len(rep) < 4000
     st0 = {"A": {"closed": [], "open": []}}
     periodic_reports(st0, 1792540799999); assert "last_weekly" in st0 and "last_monthly" in st0   # arms silently
     print("selftest ok")
