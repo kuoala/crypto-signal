@@ -1,6 +1,25 @@
 {
-  "next_id": 463,
-  "open": [],
+  "next_id": 464,
+  "open": [
+    {
+      "id": 463,
+      "symbol": "XRP/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 1.2779,
+      "stop": 1.3045357142857144,
+      "target1": 1.2512642857142857,
+      "target": 1.2246285714285714,
+      "leverage": 5,
+      "paper": true,
+      "opened_at": "2026-10-26 09:30 UTC",
+      "opened_ms": 1793007032636,
+      "rsi": 42.1,
+      "adx": 23.0,
+      "sl_pct": 2.08,
+      "exchange": "mexc",
+      "is_meme": false
+    }
+  ],
   "stats": {
     "2026-06": {
       "tp": 4,
