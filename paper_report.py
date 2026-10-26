@@ -2,7 +2,7 @@
 
     python paper_report.py > PAPER_REPORT.md        # run paper_mirror.py first to refresh the mirror rows
 
-Sources: signal_bot (trades.jsonl), alt_breakout rules A/B/C (breakout_state.json), mirror = erfann_finance
+Sources: signal_bot (trades.jsonl), alt_breakout rules A/B/C (breakout_state.json), mirror = every copied channel
 replayed on candles (paper_mirror.jsonl, scale-out model). Every trade is scored in R; RISK% is the account
 risk per trade used for the equity column. Costs are already inside each source's R.
 """
@@ -24,7 +24,7 @@ def load():
         if isinstance(v, dict):
             rows += [(f"alt_breakout {rule}" + ("" if rule == "A" else " (shadow)"), c["exit_T"], c["r"]) for c in v["closed"]]
     try:
-        rows += [("mirror erfann_finance", r["ms"], r["scale_r"]) for r in map(json.loads, open("paper_mirror.jsonl")) if r["status"] == "closed"]
+        rows += [("mirror " + r.get("ch", "erfann_finance"), r.get("t", r["ms"]), r["scale_r"]) for r in map(json.loads, open("paper_mirror.jsonl")) if r["status"] == "closed"]
     except OSError:
         pass
     return rows

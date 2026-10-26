@@ -3,6 +3,7 @@ name: Paper report (all sources)
 on:
   schedule:
     - cron: "30 6 * * *"
+    - cron: "30 23 * * *"     # fresh mirror results just before the Mon/1st 00:00 UTC weekly/monthly reports
   workflow_dispatch:
 
 concurrency:

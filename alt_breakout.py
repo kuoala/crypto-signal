@@ -201,7 +201,11 @@ def pr(p):
 
 def lev_of(t):
     """Suggested leverage: same rule as the other channel bot (stop ≈ 10% of margin), 2x..10x."""
-    return max(2, min(10, round(10 / max(t["risk"] / t["entry"] * 100, 1))))
+    return lev_pct(t["risk"] / t["entry"] * 100)
+
+
+def lev_pct(risk_pct):
+    return max(2, min(10, round(10 / max(risk_pct, 1))))
 
 
 def targets(t):
@@ -245,31 +249,64 @@ def fmt_exit(c, s=None):
             f"{'Profit' if pct > 0 else 'Result'}: {pct:+.1f}% (x{lev} ≈ {pct * lev:+.1f}%)")
 
 
+def channel_trades(st):
+    """Every closed signal that was posted to the channel, from all sources -> (closed, n_open).
+    Item: dict(src, tag, coin, pct, lev, r, T). Mirrored signals are scored by replay on real candles
+    (paper_mirror.py), never by the source's own profit claims; signal_bot paper trades were never posted."""
+    out = [dict(src="Breakout", tag=f"#{c['id']:04d}", coin=c["coin"], pct=net_pct(c), lev=lev_of(c), r=c["r"], T=c["exit_T"] + 1)
+           for c in st["A"]["closed"]]
+    n_open = len(st["A"]["open"])
+    try:
+        for t in map(json.loads, open("trades.jsonl")):
+            if not t.get("paper") and t["outcome"] != "UNTRACKABLE":
+                rp = abs(t["entry"] - t["stop"]) / t["entry"] * 100
+                out.append(dict(src="Futures", tag="Futures", coin=t["symbol"].split("/")[0], pct=t["net_r"] * rp, lev=t["leverage"], r=t["net_r"],
+                                T=int(datetime.strptime(t["closed_at"], "%Y-%m-%d %H:%M UTC").replace(tzinfo=timezone.utc).timestamp() * 1000)))
+        n_open += sum(not o.get("paper") for o in json.load(open("state.json")).get("open", []))
+    except OSError:
+        pass
+    try:
+        for m in map(json.loads, open("paper_mirror.jsonl")):
+            if m.get("posted") and m["status"] == "closed":
+                out.append(dict(src="Mirror", tag="Mirror", coin=m["symbol"], pct=m["scale_r"] * m["risk_pct"], lev=lev_pct(m["risk_pct"]),
+                                r=m["scale_r"], T=m.get("t", m["ms"])))
+            n_open += bool(m.get("posted")) and m["status"] == "open"
+    except OSError:
+        pass
+    return sorted(out, key=lambda c: c["T"]), n_open
+
+
 def fmt_report(kind, label, cs, all_closed, n_open):
     s = stats(cs)
     wins = [c for c in cs if c["r"] > 0]
     pf = "∞" if s["pf"] == float("inf") else f"{s['pf']:.2f}"
-    best, worst = max(cs, key=net_pct), min(cs, key=net_pct)
-    rows = "\n".join(f"{'✅' if c['r'] > 0 else '❌'} #{c['id']:04d} {c['coin']}/USDT  {net_pct(c):+.1f}%  (x{lev_of(c)}: {net_pct(c) * lev_of(c):+.0f}%)"
-                     for c in sorted(cs, key=lambda c: c["exit_T"])[:30])
+    best, worst = max(cs, key=lambda c: c["pct"]), min(cs, key=lambda c: c["pct"])
+    by = {}
+    for c in cs:
+        by.setdefault(c["src"], []).append(c["r"])
+    srcs = "   ·   ".join(f"{k} {len(v)} ({sum(v):+.1f}R)" for k, v in sorted(by.items(), key=lambda kv: -len(kv[1])))
+    rows = "\n".join(f"{'✅' if c['r'] > 0 else '❌'} {c['tag']} {c['coin']}/USDT  {c['pct']:+.1f}%  (x{c['lev']}: {c['pct'] * c['lev']:+.0f}%)"
+                     for c in cs[:30])
     more = f"\n… +{len(cs) - 30} more" if len(cs) > 30 else ""
     bar = "━━━━━━━━━━━━━━━━━━━━"
     return (f"{'🏆' if kind == 'MONTHLY' else '📈'} {kind} PERFORMANCE REPORT\n📅 {label}\n{bar}\n\n"
             f"📊 Signals closed: {s['n']}\n"
+            f"📡 {srcs}\n"
             f"✅ Winners: {len(wins)}   ❌ Losers: {s['n'] - len(wins)}\n"
             f"🎯 Win rate: {len(wins) / s['n'] * 100:.0f}%\n\n"
             f"💰 Net result: {s['total_r']:+.1f}R  ≈ {s['total_r'] * P['RISK_PCT']:+.1f}% of account at {P['RISK_PCT']:g}% risk/trade\n"
             f"📐 Profit factor: {pf}   ·   Avg {s['avg_r']:+.2f}R per trade\n\n"
-            f"🥇 Best: {best['coin']}/USDT {net_pct(best):+.1f}%\n"
-            f"🥉 Worst: {worst['coin']}/USDT {net_pct(worst):+.1f}%\n\n"
+            f"🥇 Best: {best['coin']}/USDT {best['pct']:+.1f}%\n"
+            f"🥉 Worst: {worst['coin']}/USDT {worst['pct']:+.1f}%\n\n"
             f"{bar}\n{rows}{more}\n{bar}\n"
             f"📂 Still open: {n_open}   ·   All-time: {len(all_closed)} signals, {stats(all_closed)['total_r']:+.1f}R\n"
-            f"🔎 Every signal is timestamped and never edited — losses included.\n"
+            f"🔎 Every signal is timestamped and never edited — losses included. Mirrored signals are scored on real candles, not on the source's claims.\n"
             f"⚠️ Not financial advice.")
 
 
 def periodic_reports(st, now_ms):
-    """Weekly (Mon 00:00 UTC, covers prior 7 days) and monthly (1st, covers prior calendar month); once each."""
+    """Weekly (Mon 00:00 UTC, covers prior 7 days) and monthly (1st, covers prior calendar month); once each.
+    Covers every signal posted to the channel (see channel_trades)."""
     d = datetime.fromtimestamp(now_ms / 1000, timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
     ms = lambda x: int(x.timestamp() * 1000)
     mon, first = d - timedelta(days=d.weekday()), d.replace(day=1)
@@ -282,11 +319,12 @@ def periodic_reports(st, now_ms):
             st[key] = cur            # first run: arm silently, report from the next boundary on
         elif st[key] != cur:
             st[key] = cur
-            cs = [c for c in st["A"]["closed"] if lo <= c["exit_T"] + 1 < hi]
+            closed, n_open = channel_trades(st)
+            cs = [c for c in closed if lo <= c["T"] < hi]
             if cs:
-                publish_photo(scoreboard.render(kind, label, [(c["r"] > 0, c["coin"], c["id"], net_pct(c), net_pct(c) * lev_of(c), c["r"]) for c in cs],
-                                                stats(cs), len(st["A"]["open"]), P["RISK_PCT"]), f"{kind} scoreboard · {label}")
-                publish(fmt_report(kind, label, cs, st["A"]["closed"], len(st["A"]["open"])))
+                publish_photo(scoreboard.render(kind, label, [(c["r"] > 0, c["coin"], c["tag"], c["pct"], c["pct"] * c["lev"], c["r"]) for c in cs],
+                                                stats(cs), n_open, P["RISK_PCT"]), f"{kind} scoreboard · {label}")
+                publish(fmt_report(kind, label, cs, closed, n_open))
 
 
 def publish(text, reply_to=None):
@@ -499,11 +537,13 @@ def selftest():
     cw = close_trade(t, 106.0, "TRAIL", 1, 0.0); cl = close_trade(t, 98.0, "STOP", 1, 0.0)
     assert fmt_exit(cw).startswith("✅") and "Profit" in fmt_exit(cw) and fmt_exit(cl).startswith("❌")
     import scoreboard
-    png = scoreboard.render("MONTHLY", "October 2026", [(True, "ABC", 1, 6.0, 30.0, 1.5), (False, "XYZ", 2, -2.0, -10.0, -1.0), (True, "DEF", 3, 11.0, 44.0, 2.4), (True, "GHI", 4, 3.0, 15.0, 0.9)], stats([cw, cl]), 1, 1.0)
+    png = scoreboard.render("MONTHLY", "October 2026", [(True, "ABC", "#0001", 6.0, 30.0, 1.5), (False, "XYZ", "Mirror", -2.0, -10.0, -1.0), (True, "DEF", "Futures", 11.0, 44.0, 2.4), (True, "GHI", "#0004", 3.0, 15.0, 0.9)], stats([cw, cl]), 1, 1.0)
     assert png[:4] == b"\x89PNG"
     open("/tmp/scoreboard_sample.png", "wb").write(png) if "--png" in sys.argv else None
-    rep = fmt_report("MONTHLY", "October 2026", [cw, cl], [cw, cl], 1)
-    assert "Win rate: 50%" in rep and "Best:" in rep and len(rep) < 4000
+    it = [dict(src="Breakout", tag="#0001", coin="X", pct=net_pct(cw), lev=lev_of(cw), r=cw["r"], T=1),
+          dict(src="Mirror", tag="Mirror", coin="Y", pct=-2.0, lev=5, r=cl["r"], T=2)]
+    rep = fmt_report("MONTHLY", "October 2026", it, it, 1)
+    assert "Win rate: 50%" in rep and "Breakout 1" in rep and "Mirror 1" in rep and "Best:" in rep and len(rep) < 4000
     st0 = {"A": {"closed": [], "open": []}}
     periodic_reports(st0, 1792540799999); assert "last_weekly" in st0 and "last_monthly" in st0   # arms silently
     print("selftest ok")

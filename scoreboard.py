@@ -12,7 +12,7 @@ def _f(n):
 
 
 def render(kind, label, rows, s, n_open, risk_pct):
-    """rows: [(won, coin, id, pct, lev_pct, r)] in close order ; s: stats() dict. Returns PNG bytes."""
+    """rows: [(won, coin, tag, pct, lev_pct, r)] in close order ; s: stats() dict. Returns PNG bytes."""
     nwin = sum(1 for r in rows if r[0])
     best = sorted(rows, key=lambda r: -r[3])[:ROWS]
     H = 1000 + 74 * len(best) - 74 * 0 - 150
@@ -29,7 +29,7 @@ def render(kind, label, rows, s, n_open, risk_pct):
     # header
     d.rounded_rectangle((X(60), X(56), X(66), X(150)), X(3), fill=acc)
     d.text((X(86), X(52)), f"{kind} SCOREBOARD", font=_f(44), fill=TXT)
-    d.text((X(86), X(110)), label, font=_f(26), fill=DIM)
+    d.text((X(86), X(110)), label.replace("–", "-"), font=_f(26), fill=DIM)
     # hero number
     d.text((X(60), X(190)), "NET RESULT", font=_f(22), fill=DIM)
     d.text((X(60), X(222)), f"{net:+.1f}%", font=_f(110), fill=acc)
@@ -74,7 +74,7 @@ def render(kind, label, rows, s, n_open, risk_pct):
         d.rounded_rectangle((X(60), X(y), X(W - 60), X(y + 62)), X(14), fill=CARD)
         d.rounded_rectangle((X(60), X(y), X(70), X(y + 62)), X(5), fill=c)
         d.text((X(92), X(y + 15)), f"{coin}/USDT", font=_f(28), fill=TXT)
-        d.text((X(92 + 190), X(y + 21)), f"#{tid:04d}", font=_f(20), fill=DIM)
+        d.text((X(92 + 215), X(y + 21)), tid, font=_f(20), fill=DIM)
         bw = abs(pct) / mx * 170                              # magnitude bar
         d.rounded_rectangle((X(500), X(y + 26), X(500 + bw), X(y + 36)), X(5), fill=c + (150,))
         d.text((X(W - 84), X(y + 15)), f"{pct:+.1f}%  ·  {lp:+.0f}%", font=_f(28), fill=c, anchor="ra")

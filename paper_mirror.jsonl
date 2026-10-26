@@ -1,237 +1,260 @@
-{"id": 6500, "ms": 1788865090000, "symbol": "LTC", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0265061124694377, "scale_r": -1.0265061124694377, "hit": 0}
-{"id": 6505, "ms": 1789109078000, "symbol": "ATOM", "side": "SHORT", "month": "2026-09", "status": "unfilled"}
-{"id": 6519, "ms": 1789889856000, "symbol": "CELR", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 1.0278444444444428, "scale_r": 1.0352518518518519, "hit": 2}
-{"id": 6524, "ms": 1789899290000, "symbol": "ADA", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": -1.0229267015706807, "scale_r": -1.0229267015706807, "hit": 0}
-{"id": 6525, "ms": 1789914942000, "symbol": "FIL", "side": "SHORT", "month": "2026-09", "status": "bad"}
-{"id": 6529, "ms": 1789924747000, "symbol": "DASH", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.16425072886297512, "scale_r": 0.06901263362487878, "hit": 2}
-{"id": 6535, "ms": 1789964986000, "symbol": "ALT", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.2598595317725747, "scale_r": 1.2605284280936426, "hit": 5}
-{"id": 6538, "ms": 1789975132000, "symbol": "TRX", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.26232441162897996, "scale_r": 0.017362098138747818, "hit": 1}
-{"id": 6545, "ms": 1789984475000, "symbol": "OP", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.23408687258687452, "scale_r": 0.10216924066924174, "hit": 2}
-{"id": 6551, "ms": 1789998300000, "symbol": "DOT", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.383628770301626, "scale_r": 0.21657540603248296, "hit": 2}
-{"id": 6557, "ms": 1790050152000, "symbol": "SOL", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.2524256292906173, "scale_r": 0.11627002288329509, "hit": 2}
-{"id": 6558, "ms": 1790051473000, "symbol": "1000LUNC", "side": "SHORT", "month": "2026-09", "status": "bad"}
-{"id": 6560, "ms": 1790069751000, "symbol": "ARB", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": 0.2634711177794454, "scale_r": 0.12018529632408062, "hit": 2}
-{"id": 6563, "ms": 1790083682000, "symbol": "GRT", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": -1.0681714285714285, "scale_r": -1.0681714285714285, "hit": 0}
-{"id": 6567, "ms": 1790137429000, "symbol": "XLM", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0240797413793103, "scale_r": -1.0240797413793103, "hit": 0}
-{"id": 6572, "ms": 1790140775000, "symbol": "NEAR", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.23108510638298213, "scale_r": 0.01578622087132775, "hit": 1}
-{"id": 6584, "ms": 1790166164000, "symbol": "FIL", "side": "LONG", "month": "2026-09", "status": "bad"}
-{"id": 6586, "ms": 1790169576000, "symbol": "DOT", "side": "SHORT", "month": "2026-09", "status": "unfilled"}
-{"id": 6588, "ms": 1790187566000, "symbol": "XLM", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": 0.2765426731078859, "scale_r": 0.018893719806762604, "hit": 1}
-{"id": 6594, "ms": 1790223281000, "symbol": "LTC", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.30615808823529633, "scale_r": 0.19145220588235387, "hit": 2}
-{"id": 6596, "ms": 1790225625000, "symbol": "BTC", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": 0.3395205205205205, "scale_r": 0.12864297630964294, "hit": 2}
-{"id": 6597, "ms": 1790225963000, "symbol": "ARK", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 1.110866666666663, "scale_r": 2.533088888888885, "hit": 3}
-{"id": 6598, "ms": 1790226929000, "symbol": "BTR", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.9765111111111111, "scale_r": 1.0579925925925917, "hit": 2}
-{"id": 6599, "ms": 1790230190000, "symbol": "LINK", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.3049209370424674, "scale_r": 0.020635919960957684, "hit": 1}
-{"id": 6600, "ms": 1790234035000, "symbol": "KMNO", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.2505151515151511, "scale_r": 0.023242424242424155, "hit": 1}
-{"id": 6603, "ms": 1790242347000, "symbol": "BCH", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": -1.0313681687440075, "scale_r": -1.0313681687440075, "hit": 0}
-{"id": 6607, "ms": 1790255695000, "symbol": "ETH", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.5663255813953488, "scale_r": 0.6872558139534884, "hit": 3}
-{"id": 6626, "ms": 1790277449000, "symbol": "APEUSDT", "side": "LONG", "month": "2026-09", "status": "bad"}
-{"id": 6634, "ms": 1790310645000, "symbol": "ONDO", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.25948695652173676, "scale_r": 0.7342695652173892, "hit": 4}
-{"id": 6635, "ms": 1790312334000, "symbol": "H", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.9783333333333334, "scale_r": 2.2561111111111085, "hit": 3}
-{"id": 6637, "ms": 1790315725000, "symbol": "SAGA", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 1.2577727272727308, "scale_r": 1.31837878787879, "hit": 2}
-{"id": 6645, "ms": 1790342644000, "symbol": "ADA", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": 0.4725466666666696, "scale_r": 0.06721333333333393, "hit": 1}
-{"id": 6649, "ms": 1790346294000, "symbol": "HYPE", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": 0.3254520000000033, "scale_r": 0.02636109090909145, "hit": 1}
-{"id": 6654, "ms": 1790360324000, "symbol": "ONE", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0377546874999999, "scale_r": -1.0377546874999999, "hit": 0}
-{"id": 6655, "ms": 1790396167000, "symbol": "DOT", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.24757056451613105, "scale_r": 0.029828629032258414, "hit": 1}
-{"id": 6657, "ms": 1790402849000, "symbol": "PHA", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0182222222222221, "scale_r": -1.0182222222222221, "hit": 0}
-{"id": 6658, "ms": 1790405042000, "symbol": "RARE", "side": "LONG", "month": "2026-09", "status": "unfilled"}
-{"id": 6666, "ms": 1790420818000, "symbol": "NEAR", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.24222527472527627, "scale_r": 0.017866300366300672, "hit": 1}
-{"id": 6668, "ms": 1790424742000, "symbol": "SPELL", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.9758888888888829, "scale_r": 1.012925925925921, "hit": 2}
-{"id": 6671, "ms": 1790429145000, "symbol": "BCH", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": -1.0263385826771654, "scale_r": -1.0263385826771654, "hit": 0}
-{"id": 6673, "ms": 1790432622000, "symbol": "BCH", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": -1.03928790560472, "scale_r": -1.03928790560472, "hit": 0}
-{"id": 6679, "ms": 1790483417000, "symbol": "AVAX", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": -1.0252921083627797, "scale_r": -1.0252921083627797, "hit": 0}
-{"id": 6680, "ms": 1790483827000, "symbol": "NEAR", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.26811219512195356, "scale_r": 1.2681121951219516, "hit": 5}
-{"id": 6686, "ms": 1790491235000, "symbol": "RUNE", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0253999999999999, "scale_r": -1.0253999999999999, "hit": 0}
-{"id": 6690, "ms": 1790507480000, "symbol": "ARB", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": 0.2668081023454197, "scale_r": 0.5134321250888446, "hit": 4}
-{"id": 6708, "ms": 1790567916000, "symbol": "FIL", "side": "SHORT", "month": "2026-09", "status": "bad"}
-{"id": 6710, "ms": 1790570020000, "symbol": "WLD", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0238108108108108, "scale_r": -1.0238108108108108, "hit": 0}
-{"id": 6715, "ms": 1790578642000, "symbol": "QNT", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0184666666666666, "scale_r": -1.0184666666666666, "hit": 0}
-{"id": 6720, "ms": 1790589367000, "symbol": "AAVE", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": 0.19149390739236205, "scale_r": 0.012100460330354418, "hit": 1}
-{"id": 6721, "ms": 1790599983000, "symbol": "DASH", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.024030965391621, "scale_r": -1.024030965391621, "hit": 0}
-{"id": 6733, "ms": 1790656227000, "symbol": "GRT", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.24962499999999738, "scale_r": 0.018970238095237714, "hit": 1}
-{"id": 6734, "ms": 1790656324000, "symbol": "CRV", "side": "LONG", "month": "2026-09", "status": "unfilled"}
-{"id": 6735, "ms": 1790659185000, "symbol": "ALGO", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0146666666666666, "scale_r": -1.0146666666666666, "hit": 0}
-{"id": 6737, "ms": 1790666750000, "symbol": "INJ", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": -1.0254331641285956, "scale_r": -1.0254331641285956, "hit": 0}
-{"id": 6738, "ms": 1790667486000, "symbol": "AKE", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 1.3123333333333334, "scale_r": 1.8678888888888874, "hit": 2}
-{"id": 6742, "ms": 1790689239000, "symbol": "ETH", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.4463977272727273, "scale_r": 0.06457954545454546, "hit": 1}
-{"id": 6743, "ms": 1790690180000, "symbol": "LINK", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": 0.25408833922261576, "scale_r": 0.9387173144876313, "hit": 6}
-{"id": 6755, "ms": 1790740778000, "symbol": "MOVR", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.27551962616822406, "scale_r": 0.03626728971962615, "hit": 1}
-{"id": 6757, "ms": 1790742074000, "symbol": "INIT", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0224444444444445, "scale_r": -1.0224444444444445, "hit": 0}
-{"id": 6761, "ms": 1790746184000, "symbol": "BTC", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": -1.0592702702702703, "scale_r": -1.0592702702702703, "hit": 0}
-{"id": 6763, "ms": 1790746871000, "symbol": "MOVR", "side": "LONG", "month": "2026-09", "status": "unfilled"}
-{"id": 6764, "ms": 1790747119000, "symbol": "SOON", "side": "LONG", "month": "2026-09", "status": "bad"}
-{"id": 6772, "ms": 1790759664000, "symbol": "DOGE", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.32953164556962194, "scale_r": 0.5519547920433994, "hit": 4}
-{"id": 6779, "ms": 1790775095000, "symbol": "JUP", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0192758620689655, "scale_r": -1.0192758620689655, "hit": 0}
-{"id": 6780, "ms": 1790778821000, "symbol": "1000PEPE", "side": "SHORT", "month": "2026-09", "status": "bad"}
-{"id": 6785, "ms": 1790827530000, "symbol": "INJ", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.55007438016529, "scale_r": 0.3070991735537199, "hit": 2}
-{"id": 6786, "ms": 1790828678000, "symbol": "US", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0176666666666667, "scale_r": -1.0176666666666667, "hit": 0}
-{"id": 6789, "ms": 1790830107000, "symbol": "MOVR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.319799999999995, "scale_r": 2.853133333333326, "hit": 3}
-{"id": 6796, "ms": 1790857258000, "symbol": "ICP", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.029607142857143, "scale_r": -1.029607142857143, "hit": 0}
-{"id": 6797, "ms": 1790865706000, "symbol": "TIA", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.26882638888889027, "scale_r": 0.019983796296296565, "hit": 1}
-{"id": 6814, "ms": 1790915054000, "symbol": "IMX", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.327470588235296, "scale_r": 0.8745294117647062, "hit": 4}
-{"id": 6815, "ms": 1790917048000, "symbol": "DASH", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0231779497098645, "scale_r": -1.0231779497098645, "hit": 0}
-{"id": 6816, "ms": 1790918202000, "symbol": "MOVR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0212857142857141, "scale_r": -1.0212857142857141, "hit": 0}
-{"id": 6817, "ms": 1790922484000, "symbol": "DEXE", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0196666666666667, "scale_r": -1.0196666666666667, "hit": 0}
-{"id": 6819, "ms": 1790934302000, "symbol": "GRASS", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.2825033860045152, "scale_r": 0.021028592927012875, "hit": 1}
-{"id": 6822, "ms": 1790944588000, "symbol": "NEAR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.3177183098591529, "scale_r": 0.024291079812206302, "hit": 1}
-{"id": 6826, "ms": 1790946781000, "symbol": "MOVR", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0250157004830918, "scale_r": -1.0250157004830918, "hit": 0}
-{"id": 6829, "ms": 1790952157000, "symbol": "MAGMA", "side": "LONG", "month": "2026-10", "status": "unfilled"}
-{"id": 6832, "ms": 1790953931000, "symbol": "MAGIC", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0208333333333333, "scale_r": -1.0208333333333333, "hit": 0}
-{"id": 6835, "ms": 1790965291000, "symbol": "NEAR", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.22861627906976545, "scale_r": 0.015437984496123665, "hit": 1}
-{"id": 6879, "ms": 1791346589000, "symbol": "STX", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.24737349397590383, "scale_r": 0.1750843373493977, "hit": 2}
-{"id": 6881, "ms": 1791348715000, "symbol": "SUI", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.2477923076923047, "scale_r": 0.11018547008546856, "hit": 2}
-{"id": 6882, "ms": 1791349572000, "symbol": "RLC", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0123333333333333, "scale_r": -1.0123333333333333, "hit": 0}
-{"id": 6884, "ms": 1791349970000, "symbol": "BR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0191666666666668, "scale_r": -1.0191666666666668, "hit": 0}
-{"id": 6886, "ms": 1791352252000, "symbol": "BR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0193333333333334, "scale_r": -1.0193333333333334, "hit": 0}
-{"id": 6890, "ms": 1791364984000, "symbol": "ORCA", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0264976303317535, "scale_r": -1.0264976303317535, "hit": 0}
-{"id": 6892, "ms": 1791365659000, "symbol": "ENJ", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.21419642857143126, "scale_r": 0.42104166666666815, "hit": 4}
-{"id": 6896, "ms": 1791379323000, "symbol": "VIRTUAL", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.3714048442906554, "scale_r": 0.0530657439446363, "hit": 1}
-{"id": 6901, "ms": 1791430913000, "symbol": "LPT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.2364285714285643, "scale_r": 1.1888095238095178, "hit": 2}
-{"id": 6902, "ms": 1791436388000, "symbol": "PONS", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.23691005291005407, "scale_r": 0.020860670194003693, "hit": 1}
-{"id": 6906, "ms": 1791455748000, "symbol": "OGN", "side": "LONG", "month": "2026-10", "status": "unfilled"}
-{"id": 6909, "ms": 1791459367000, "symbol": "STRK", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 1.034249999999999, "scale_r": 0.9159166666666655, "hit": 2}
-{"id": 6912, "ms": 1791465402000, "symbol": "SUI", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.33187366167023313, "scale_r": 0.047505353319057406, "hit": 1}
-{"id": 6914, "ms": 1791471459000, "symbol": "OGN", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.9723333333333379, "scale_r": 0.9278888888888936, "hit": 2}
-{"id": 6920, "ms": 1791474944000, "symbol": "LDO", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.27234265734265956, "scale_r": 0.021759906759907095, "hit": 1}
-{"id": 6931, "ms": 1791517668000, "symbol": "RLC", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0239333333333334, "scale_r": -1.0239333333333334, "hit": 0}
-{"id": 6932, "ms": 1791519825000, "symbol": "WLD", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.24796601941747534, "scale_r": 0.030490291262135854, "hit": 1}
-{"id": 6933, "ms": 1791520453000, "symbol": "LTC", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.17164359861591771, "scale_r": 0.010167243367935532, "hit": 1}
-{"id": 6935, "ms": 1791527976000, "symbol": "RLC", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0216666666666667, "scale_r": -1.0216666666666667, "hit": 0}
-{"id": 6937, "ms": 1791528504000, "symbol": "RLC", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9796666666666667, "scale_r": 0.313, "hit": 1}
-{"id": 6940, "ms": 1791537551000, "symbol": "US", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.30444827586206774, "scale_r": 0.3527241379310337, "hit": 2}
-{"id": 6942, "ms": 1791546458000, "symbol": "DOGE", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.2919467455621332, "scale_r": 0.13152596975674002, "hit": 2}
-{"id": 6943, "ms": 1791552682000, "symbol": "APT", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.29941282051281914, "scale_r": 0.04300256410256384, "hit": 1}
-{"id": 6951, "ms": 1791602091000, "symbol": "BAT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.193, "scale_r": 1.155962962962961, "hit": 2}
-{"id": 6952, "ms": 1791604548000, "symbol": "APT", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.34834955752212643, "scale_r": 0.15292182890855527, "hit": 2}
-{"id": 6953, "ms": 1791604937000, "symbol": "MAGIC", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.2831666666666666, "scale_r": 0.3942777777777778, "hit": 1}
-{"id": 6955, "ms": 1791606447000, "symbol": "C98", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0237037037037038, "scale_r": -1.0237037037037038, "hit": 0}
-{"id": 6956, "ms": 1791606761000, "symbol": "US", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.3153333333333332, "scale_r": 0.42644444444444446, "hit": 1}
-{"id": 6957, "ms": 1791606782000, "symbol": "US", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.3153333333333332, "scale_r": 0.42644444444444446, "hit": 1}
-{"id": 6962, "ms": 1791613625000, "symbol": "PIXEL", "side": "SHORT", "month": "2026-10", "status": "unfilled"}
-{"id": 6963, "ms": 1791613688000, "symbol": "PIXEL", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.9753999999999943, "scale_r": 2.108733333333326, "hit": 3}
-{"id": 6967, "ms": 1791619777000, "symbol": "HBAR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.3186261682242931, "scale_r": 0.024233644859812206, "hit": 1}
-{"id": 6968, "ms": 1791623703000, "symbol": "LUMIA", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9752222222222222, "scale_r": 0.3085555555555556, "hit": 1}
-{"id": 6970, "ms": 1791626102000, "symbol": "BAT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.6834255319148884, "scale_r": 1.2555295508274142, "hit": 3}
-{"id": 6977, "ms": 1791632544000, "symbol": "BAT", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0131363636363637, "scale_r": -1.0131363636363637, "hit": 0}
-{"id": 6978, "ms": 1791638639000, "symbol": "SUI", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.43910985915492673, "scale_r": 0.06277183098591499, "hit": 1}
-{"id": 6981, "ms": 1791642348000, "symbol": "GRAM", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0483333333333333, "scale_r": -1.0483333333333333, "hit": 0}
-{"id": 6982, "ms": 1791662540000, "symbol": "LPT", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.19755621301775098, "scale_r": 0.19854240631163692, "hit": 3}
-{"id": 6988, "ms": 1791696065000, "symbol": "S", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.24076800000000237, "scale_r": 0.032768000000000436, "hit": 1}
-{"id": 6989, "ms": 1791703765000, "symbol": "ARB", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0328635214827295, "scale_r": -1.0328635214827295, "hit": 0}
-{"id": 6991, "ms": 1791711129000, "symbol": "INJ", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0263982608695652, "scale_r": -1.0263982608695652, "hit": 0}
-{"id": 6997, "ms": 1791723519000, "symbol": "LUMIA", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0295714285714286, "scale_r": -1.0295714285714286, "hit": 0}
-{"id": 6998, "ms": 1791724017000, "symbol": "AAVE", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.27493996569468515, "scale_r": 0.26979416809605555, "hit": 3}
-{"id": 7000, "ms": 1791726039000, "symbol": "CFX", "side": "LONG", "month": "2026-10", "status": "unfilled"}
-{"id": 7001, "ms": 1791726153000, "symbol": "CFX", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.6153703703703568, "scale_r": 0.5042592592592549, "hit": 1}
-{"id": 7015, "ms": 1791771879000, "symbol": "MAGIC", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0180666666666667, "scale_r": -1.0180666666666667, "hit": 0}
-{"id": 7016, "ms": 1791775733000, "symbol": "IO", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0243333333333333, "scale_r": -1.0243333333333333, "hit": 0}
-{"id": 7018, "ms": 1791778215000, "symbol": "FIL", "side": "LONG", "month": "2026-10", "status": "bad"}
-{"id": 7019, "ms": 1791779904000, "symbol": "PLUME", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0246881720430108, "scale_r": -1.0246881720430108, "hit": 0}
-{"id": 7022, "ms": 1791787341000, "symbol": "ICP", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.0791555555555683, "scale_r": 0.3087851851851894, "hit": 1}
-{"id": 7026, "ms": 1791808273000, "symbol": "HYPE", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.2441147836538448, "scale_r": 0.9014665464743572, "hit": 6}
-{"id": 7029, "ms": 1791813228000, "symbol": "WLD", "side": "SHORT", "month": "2026-10", "status": "unfilled"}
-{"id": 7045, "ms": 1791863671000, "symbol": "ATOM", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0299090909090909, "scale_r": -1.0299090909090909, "hit": 0}
-{"id": 7046, "ms": 1791867241000, "symbol": "CT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.23009221076746725, "scale_r": 0.35609450171821233, "hit": 3}
-{"id": 7048, "ms": 1791869451000, "symbol": "OGN", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9763333333333287, "scale_r": 2.198555555555551, "hit": 3}
-{"id": 7053, "ms": 1791880338000, "symbol": "BTW", "side": "LONG", "month": "2026-10", "status": "unfilled"}
-{"id": 7055, "ms": 1791894326000, "symbol": "EIGEN", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.21501098901098992, "scale_r": 0.013545787545787693, "hit": 1}
-{"id": 7057, "ms": 1791897615000, "symbol": "JUP", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.3199510489510505, "scale_r": 0.045825174825175105, "hit": 1}
-{"id": 7059, "ms": 1791904020000, "symbol": "TRUTH", "side": "LONG", "month": "2026-10", "status": "unfilled"}
-{"id": 7060, "ms": 1791904135000, "symbol": "BAT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9756666666666667, "scale_r": 0.309, "hit": 1}
-{"id": 7066, "ms": 1791954552000, "symbol": "SOL", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.2577701863354024, "scale_r": 0.02071014492753604, "hit": 1}
-{"id": 7067, "ms": 1791954929000, "symbol": "PONS", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.23932214765100732, "scale_r": 0.029926174496644444, "hit": 1}
-{"id": 7068, "ms": 1791955404000, "symbol": "CELR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0218287671232877, "scale_r": -1.0218287671232877, "hit": 0}
-{"id": 7070, "ms": 1791956518000, "symbol": "BAT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0263333333333333, "scale_r": -1.0263333333333333, "hit": 0}
-{"id": 7071, "ms": 1791958924000, "symbol": "TRUTH", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0241111111111112, "scale_r": -1.0241111111111112, "hit": 0}
-{"id": 7073, "ms": 1791962673000, "symbol": "NIL", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0211333333333332, "scale_r": -1.0211333333333332, "hit": 0}
-{"id": 7076, "ms": 1791970663000, "symbol": "JCT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9739333333333305, "scale_r": 1.6405999999999932, "hit": 3}
-{"id": 7077, "ms": 1791971347000, "symbol": "SUI", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.25014201183431445, "scale_r": 1.0839684418145912, "hit": 6}
-{"id": 7086, "ms": 1791983489000, "symbol": "ETH", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0532608695652175, "scale_r": -1.0532608695652175, "hit": 0}
-{"id": 7090, "ms": 1791988218000, "symbol": "OP", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.2951267454350201, "scale_r": 0.1211203007518803, "hit": 2}
-{"id": 7095, "ms": 1792000675000, "symbol": "MAGIC", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.3332124789207468, "scale_r": 0.0254553119730193, "hit": 1}
-{"id": 7122, "ms": 1792040272000, "symbol": "QTUM", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 1.1031333333333333, "scale_r": 1.582022222222222, "hit": 2, "timeout": true}
-{"id": 7123, "ms": 1792041429000, "symbol": "SKDD", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.24388752556236865, "scale_r": 0.17558486707566345, "hit": 2}
-{"id": 7124, "ms": 1792041493000, "symbol": "BAT", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0234666666666667, "scale_r": -1.0234666666666667, "hit": 0}
-{"id": 7127, "ms": 1792057416000, "symbol": "ADA", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.2371520467836259, "scale_r": 0.4125906432748541, "hit": 4}
-{"id": 7129, "ms": 1792069256000, "symbol": "ATOM", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.5856363636363584, "scale_r": 0.07654545454545367, "hit": 1}
-{"id": 7152, "ms": 1792125915000, "symbol": "CFX", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.023672268907563, "scale_r": -1.023672268907563, "hit": 0}
-{"id": 7153, "ms": 1792131650000, "symbol": "BAT", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0326233552631578, "scale_r": -1.0326233552631578, "hit": 0}
-{"id": 7154, "ms": 1792136061000, "symbol": "AGT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9751333333333334, "scale_r": 0.30846666666666667, "hit": 1}
-{"id": 7158, "ms": 1792139205000, "symbol": "ZEC", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0294819277108433, "scale_r": -1.0294819277108433, "hit": 0}
-{"id": 7161, "ms": 1792154493000, "symbol": "STBL", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.0947500000000037, "scale_r": 1.0530833333333358, "hit": 2}
-{"id": 7163, "ms": 1792156669000, "symbol": "INJ", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.3493994490358093, "scale_r": 1.3411349862258886, "hit": 5}
-{"id": 7169, "ms": 1792170624000, "symbol": "NEAR", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0248358208955224, "scale_r": -1.0248358208955224, "hit": 0}
-{"id": 7172, "ms": 1792208862000, "symbol": "TIA", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.976, "scale_r": 0.30933333333333335, "hit": 1}
-{"id": 7174, "ms": 1792209300000, "symbol": "AGT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.0791904761904791, "scale_r": 0.34903174603174697, "hit": 1}
-{"id": 7176, "ms": 1792211098000, "symbol": "TIA", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.2687933333333351, "scale_r": 0.034126666666666965, "hit": 1}
-{"id": 7179, "ms": 1792211353000, "symbol": "Q", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0222666666666667, "scale_r": -1.0222666666666667, "hit": 0}
-{"id": 7181, "ms": 1792212680000, "symbol": "DUSK", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0238571428571428, "scale_r": -1.0238571428571428, "hit": 0}
-{"id": 7182, "ms": 1792218594000, "symbol": "ONDO", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.32620472440944853, "scale_r": 1.2632125984251983, "hit": 6}
-{"id": 7185, "ms": 1792228354000, "symbol": "AGT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.021, "scale_r": -1.021, "hit": 0}
-{"id": 7187, "ms": 1792229899000, "symbol": "EPIC", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9821333333333296, "scale_r": 1.6265777777777741, "hit": 3}
-{"id": 7188, "ms": 1792230144000, "symbol": "ICNT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.018904761904762, "scale_r": -1.018904761904762, "hit": 0}
-{"id": 7191, "ms": 1792235369000, "symbol": "HYPE", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.2237638629283445, "scale_r": 0.39473997923156423, "hit": 4}
-{"id": 7195, "ms": 1792243620000, "symbol": "OP", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.5620218978102166, "scale_r": 0.07443065693430638, "hit": 1}
-{"id": 7196, "ms": 1792245684000, "symbol": "AGT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9834444444444476, "scale_r": 0.9464074074074104, "hit": 2}
-{"id": 7201, "ms": 1792255291000, "symbol": "Q", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.02, "scale_r": -1.02, "hit": 0}
-{"id": 7213, "ms": 1792299352000, "symbol": "BTC", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.3465768307322929, "scale_r": 0.030130252100840332, "hit": 1}
-{"id": 7214, "ms": 1792300940000, "symbol": "HBAR", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0324334600760456, "scale_r": -1.0324334600760456, "hit": 0}
-{"id": 7215, "ms": 1792301943000, "symbol": "Q", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9832666666666667, "scale_r": 0.3166, "hit": 1}
-{"id": 7217, "ms": 1792308485000, "symbol": "STBL", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9769999999999968, "scale_r": 0.31033333333333224, "hit": 1}
-{"id": 7219, "ms": 1792320460000, "symbol": "LAB", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.20987999999999765, "scale_r": 0.012444102564102194, "hit": 1}
-{"id": 7222, "ms": 1792334688000, "symbol": "WLD", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.2864370860927169, "scale_r": 0.2941633554083887, "hit": 3}
-{"id": 7234, "ms": 1792378845000, "symbol": "GTC", "side": "LONG", "month": "2026-10", "status": "unfilled"}
-{"id": 7235, "ms": 1792382203000, "symbol": "CELO", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.25410000000000144, "scale_r": 0.03106969696969724, "hit": 1}
-{"id": 7237, "ms": 1792386653000, "symbol": "EPIC", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0128444444444444, "scale_r": -1.0128444444444444, "hit": 0}
-{"id": 7238, "ms": 1792394208000, "symbol": "AVAX", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0272253129346314, "scale_r": -1.0272253129346314, "hit": 0}
-{"id": 7241, "ms": 1792403161000, "symbol": "ZEC", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.029964267352185, "scale_r": -1.029964267352185, "hit": 0}
-{"id": 7242, "ms": 1792414531000, "symbol": "LINK", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.7144620253164581, "scale_r": 0.38787974683544546, "hit": 2}
-{"id": 7245, "ms": 1792420712000, "symbol": "INJ", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.034188640973631, "scale_r": -1.034188640973631, "hit": 0}
-{"id": 7250, "ms": 1792469928000, "symbol": "METIS", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.08616759776536351, "scale_r": 0.03979888268156403, "hit": 2}
-{"id": 7251, "ms": 1792475049000, "symbol": "BR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9783333333333334, "scale_r": 0.9783333333333321, "hit": 2}
-{"id": 7254, "ms": 1792478218000, "symbol": "JCT", "side": "LONG", "month": "2026-10", "status": "unfilled"}
-{"id": 7257, "ms": 1792482661000, "symbol": "BCH", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0277222222222222, "scale_r": -1.0277222222222222, "hit": 0}
-{"id": 7258, "ms": 1792483657000, "symbol": "AKE", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.1778666666666675, "scale_r": 0.37786666666666696, "hit": 1}
-{"id": 7260, "ms": 1792489755000, "symbol": "IO", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9786, "scale_r": 0.31193333333333334, "hit": 1}
-{"id": 7261, "ms": 1792497963000, "symbol": "Q", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9835333333333351, "scale_r": 0.31686666666666724, "hit": 1}
-{"id": 7262, "ms": 1792500896000, "symbol": "NEAR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.5907835051546448, "scale_r": 1.9433608247422798, "hit": 5}
-{"id": 7268, "ms": 1792505897000, "symbol": "ARB", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.31601766190075553, "scale_r": 0.8056447995514429, "hit": 5}
-{"id": 7280, "ms": 1792557062000, "symbol": "DOOD", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.3128032786885273, "scale_r": 0.775098360655741, "hit": 4}
-{"id": 7281, "ms": 1792561685000, "symbol": "IOST", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9788333333333369, "scale_r": 0.92327777777778, "hit": 2}
-{"id": 7282, "ms": 1792561782000, "symbol": "IOST", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9794999999999999, "scale_r": 1.9239444444444467, "hit": 3}
-{"id": 7284, "ms": 1792562770000, "symbol": "HYPE", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.2095425431711159, "scale_r": 0.013833490319204837, "hit": 1}
-{"id": 7287, "ms": 1792569148000, "symbol": "Q", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0163333333333333, "scale_r": -1.0163333333333333, "hit": 0}
-{"id": 7289, "ms": 1792575741000, "symbol": "TAO", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.24912251655629614, "scale_r": 0.01641464311994177, "hit": 1}
-{"id": 7291, "ms": 1792589564000, "symbol": "ENS", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0491610169491528, "scale_r": -1.0491610169491528, "hit": 0}
-{"id": 7296, "ms": 1792592678000, "symbol": "APT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.32512017167381835, "scale_r": 0.14200143061516413, "hit": 2}
-{"id": 7325, "ms": 1792639544000, "symbol": "STX", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0237718120805368, "scale_r": -1.0237718120805368, "hit": 0}
-{"id": 7326, "ms": 1792645680000, "symbol": "TRIA", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0187333333333333, "scale_r": -1.0187333333333333, "hit": 0}
-{"id": 7327, "ms": 1792649838000, "symbol": "XMR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0212333333333334, "scale_r": -1.0212333333333334, "hit": 0}
-{"id": 7329, "ms": 1792655561000, "symbol": "AGT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9809999999999977, "scale_r": 1.925444444444442, "hit": 3}
-{"id": 7333, "ms": 1792657017000, "symbol": "MAGMA", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9838333333333351, "scale_r": 0.9282777777777795, "hit": 2}
-{"id": 7337, "ms": 1792658608000, "symbol": "M", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.1103333333333303, "scale_r": 0.35477777777777675, "hit": 1}
-{"id": 7342, "ms": 1792672319000, "symbol": "ASTER", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.3104736842105228, "scale_r": 0.020999999999999443, "hit": 1}
-{"id": 7343, "ms": 1792672335000, "symbol": "ASTER", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.2564782608695624, "scale_r": 0.01734782608695607, "hit": 1}
-{"id": 7344, "ms": 1792675177000, "symbol": "HYPE", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.4332845849802295, "scale_r": 0.037395256916994545, "hit": 1}
-{"id": 7352, "ms": 1792731440000, "symbol": "CHZ", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.2768947368421029, "scale_r": 0.022508771929824242, "hit": 1}
-{"id": 7353, "ms": 1792731511000, "symbol": "ONDO", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0193169642857143, "scale_r": -1.0193169642857143, "hit": 0}
-{"id": 7354, "ms": 1792733136000, "symbol": "BTR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9734444444444474, "scale_r": 0.9364074074074102, "hit": 2}
-{"id": 7357, "ms": 1792746941000, "symbol": "IRYS", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.0723846153846144, "scale_r": 1.4313589743589734, "hit": 3}
-{"id": 7360, "ms": 1792759346000, "symbol": "DOGE", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0317549407114626, "scale_r": -1.0317549407114626, "hit": 0}
-{"id": 7361, "ms": 1792760928000, "symbol": "ATOM", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.39017948717948325, "scale_r": 0.041461538461537814, "hit": 1}
-{"id": 7365, "ms": 1792803083000, "symbol": "IRYS", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.9817777777777809, "scale_r": 0.3151111111111121, "hit": 1}
-{"id": 7366, "ms": 1792804347000, "symbol": "BIRB", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0171904761904762, "scale_r": -1.0171904761904762, "hit": 0}
-{"id": 7367, "ms": 1792817237000, "symbol": "TIA", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.6162961373390572, "scale_r": 0.0833919885550789, "hit": 1}
-{"id": 7370, "ms": 1792822617000, "symbol": "TRX", "side": "LONG", "month": "2026-10", "status": "open"}
-{"id": 7371, "ms": 1792822844000, "symbol": "AGT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.979, "scale_r": 1.0012222222222211, "hit": 2}
-{"id": 7372, "ms": 1792823453000, "symbol": "IRYS", "side": "SHORT", "month": "2026-10", "status": "unfilled"}
-{"id": 7386, "ms": 1792842288000, "symbol": "LIT", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.28280778958017316, "scale_r": 0.12431849603776854, "hit": 2}
-{"id": 7387, "ms": 1792842890000, "symbol": "BIRB", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9780476190476164, "scale_r": 0.9304285714285696, "hit": 2}
-{"id": 7390, "ms": 1792846019000, "symbol": "M", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0176666666666667, "scale_r": -1.0176666666666667, "hit": 0}
-{"id": 7392, "ms": 1792847658000, "symbol": "WLD", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0295759493670886, "scale_r": -1.0295759493670886, "hit": 0}
-{"id": 7397, "ms": 1792875599000, "symbol": "XLM", "side": "SHORT", "month": "2026-10", "status": "open"}
-{"id": 7399, "ms": 1792903567000, "symbol": "TRUMP", "side": "LONG", "month": "2026-10", "status": "bad"}
-{"id": 7400, "ms": 1792905688000, "symbol": "ORDER", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0256666666666667, "scale_r": -1.0256666666666667, "hit": 0}
-{"id": 7401, "ms": 1792908467000, "symbol": "JCT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.979, "scale_r": 1.6456666666666668, "hit": 3}
-{"id": 7405, "ms": 1792917283000, "symbol": "JCT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.3821999999999972, "scale_r": 0.44886666666666575, "hit": 1}
-{"id": 7409, "ms": 1792924354000, "symbol": "SAND", "side": "SHORT", "month": "2026-10", "status": "open"}
+{"id": 40904, "ch": "binance_360_spot", "ms": 1791246297000, "symbol": "DASH", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 5.58, "status": "closed", "tp1_r": -1.0179210567699324, "scale_r": -1.0179210567699324, "hit": 0, "t": 1791338400000}
+{"id": 40937, "ch": "binance_360_spot", "ms": 1791682546000, "symbol": "XMR", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 5.583, "status": "closed", "tp1_r": 0.34467454181383134, "scale_r": 1.4304158439246863, "hit": 5, "t": 1792286100000}
+{"id": 40989, "ch": "binance_360_spot", "ms": 1792152031000, "symbol": "ZIL", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 5.583, "status": "closed", "tp1_r": -1.017911964649898, "scale_r": -1.017911964649898, "hit": 0, "t": 1792191000000}
+{"id": 41010, "ch": "binance_360_spot", "ms": 1792456776000, "symbol": "XRP", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 5.58, "status": "closed", "tp1_r": 0.345420366707347, "scale_r": 0.5258280375405069, "hit": 3, "t": 1792832400000}
+{"id": 41028, "ch": "binance_360_spot", "ms": 1792647852000, "symbol": "SUSHI", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 5.579, "status": "closed", "tp1_r": -1.0179238237490664, "scale_r": -1.0179238237490664, "hit": 0, "t": 1792795800000}
+{"id": 41030, "ch": "binance_360_spot", "ms": 1792677731000, "symbol": "BTC", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 5.584, "status": "open"}
+{"id": 41031, "ch": "binance_360_spot", "ms": 1792747870000, "symbol": "ALGO", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 5.584, "status": "closed", "tp1_r": 0.34474034767007017, "scale_r": 0.05462033886829523, "hit": 1, "t": 1792794600000}
+{"id": 41035, "ch": "binance_360_spot", "ms": 1792762989000, "symbol": "DOT", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 5.584, "status": "closed", "tp1_r": -1.0179090909090909, "scale_r": -1.0179090909090909, "hit": 0, "t": 1792828500000}
+{"id": 41040, "ch": "binance_360_spot", "ms": 1792834146000, "symbol": "XTZ", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 5.584, "status": "closed", "tp1_r": 0.3448114659014569, "scale_r": 0.054635020453018684, "hit": 1, "t": 1792851300000}
+{"id": 41042, "ch": "binance_360_spot", "ms": 1792848725000, "symbol": "RLC", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 5.578, "status": "closed", "tp1_r": 0.34505611209738635, "scale_r": 0.05466808267816356, "hit": 1, "t": 1792863300000}
+{"id": 41047, "ch": "binance_360_spot", "ms": 1792921562000, "symbol": "VET", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 5.581, "status": "unfilled"}
+{"id": 86868, "ch": "crypto_musk1", "ms": 1792557140000, "symbol": "KNC", "side": "SHORT", "month": "2026-10", "posted": true, "risk_pct": 4.727, "status": "closed", "tp1_r": 0.4149554822753462, "scale_r": 0.30654657873041846, "hit": 2, "t": 1792769700000}
+{"id": 86918, "ch": "crypto_musk1", "ms": 1792648997000, "symbol": "XMR", "side": "SHORT", "month": "2026-10", "posted": true, "risk_pct": 4.729, "status": "closed", "tp1_r": 0.4136488056810867, "scale_r": 0.08755132343447433, "hit": 1, "t": 1792660500000}
+{"id": 86929, "ch": "crypto_musk1", "ms": 1792659856000, "symbol": "AVAX", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 4.873, "status": "closed", "tp1_r": 0.4115111488398449, "scale_r": 0.08748737973967256, "hit": 1, "t": 1792687800000}
+{"id": 86940, "ch": "crypto_musk1", "ms": 1792720754000, "symbol": "BCH", "side": "SHORT", "month": "2026-10", "posted": true, "risk_pct": 4.729, "status": "closed", "tp1_r": 0.41350560119491975, "scale_r": 0.30614936519790736, "hit": 2, "t": 1792955400000}
+{"id": 86942, "ch": "crypto_musk1", "ms": 1792741633000, "symbol": "BNB", "side": "SHORT", "month": "2026-10", "posted": true, "risk_pct": 4.729, "status": "open"}
+{"id": 86946, "ch": "crypto_musk1", "ms": 1792754172000, "symbol": "DASH", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 4.865, "status": "closed", "tp1_r": 0.41370916334661123, "scale_r": 0.3051434262948197, "hit": 2, "t": 1792796100000}
+{"id": 86950, "ch": "crypto_musk1", "ms": 1792765872000, "symbol": "RLC", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 4.886, "status": "closed", "tp1_r": 0.407642972536348, "scale_r": 0.08656058158319849, "hit": 1, "t": 1792785000000}
+{"id": 86983, "ch": "crypto_musk1", "ms": 1792841769000, "symbol": "EGLD", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 4.889, "status": "closed", "tp1_r": 0.4098854489164089, "scale_r": 0.0871300309597524, "hit": 1, "t": 1792851300000}
+{"id": 86985, "ch": "crypto_musk1", "ms": 1792852629000, "symbol": "SUSHI", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 4.891, "status": "closed", "tp1_r": 0.40519487179487007, "scale_r": 0.08596410256410215, "hit": 1, "t": 1792918200000}
+{"id": 86991, "ch": "crypto_musk1", "ms": 1792887128000, "symbol": "BNB", "side": "SHORT", "month": "2026-10", "posted": true, "risk_pct": 4.729, "status": "open"}
+{"id": 86992, "ch": "crypto_musk1", "ms": 1792891088000, "symbol": "IOST", "side": "SHORT", "month": "2026-10", "posted": true, "risk_pct": 4.729, "status": "closed", "tp1_r": 0.4134595180070439, "scale_r": 0.30609423233143945, "hit": 2, "t": 1792901400000}
+{"id": 87003, "ch": "crypto_musk1", "ms": 1792928047000, "symbol": "UNI", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 4.873, "status": "open"}
+{"id": 6500, "ms": 1788865090000, "symbol": "LTC", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0265061124694377, "scale_r": -1.0265061124694377, "hit": 0, "ch": "erfann_finance"}
+{"id": 6505, "ms": 1789109078000, "symbol": "ATOM", "side": "SHORT", "month": "2026-09", "status": "unfilled", "ch": "erfann_finance"}
+{"id": 6519, "ms": 1789889856000, "symbol": "CELR", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 1.0278444444444428, "scale_r": 1.0352518518518519, "hit": 2, "ch": "erfann_finance"}
+{"id": 6524, "ms": 1789899290000, "symbol": "ADA", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": -1.0229267015706807, "scale_r": -1.0229267015706807, "hit": 0, "ch": "erfann_finance"}
+{"id": 6525, "ms": 1789914942000, "symbol": "FIL", "side": "SHORT", "month": "2026-09", "status": "bad", "ch": "erfann_finance"}
+{"id": 6529, "ms": 1789924747000, "symbol": "DASH", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.16425072886297512, "scale_r": 0.06901263362487878, "hit": 2, "ch": "erfann_finance"}
+{"id": 6535, "ms": 1789964986000, "symbol": "ALT", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.2598595317725747, "scale_r": 1.2605284280936426, "hit": 5, "ch": "erfann_finance"}
+{"id": 6538, "ms": 1789975132000, "symbol": "TRX", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.26232441162897996, "scale_r": 0.017362098138747818, "hit": 1, "ch": "erfann_finance"}
+{"id": 6545, "ms": 1789984475000, "symbol": "OP", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.23408687258687452, "scale_r": 0.10216924066924174, "hit": 2, "ch": "erfann_finance"}
+{"id": 6551, "ms": 1789998300000, "symbol": "DOT", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.383628770301626, "scale_r": 0.21657540603248296, "hit": 2, "ch": "erfann_finance"}
+{"id": 6557, "ms": 1790050152000, "symbol": "SOL", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.2524256292906173, "scale_r": 0.11627002288329509, "hit": 2, "ch": "erfann_finance"}
+{"id": 6558, "ms": 1790051473000, "symbol": "1000LUNC", "side": "SHORT", "month": "2026-09", "status": "bad", "ch": "erfann_finance"}
+{"id": 6560, "ms": 1790069751000, "symbol": "ARB", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": 0.2634711177794454, "scale_r": 0.12018529632408062, "hit": 2, "ch": "erfann_finance"}
+{"id": 6563, "ms": 1790083682000, "symbol": "GRT", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": -1.0681714285714285, "scale_r": -1.0681714285714285, "hit": 0, "ch": "erfann_finance"}
+{"id": 6567, "ms": 1790137429000, "symbol": "XLM", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0240797413793103, "scale_r": -1.0240797413793103, "hit": 0, "ch": "erfann_finance"}
+{"id": 6572, "ms": 1790140775000, "symbol": "NEAR", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.23108510638298213, "scale_r": 0.01578622087132775, "hit": 1, "ch": "erfann_finance"}
+{"id": 6584, "ms": 1790166164000, "symbol": "FIL", "side": "LONG", "month": "2026-09", "status": "bad", "ch": "erfann_finance"}
+{"id": 6586, "ms": 1790169576000, "symbol": "DOT", "side": "SHORT", "month": "2026-09", "status": "unfilled", "ch": "erfann_finance"}
+{"id": 6588, "ms": 1790187566000, "symbol": "XLM", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": 0.2765426731078859, "scale_r": 0.018893719806762604, "hit": 1, "ch": "erfann_finance"}
+{"id": 6594, "ms": 1790223281000, "symbol": "LTC", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.30615808823529633, "scale_r": 0.19145220588235387, "hit": 2, "ch": "erfann_finance"}
+{"id": 6596, "ms": 1790225625000, "symbol": "BTC", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": 0.3395205205205205, "scale_r": 0.12864297630964294, "hit": 2, "ch": "erfann_finance"}
+{"id": 6597, "ms": 1790225963000, "symbol": "ARK", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 1.110866666666663, "scale_r": 2.533088888888885, "hit": 3, "ch": "erfann_finance"}
+{"id": 6598, "ms": 1790226929000, "symbol": "BTR", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.9765111111111111, "scale_r": 1.0579925925925917, "hit": 2, "ch": "erfann_finance"}
+{"id": 6599, "ms": 1790230190000, "symbol": "LINK", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.3049209370424674, "scale_r": 0.020635919960957684, "hit": 1, "ch": "erfann_finance"}
+{"id": 6600, "ms": 1790234035000, "symbol": "KMNO", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.2505151515151511, "scale_r": 0.023242424242424155, "hit": 1, "ch": "erfann_finance"}
+{"id": 6603, "ms": 1790242347000, "symbol": "BCH", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": -1.0313681687440075, "scale_r": -1.0313681687440075, "hit": 0, "ch": "erfann_finance"}
+{"id": 6607, "ms": 1790255695000, "symbol": "ETH", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.5663255813953488, "scale_r": 0.6872558139534884, "hit": 3, "ch": "erfann_finance"}
+{"id": 6626, "ms": 1790277449000, "symbol": "APEUSDT", "side": "LONG", "month": "2026-09", "status": "bad", "ch": "erfann_finance"}
+{"id": 6634, "ms": 1790310645000, "symbol": "ONDO", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.25948695652173676, "scale_r": 0.7342695652173892, "hit": 4, "ch": "erfann_finance"}
+{"id": 6635, "ms": 1790312334000, "symbol": "H", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.9783333333333334, "scale_r": 2.2561111111111085, "hit": 3, "ch": "erfann_finance"}
+{"id": 6637, "ms": 1790315725000, "symbol": "SAGA", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 1.2577727272727308, "scale_r": 1.31837878787879, "hit": 2, "ch": "erfann_finance"}
+{"id": 6645, "ms": 1790342644000, "symbol": "ADA", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": 0.4725466666666696, "scale_r": 0.06721333333333393, "hit": 1, "ch": "erfann_finance"}
+{"id": 6649, "ms": 1790346294000, "symbol": "HYPE", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": 0.3254520000000033, "scale_r": 0.02636109090909145, "hit": 1, "ch": "erfann_finance"}
+{"id": 6654, "ms": 1790360324000, "symbol": "ONE", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0377546874999999, "scale_r": -1.0377546874999999, "hit": 0, "ch": "erfann_finance"}
+{"id": 6655, "ms": 1790396167000, "symbol": "DOT", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.24757056451613105, "scale_r": 0.029828629032258414, "hit": 1, "ch": "erfann_finance"}
+{"id": 6657, "ms": 1790402849000, "symbol": "PHA", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0182222222222221, "scale_r": -1.0182222222222221, "hit": 0, "ch": "erfann_finance"}
+{"id": 6658, "ms": 1790405042000, "symbol": "RARE", "side": "LONG", "month": "2026-09", "status": "unfilled", "ch": "erfann_finance"}
+{"id": 6666, "ms": 1790420818000, "symbol": "NEAR", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.24222527472527627, "scale_r": 0.017866300366300672, "hit": 1, "ch": "erfann_finance"}
+{"id": 6668, "ms": 1790424742000, "symbol": "SPELL", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.9758888888888829, "scale_r": 1.012925925925921, "hit": 2, "ch": "erfann_finance"}
+{"id": 6671, "ms": 1790429145000, "symbol": "BCH", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": -1.0263385826771654, "scale_r": -1.0263385826771654, "hit": 0, "ch": "erfann_finance"}
+{"id": 6673, "ms": 1790432622000, "symbol": "BCH", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": -1.03928790560472, "scale_r": -1.03928790560472, "hit": 0, "ch": "erfann_finance"}
+{"id": 6679, "ms": 1790483417000, "symbol": "AVAX", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": -1.0252921083627797, "scale_r": -1.0252921083627797, "hit": 0, "ch": "erfann_finance"}
+{"id": 6680, "ms": 1790483827000, "symbol": "NEAR", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.26811219512195356, "scale_r": 1.2681121951219516, "hit": 5, "ch": "erfann_finance"}
+{"id": 6686, "ms": 1790491235000, "symbol": "RUNE", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0253999999999999, "scale_r": -1.0253999999999999, "hit": 0, "ch": "erfann_finance"}
+{"id": 6690, "ms": 1790507480000, "symbol": "ARB", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": 0.2668081023454197, "scale_r": 0.5134321250888446, "hit": 4, "ch": "erfann_finance"}
+{"id": 6708, "ms": 1790567916000, "symbol": "FIL", "side": "SHORT", "month": "2026-09", "status": "bad", "ch": "erfann_finance"}
+{"id": 6710, "ms": 1790570020000, "symbol": "WLD", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0238108108108108, "scale_r": -1.0238108108108108, "hit": 0, "ch": "erfann_finance"}
+{"id": 6715, "ms": 1790578642000, "symbol": "QNT", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0184666666666666, "scale_r": -1.0184666666666666, "hit": 0, "ch": "erfann_finance"}
+{"id": 6720, "ms": 1790589367000, "symbol": "AAVE", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": 0.19149390739236205, "scale_r": 0.012100460330354418, "hit": 1, "ch": "erfann_finance"}
+{"id": 6721, "ms": 1790599983000, "symbol": "DASH", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.024030965391621, "scale_r": -1.024030965391621, "hit": 0, "ch": "erfann_finance"}
+{"id": 6733, "ms": 1790656227000, "symbol": "GRT", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.24962499999999738, "scale_r": 0.018970238095237714, "hit": 1, "ch": "erfann_finance"}
+{"id": 6734, "ms": 1790656324000, "symbol": "CRV", "side": "LONG", "month": "2026-09", "status": "unfilled", "ch": "erfann_finance"}
+{"id": 6735, "ms": 1790659185000, "symbol": "ALGO", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0146666666666666, "scale_r": -1.0146666666666666, "hit": 0, "ch": "erfann_finance"}
+{"id": 6737, "ms": 1790666750000, "symbol": "INJ", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": -1.0254331641285956, "scale_r": -1.0254331641285956, "hit": 0, "ch": "erfann_finance"}
+{"id": 6738, "ms": 1790667486000, "symbol": "AKE", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 1.3123333333333334, "scale_r": 1.8678888888888874, "hit": 2, "ch": "erfann_finance"}
+{"id": 6742, "ms": 1790689239000, "symbol": "ETH", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.4463977272727273, "scale_r": 0.06457954545454546, "hit": 1, "ch": "erfann_finance"}
+{"id": 6743, "ms": 1790690180000, "symbol": "LINK", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": 0.25408833922261576, "scale_r": 0.9387173144876313, "hit": 6, "ch": "erfann_finance"}
+{"id": 6755, "ms": 1790740778000, "symbol": "MOVR", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.27551962616822406, "scale_r": 0.03626728971962615, "hit": 1, "ch": "erfann_finance"}
+{"id": 6757, "ms": 1790742074000, "symbol": "INIT", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0224444444444445, "scale_r": -1.0224444444444445, "hit": 0, "ch": "erfann_finance"}
+{"id": 6761, "ms": 1790746184000, "symbol": "BTC", "side": "SHORT", "month": "2026-09", "status": "closed", "tp1_r": -1.0592702702702703, "scale_r": -1.0592702702702703, "hit": 0, "ch": "erfann_finance"}
+{"id": 6763, "ms": 1790746871000, "symbol": "MOVR", "side": "LONG", "month": "2026-09", "status": "unfilled", "ch": "erfann_finance"}
+{"id": 6764, "ms": 1790747119000, "symbol": "SOON", "side": "LONG", "month": "2026-09", "status": "bad", "ch": "erfann_finance"}
+{"id": 6772, "ms": 1790759664000, "symbol": "DOGE", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 0.32953164556962194, "scale_r": 0.5519547920433994, "hit": 4, "ch": "erfann_finance"}
+{"id": 6779, "ms": 1790775095000, "symbol": "JUP", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0192758620689655, "scale_r": -1.0192758620689655, "hit": 0, "ch": "erfann_finance"}
+{"id": 6780, "ms": 1790778821000, "symbol": "1000PEPE", "side": "SHORT", "month": "2026-09", "status": "bad", "ch": "erfann_finance"}
+{"id": 6785, "ms": 1790827530000, "symbol": "INJ", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.55007438016529, "scale_r": 0.3070991735537199, "hit": 2, "ch": "erfann_finance"}
+{"id": 6786, "ms": 1790828678000, "symbol": "US", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0176666666666667, "scale_r": -1.0176666666666667, "hit": 0, "ch": "erfann_finance"}
+{"id": 6789, "ms": 1790830107000, "symbol": "MOVR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.319799999999995, "scale_r": 2.853133333333326, "hit": 3, "ch": "erfann_finance"}
+{"id": 6796, "ms": 1790857258000, "symbol": "ICP", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.029607142857143, "scale_r": -1.029607142857143, "hit": 0, "ch": "erfann_finance"}
+{"id": 6797, "ms": 1790865706000, "symbol": "TIA", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.26882638888889027, "scale_r": 0.019983796296296565, "hit": 1, "ch": "erfann_finance"}
+{"id": 6814, "ms": 1790915054000, "symbol": "IMX", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.327470588235296, "scale_r": 0.8745294117647062, "hit": 4, "ch": "erfann_finance"}
+{"id": 6815, "ms": 1790917048000, "symbol": "DASH", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0231779497098645, "scale_r": -1.0231779497098645, "hit": 0, "ch": "erfann_finance"}
+{"id": 6816, "ms": 1790918202000, "symbol": "MOVR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0212857142857141, "scale_r": -1.0212857142857141, "hit": 0, "ch": "erfann_finance"}
+{"id": 6817, "ms": 1790922484000, "symbol": "DEXE", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0196666666666667, "scale_r": -1.0196666666666667, "hit": 0, "ch": "erfann_finance"}
+{"id": 6819, "ms": 1790934302000, "symbol": "GRASS", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.2825033860045152, "scale_r": 0.021028592927012875, "hit": 1, "ch": "erfann_finance"}
+{"id": 6822, "ms": 1790944588000, "symbol": "NEAR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.3177183098591529, "scale_r": 0.024291079812206302, "hit": 1, "ch": "erfann_finance"}
+{"id": 6826, "ms": 1790946781000, "symbol": "MOVR", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0250157004830918, "scale_r": -1.0250157004830918, "hit": 0, "ch": "erfann_finance"}
+{"id": 6829, "ms": 1790952157000, "symbol": "MAGMA", "side": "LONG", "month": "2026-10", "status": "unfilled", "ch": "erfann_finance"}
+{"id": 6832, "ms": 1790953931000, "symbol": "MAGIC", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0208333333333333, "scale_r": -1.0208333333333333, "hit": 0, "ch": "erfann_finance"}
+{"id": 6835, "ms": 1790965291000, "symbol": "NEAR", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.22861627906976545, "scale_r": 0.015437984496123665, "hit": 1, "ch": "erfann_finance"}
+{"id": 6879, "ms": 1791346589000, "symbol": "STX", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.24737349397590383, "scale_r": 0.1750843373493977, "hit": 2, "ch": "erfann_finance"}
+{"id": 6881, "ms": 1791348715000, "symbol": "SUI", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.2477923076923047, "scale_r": 0.11018547008546856, "hit": 2, "ch": "erfann_finance"}
+{"id": 6882, "ms": 1791349572000, "symbol": "RLC", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0123333333333333, "scale_r": -1.0123333333333333, "hit": 0, "ch": "erfann_finance"}
+{"id": 6884, "ms": 1791349970000, "symbol": "BR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0191666666666668, "scale_r": -1.0191666666666668, "hit": 0, "ch": "erfann_finance"}
+{"id": 6886, "ms": 1791352252000, "symbol": "BR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0193333333333334, "scale_r": -1.0193333333333334, "hit": 0, "ch": "erfann_finance"}
+{"id": 6890, "ms": 1791364984000, "symbol": "ORCA", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0264976303317535, "scale_r": -1.0264976303317535, "hit": 0, "ch": "erfann_finance"}
+{"id": 6892, "ms": 1791365659000, "symbol": "ENJ", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.21419642857143126, "scale_r": 0.42104166666666815, "hit": 4, "ch": "erfann_finance"}
+{"id": 6896, "ms": 1791379323000, "symbol": "VIRTUAL", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.3714048442906554, "scale_r": 0.0530657439446363, "hit": 1, "ch": "erfann_finance"}
+{"id": 6901, "ms": 1791430913000, "symbol": "LPT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.2364285714285643, "scale_r": 1.1888095238095178, "hit": 2, "ch": "erfann_finance"}
+{"id": 6902, "ms": 1791436388000, "symbol": "PONS", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.23691005291005407, "scale_r": 0.020860670194003693, "hit": 1, "ch": "erfann_finance"}
+{"id": 6906, "ms": 1791455748000, "symbol": "OGN", "side": "LONG", "month": "2026-10", "status": "unfilled", "ch": "erfann_finance"}
+{"id": 6909, "ms": 1791459367000, "symbol": "STRK", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 1.034249999999999, "scale_r": 0.9159166666666655, "hit": 2, "ch": "erfann_finance"}
+{"id": 6912, "ms": 1791465402000, "symbol": "SUI", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.33187366167023313, "scale_r": 0.047505353319057406, "hit": 1, "ch": "erfann_finance"}
+{"id": 6914, "ms": 1791471459000, "symbol": "OGN", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.9723333333333379, "scale_r": 0.9278888888888936, "hit": 2, "ch": "erfann_finance"}
+{"id": 6920, "ms": 1791474944000, "symbol": "LDO", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.27234265734265956, "scale_r": 0.021759906759907095, "hit": 1, "ch": "erfann_finance"}
+{"id": 6931, "ms": 1791517668000, "symbol": "RLC", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0239333333333334, "scale_r": -1.0239333333333334, "hit": 0, "ch": "erfann_finance"}
+{"id": 6932, "ms": 1791519825000, "symbol": "WLD", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.24796601941747534, "scale_r": 0.030490291262135854, "hit": 1, "ch": "erfann_finance"}
+{"id": 6933, "ms": 1791520453000, "symbol": "LTC", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.17164359861591771, "scale_r": 0.010167243367935532, "hit": 1, "ch": "erfann_finance"}
+{"id": 6935, "ms": 1791527976000, "symbol": "RLC", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0216666666666667, "scale_r": -1.0216666666666667, "hit": 0, "ch": "erfann_finance"}
+{"id": 6937, "ms": 1791528504000, "symbol": "RLC", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9796666666666667, "scale_r": 0.313, "hit": 1, "ch": "erfann_finance"}
+{"id": 6940, "ms": 1791537551000, "symbol": "US", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.30444827586206774, "scale_r": 0.3527241379310337, "hit": 2, "ch": "erfann_finance"}
+{"id": 6942, "ms": 1791546458000, "symbol": "DOGE", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.2919467455621332, "scale_r": 0.13152596975674002, "hit": 2, "ch": "erfann_finance"}
+{"id": 6943, "ms": 1791552682000, "symbol": "APT", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.29941282051281914, "scale_r": 0.04300256410256384, "hit": 1, "ch": "erfann_finance"}
+{"id": 6951, "ms": 1791602091000, "symbol": "BAT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.193, "scale_r": 1.155962962962961, "hit": 2, "ch": "erfann_finance"}
+{"id": 6952, "ms": 1791604548000, "symbol": "APT", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.34834955752212643, "scale_r": 0.15292182890855527, "hit": 2, "ch": "erfann_finance"}
+{"id": 6953, "ms": 1791604937000, "symbol": "MAGIC", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.2831666666666666, "scale_r": 0.3942777777777778, "hit": 1, "ch": "erfann_finance"}
+{"id": 6955, "ms": 1791606447000, "symbol": "C98", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0237037037037038, "scale_r": -1.0237037037037038, "hit": 0, "ch": "erfann_finance"}
+{"id": 6956, "ms": 1791606761000, "symbol": "US", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.3153333333333332, "scale_r": 0.42644444444444446, "hit": 1, "ch": "erfann_finance"}
+{"id": 6957, "ms": 1791606782000, "symbol": "US", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.3153333333333332, "scale_r": 0.42644444444444446, "hit": 1, "ch": "erfann_finance"}
+{"id": 6962, "ms": 1791613625000, "symbol": "PIXEL", "side": "SHORT", "month": "2026-10", "status": "unfilled", "ch": "erfann_finance"}
+{"id": 6963, "ms": 1791613688000, "symbol": "PIXEL", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.9753999999999943, "scale_r": 2.108733333333326, "hit": 3, "ch": "erfann_finance"}
+{"id": 6967, "ms": 1791619777000, "symbol": "HBAR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.3186261682242931, "scale_r": 0.024233644859812206, "hit": 1, "ch": "erfann_finance"}
+{"id": 6968, "ms": 1791623703000, "symbol": "LUMIA", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9752222222222222, "scale_r": 0.3085555555555556, "hit": 1, "ch": "erfann_finance"}
+{"id": 6970, "ms": 1791626102000, "symbol": "BAT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.6834255319148884, "scale_r": 1.2555295508274142, "hit": 3, "ch": "erfann_finance"}
+{"id": 6977, "ms": 1791632544000, "symbol": "BAT", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0131363636363637, "scale_r": -1.0131363636363637, "hit": 0, "ch": "erfann_finance"}
+{"id": 6978, "ms": 1791638639000, "symbol": "SUI", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.43910985915492673, "scale_r": 0.06277183098591499, "hit": 1, "ch": "erfann_finance"}
+{"id": 6981, "ms": 1791642348000, "symbol": "GRAM", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0483333333333333, "scale_r": -1.0483333333333333, "hit": 0, "ch": "erfann_finance"}
+{"id": 6982, "ms": 1791662540000, "symbol": "LPT", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.19755621301775098, "scale_r": 0.19854240631163692, "hit": 3, "ch": "erfann_finance"}
+{"id": 6988, "ms": 1791696065000, "symbol": "S", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.24076800000000237, "scale_r": 0.032768000000000436, "hit": 1, "ch": "erfann_finance"}
+{"id": 6989, "ms": 1791703765000, "symbol": "ARB", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0328635214827295, "scale_r": -1.0328635214827295, "hit": 0, "ch": "erfann_finance"}
+{"id": 6991, "ms": 1791711129000, "symbol": "INJ", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0263982608695652, "scale_r": -1.0263982608695652, "hit": 0, "ch": "erfann_finance"}
+{"id": 6997, "ms": 1791723519000, "symbol": "LUMIA", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0295714285714286, "scale_r": -1.0295714285714286, "hit": 0, "ch": "erfann_finance"}
+{"id": 6998, "ms": 1791724017000, "symbol": "AAVE", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.27493996569468515, "scale_r": 0.26979416809605555, "hit": 3, "ch": "erfann_finance"}
+{"id": 7000, "ms": 1791726039000, "symbol": "CFX", "side": "LONG", "month": "2026-10", "status": "unfilled", "ch": "erfann_finance"}
+{"id": 7001, "ms": 1791726153000, "symbol": "CFX", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.6153703703703568, "scale_r": 0.5042592592592549, "hit": 1, "ch": "erfann_finance"}
+{"id": 7015, "ms": 1791771879000, "symbol": "MAGIC", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0180666666666667, "scale_r": -1.0180666666666667, "hit": 0, "ch": "erfann_finance"}
+{"id": 7016, "ms": 1791775733000, "symbol": "IO", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0243333333333333, "scale_r": -1.0243333333333333, "hit": 0, "ch": "erfann_finance"}
+{"id": 7018, "ms": 1791778215000, "symbol": "FIL", "side": "LONG", "month": "2026-10", "status": "bad", "ch": "erfann_finance"}
+{"id": 7019, "ms": 1791779904000, "symbol": "PLUME", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0246881720430108, "scale_r": -1.0246881720430108, "hit": 0, "ch": "erfann_finance"}
+{"id": 7022, "ms": 1791787341000, "symbol": "ICP", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.0791555555555683, "scale_r": 0.3087851851851894, "hit": 1, "ch": "erfann_finance"}
+{"id": 7026, "ms": 1791808273000, "symbol": "HYPE", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.2441147836538448, "scale_r": 0.9014665464743572, "hit": 6, "ch": "erfann_finance"}
+{"id": 7029, "ms": 1791813228000, "symbol": "WLD", "side": "SHORT", "month": "2026-10", "status": "unfilled", "ch": "erfann_finance"}
+{"id": 7045, "ms": 1791863671000, "symbol": "ATOM", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0299090909090909, "scale_r": -1.0299090909090909, "hit": 0, "ch": "erfann_finance"}
+{"id": 7046, "ms": 1791867241000, "symbol": "CT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.23009221076746725, "scale_r": 0.35609450171821233, "hit": 3, "ch": "erfann_finance"}
+{"id": 7048, "ms": 1791869451000, "symbol": "OGN", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9763333333333287, "scale_r": 2.198555555555551, "hit": 3, "ch": "erfann_finance"}
+{"id": 7053, "ms": 1791880338000, "symbol": "BTW", "side": "LONG", "month": "2026-10", "status": "unfilled", "ch": "erfann_finance"}
+{"id": 7055, "ms": 1791894326000, "symbol": "EIGEN", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.21501098901098992, "scale_r": 0.013545787545787693, "hit": 1, "ch": "erfann_finance"}
+{"id": 7057, "ms": 1791897615000, "symbol": "JUP", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.3199510489510505, "scale_r": 0.045825174825175105, "hit": 1, "ch": "erfann_finance"}
+{"id": 7059, "ms": 1791904020000, "symbol": "TRUTH", "side": "LONG", "month": "2026-10", "status": "unfilled", "ch": "erfann_finance"}
+{"id": 7060, "ms": 1791904135000, "symbol": "BAT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9756666666666667, "scale_r": 0.309, "hit": 1, "ch": "erfann_finance"}
+{"id": 7066, "ms": 1791954552000, "symbol": "SOL", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.2577701863354024, "scale_r": 0.02071014492753604, "hit": 1, "ch": "erfann_finance"}
+{"id": 7067, "ms": 1791954929000, "symbol": "PONS", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.23932214765100732, "scale_r": 0.029926174496644444, "hit": 1, "ch": "erfann_finance"}
+{"id": 7068, "ms": 1791955404000, "symbol": "CELR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0218287671232877, "scale_r": -1.0218287671232877, "hit": 0, "ch": "erfann_finance"}
+{"id": 7070, "ms": 1791956518000, "symbol": "BAT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0263333333333333, "scale_r": -1.0263333333333333, "hit": 0, "ch": "erfann_finance"}
+{"id": 7071, "ms": 1791958924000, "symbol": "TRUTH", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0241111111111112, "scale_r": -1.0241111111111112, "hit": 0, "ch": "erfann_finance"}
+{"id": 7073, "ms": 1791962673000, "symbol": "NIL", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0211333333333332, "scale_r": -1.0211333333333332, "hit": 0, "ch": "erfann_finance"}
+{"id": 7076, "ms": 1791970663000, "symbol": "JCT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9739333333333305, "scale_r": 1.6405999999999932, "hit": 3, "ch": "erfann_finance"}
+{"id": 7077, "ms": 1791971347000, "symbol": "SUI", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.25014201183431445, "scale_r": 1.0839684418145912, "hit": 6, "ch": "erfann_finance"}
+{"id": 7086, "ms": 1791983489000, "symbol": "ETH", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0532608695652175, "scale_r": -1.0532608695652175, "hit": 0, "ch": "erfann_finance"}
+{"id": 7090, "ms": 1791988218000, "symbol": "OP", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.2951267454350201, "scale_r": 0.1211203007518803, "hit": 2, "ch": "erfann_finance"}
+{"id": 7095, "ms": 1792000675000, "symbol": "MAGIC", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.3332124789207468, "scale_r": 0.0254553119730193, "hit": 1, "ch": "erfann_finance"}
+{"id": 7122, "ms": 1792040272000, "symbol": "QTUM", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 1.1031333333333333, "scale_r": 1.582022222222222, "hit": 2, "timeout": true, "ch": "erfann_finance"}
+{"id": 7123, "ms": 1792041429000, "symbol": "SKDD", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.24388752556236865, "scale_r": 0.17558486707566345, "hit": 2, "ch": "erfann_finance"}
+{"id": 7124, "ms": 1792041493000, "symbol": "BAT", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0234666666666667, "scale_r": -1.0234666666666667, "hit": 0, "ch": "erfann_finance"}
+{"id": 7127, "ms": 1792057416000, "symbol": "ADA", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.2371520467836259, "scale_r": 0.4125906432748541, "hit": 4, "ch": "erfann_finance"}
+{"id": 7129, "ms": 1792069256000, "symbol": "ATOM", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.5856363636363584, "scale_r": 0.07654545454545367, "hit": 1, "ch": "erfann_finance"}
+{"id": 7152, "ms": 1792125915000, "symbol": "CFX", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.023672268907563, "scale_r": -1.023672268907563, "hit": 0, "ch": "erfann_finance"}
+{"id": 7153, "ms": 1792131650000, "symbol": "BAT", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0326233552631578, "scale_r": -1.0326233552631578, "hit": 0, "ch": "erfann_finance"}
+{"id": 7154, "ms": 1792136061000, "symbol": "AGT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9751333333333334, "scale_r": 0.30846666666666667, "hit": 1, "ch": "erfann_finance"}
+{"id": 7158, "ms": 1792139205000, "symbol": "ZEC", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0294819277108433, "scale_r": -1.0294819277108433, "hit": 0, "ch": "erfann_finance"}
+{"id": 7161, "ms": 1792154493000, "symbol": "STBL", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.0947500000000037, "scale_r": 1.0530833333333358, "hit": 2, "ch": "erfann_finance"}
+{"id": 7163, "ms": 1792156669000, "symbol": "INJ", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.3493994490358093, "scale_r": 1.3411349862258886, "hit": 5, "ch": "erfann_finance"}
+{"id": 7169, "ms": 1792170624000, "symbol": "NEAR", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0248358208955224, "scale_r": -1.0248358208955224, "hit": 0, "ch": "erfann_finance"}
+{"id": 7172, "ms": 1792208862000, "symbol": "TIA", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.976, "scale_r": 0.30933333333333335, "hit": 1, "ch": "erfann_finance"}
+{"id": 7174, "ms": 1792209300000, "symbol": "AGT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.0791904761904791, "scale_r": 0.34903174603174697, "hit": 1, "ch": "erfann_finance"}
+{"id": 7176, "ms": 1792211098000, "symbol": "TIA", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.2687933333333351, "scale_r": 0.034126666666666965, "hit": 1, "ch": "erfann_finance"}
+{"id": 7179, "ms": 1792211353000, "symbol": "Q", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0222666666666667, "scale_r": -1.0222666666666667, "hit": 0, "ch": "erfann_finance"}
+{"id": 7181, "ms": 1792212680000, "symbol": "DUSK", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0238571428571428, "scale_r": -1.0238571428571428, "hit": 0, "ch": "erfann_finance"}
+{"id": 7182, "ms": 1792218594000, "symbol": "ONDO", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.32620472440944853, "scale_r": 1.2632125984251983, "hit": 6, "ch": "erfann_finance"}
+{"id": 7185, "ms": 1792228354000, "symbol": "AGT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.021, "scale_r": -1.021, "hit": 0, "ch": "erfann_finance"}
+{"id": 7187, "ms": 1792229899000, "symbol": "EPIC", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9821333333333296, "scale_r": 1.6265777777777741, "hit": 3, "ch": "erfann_finance"}
+{"id": 7188, "ms": 1792230144000, "symbol": "ICNT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.018904761904762, "scale_r": -1.018904761904762, "hit": 0, "ch": "erfann_finance"}
+{"id": 7191, "ms": 1792235369000, "symbol": "HYPE", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.2237638629283445, "scale_r": 0.39473997923156423, "hit": 4, "posted": true, "risk_pct": 4.027, "ch": "erfann_finance"}
+{"id": 7195, "ms": 1792243620000, "symbol": "OP", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.5620218978102166, "scale_r": 0.07443065693430638, "hit": 1, "ch": "erfann_finance"}
+{"id": 7196, "ms": 1792245684000, "symbol": "AGT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9834444444444476, "scale_r": 0.9464074074074104, "hit": 2, "ch": "erfann_finance"}
+{"id": 7201, "ms": 1792255291000, "symbol": "Q", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.02, "scale_r": -1.02, "hit": 0, "ch": "erfann_finance"}
+{"id": 7213, "ms": 1792299352000, "symbol": "BTC", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.3465768307322929, "scale_r": 0.030130252100840332, "hit": 1, "ch": "erfann_finance"}
+{"id": 7214, "ms": 1792300940000, "symbol": "HBAR", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0324334600760456, "scale_r": -1.0324334600760456, "hit": 0, "ch": "erfann_finance"}
+{"id": 7215, "ms": 1792301943000, "symbol": "Q", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9832666666666667, "scale_r": 0.3166, "hit": 1, "ch": "erfann_finance"}
+{"id": 7217, "ms": 1792308485000, "symbol": "STBL", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9769999999999968, "scale_r": 0.31033333333333224, "hit": 1, "ch": "erfann_finance"}
+{"id": 7219, "ms": 1792320460000, "symbol": "LAB", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.20987999999999765, "scale_r": 0.012444102564102194, "hit": 1, "ch": "erfann_finance"}
+{"id": 7222, "ms": 1792334688000, "symbol": "WLD", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.2864370860927169, "scale_r": 0.2941633554083887, "hit": 3, "ch": "erfann_finance"}
+{"id": 7234, "ms": 1792378845000, "symbol": "GTC", "side": "LONG", "month": "2026-10", "status": "unfilled", "ch": "erfann_finance"}
+{"id": 7235, "ms": 1792382203000, "symbol": "CELO", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.25410000000000144, "scale_r": 0.03106969696969724, "hit": 1, "ch": "erfann_finance"}
+{"id": 7237, "ms": 1792386653000, "symbol": "EPIC", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0128444444444444, "scale_r": -1.0128444444444444, "hit": 0, "ch": "erfann_finance"}
+{"id": 7238, "ms": 1792394208000, "symbol": "AVAX", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0272253129346314, "scale_r": -1.0272253129346314, "hit": 0, "ch": "erfann_finance"}
+{"id": 7241, "ms": 1792403161000, "symbol": "ZEC", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.029964267352185, "scale_r": -1.029964267352185, "hit": 0, "posted": true, "risk_pct": 3.337, "ch": "erfann_finance"}
+{"id": 7242, "ms": 1792414531000, "symbol": "LINK", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.7144620253164581, "scale_r": 0.38787974683544546, "hit": 2, "posted": true, "risk_pct": 1.304, "ch": "erfann_finance"}
+{"id": 7245, "ms": 1792420712000, "symbol": "INJ", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.034188640973631, "scale_r": -1.034188640973631, "hit": 0, "posted": true, "risk_pct": 2.925, "ch": "erfann_finance"}
+{"id": 7250, "ms": 1792469928000, "symbol": "METIS", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.08616759776536351, "scale_r": 0.03979888268156403, "hit": 2, "posted": true, "risk_pct": 8.622, "ch": "erfann_finance"}
+{"id": 7251, "ms": 1792475049000, "symbol": "BR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9783333333333334, "scale_r": 0.9783333333333321, "hit": 2, "posted": true, "risk_pct": 4.615, "ch": "erfann_finance"}
+{"id": 7254, "ms": 1792478218000, "symbol": "JCT", "side": "LONG", "month": "2026-10", "status": "unfilled", "posted": true, "risk_pct": 4.677, "ch": "erfann_finance"}
+{"id": 7257, "ms": 1792482661000, "symbol": "BCH", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0277222222222222, "scale_r": -1.0277222222222222, "hit": 0, "posted": true, "risk_pct": 3.607, "ch": "erfann_finance"}
+{"id": 7258, "ms": 1792483657000, "symbol": "AKE", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.1778666666666675, "scale_r": 0.37786666666666696, "hit": 1, "posted": true, "risk_pct": 4.518, "ch": "erfann_finance"}
+{"id": 7260, "ms": 1792489755000, "symbol": "IO", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9786, "scale_r": 0.31193333333333334, "hit": 1, "posted": true, "risk_pct": 4.673, "ch": "erfann_finance"}
+{"id": 7261, "ms": 1792497963000, "symbol": "Q", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9835333333333351, "scale_r": 0.31686666666666724, "hit": 1, "posted": true, "risk_pct": 6.073, "ch": "erfann_finance"}
+{"id": 7262, "ms": 1792500896000, "symbol": "NEAR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.5907835051546448, "scale_r": 1.9433608247422798, "hit": 5, "posted": true, "risk_pct": 2.066, "ch": "erfann_finance"}
+{"id": 7268, "ms": 1792505897000, "symbol": "ARB", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.31601766190075553, "scale_r": 0.8056447995514429, "hit": 5, "posted": true, "risk_pct": 3.029, "ch": "erfann_finance"}
+{"id": 7280, "ms": 1792557062000, "symbol": "DOOD", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.3128032786885273, "scale_r": 0.775098360655741, "hit": 4, "posted": true, "risk_pct": 4.299, "ch": "erfann_finance"}
+{"id": 7281, "ms": 1792561685000, "symbol": "IOST", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9788333333333369, "scale_r": 0.92327777777778, "hit": 2, "posted": true, "risk_pct": 4.724, "ch": "erfann_finance"}
+{"id": 7282, "ms": 1792561782000, "symbol": "IOST", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9794999999999999, "scale_r": 1.9239444444444467, "hit": 3, "posted": true, "risk_pct": 4.878, "ch": "erfann_finance"}
+{"id": 7284, "ms": 1792562770000, "symbol": "HYPE", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.2095425431711159, "scale_r": 0.013833490319204837, "hit": 1, "posted": true, "risk_pct": 3.951, "ch": "erfann_finance"}
+{"id": 7287, "ms": 1792569148000, "symbol": "Q", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0163333333333333, "scale_r": -1.0163333333333333, "hit": 0, "posted": true, "risk_pct": 6.122, "ch": "erfann_finance"}
+{"id": 7289, "ms": 1792575741000, "symbol": "TAO", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.24912251655629614, "scale_r": 0.01641464311994177, "hit": 1, "posted": true, "risk_pct": 3.319, "ch": "erfann_finance"}
+{"id": 7291, "ms": 1792589564000, "symbol": "ENS", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": -1.0491610169491528, "scale_r": -1.0491610169491528, "hit": 0, "posted": true, "risk_pct": 2.034, "ch": "erfann_finance"}
+{"id": 7296, "ms": 1792592678000, "symbol": "APT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.32512017167381835, "scale_r": 0.14200143061516413, "hit": 2, "posted": true, "risk_pct": 2.825, "ch": "erfann_finance"}
+{"id": 7325, "ms": 1792639544000, "symbol": "STX", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0237718120805368, "scale_r": -1.0237718120805368, "hit": 0, "posted": true, "risk_pct": 4.207, "ch": "erfann_finance"}
+{"id": 7326, "ms": 1792645680000, "symbol": "TRIA", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0187333333333333, "scale_r": -1.0187333333333333, "hit": 0, "posted": true, "risk_pct": 5.338, "ch": "erfann_finance"}
+{"id": 7327, "ms": 1792649838000, "symbol": "XMR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0212333333333334, "scale_r": -1.0212333333333334, "hit": 0, "posted": true, "risk_pct": 4.71, "ch": "erfann_finance"}
+{"id": 7329, "ms": 1792655561000, "symbol": "AGT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9809999999999977, "scale_r": 1.925444444444442, "hit": 3, "posted": true, "risk_pct": 5.263, "ch": "erfann_finance"}
+{"id": 7333, "ms": 1792657017000, "symbol": "MAGMA", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9838333333333351, "scale_r": 0.9282777777777795, "hit": 2, "posted": true, "risk_pct": 6.186, "ch": "erfann_finance"}
+{"id": 7337, "ms": 1792658608000, "symbol": "M", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.1103333333333303, "scale_r": 0.35477777777777675, "hit": 1, "posted": true, "risk_pct": 4.348, "ch": "erfann_finance"}
+{"id": 7342, "ms": 1792672319000, "symbol": "ASTER", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.3104736842105228, "scale_r": 0.020999999999999443, "hit": 1, "posted": true, "risk_pct": 2.71, "ch": "erfann_finance"}
+{"id": 7343, "ms": 1792672335000, "symbol": "ASTER", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.2564782608695624, "scale_r": 0.01734782608695607, "hit": 1, "posted": true, "risk_pct": 3.281, "ch": "erfann_finance"}
+{"id": 7344, "ms": 1792675177000, "symbol": "HYPE", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.4332845849802295, "scale_r": 0.037395256916994545, "hit": 1, "posted": true, "risk_pct": 1.624, "ch": "erfann_finance"}
+{"id": 7352, "ms": 1792731440000, "symbol": "CHZ", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.2768947368421029, "scale_r": 0.022508771929824242, "hit": 1, "posted": true, "risk_pct": 3.525, "ch": "erfann_finance"}
+{"id": 7353, "ms": 1792731511000, "symbol": "ONDO", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0193169642857143, "scale_r": -1.0193169642857143, "hit": 0, "posted": true, "risk_pct": 5.177, "ch": "erfann_finance"}
+{"id": 7354, "ms": 1792733136000, "symbol": "BTR", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9734444444444474, "scale_r": 0.9364074074074102, "hit": 2, "posted": true, "risk_pct": 3.766, "ch": "erfann_finance"}
+{"id": 7357, "ms": 1792746941000, "symbol": "IRYS", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.0723846153846144, "scale_r": 1.4313589743589734, "hit": 3, "posted": true, "risk_pct": 22.034, "ch": "erfann_finance"}
+{"id": 7360, "ms": 1792759346000, "symbol": "DOGE", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0317549407114626, "scale_r": -1.0317549407114626, "hit": 0, "posted": true, "risk_pct": 3.149, "ch": "erfann_finance"}
+{"id": 7361, "ms": 1792760928000, "symbol": "ATOM", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.39017948717948325, "scale_r": 0.041461538461537814, "hit": 1, "posted": true, "risk_pct": 2.187, "ch": "erfann_finance"}
+{"id": 7365, "ms": 1792803083000, "symbol": "IRYS", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.9817777777777809, "scale_r": 0.3151111111111121, "hit": 1, "posted": true, "risk_pct": 5.488, "ch": "erfann_finance"}
+{"id": 7366, "ms": 1792804347000, "symbol": "BIRB", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0171904761904762, "scale_r": -1.0171904761904762, "hit": 0, "posted": true, "risk_pct": 5.817, "ch": "erfann_finance"}
+{"id": 7367, "ms": 1792817237000, "symbol": "TIA", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.6162961373390572, "scale_r": 0.0833919885550789, "hit": 1, "posted": true, "risk_pct": 4.312, "ch": "erfann_finance"}
+{"id": 7370, "ch": "erfann_finance", "ms": 1792822617000, "symbol": "TRX", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 2.918, "status": "open"}
+{"id": 7371, "ms": 1792822844000, "symbol": "AGT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.979, "scale_r": 1.0012222222222211, "hit": 2, "posted": true, "risk_pct": 4.762, "ch": "erfann_finance"}
+{"id": 7372, "ms": 1792823453000, "symbol": "IRYS", "side": "SHORT", "month": "2026-10", "status": "unfilled", "posted": true, "risk_pct": 8.287, "ch": "erfann_finance"}
+{"id": 7386, "ms": 1792842288000, "symbol": "LIT", "side": "SHORT", "month": "2026-10", "status": "closed", "tp1_r": 0.28280778958017316, "scale_r": 0.12431849603776854, "hit": 2, "posted": true, "risk_pct": 3.194, "ch": "erfann_finance"}
+{"id": 7387, "ms": 1792842890000, "symbol": "BIRB", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.9780476190476164, "scale_r": 0.9304285714285696, "hit": 2, "posted": true, "risk_pct": 4.555, "ch": "erfann_finance"}
+{"id": 7390, "ms": 1792846019000, "symbol": "M", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0176666666666667, "scale_r": -1.0176666666666667, "hit": 0, "posted": true, "risk_pct": 5.66, "ch": "erfann_finance"}
+{"id": 7392, "ms": 1792847658000, "symbol": "WLD", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0295759493670886, "scale_r": -1.0295759493670886, "hit": 0, "posted": true, "risk_pct": 3.381, "ch": "erfann_finance"}
+{"id": 7397, "ch": "erfann_finance", "ms": 1792875599000, "symbol": "XLM", "side": "SHORT", "month": "2026-10", "posted": true, "risk_pct": 3.048, "status": "open"}
+{"id": 7399, "ms": 1792903567000, "symbol": "TRUMP", "side": "LONG", "month": "2026-10", "status": "bad", "posted": true, "risk_pct": 3.874, "ch": "erfann_finance"}
+{"id": 7400, "ms": 1792905688000, "symbol": "ORDER", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": -1.0256666666666667, "scale_r": -1.0256666666666667, "hit": 0, "posted": true, "risk_pct": 3.896, "ch": "erfann_finance"}
+{"id": 7401, "ms": 1792908467000, "symbol": "JCT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 0.979, "scale_r": 1.6456666666666668, "hit": 3, "posted": true, "risk_pct": 4.762, "ch": "erfann_finance"}
+{"id": 7405, "ms": 1792917283000, "symbol": "JCT", "side": "LONG", "month": "2026-10", "status": "closed", "tp1_r": 1.3821999999999972, "scale_r": 0.44886666666666575, "hit": 1, "posted": true, "risk_pct": 5.618, "ch": "erfann_finance"}
+{"id": 7409, "ch": "erfann_finance", "ms": 1792924354000, "symbol": "SAND", "side": "SHORT", "month": "2026-10", "posted": true, "risk_pct": 3.908, "status": "closed", "tp1_r": 0.25100531914893603, "scale_r": 0.020508865248226923, "hit": 1, "t": 1792940400000}
