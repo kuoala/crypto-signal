@@ -14,17 +14,18 @@
 {"id": 41049, "ch": "binance_360_spot", "ms": 1792934942000, "symbol": "ENJ", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 5.576, "status": "open"}
 {"id": 41056, "ch": "binance_360_spot", "ms": 1793011379000, "symbol": "RLC", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 5.576, "status": "closed", "tp1_r": 0.3465246830414187, "scale_r": 0.5261633329878743, "hit": 3, "t": 1793052900000}
 {"id": 41060, "ch": "binance_360_spot", "ms": 1793022358000, "symbol": "ETH", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 5.584, "status": "open"}
-{"id": 41064, "ch": "binance_360_spot", "ms": 1793097477000, "symbol": "KNC", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 5.584, "status": "open"}
+{"id": 41064, "ch": "binance_360_spot", "ms": 1793097477000, "symbol": "KNC", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 5.584, "status": "unfilled"}
+{"id": 41066, "ch": "binance_360_spot", "ms": 1793110615000, "symbol": "XMR", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 5.584, "status": "open"}
 {"id": 86868, "ch": "crypto_musk1", "ms": 1792557140000, "symbol": "KNC", "side": "SHORT", "month": "2026-10", "posted": true, "risk_pct": 4.727, "status": "closed", "tp1_r": 0.4149554822753462, "scale_r": 0.30654657873041846, "hit": 2, "t": 1792769700000}
 {"id": 86918, "ch": "crypto_musk1", "ms": 1792648997000, "symbol": "XMR", "side": "SHORT", "month": "2026-10", "posted": true, "risk_pct": 4.729, "status": "closed", "tp1_r": 0.4136488056810867, "scale_r": 0.08755132343447433, "hit": 1, "t": 1792660500000}
 {"id": 86929, "ch": "crypto_musk1", "ms": 1792659856000, "symbol": "AVAX", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 4.873, "status": "closed", "tp1_r": 0.4115111488398449, "scale_r": 0.08748737973967256, "hit": 1, "t": 1792687800000}
 {"id": 86940, "ch": "crypto_musk1", "ms": 1792720754000, "symbol": "BCH", "side": "SHORT", "month": "2026-10", "posted": true, "risk_pct": 4.729, "status": "closed", "tp1_r": 0.41350560119491975, "scale_r": 0.30614936519790736, "hit": 2, "t": 1792955400000}
-{"id": 86942, "ch": "crypto_musk1", "ms": 1792741633000, "symbol": "BNB", "side": "SHORT", "month": "2026-10", "posted": true, "risk_pct": 4.729, "status": "open"}
+{"id": 86942, "ch": "crypto_musk1", "ms": 1792741633000, "symbol": "BNB", "side": "SHORT", "month": "2026-10", "posted": true, "risk_pct": 4.729, "status": "closed", "tp1_r": 0.413394172015045, "scale_r": 0.306070039291357, "hit": 2, "t": 1793114400000}
 {"id": 86946, "ch": "crypto_musk1", "ms": 1792754172000, "symbol": "DASH", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 4.865, "status": "closed", "tp1_r": 0.41370916334661123, "scale_r": 0.3051434262948197, "hit": 2, "t": 1792796100000}
 {"id": 86950, "ch": "crypto_musk1", "ms": 1792765872000, "symbol": "RLC", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 4.886, "status": "closed", "tp1_r": 0.407642972536348, "scale_r": 0.08656058158319849, "hit": 1, "t": 1792785000000}
 {"id": 86983, "ch": "crypto_musk1", "ms": 1792841769000, "symbol": "EGLD", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 4.889, "status": "closed", "tp1_r": 0.4098854489164089, "scale_r": 0.0871300309597524, "hit": 1, "t": 1792851300000}
 {"id": 86985, "ch": "crypto_musk1", "ms": 1792852629000, "symbol": "SUSHI", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 4.891, "status": "closed", "tp1_r": 0.40519487179487007, "scale_r": 0.08596410256410215, "hit": 1, "t": 1792918200000}
-{"id": 86991, "ch": "crypto_musk1", "ms": 1792887128000, "symbol": "BNB", "side": "SHORT", "month": "2026-10", "posted": true, "risk_pct": 4.729, "status": "open"}
+{"id": 86991, "ch": "crypto_musk1", "ms": 1792887128000, "symbol": "BNB", "side": "SHORT", "month": "2026-10", "posted": true, "risk_pct": 4.729, "status": "closed", "tp1_r": 0.4134040016908527, "scale_r": 0.08749164435676987, "hit": 1, "t": 1793114400000}
 {"id": 86992, "ch": "crypto_musk1", "ms": 1792891088000, "symbol": "IOST", "side": "SHORT", "month": "2026-10", "posted": true, "risk_pct": 4.729, "status": "closed", "tp1_r": 0.4134595180070439, "scale_r": 0.30609423233143945, "hit": 2, "t": 1792901400000}
 {"id": 87003, "ch": "crypto_musk1", "ms": 1792928047000, "symbol": "UNI", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 4.873, "status": "closed", "tp1_r": 0.4114822208359317, "scale_r": 1.0643206487835313, "hit": 4, "t": 1793027100000}
 {"id": 87017, "ch": "crypto_musk1", "ms": 1792940465000, "symbol": "THETA", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 4.907, "status": "closed", "tp1_r": 0.40335028248587623, "scale_r": 0.0855536723163843, "hit": 1, "t": 1792971000000}
@@ -32,7 +33,10 @@
 {"id": 87063, "ch": "crypto_musk1", "ms": 1793021523000, "symbol": "ZIL", "side": "SHORT", "month": "2026-10", "posted": true, "risk_pct": 4.726, "status": "closed", "tp1_r": 0.41414510214772154, "scale_r": 0.08766526977475123, "hit": 1, "t": 1793026800000}
 {"id": 87065, "ch": "crypto_musk1", "ms": 1793028782000, "symbol": "KAVA", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 4.874, "status": "open"}
 {"id": 87072, "ch": "crypto_musk1", "ms": 1793049241000, "symbol": "COMP", "side": "SHORT", "month": "2026-10", "posted": true, "risk_pct": 4.699, "status": "open"}
-{"id": 87081, "ch": "crypto_musk1", "ms": 1793100960000, "symbol": "RLC", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 4.871, "status": "open"}
+{"id": 87081, "ch": "crypto_musk1", "ms": 1793100960000, "symbol": "RLC", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 4.871, "status": "closed", "tp1_r": 0.4115192697768782, "scale_r": 0.08748275862069013, "hit": 1, "t": 1793122500000}
+{"id": 87084, "ch": "crypto_musk1", "ms": 1793115119000, "symbol": "BNB", "side": "SHORT", "month": "2026-10", "posted": true, "risk_pct": 4.729, "status": "open"}
+{"id": 87085, "ch": "crypto_musk1", "ms": 1793135518000, "symbol": "TRX", "side": "SHORT", "month": "2026-10", "posted": true, "risk_pct": 4.73, "status": "open"}
+{"id": 87090, "ch": "crypto_musk1", "ms": 1793149558000, "symbol": "KAVA", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 4.873, "status": "open"}
 {"id": 6500, "ms": 1788865090000, "symbol": "LTC", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0265061124694377, "scale_r": -1.0265061124694377, "hit": 0, "ch": "erfann_finance"}
 {"id": 6505, "ms": 1789109078000, "symbol": "ATOM", "side": "SHORT", "month": "2026-09", "status": "unfilled", "ch": "erfann_finance"}
 {"id": 6519, "ms": 1789889856000, "symbol": "CELR", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 1.0278444444444428, "scale_r": 1.0352518518518519, "hit": 2, "ch": "erfann_finance"}
@@ -276,7 +280,7 @@
 {"id": 7422, "ch": "erfann_finance", "ms": 1793017517000, "symbol": "AVA", "side": "SHORT", "month": "2026-10", "posted": true, "risk_pct": 3.7, "status": "closed", "tp1_r": 0.2571033210332117, "scale_r": 0.02032595325953283, "hit": 1, "t": 1793019600000}
 {"id": 7423, "ch": "erfann_finance", "ms": 1793017584000, "symbol": "ARIA", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 5.028, "status": "closed", "tp1_r": -1.0198888888888888, "scale_r": -1.0198888888888888, "hit": 0, "t": 1793020500000}
 {"id": 7442, "ch": "erfann_finance", "ms": 1793075032000, "symbol": "LINK", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 2.949, "status": "open"}
-{"id": 7444, "ch": "erfann_finance", "ms": 1793084573000, "symbol": "GRVT", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 3.597, "status": "open"}
+{"id": 7444, "ch": "erfann_finance", "ms": 1793084573000, "symbol": "GRVT", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 3.597, "status": "closed", "tp1_r": 0.9722000000000037, "scale_r": 1.6388666666666727, "hit": 3, "t": 1793106000000}
 {"id": 7445, "ch": "erfann_finance", "ms": 1793089885000, "symbol": "TRIA", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 11.504, "status": "open"}
-{"id": 7446, "ch": "erfann_finance", "ms": 1793091851000, "symbol": "DOOD", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 7.853, "status": "open"}
+{"id": 7446, "ch": "erfann_finance", "ms": 1793091851000, "symbol": "DOOD", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 7.853, "status": "unfilled"}
 {"id": 7460, "ch": "erfann_finance", "ms": 1793103789000, "symbol": "AAVE", "side": "LONG", "month": "2026-10", "posted": true, "risk_pct": 3.164, "status": "open"}
