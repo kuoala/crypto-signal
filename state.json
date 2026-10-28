@@ -1,25 +1,6 @@
 {
   "next_id": 465,
-  "open": [
-    {
-      "id": 464,
-      "symbol": "UKOIL/USDT:USDT",
-      "direction": "LONG",
-      "entry": 112.42,
-      "stop": 110.35,
-      "target1": 114.49000000000001,
-      "target": 116.56,
-      "leverage": 5,
-      "paper": true,
-      "opened_at": "2026-10-28 17:40 UTC",
-      "opened_ms": 1793209245298,
-      "rsi": 59.3,
-      "adx": 32.5,
-      "sl_pct": 1.84,
-      "exchange": "mexc",
-      "is_meme": false
-    }
-  ],
+  "open": [],
   "stats": {
     "2026-06": {
       "tp": 4,
@@ -59,12 +40,12 @@
     },
     "2026-10": {
       "tp": 1,
-      "sl": 8,
+      "sl": 9,
       "tp1": 4,
       "tp2": 1,
       "be": 5,
-      "r_sum": -4.800000000000001,
-      "r_count": 14
+      "r_sum": -5.800000000000001,
+      "r_count": 15
     }
   }
 }
