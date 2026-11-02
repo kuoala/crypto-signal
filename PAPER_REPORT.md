@@ -1,4 +1,4 @@
-# Paper report — generated 2026-11-01 13:43 UTC
+# Paper report — generated 2026-11-02 02:40 UTC
 
 R = profit / initial risk. Not posted to the channel.
 
@@ -50,8 +50,8 @@ R = profit / initial risk. Not posted to the channel.
 | period | trades | win | avg R | total R | acct @1% | PF | maxDD R |
 |---|---|---|---|---|---|---|---|
 | 2026-W43 | 10 | 100% | +0.17 | +1.7 | +1.7% | inf | 0.0 |
-| 2026-W44 | 19 | 95% | +0.33 | +6.3 | +6.3% | 7.22 | 1.0 |
-| **all** | 29 | 97% | +0.28 | +8.1 | +8.1% | 8.92 | 1.0 |
+| 2026-W44 | 20 | 95% | +0.32 | +6.4 | +6.4% | 7.30 | 1.0 |
+| **all** | 30 | 97% | +0.27 | +8.2 | +8.2% | 9.01 | 1.0 |
 
 **mirror erfann_finance**
 
@@ -135,8 +135,8 @@ R = profit / initial risk. Not posted to the channel.
 | period | trades | win | avg R | total R | acct @1% | PF | maxDD R |
 |---|---|---|---|---|---|---|---|
 | 2026-10 | 28 | 100% | +0.33 | +9.1 | +9.1% | inf | 0.0 |
-| 2026-11 | 1 | 0% | -1.02 | -1.0 | -1.0% | 0.00 | 1.0 |
-| **all** | 29 | 97% | +0.28 | +8.1 | +8.1% | 8.92 | 1.0 |
+| 2026-11 | 2 | 50% | -0.47 | -0.9 | -0.9% | 0.09 | 1.0 |
+| **all** | 30 | 97% | +0.27 | +8.2 | +8.2% | 9.01 | 1.0 |
 
 **mirror erfann_finance**
 
