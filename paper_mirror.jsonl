@@ -71,10 +71,11 @@
 {"id": 87309, "ch": "crypto_musk1", "ms": 1793612741000, "symbol": "IOST", "side": "LONG", "month": "2026-11", "posted": true, "risk_pct": 4.873, "status": "closed", "tp1_r": 0.41148545130640996, "scale_r": 0.08748010688836022, "hit": 1, "t": 1793644800000}
 {"id": 87321, "ch": "crypto_musk1", "ms": 1793631820000, "symbol": "TRX", "side": "SHORT", "month": "2026-11", "posted": true, "risk_pct": 4.728, "status": "closed", "tp1_r": 0.41348954248365993, "scale_r": 0.08750915032679732, "hit": 1, "t": 1793727300000}
 {"id": 87339, "ch": "crypto_musk1", "ms": 1793653660000, "symbol": "LTC", "side": "LONG", "month": "2026-11", "posted": true, "risk_pct": 4.878, "status": "closed", "tp1_r": 0.40806949806950116, "scale_r": 0.0866409266409274, "hit": 1, "t": 1793756400000}
-{"id": 87370, "ch": "crypto_musk1", "ms": 1793706997000, "symbol": "ALGO", "side": "SHORT", "month": "2026-11", "posted": true, "risk_pct": 4.729, "status": "open"}
+{"id": 87370, "ch": "crypto_musk1", "ms": 1793706997000, "symbol": "ALGO", "side": "SHORT", "month": "2026-11", "posted": true, "risk_pct": 4.729, "status": "closed", "tp1_r": 0.41352196382428663, "scale_r": 0.3061183013144575, "hit": 2, "t": 1793776800000}
 {"id": 87378, "ch": "crypto_musk1", "ms": 1793719957000, "symbol": "COMP", "side": "LONG", "month": "2026-11", "posted": true, "risk_pct": 4.85, "status": "open"}
-{"id": 87386, "ch": "crypto_musk1", "ms": 1793728836000, "symbol": "YFI", "side": "SHORT", "month": "2026-11", "posted": true, "risk_pct": 4.728, "status": "open"}
+{"id": 87386, "ch": "crypto_musk1", "ms": 1793728836000, "symbol": "YFI", "side": "SHORT", "month": "2026-11", "posted": true, "risk_pct": 4.728, "status": "closed", "tp1_r": 0.4142171664943135, "scale_r": 0.08769183040330951, "hit": 1, "t": 1793771100000}
 {"id": 87396, "ch": "crypto_musk1", "ms": 1793749716000, "symbol": "TRX", "side": "LONG", "month": "2026-11", "posted": true, "risk_pct": 4.873, "status": "open"}
+{"id": 87430, "ch": "crypto_musk1", "ms": 1793793574000, "symbol": "BAT", "side": "SHORT", "month": "2026-11", "posted": true, "risk_pct": 4.729, "status": "open"}
 {"id": 6500, "ms": 1788865090000, "symbol": "LTC", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0265061124694377, "scale_r": -1.0265061124694377, "hit": 0, "ch": "erfann_finance"}
 {"id": 6505, "ms": 1789109078000, "symbol": "ATOM", "side": "SHORT", "month": "2026-09", "status": "unfilled", "ch": "erfann_finance"}
 {"id": 6519, "ms": 1789889856000, "symbol": "CELR", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 1.0278444444444428, "scale_r": 1.0352518518518519, "hit": 2, "ch": "erfann_finance"}
