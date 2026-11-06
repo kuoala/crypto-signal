@@ -305,17 +305,36 @@ def fmt_report(kind, label, cs, all_closed, n_open):
             f"⚠️ Not financial advice.")
 
 
-def periodic_reports(st, now_ms):
-    """Weekly (Mon 00:00 UTC, covers prior 7 days) and monthly (1st, covers prior calendar month); once each.
-    Covers every signal posted to the channel (see channel_trades)."""
+def report_windows(now_ms):
+    """(state_key, boundary_ms, lo_ms, hi_ms, kind, label) for the last completed week (Mon-Sun UTC) and month."""
     d = datetime.fromtimestamp(now_ms / 1000, timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
     ms = lambda x: int(x.timestamp() * 1000)
     mon, first = d - timedelta(days=d.weekday()), d.replace(day=1)
     prev_first = (first - timedelta(days=1)).replace(day=1)
-    for key, cur, lo, hi, kind, label in (
-            ("last_weekly", ms(mon), ms(mon - timedelta(days=7)), ms(mon), "WEEKLY",
+    return (("last_weekly", ms(mon), ms(mon - timedelta(days=7)), ms(mon), "WEEKLY",
              f"{(mon - timedelta(days=7)):%d %b} – {(mon - timedelta(days=1)):%d %b %Y}"),
-            ("last_monthly", ms(first), ms(prev_first), ms(first), "MONTHLY", f"{prev_first:%B %Y}")):
+            ("last_monthly", ms(first), ms(prev_first), ms(first), "MONTHLY", f"{prev_first:%B %Y}"))
+
+
+def export_report(kind, out="report_card.png"):
+    """Write the same scoreboard PNG + text Telegram got for the last completed WEEKLY/MONTHLY period (for X).
+    Read-only: posts nothing, changes no state."""
+    _, _, lo, hi, k, label = next(w for w in report_windows(int(time.time() * 1000)) if w[4] == kind)
+    closed, n_open = channel_trades(load_state())
+    cs = [c for c in closed if lo <= c["T"] < hi]
+    if not cs:
+        print(f"NO_TRADES {kind} {label}")
+        return
+    open(out, "wb").write(scoreboard.render(k, label, [(c["r"] > 0, c["coin"], c["tag"], c["pct"], c["pct"] * c["lev"], c["r"]) for c in cs],
+                                            stats(cs), n_open, P["RISK_PCT"]))
+    print(out)
+    print(fmt_report(k, label, cs, closed, n_open))
+
+
+def periodic_reports(st, now_ms):
+    """Weekly (Mon 00:00 UTC, covers prior 7 days) and monthly (1st, covers prior calendar month); once each.
+    Covers every signal posted to the channel (see channel_trades)."""
+    for key, cur, lo, hi, kind, label in report_windows(now_ms):
         if key not in st:
             st[key] = cur            # first run: arm silently, report from the next boundary on
         elif st[key] != cur:
@@ -551,4 +570,7 @@ def selftest():
 
 
 if __name__ == "__main__":
-    selftest() if "--selftest" in sys.argv else test_post() if "--test-post" in sys.argv else run()
+    if "--export-report" in sys.argv:                 # python3 alt_breakout.py --export-report WEEKLY|MONTHLY
+        export_report(sys.argv[sys.argv.index("--export-report") + 1].upper())
+    else:
+        selftest() if "--selftest" in sys.argv else test_post() if "--test-post" in sys.argv else run()
