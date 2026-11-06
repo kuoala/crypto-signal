@@ -327,6 +327,9 @@ def export_report(kind, out="report_card.png"):
         return
     open(out, "wb").write(scoreboard.render(k, label, [(c["r"] > 0, c["coin"], c["tag"], c["pct"], c["pct"] * c["lev"], c["r"]) for c in cs],
                                             stats(cs), n_open, P["RISK_PCT"]))
+    import x_card                                   # X copy gets the Kuoala footer; Telegram's image is unchanged
+    from PIL import Image
+    x_card.brand(Image.open(out)).save(out)
     print(out)
     print(fmt_report(k, label, cs, closed, n_open))
 
