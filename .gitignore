@@ -11,3 +11,4 @@ venv/
 research/.ohlcv_cache/
 research/hl_fills/
 research/leaderboard.json
+x_card.png
