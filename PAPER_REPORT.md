@@ -1,4 +1,4 @@
-# Paper report — generated 2026-11-06 03:32 UTC
+# Paper report — generated 2026-11-06 14:31 UTC
 
 R = profit / initial risk. Not posted to the channel.
 
