@@ -267,3 +267,24 @@ Parameters are frozen until 100 live trades; changes ship as a new version with 
 (`UNIVERSE_WIDE`). Logged and graded in `breakout_state.json` / `breakout_log.jsonl`, never posted.
 Backtest (`research/breakout_bt.py`): top-60 PF 0.87 vs 1.31 for the 20-coin universe — widening the
 universe lost money, so A stays on the proven 20 until live Rule C data says otherwise.
+
+---
+
+# X (Twitter) — @KuoalaOfficial
+
+Posting and replies run as two Claude desktop scheduled tasks that drive the signed-in Chrome. There is no X API: it was removed on 2026-10-24 because it charges per use. **All rules live in [X_PLAYBOOK.md](X_PLAYBOOK.md):** how X ranks posts, writing rules, the Telegram CTA, image choice, the post mix and safety. Both tasks read it at the start of every run, so edit the playbook, not the task prompts.
+
+| Task | When (Dubai) | Does |
+|---|---|---|
+| `x-post-kuoala` | 10:11, 18:11 | One post: market pulse, news take, tip, question, weekly/monthly report, or Thursday channel invite |
+| `x-replies-kuoala` | 12:41, 20:41 | Up to 3 replies to fresh posts by big crypto accounts, plus answers to people who replied to us |
+
+Helpers (read-only, never post to Telegram):
+
+```bash
+python3 x_card.py bitcoin "BTC -4.9% in 24h" x_card.png      # 7-day chart card + Kuoala footer
+python3 x_card.py --brand in.jpg ai_card.png                   # add the Kuoala footer to any image (Gemini AI art)
+python3 alt_breakout.py --export-report WEEKLY                 # same scoreboard + text Telegram got → report_card.png
+```
+
+Logo: `assets/kuoala_logo.jpg`, the X profile picture. The generated images are gitignored.
