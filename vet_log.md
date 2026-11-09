@@ -7,3 +7,6 @@
 ## 2026-11-02
 @Signals_Trader_Trading: 61 signals parsed, 49 gradable (12 not on MEXC / still open)
   TP1-before-SL win rate 84%   avg R at TP1-or-SL +557.83
+## 2026-11-09
+@Signals_Trader_Trading: 59 signals parsed, 47 gradable (12 not on MEXC / still open)
+  TP1-before-SL win rate 83%   avg R at TP1-or-SL +1851.10
