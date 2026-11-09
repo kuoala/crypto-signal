@@ -1,6 +1,25 @@
 {
-  "next_id": 465,
-  "open": [],
+  "next_id": 466,
+  "open": [
+    {
+      "id": 465,
+      "symbol": "TAO/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 216.89,
+      "stop": 222.8385714285714,
+      "target1": 210.94142857142856,
+      "target": 204.99285714285713,
+      "leverage": 4,
+      "paper": true,
+      "opened_at": "2026-11-09 03:44 UTC",
+      "opened_ms": 1794195879573,
+      "rsi": 32.9,
+      "adx": 25.4,
+      "sl_pct": 2.74,
+      "exchange": "mexc",
+      "is_meme": false
+    }
+  ],
   "stats": {
     "2026-06": {
       "tp": 4,
