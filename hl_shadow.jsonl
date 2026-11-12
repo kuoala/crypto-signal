@@ -200,5 +200,13 @@
 {"trader": "0x3f3192097db8fc6043e459db7926a4d8a26c155b", "coin": "ZEC", "side": 1, "entry": 984.13, "ts": 1794400915777, "notional": 28784}
 {"trader": "0xf83858e57d9f804f5ca1603bce82558119aeac7b", "coin": "LIT", "side": -1, "entry": 3.39945, "ts": 1794400915777, "notional": 12484}
 {"trader": "0xf83858e57d9f804f5ca1603bce82558119aeac7b", "coin": "ETH", "side": 1, "entry": 2055.15, "ts": 1794400915777, "notional": 10335}
-{"trader": "0xb4bfb5f79bf6109ef70edb4c8c1b7c809155629b", "coin": "ZEC", "side": 1, "entry": 984.13, "ts": 1794400915777, "notional": 158434}
-{"trader": "0xf00eabc409c51cf884ec7861cb839524af6afe3d", "coin": "CASHCAT", "side": 1, "entry": 0.060756, "ts": 1794400915777, "notional": 68225}
+{"trader": "0xb4bfb5f79bf6109ef70edb4c8c1b7c809155629b", "coin": "ZEC", "side": 1, "entry": 984.13, "ts": 1794400915777, "notional": 158434, "exit": 965.135, "ret": -0.0203}
+{"trader": "0xf00eabc409c51cf884ec7861cb839524af6afe3d", "coin": "CASHCAT", "side": 1, "entry": 0.060756, "ts": 1794400915777, "notional": 68225, "exit": 0.052511, "ret": -0.13671}
+{"trader": "0xc35bf47aca839e371eb70fc5d16a5b747ad4d8dd", "coin": "BTC", "side": 1, "entry": 72548.5, "ts": 1794491108144, "notional": 77464}
+{"trader": "0xc35bf47aca839e371eb70fc5d16a5b747ad4d8dd", "coin": "HYPE", "side": 1, "entry": 70.4725, "ts": 1794491108144, "notional": 24210}
+{"trader": "0x9c062c0575c30a3b7614d0c6ea8de67faab00560", "coin": "BTC", "side": 1, "entry": 72548.5, "ts": 1794491108144, "notional": 1999998}
+{"trader": "0xf83858e57d9f804f5ca1603bce82558119aeac7b", "coin": "CASHCAT", "side": 1, "entry": 0.052511, "ts": 1794491108144, "notional": 5417}
+{"trader": "0xf83858e57d9f804f5ca1603bce82558119aeac7b", "coin": "GRAM", "side": 1, "entry": 1.25105, "ts": 1794491108144, "notional": 5001}
+{"trader": "0x2396bc99feedc162af809314257571bb7ff07a36", "coin": "TRUMP", "side": -1, "entry": 1.1057, "ts": 1794491108144, "notional": 27487}
+{"trader": "0x52f2540578e878e39b37f1915056bc13ecb7923f", "coin": "BTC", "side": -1, "entry": 72548.5, "ts": 1794491108144, "notional": 7359}
+{"trader": "0x72dae3560e7f4c59a305e2e739d6bd6777f738b5", "coin": "BTC", "side": 1, "entry": 72548.5, "ts": 1794491108144, "notional": 1479848}
