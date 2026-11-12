@@ -1,5 +1,5 @@
 {
-  "next_id": 474,
+  "next_id": 475,
   "open": [
     {
       "id": 468,
@@ -106,6 +106,24 @@
       "rsi": 30.2,
       "adx": 40.3,
       "sl_pct": 5.31,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 474,
+      "symbol": "ENA/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 0.14208,
+      "stop": 0.1496357142857143,
+      "target1": 0.13452428571428574,
+      "target": 0.12696857142857143,
+      "leverage": 2,
+      "paper": true,
+      "opened_at": "2026-11-12 11:59 UTC",
+      "opened_ms": 1794484768354,
+      "rsi": 29.4,
+      "adx": 34.6,
+      "sl_pct": 5.32,
       "exchange": "mexc",
       "is_meme": false
     }
