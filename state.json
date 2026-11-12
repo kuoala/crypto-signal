@@ -1,5 +1,5 @@
 {
-  "next_id": 473,
+  "next_id": 474,
   "open": [
     {
       "id": 468,
@@ -88,6 +88,24 @@
       "rsi": 41.2,
       "adx": 30.4,
       "sl_pct": 4.14,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 473,
+      "symbol": "NVIDIA/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 160.68,
+      "stop": 169.215,
+      "target1": 152.145,
+      "target": 143.61,
+      "leverage": 2,
+      "paper": true,
+      "opened_at": "2026-11-12 01:44 UTC",
+      "opened_ms": 1794447870622,
+      "rsi": 30.2,
+      "adx": 40.3,
+      "sl_pct": 5.31,
       "exchange": "mexc",
       "is_meme": false
     }
