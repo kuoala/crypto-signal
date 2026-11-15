@@ -11,11 +11,15 @@ Data: the same closed-trade set as `alt_breakout.py --export-report WEEKLY` (las
 plus BTC's real move over that week (CoinGecko, no key).
 Render: OpenMontage's Remotion "Explainer" composition (github.com/calesthio/OpenMontage, AGPL-3.0, used
 unmodified as an external tool). OM_DIR points at a checkout with `npm ci` done in remotion-composer/.
+Audio: the on-screen lines are narrated with Piper TTS (local, offline; `pip install piper-tts`, voice
+en_US-ryan-high in ~/.piper or PIPER_VOICE) and laid over an original synth music bed generated in music(),
+ducked under the voice. Scenes are re-timed to the narration.
 Outputs (gitignored): weekly_video/kuoala_weekly.mp4, props.json, meta.json (Instagram caption).
 Env (optional): INVITE_REELS_IG = the named invite link from make_invite_link.py / the Telegram app.
 """
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -27,6 +31,8 @@ OM_DIR = os.path.expanduser(os.environ.get("OM_DIR", "~/OpenMontage"))
 CHANNEL = "t.me/KuoalaOfficial"
 NFA = "Not financial advice"
 GREEN, RED, BG = "#00ba7c", "#f4212e", "#0f1419"
+SR = 44100
+VOICE = os.path.expanduser(os.environ.get("PIPER_VOICE", "~/.piper/en_US-ryan-high.onnx"))
 
 
 def week():
@@ -119,6 +125,100 @@ def check_honesty(props, meta, s):
         assert "other channels" in json.dumps(props["cuts"]), "relayed signals must be disclosed"
 
 
+def spoken(text):
+    """On-screen line -> what the narrator says (no URLs read out, signs spelled)."""
+    text = text.replace(CHANNEL, "Link in bio.")
+    return re.sub(r"([+-])(\d)", lambda m: ("plus " if m[1] == "+" else "minus ") + m[2], text)
+
+
+def narrate(props):
+    """Piper TTS per scene, then re-time the scenes to the voice. Returns (mono float32 @SR, seconds)."""
+    import numpy as np
+    import wave
+    from piper import PiperVoice, SynthesisConfig
+    if not os.path.exists(VOICE):
+        sys.exit(f"Piper voice missing: {VOICE} (python3 -m piper.download_voices --download-dir ~/.piper en_US-ryan-high)")
+    v, cfg = PiperVoice.load(VOICE), SynthesisConfig(length_scale=0.9)
+    clips, t = [], 0.4
+    for c in props["cuts"]:
+        p = os.path.join(OUT, f"{c['id']}.wav")
+        with wave.open(p, "wb") as wf:
+            v.synthesize_wav(spoken(c["text"]), wf, syn_config=cfg)
+        with wave.open(p) as wf:
+            sr, a = wf.getframerate(), np.frombuffer(wf.readframes(wf.getnframes()), np.int16) / 32768
+        a = np.interp(np.arange(int(len(a) * SR / sr)) * sr / SR, np.arange(len(a)), a)    # -> SR
+        c["in_seconds"] = 0 if not clips else round(t - 0.3, 2)
+        clips.append((t, a))
+        t += len(a) / SR + 0.45
+        c["out_seconds"] = round(t - 0.3, 2)
+    props["cuts"][-1]["out_seconds"] = total = round(t + 1.2, 2)                              # hold the CTA
+    for o in props["overlays"]:
+        o["out_seconds"] = total
+    voice = np.zeros(int(total * SR))
+    for start, a in clips:
+        i = int(start * SR)
+        voice[i:i + len(a)] += a[:len(voice) - i]
+    return voice, total
+
+
+def music(seconds, bpm=104, seed=7):
+    """Original synth bed (Am-F-C-G pad, bass, pluck arp, kick, hat). Generated here, so no licence issues."""
+    import numpy as np
+    n, beat = int(seconds * SR), 60 / bpm
+    out, rng = np.zeros(n), np.random.default_rng(seed)
+    hz = lambda m: 440 * 2 ** ((m - 69) / 12)
+
+    def add(start, sig):
+        i = int(start * SR)
+        if i < n:
+            out[i:i + len(sig)] += sig[:n - i]
+
+    def tone(f, dur, amp, harm=(1, .5, .25), dec=None):
+        tt = np.arange(int(dur * SR)) / SR
+        env = np.exp(-tt * dec) if dec else np.minimum(1, tt / .4) * np.minimum(1, (dur - tt) / .4)
+        return amp * env * sum(a * np.sin(2 * np.pi * f * k * tt) for k, a in enumerate(harm, 1))
+
+    tt = np.arange(int(.3 * SR)) / SR
+    kick = .55 * np.sin(2 * np.pi * (45 * tt + 75 * (1 - np.exp(-tt * 30)) / 30)) * np.exp(-tt * 11)
+    hat = np.diff(rng.standard_normal(int(.06 * SR)), prepend=0) * np.exp(-np.arange(int(.06 * SR)) / SR * 70) * .05
+    for b in range(int(seconds / (4 * beat)) + 1):
+        root, third, fifth = ((57, 60, 64), (53, 57, 60), (48, 52, 55), (55, 59, 62))[b % 4]
+        s0 = b * 4 * beat
+        for m in (root, third, fifth, root + 12):
+            add(s0, tone(hz(m), 4 * beat, .045))                                              # pad
+        arp = (root, fifth, third + 12, fifth)
+        for e in range(8):
+            add(s0 + e * beat / 2, tone(hz(root - 24), beat / 2, .2, (1, .35), dec=7))       # bass
+            add(s0 + e * beat / 2, tone(hz(arp[e % 4] + 12), beat / 2, .06, (1, .2, .1), dec=8))  # pluck
+            add(s0 + e * beat / 2, kick if e % 2 == 0 else hat)                               # kick / hat
+    fade = np.minimum(1, np.minimum(np.arange(n) / (.6 * SR), (n - np.arange(n)) / (1.8 * SR)))
+    out *= fade
+    return out / max(np.abs(out).max(), 1e-9)
+
+
+def mix(voice, bed):
+    """Voice on top, music ducked under speech (~-12 dB) and up between lines."""
+    import numpy as np
+    win = int(.25 * SR)
+    env = np.convolve(np.abs(voice) > .02, np.ones(win) / win, "same")
+    gain = .7 - .52 * np.clip(env * 4, 0, 1)
+    return np.clip(voice * .95 + bed * gain, -1, 1)
+
+
+def mux_audio(out_mp4, audio):
+    import numpy as np
+    import wave
+    wav = os.path.join(OUT, "mix.wav")
+    with wave.open(wav, "wb") as wf:
+        wf.setnchannels(1), wf.setsampwidth(2), wf.setframerate(SR)
+        wf.writeframes((audio * 32767).astype(np.int16).tobytes())
+    tmp = out_mp4 + ".tmp.mp4"           # Instagram expects H.264 + AAC; loudnorm to ~-14 LUFS like most Reels
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", out_mp4, "-i", wav, "-map", "0:v", "-map", "1:a",
+                    "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
+                    "-ar", "44100", "-ac", "2", "-shortest", "-movflags", "+faststart", tmp], check=True)
+    os.replace(tmp, out_mp4)
+
+
 def render(props, out_mp4):
     rc = os.path.join(OM_DIR, "remotion-composer")
     if not os.path.isdir(os.path.join(rc, "node_modules")):
@@ -129,11 +229,6 @@ def render(props, out_mp4):
     pj = os.path.abspath(os.path.join(OUT, "props.json"))
     subprocess.run(["npx", "remotion", "render", "src/index.tsx", "Explainer", os.path.abspath(out_mp4),
                     f"--props={pj}", "--width=1080", "--height=1920", "--codec=h264", "--crf=20"], cwd=rc, check=True)
-    # silent AAC track: Instagram's Reels pipeline expects H.264 + AAC
-    tmp = out_mp4 + ".tmp.mp4"
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", out_mp4, "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo",
-                    "-c:v", "copy", "-c:a", "aac", "-shortest", "-movflags", "+faststart", tmp], check=True)
-    os.replace(tmp, out_mp4)
 
 
 def selftest():
@@ -146,6 +241,16 @@ def selftest():
     assert rough(0.57) == "more than half" and rough(0.05) == "a small part"
     red = plan("x – y", [dict(src="Breakout", coin="Z", pct=-2, r=-1.0)], 1.0, [1, 1, 1] * 5)[0]
     assert "red week" in json.dumps(red["cuts"]) and "Down 1.0%" in json.dumps(red["cuts"])
+    assert spoken(f"Best trade +6%. Worst -3%. Free every day on Telegram. {CHANNEL}") == \
+        "Best trade plus 6%. Worst minus 3%. Free every day on Telegram. Link in bio."
+    import numpy as np
+    bed = music(3)
+    assert len(bed) == 3 * SR and abs(np.abs(bed).max() - 1) < 1e-6
+    v = np.zeros(3 * SR)
+    v[SR:2 * SR] = .5
+    m = mix(v, bed)
+    quiet, loud = np.abs(m[int(1.4 * SR):int(1.6 * SR)] - .475).max(), np.abs(m[int(2.6 * SR):]).max()
+    assert quiet < .2 and m.max() <= 1, (quiet, loud)          # music ducked under the voice
     print("selftest ok")
 
 
@@ -159,10 +264,14 @@ if __name__ == "__main__":
         print(f"NO_TRADES {label}: no video this week")
         sys.exit()
     props, meta = plan(label, cs, risk, btc_week(lo, hi))
-    json.dump(props, open(os.path.join(OUT, "props.json"), "w"), indent=1)
-    json.dump(meta, open(os.path.join(OUT, "meta.json"), "w"), indent=1, ensure_ascii=False)
     print("\n".join(c.get("text", c.get("title", "")) for c in props["cuts"]))
     print("---\n" + meta["instagram"]["caption"])
     if "--plan-only" not in sys.argv:
-        render(props, os.path.join(OUT, "kuoala_weekly.mp4"))
-        print(os.path.join(OUT, "kuoala_weekly.mp4"))
+        voice, total = narrate(props)                     # re-times the scenes to the voice
+    json.dump(props, open(os.path.join(OUT, "props.json"), "w"), indent=1)
+    json.dump(meta, open(os.path.join(OUT, "meta.json"), "w"), indent=1, ensure_ascii=False)
+    if "--plan-only" not in sys.argv:
+        mp4 = os.path.join(OUT, "kuoala_weekly.mp4")
+        render(props, mp4)
+        mux_audio(mp4, mix(voice, music(total)))
+        print(mp4)

@@ -301,7 +301,7 @@ Video goes to **Instagram only** (YouTube and TikTok are out of scope for now).
 | Channel title + description | Actions > "Set channel title + description" (dry run unless *apply*), or `python3 set_channel_info.py --title … --description … [--apply]` | bot needs *Change channel info*; or edit in the Telegram app |
 | SFS prospects | `python3 sfs_prospects.py --selftest`, then `--dry-run <seeds>`, then `<seeds>` | your Telethon user session, read-only; see [SFS_OUTREACH.md](SFS_OUTREACH.md) |
 | Tracked invite links | `python3 make_invite_link.py x-bio ig-bio ig-reels sfs-<partner> [--dry-run]`, `--stats` | run locally; map in `invite_links.json` (or create them in the app: channel > Invite links) |
-| Weekly Reel | `python3 weekly_video.py --plan-only` / full render; Actions "Weekly Instagram Reel" Mon 03:30 UTC | plain-language ~26 s Reel via OpenMontage; publishes with `instagram_upload.py` (official API) when the IG secrets exist, else MP4 artifact for manual upload |
+| Weekly Reel | `python3 weekly_video.py --plan-only` / full render; Actions "Weekly Instagram Reel" Mon 03:30 UTC | plain-language ~25 s Reel via OpenMontage, narrated (Piper TTS, local) over an original generated music bed; publishes with `instagram_upload.py` (official API) when the IG secrets exist, else MP4 artifact for manual upload |
 
 Secrets (GitHub > Settings > Secrets and variables > Actions): `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHANNEL_ID` (existing), `IG_USER_ID`, `IG_ACCESS_TOKEN` (60-day token: `python3 instagram_upload.py --refresh` monthly).
 Variables (not secret): `INVITE_REELS_IG`.

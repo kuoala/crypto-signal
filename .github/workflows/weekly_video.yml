@@ -43,6 +43,14 @@ jobs:
           git remote add origin https://github.com/calesthio/OpenMontage.git
           git fetch -q --depth 1 origin "$OM_COMMIT" && git checkout -q FETCH_HEAD
           cd remotion-composer && npm ci --no-audit --no-fund && npx remotion browser ensure
+      - uses: actions/cache@v4
+        with:
+          path: ~/.piper
+          key: piper-en_US-ryan-high
+      - name: Piper TTS (narration, local/offline)
+        run: |
+          pip install piper-tts==1.8.0
+          [ -f ~/.piper/en_US-ryan-high.onnx ] || python -m piper.download_voices --download-dir ~/.piper en_US-ryan-high
       - name: Render
         env:
           INVITE_REELS_IG: ${{ vars.INVITE_REELS_IG }}
