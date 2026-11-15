@@ -196,16 +196,16 @@
 {"trader": "0xb85bf31a9540e631461f295fbe1a3c3d9b8800fd", "coin": "PUMP", "side": 1, "entry": 0.003526, "ts": 1794317218508, "notional": 365200, "exit": 0.003282, "ret": -0.0702}
 {"trader": "0xcb5c2f378860437fad512c3aec09efce1c470283", "coin": "HYPE", "side": 1, "entry": 73.4355, "ts": 1794317218508, "notional": 41020, "exit": 72.3325, "ret": -0.01602}
 {"trader": "0xbd470d2ab7e12b9eb0fc5c820b4c84e202bfd24d", "coin": "HYPE", "side": -1, "entry": 73.4355, "ts": 1794317218508, "notional": 19524, "exit": 68.7445, "ret": 0.06288}
-{"trader": "0x7aea4799452f25d50386e81029794e0ebbb6ec06", "coin": "BTC", "side": 1, "entry": 73991.5, "ts": 1794400915777, "notional": 19729}
+{"trader": "0x7aea4799452f25d50386e81029794e0ebbb6ec06", "coin": "BTC", "side": 1, "entry": 73991.5, "ts": 1794400915777, "notional": 19729, "exit": 65409.5, "ret": -0.11699}
 {"trader": "0x3f3192097db8fc6043e459db7926a4d8a26c155b", "coin": "ZEC", "side": 1, "entry": 984.13, "ts": 1794400915777, "notional": 28784, "exit": 969.235, "ret": -0.01614}
-{"trader": "0xf83858e57d9f804f5ca1603bce82558119aeac7b", "coin": "LIT", "side": -1, "entry": 3.39945, "ts": 1794400915777, "notional": 12484}
-{"trader": "0xf83858e57d9f804f5ca1603bce82558119aeac7b", "coin": "ETH", "side": 1, "entry": 2055.15, "ts": 1794400915777, "notional": 10335}
+{"trader": "0xf83858e57d9f804f5ca1603bce82558119aeac7b", "coin": "LIT", "side": -1, "entry": 3.39945, "ts": 1794400915777, "notional": 12484, "exit": 3.00765, "ret": 0.11425}
+{"trader": "0xf83858e57d9f804f5ca1603bce82558119aeac7b", "coin": "ETH", "side": 1, "entry": 2055.15, "ts": 1794400915777, "notional": 10335, "exit": 1828.95, "ret": -0.11106}
 {"trader": "0xb4bfb5f79bf6109ef70edb4c8c1b7c809155629b", "coin": "ZEC", "side": 1, "entry": 984.13, "ts": 1794400915777, "notional": 158434, "exit": 965.135, "ret": -0.0203}
 {"trader": "0xf00eabc409c51cf884ec7861cb839524af6afe3d", "coin": "CASHCAT", "side": 1, "entry": 0.060756, "ts": 1794400915777, "notional": 68225, "exit": 0.052511, "ret": -0.13671}
 {"trader": "0xc35bf47aca839e371eb70fc5d16a5b747ad4d8dd", "coin": "BTC", "side": 1, "entry": 72548.5, "ts": 1794491108144, "notional": 77464}
 {"trader": "0xc35bf47aca839e371eb70fc5d16a5b747ad4d8dd", "coin": "HYPE", "side": 1, "entry": 70.4725, "ts": 1794491108144, "notional": 24210}
 {"trader": "0x9c062c0575c30a3b7614d0c6ea8de67faab00560", "coin": "BTC", "side": 1, "entry": 72548.5, "ts": 1794491108144, "notional": 1999998}
-{"trader": "0xf83858e57d9f804f5ca1603bce82558119aeac7b", "coin": "CASHCAT", "side": 1, "entry": 0.052511, "ts": 1794491108144, "notional": 5417}
+{"trader": "0xf83858e57d9f804f5ca1603bce82558119aeac7b", "coin": "CASHCAT", "side": 1, "entry": 0.052511, "ts": 1794491108144, "notional": 5417, "exit": 0.04023, "ret": -0.23487}
 {"trader": "0xf83858e57d9f804f5ca1603bce82558119aeac7b", "coin": "GRAM", "side": 1, "entry": 1.25105, "ts": 1794491108144, "notional": 5001, "exit": 1.14975, "ret": -0.08197}
 {"trader": "0x2396bc99feedc162af809314257571bb7ff07a36", "coin": "TRUMP", "side": -1, "entry": 1.1057, "ts": 1794491108144, "notional": 27487}
 {"trader": "0x52f2540578e878e39b37f1915056bc13ecb7923f", "coin": "BTC", "side": -1, "entry": 72548.5, "ts": 1794491108144, "notional": 7359, "exit": 69226.5, "ret": 0.04479}
@@ -217,15 +217,34 @@
 {"trader": "0xf929122994e177079c924631ba13fb280f5cd1f9", "coin": "ETH", "side": 1, "entry": 1960.55, "ts": 1794575067506, "notional": 1960730}
 {"trader": "0x1e771e1b95c86491299d6e2a5c3b3842d03b552e", "coin": "BTC", "side": 1, "entry": 69226.5, "ts": 1794575067506, "notional": 137372}
 {"trader": "0xf00eabc409c51cf884ec7861cb839524af6afe3d", "coin": "ZEC", "side": 1, "entry": 969.235, "ts": 1794575067506, "notional": 612683, "exit": 903.625, "ret": -0.06869}
-{"trader": "0x4594d0b089984277ae64bdea2093c28db66d3e01", "coin": "XMR", "side": -1, "entry": 534.02, "ts": 1794575067506, "notional": 5068}
+{"trader": "0x4594d0b089984277ae64bdea2093c28db66d3e01", "coin": "XMR", "side": -1, "entry": 534.02, "ts": 1794575067506, "notional": 5068, "exit": 503.54, "ret": 0.05608}
 {"trader": "0x668cec05549105e5b05bcc779a43186735d7ea2e", "coin": "HYPE", "side": -1, "entry": 68.7445, "ts": 1794658153286, "notional": 953731}
 {"trader": "0x668cec05549105e5b05bcc779a43186735d7ea2e", "coin": "LIT", "side": -1, "entry": 3.08505, "ts": 1794658153286, "notional": 826434}
 {"trader": "0x9c062c0575c30a3b7614d0c6ea8de67faab00560", "coin": "ETH", "side": 1, "entry": 1907.95, "ts": 1794658153286, "notional": 1995848}
-{"trader": "0x847ae9472a5a66b671627c9be059bb7c78017c72", "coin": "BTC", "side": -1, "entry": 67195.5, "ts": 1794658153286, "notional": 13099}
+{"trader": "0x847ae9472a5a66b671627c9be059bb7c78017c72", "coin": "BTC", "side": -1, "entry": 67195.5, "ts": 1794658153286, "notional": 13099, "exit": 65409.5, "ret": 0.02558}
 {"trader": "0x14e2ad432297508f8ef3b26d7e99e81d64d05b57", "coin": "BTC", "side": 1, "entry": 67195.5, "ts": 1794658153286, "notional": 100000}
 {"trader": "0xa1d4fc32f21d9d77a4c20a6ac4b748815912c07c", "coin": "HYPE", "side": -1, "entry": 68.7445, "ts": 1794658153286, "notional": 75913}
 {"trader": "0x9c16bc8f1104e4d2f72267eb981fa12de7cc4a6f", "coin": "BTC", "side": 1, "entry": 67195.5, "ts": 1794658153286, "notional": 1890955}
-{"trader": "0x52f2540578e878e39b37f1915056bc13ecb7923f", "coin": "HYPE", "side": 1, "entry": 68.7445, "ts": 1794658153286, "notional": 74082}
+{"trader": "0x52f2540578e878e39b37f1915056bc13ecb7923f", "coin": "HYPE", "side": 1, "entry": 68.7445, "ts": 1794658153286, "notional": 74082, "exit": 68.1965, "ret": -0.00897}
 {"trader": "0xee16198171b3cf5c96af82e538d489f78935fb67", "coin": "BTC", "side": -1, "entry": 67195.5, "ts": 1794658153286, "notional": 1068868}
-{"trader": "0x00532b2e10626ed952d6664b9c6848646b227b57", "coin": "BTC", "side": 1, "entry": 67195.5, "ts": 1794658153286, "notional": 84609}
-{"trader": "0x00532b2e10626ed952d6664b9c6848646b227b57", "coin": "AERO", "side": 1, "entry": 0.455315, "ts": 1794658153286, "notional": 78823}
+{"trader": "0x00532b2e10626ed952d6664b9c6848646b227b57", "coin": "BTC", "side": 1, "entry": 67195.5, "ts": 1794658153286, "notional": 84609, "exit": 65409.5, "ret": -0.02758}
+{"trader": "0x00532b2e10626ed952d6664b9c6848646b227b57", "coin": "AERO", "side": 1, "entry": 0.455315, "ts": 1794658153286, "notional": 78823, "exit": 0.442085, "ret": -0.03006}
+{"trader": "0xfc98b6ec7f59ea13354bae6171a9120692fb8777", "coin": "PUMP", "side": 1, "entry": 0.002942, "ts": 1794746563483, "notional": 527275}
+{"trader": "0x5f1055597a652a50c67e62bcf2912dc621bfd49d", "coin": "JUP", "side": 1, "entry": 0.26646, "ts": 1794746563483, "notional": 7335}
+{"trader": "0xb853d921062c83e79523dff1e3f0eec332e26934", "coin": "BTC", "side": 1, "entry": 65409.5, "ts": 1794746563483, "notional": 6341}
+{"trader": "0x65d0ab18172c32e37cd7f39d1ad3f9c5de8bdfb0", "coin": "BTC", "side": 1, "entry": 65409.5, "ts": 1794746563483, "notional": 130198}
+{"trader": "0x847ae9472a5a66b671627c9be059bb7c78017c72", "coin": "BTC", "side": 1, "entry": 65409.5, "ts": 1794746563483, "notional": 12479}
+{"trader": "0x14e2ad432297508f8ef3b26d7e99e81d64d05b57", "coin": "SOL", "side": 1, "entry": 72.6105, "ts": 1794746563483, "notional": 50000}
+{"trader": "0x14e2ad432297508f8ef3b26d7e99e81d64d05b57", "coin": "ETH", "side": 1, "entry": 1828.95, "ts": 1794746563483, "notional": 50000}
+{"trader": "0xeb7f3e17a7c525a90010a9c7d99b85006e0c0c01", "coin": "LIT", "side": 1, "entry": 3.00765, "ts": 1794746563483, "notional": 6668}
+{"trader": "0xe676708ea7611c93ee106b1d7a2c6f721fc10c18", "coin": "LTC", "side": 1, "entry": 45.4175, "ts": 1794746563483, "notional": 265793}
+{"trader": "0xe676708ea7611c93ee106b1d7a2c6f721fc10c18", "coin": "SOL", "side": 1, "entry": 72.6105, "ts": 1794746563483, "notional": 279479}
+{"trader": "0xe676708ea7611c93ee106b1d7a2c6f721fc10c18", "coin": "ETH", "side": 1, "entry": 1828.95, "ts": 1794746563483, "notional": 573895}
+{"trader": "0xb85bf31a9540e631461f295fbe1a3c3d9b8800fd", "coin": "LIT", "side": 1, "entry": 3.00765, "ts": 1794746563483, "notional": 296051}
+{"trader": "0x6ea486a3426563e23023125f18867117878f0ea7", "coin": "ETH", "side": 1, "entry": 1828.95, "ts": 1794746563483, "notional": 4019210}
+{"trader": "0xa4beb4fbe651b00bc16d472e2e1aa1c26b3d90aa", "coin": "HYPE", "side": 1, "entry": 68.1965, "ts": 1794746563483, "notional": 42499}
+{"trader": "0x30372cab9f2f7e4a3bfab04f41b6ee2e14e8c9e1", "coin": "HYPE", "side": 1, "entry": 68.1965, "ts": 1794746563483, "notional": 60409}
+{"trader": "0xf00eabc409c51cf884ec7861cb839524af6afe3d", "coin": "HYPE", "side": 1, "entry": 68.1965, "ts": 1794746563483, "notional": 397983}
+{"trader": "0xf00eabc409c51cf884ec7861cb839524af6afe3d", "coin": "ZEC", "side": 1, "entry": 923.695, "ts": 1794746563483, "notional": 394401}
+{"trader": "0x72dae3560e7f4c59a305e2e739d6bd6777f738b5", "coin": "HYPE", "side": -1, "entry": 68.1965, "ts": 1794746563483, "notional": 1507419}
+{"trader": "0x1e5cf44f64a66dae56104ed91bf15f6147200ac1", "coin": "PURR", "side": 1, "entry": 0.083543, "ts": 1794746563483, "notional": 7729}
