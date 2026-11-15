@@ -1,0 +1,36 @@
+name: Set channel title + description
+
+# Manual only. Dry run unless "apply" is ticked. Uses the same bot secrets as the signal jobs.
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: "Channel title (1-128 chars)"
+        required: true
+      description:
+        description: "Channel description (<=255 chars, must include 'Not financial advice')"
+        required: true
+      apply:
+        description: "Actually change it (unticked = dry run)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  set:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests==2.32.3
+      - env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          TITLE: ${{ inputs.title }}
+          DESC: ${{ inputs.description }}
+        run: python set_channel_info.py --title "$TITLE" --description "$DESC" ${{ inputs.apply && '--apply' || '' }}

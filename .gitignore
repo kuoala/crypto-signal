@@ -14,3 +14,12 @@ research/leaderboard.json
 x_card.png
 report_card.png
 ai_card.png
+# growth tooling: secrets, sessions, personal/partner data, generated media
+*.session
+*.session-journal
+invite_links.json
+sfs_prospects.csv
+x_reply_drafts.json
+client_secret*.json
+weekly_video/
+*.mp4

@@ -277,7 +277,8 @@ Posting and replies run as two Claude desktop scheduled tasks that drive the sig
 | Task | When (Dubai) | Does |
 |---|---|---|
 | `x-post-kuoala` | 10:11, 18:11 | One post: market pulse, news take, tip, question, weekly/monthly report, or Thursday channel invite |
-| `x-replies-kuoala` | 12:41, 20:41 | Up to 3 replies to fresh posts by big crypto accounts, plus answers to people who replied to us |
+| `x-replies-kuoala` | 11:41, 15:41, 19:41, 23:41 | **Drafts** up to 6 replies (targets in `x_targets.json`) + answers to people who replied to us; posts only the ones you approve in that run's session; logs to `x_replies_log.jsonl` |
+| `x-review-kuoala` | Mon 13:07 | Views / profile visits / follows per reply vs per own post → `x_review.jsonl`, updates playbook §2 and target hours |
 
 Helpers (read-only, never post to Telegram):
 
@@ -288,3 +289,20 @@ python3 alt_breakout.py --export-report WEEKLY                 # same scoreboard
 ```
 
 Logo: `assets/kuoala_logo.jpg`, the X profile picture. The generated images are gitignored.
+
+---
+
+# Growth tooling (Telegram search, SFS, weekly Instagram Reel)
+
+Video goes to **Instagram only** (YouTube and TikTok are out of scope for now).
+
+| What | Run | Notes |
+|---|---|---|
+| Channel title + description | Actions > "Set channel title + description" (dry run unless *apply*), or `python3 set_channel_info.py --title … --description … [--apply]` | bot needs *Change channel info*; or edit in the Telegram app |
+| SFS prospects | `python3 sfs_prospects.py --selftest`, then `--dry-run <seeds>`, then `<seeds>` | your Telethon user session, read-only; see [SFS_OUTREACH.md](SFS_OUTREACH.md) |
+| Tracked invite links | `python3 make_invite_link.py x-bio ig-bio ig-reels sfs-<partner> [--dry-run]`, `--stats` | run locally; map in `invite_links.json` (or create them in the app: channel > Invite links) |
+| Weekly Reel | `python3 weekly_video.py --plan-only` / full render; Actions "Weekly Instagram Reel" Mon 03:30 UTC | plain-language ~26 s Reel via OpenMontage; publishes with `instagram_upload.py` (official API) when the IG secrets exist, else MP4 artifact for manual upload |
+
+Secrets (GitHub > Settings > Secrets and variables > Actions): `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHANNEL_ID` (existing), `IG_USER_ID`, `IG_ACCESS_TOKEN` (60-day token: `python3 instagram_upload.py --refresh` monthly).
+Variables (not secret): `INVITE_REELS_IG`.
+Local only, never committed (gitignored): `.env`, `TG_API_ID`/`TG_API_HASH`, `kuoala_user.session`, `invite_links.json`, `sfs_prospects.csv`, `x_reply_drafts.json`, `weekly_video/`.
