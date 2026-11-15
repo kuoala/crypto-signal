@@ -276,8 +276,8 @@ Posting and replies run as two Claude desktop scheduled tasks that drive the sig
 
 | Task | When (Dubai) | Does |
 |---|---|---|
-| `x-post-kuoala` | 10:11, 18:11 | One post: market pulse, news take, tip, question, weekly/monthly report, or Thursday channel invite |
-| `x-replies-kuoala` | 11:41, 15:41, 19:41, 23:41 | **Drafts** up to 6 replies (targets in `x_targets.json`) + answers to people who replied to us; posts only the ones you approve in that run's session; logs to `x_replies_log.jsonl` |
+| `x-post-kuoala` | 17:11 | One post a day by weekday: weekly/monthly report, market pulse, tip, Thursday channel invite, news take, question |
+| `x-replies-kuoala` | every 4 h (03:41 … 23:41) | Posts up to 3 replies to fresh posts by `x_targets.json` accounts (max 15/day) + answers to people who replied to us; logs to `x_replies_log.jsonl` |
 | `x-review-kuoala` | Mon 13:07 | Views / profile visits / follows per reply vs per own post → `x_review.jsonl`, updates playbook §2 and target hours |
 
 Helpers (read-only, never post to Telegram):

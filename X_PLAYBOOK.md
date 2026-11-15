@@ -1,6 +1,6 @@
 # X Playbook — @KuoalaOfficial ("Kuoala Signals")
 
-The rules for everything we publish on X. The two scheduled tasks (`x-post-kuoala` for posts, `x-replies-kuoala` for reply drafts, `x-review-kuoala` for the weekly review) read this file at the start of every run and follow it. Change the rules here, not in the task prompts.
+The rules for everything we publish on X. The three scheduled tasks (`x-post-kuoala` for the daily post, `x-replies-kuoala` for replies every 4 hours, `x-review-kuoala` for the weekly review) read this file at the start of every run and follow it. Change the rules here, not in the task prompts.
 
 Goal: real reach and replies, and readers who move to the free Telegram channel (t.me/KuoalaOfficial). Honesty and staying spam-free come before reach.
 
@@ -76,15 +76,19 @@ Rules:
 4. `f=$(ls -t ~/Downloads/Gemini_Generated_Image_* | head -1)`. Check it is under 2 minutes old, then `python3 x_card.py --brand "$f" ai_card.png`.
 5. Look at `ai_card.png` before using it: it must fit the post, with no garbled text, nothing odd and no faces. Regenerate once if not. If it fails again, or Gemini shows a limit, sign-in or error, pick a chart card or no image.
 
-## 7. Post mix (2 posts a day, 10:11 and 18:11 Dubai)
+## 7. Post mix (1 post a day, 17:11 Dubai = 13:11 UTC; since 2026-11-15, was 2)
 
-| Slot | Post |
+Replies bring the reach now (§9), so own posts are fewer and better. One slot a day:
+
+| Day | Post |
 |---|---|
-| Morning | Market pulse. A Monday is the weekly report; the 1st of the month is the monthly report (if the 1st is a Monday, the weekly report moves to the evening). A news take instead if BTC moved 4% or more in 24h, or major confirmed news broke. |
-| Evening Mon/Wed/Fri | News take (from `python3 breaking_news.py --dry-run --top 3`; confirmed stories only). |
-| Evening Tue/Sun | Trading tip. |
-| Evening Thu | Channel invite. |
-| Evening Sat | Engagement question. |
+| Mon | Weekly report (the 1st of the month: monthly report instead; the weekly then moves to Tue). |
+| Tue | Market pulse, or a news take if BTC moved 4%+ in 24h or major confirmed news broke. |
+| Wed | Trading tip. |
+| Thu | Channel invite. |
+| Fri | News take (from `python3 breaking_news.py --dry-run --top 3`; confirmed stories only). |
+| Sat | Engagement question. |
+| Sun | Market pulse. |
 
 Never repeat a topic, opening line, coin or structure from our last 10 posts.
 
@@ -93,32 +97,29 @@ Never repeat a topic, opening line, coin or structure from our last 10 posts.
 - After posting, wait ~4 minutes, then answer up to 2 real replies with something specific: a thank-you plus one useful sentence, or a follow-up question. An author replying to repliers is the strongest signal there is.
 - Skip spam, scam links and bots.
 
-## 9. Replies (80% of our activity; own posts stay at ~2 a day per §7)
+## 9. Replies (most of our activity; own posts are 1 a day per §7)
 
 Why: a small account gets found under big accounts' posts, not in its own feed. X's ranking (§1) rewards replies and above all conversations, so time goes into replies and into answering people.
 
-**Targets.** `x_targets.json`: ~40 large, real accounts across news, market data, on-chain/smart money, derivatives/funding, macro/ETF and trading education, with estimated posting hours (UTC). Prefer targets whose hours match the run. Scam, shill, memecoin-caller, paid-group and engagement-bait accounts are never targets. The weekly review corrects hours and drops dead accounts.
+**Schedule.** `x-replies-kuoala` runs every 4 hours (03:41, 07:41, 11:41, 15:41, 19:41, 23:41 Dubai) and posts directly, without drafts (owner's decision, 2026-11-15).
+
+**Targets.** `x_targets.json` only: ~40 large, real accounts across news, market data, on-chain/smart money, derivatives/funding, macro/ETF and trading education, with estimated posting hours (UTC). Prefer targets whose hours match the run. No keyword-search candidates. Scam, shill, memecoin-caller, paid-group and engagement-bait accounts are never targets. The weekly review corrects hours and drops dead accounts.
 
 **Timing.** Reply within the first 60–90 minutes of a target's post. Older than ~90 minutes, or 300+ replies already: skip.
 
-**Every reply adds one specific thing:** a real number (live API, `trades.jsonl`, the report), a chart insight, a counterpoint, a missed risk, or a lesson. 1–2 sentences, under 200 characters. It must only make sense under that post. Agreeing is fine only if it adds something.
+**Every reply adds one specific thing:** a real number (live API, `trades.jsonl`, the report), a chart insight, a counterpoint, a missed risk, or a lesson. 1–2 sentences, under 200 characters. It must only make sense under that post. Agreeing is fine only if it adds something. If nothing good is fresh, post nothing: zero replies is a fine run.
 
 **Never:** links, "join my channel", "check our Telegram/bio", hashtags, @-tagging extras, "Great post!", price promises, financial advice, mentioning AI or bots. The profile does the selling (name, bio, pinned post).
 
-**Volume.** At most ~20 replies a day, spread across the day (never more than 6 in one hour, at least ~60 s apart), each target at most once per 24 h. Never the same template, structure or opening twice: check the last 20 entries of `x_replies_log.jsonl` before writing.
+**Volume.** At most 3 replies to targets per run and 15 per Dubai day, 2–4 minutes apart (vary it), each target at most once per 24 h. Never the same template, structure or opening twice: check the last 20 entries of `x_replies_log.jsonl` before writing.
 
-**Answer every reply we receive** first, every run (real people only; skip bots, spam and trolls). These don't count toward the 20.
+**Answer every reply we receive** first, every run (real people only; skip bots, spam and trolls). At most 5 answers per run; these don't count toward the 15.
 
 **Skip:** giveaways, airdrops, politics, tragedies, posts about people losing money, paid promos.
 
-### Approval flow (human in the loop)
+**Platform risk (read this).** X's automation rules (help.x.com/en/rules-and-policies/x-automation, updated April 2026) forbid automated replies to posts found by keyword search and treat unsolicited automated replies to many users as abuse. Automatic posting therefore carries a real risk of limits or suspension, and the owner chose it knowingly. The limits above (curated targets only, low volume, human spacing, real content) keep the risk down; they don't remove it. Any warning (§10) stops the task. If one appears, go back to drafts with approval.
 
-X's automation rules (help.x.com/en/rules-and-policies/x-automation, updated April 2026) say automated replies to posts found by keyword search are not permitted, and automating replies to many users on an unsolicited basis is abuse. So `x-replies-kuoala` **drafts only**:
-1. Each run (4 a day) finds candidates and writes up to 6 drafts to `x_reply_drafts.json` (gitignored): `n`, target post URL, handle, post age, draft text, why it adds value.
-2. The run ends by listing the drafts. Nothing is posted.
-3. The owner replies in that run's session, e.g. "post 1, 3" or "post 2 with: <edited text>". Only then are those replies posted (drafts older than ~2 h are stale and are skipped).
-4. Each posted reply is appended to `x_replies_log.jsonl`: `{"ts","kind":"reply"|"answer","target","target_post_id","our_post_id","text","category"}`. Public handles and post IDs only, nothing else about anyone.
-Answers to people who replied to us are drafted and approved the same way.
+**Log.** Each posted reply or answer is appended to `x_replies_log.jsonl`: `{"ts","kind":"reply"|"answer","target","target_post_id","our_post_id","text","category"}`. Public handles and post IDs only, nothing else about anyone.
 
 ### Weekly review (`x-review-kuoala`, Mondays)
 For the last 7 days, per reply and per own post: views, profile visits and new follows (from each post's analytics page, where X shows them; "n/a" otherwise). Compare the averages reply vs own post and by target category, write the numbers to `x_review.jsonl`, and update §2 with what changed (keep it short, with dates). Adjust `x_targets.json` hours from observed post times and drop targets that never gave us views.
