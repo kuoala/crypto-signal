@@ -1,6 +1,25 @@
 {
-  "next_id": 476,
-  "open": [],
+  "next_id": 477,
+  "open": [
+    {
+      "id": 476,
+      "symbol": "SNXX/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 3.114,
+      "stop": 3.3169285714285714,
+      "target1": 2.9110714285714283,
+      "target": 2.7081428571428567,
+      "leverage": 2,
+      "paper": true,
+      "opened_at": "2026-11-16 12:17 UTC",
+      "opened_ms": 1794831444293,
+      "rsi": 35.8,
+      "adx": 27.8,
+      "sl_pct": 6.52,
+      "exchange": "mexc",
+      "is_meme": false
+    }
+  ],
   "stats": {
     "2026-06": {
       "tp": 4,
