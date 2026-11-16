@@ -176,7 +176,8 @@
         10,
         14
       ],
-      "verified": false
+      "verified": false,
+      "review_note": "2026-11-16: profile renamed 'Spot On Chain (Hupzy)' and shows 0 posts; looks not real or wiped"
     },
     {
       "handle": "nansen_ai",
@@ -378,7 +379,7 @@
         6,
         10
       ],
-      "verified": false
+      "verified": true
     },
     {
       "handle": "tedtalksmacro",
