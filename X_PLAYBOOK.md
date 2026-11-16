@@ -33,6 +33,12 @@ From 41 posts, 24 Oct – 6 Nov 2026: ~29 views each, 4 likes and 3 replies in t
 - Worst: posts that opened with our losses (13–25).
 - Takeaway: lead with the market or the lesson. Results stay honest, but the hook is the insight, not the score.
 
+Week 2026-W46 (review 2026-11-16; X shows no "new follows" per post, so follows = null everywhere):
+- Replies n=5 (all 15–16 Nov, first days of replying; 3 were under 6 h old): avg views 21.8 (median 3), profile visits 0.2, follows null. Answers n=1: 8 views.
+- Own posts n=14 (originals, self-thread CTAs excluded): avg views 39.6, profile visits 0.0, follows null. Best: weekly results pin (87) and live fear/market data (84, 52); worst: the 15 Nov posts (12–20).
+- Best category: trading-education (AltcoinSherpa reply: 95 views, 1 profile visit, the only profile visit of the week). News 5 avg, on-chain 2.
+- Takeaway: one early reply under a mid-size trader beat every own post; news-wire replies (Cointelegraph, WuBlockchain) got almost nothing. Too few replies to judge; re-check next week.
+
 Update this section when a new review finds something.
 
 ## 3. Writing rules
