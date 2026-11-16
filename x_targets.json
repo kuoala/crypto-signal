@@ -273,7 +273,8 @@
         17,
         20
       ],
-      "verified": false
+      "verified": false,
+      "review_note": "2026-11-16: profile shows 'This account doesn't exist'"
     },
     {
       "handle": "coinglass_com",
@@ -453,7 +454,8 @@
         14,
         20
       ],
-      "verified": false
+      "verified": false,
+      "review_note": "2026-11-16: profile shows 'This account doesn't exist'"
     },
     {
       "handle": "CredibleCrypto",
