@@ -1,21 +1,21 @@
 {
-  "next_id": 478,
+  "next_id": 479,
   "open": [
     {
-      "id": 477,
-      "symbol": "SNXX/USDT:USDT",
+      "id": 478,
+      "symbol": "NVIDIA/USDT:USDT",
       "direction": "SHORT",
-      "entry": 3.07,
-      "stop": 3.315142857142857,
-      "target1": 2.8248571428571427,
-      "target": 2.579714285714285,
+      "entry": 154.02,
+      "stop": 160.3232142857143,
+      "target1": 147.71678571428572,
+      "target": 141.41357142857143,
       "leverage": 2,
       "paper": true,
-      "opened_at": "2026-11-16 23:55 UTC",
-      "opened_ms": 1794873316328,
-      "rsi": 32.3,
-      "adx": 29.3,
-      "sl_pct": 7.99,
+      "opened_at": "2026-11-17 17:14 UTC",
+      "opened_ms": 1794935643859,
+      "rsi": 37.2,
+      "adx": 38.0,
+      "sl_pct": 4.09,
       "exchange": "mexc",
       "is_meme": false
     }
@@ -71,9 +71,9 @@
       "sl": 4,
       "tp1": 5,
       "tp2": 0,
-      "be": 8,
-      "r_sum": -1.6,
-      "r_count": 12
+      "be": 9,
+      "r_sum": -1.3,
+      "r_count": 13
     }
   }
 }
