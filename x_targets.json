@@ -318,7 +318,8 @@
         13,
         16
       ],
-      "verified": false
+      "verified": false,
+      "review_note": "2026-11-17: posts protected, cannot reply"
     },
     {
       "handle": "HsakaTrades",
@@ -477,7 +478,10 @@
         12,
         17
       ],
-      "verified": true
+      "verified": true,
+      "observed_hours_utc": [
+        7
+      ]
     },
     {
       "handle": "DaanCrypto",
