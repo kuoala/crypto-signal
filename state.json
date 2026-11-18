@@ -1,5 +1,5 @@
 {
-  "next_id": 480,
+  "next_id": 482,
   "open": [
     {
       "id": 479,
@@ -16,6 +16,42 @@
       "rsi": 31.9,
       "adx": 34.3,
       "sl_pct": 2.44,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 480,
+      "symbol": "SNDKSTOCK/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 769.38,
+      "stop": 829.2664285714285,
+      "target1": 709.4935714285715,
+      "target": 649.6071428571429,
+      "leverage": 2,
+      "paper": true,
+      "opened_at": "2026-11-18 22:47 UTC",
+      "opened_ms": 1795042023248,
+      "rsi": 38.8,
+      "adx": 30.8,
+      "sl_pct": 7.78,
+      "exchange": "mexc",
+      "is_meme": false
+    },
+    {
+      "id": 481,
+      "symbol": "NVIDIA/USDT:USDT",
+      "direction": "SHORT",
+      "entry": 151.02,
+      "stop": 158.89285714285717,
+      "target1": 143.14714285714285,
+      "target": 135.27428571428572,
+      "leverage": 2,
+      "paper": true,
+      "opened_at": "2026-11-18 22:47 UTC",
+      "opened_ms": 1795042023248,
+      "rsi": 40.2,
+      "adx": 29.7,
+      "sl_pct": 5.21,
       "exchange": "mexc",
       "is_meme": false
     }
