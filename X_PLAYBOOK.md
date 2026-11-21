@@ -1,6 +1,6 @@
 # X Playbook — @KuoalaOfficial ("Kuoala Signals")
 
-The rules for everything we publish on X. The three scheduled tasks (`x-post-kuoala` for the daily post, `x-replies-kuoala` for replies every 4 hours, `x-review-kuoala` for the weekly review) read this file at the start of every run and follow it. Change the rules here, not in the task prompts.
+The rules for everything we publish on X. The three scheduled tasks (`x-post-kuoala` for the daily post, `x-replies-kuoala` for replies, 4 irregular runs a day, `x-review-kuoala` for the weekly review) read this file at the start of every run and follow it. Change the rules here, not in the task prompts.
 
 Goal: real reach and replies, and readers who move to the free Telegram channel (t.me/KuoalaOfficial). Honesty and staying spam-free come before reach.
 
@@ -107,25 +107,39 @@ Never repeat a topic, opening line, coin or structure from our last 10 posts.
 
 Why: a small account gets found under big accounts' posts, not in its own feed. X's ranking (§1) rewards replies and above all conversations, so time goes into replies and into answering people.
 
-**Schedule.** `x-replies-kuoala` runs every 4 hours (03:41, 07:41, 11:41, 15:41, 19:41, 23:41 Dubai) and posts directly, without drafts (owner's decision, 2026-11-15).
+**Status (2026-11-21).** Paused until 2026-11-28 after X labeled the account on 2026-11-18 ("temporary label ... may impact its reach", for spam/"inauthentic behaviors"). Our replies were getting 3-5 views each, even before the label.
 
-**Targets.** `x_targets.json` only: ~40 large, real accounts across news, market data, on-chain/smart money, derivatives/funding, macro/ETF and trading education, with estimated posting hours (UTC). Prefer targets whose hours match the run. No keyword-search candidates. Scam, shill, memecoin-caller, paid-group and engagement-bait accounts are never targets. The weekly review corrects hours and drops dead accounts.
+**Why we got flagged (the old pattern, 15-18 Nov, 27 replies).** Every post landed at HH:46-HH:52 UTC, 6 times a day, around the clock (including 03:47 Dubai). Each run fired 2-3 replies in a 6-minute burst. The account did nothing but reply to verified mega-accounts, often within minutes of their post. Nearly every reply had the same shape: a number, then an implication, 120-180 characters, and "BTC ~$X, Fear & Greed at Y" came up again and again. No human posts like that.
 
-**Timing.** Reply within the first 60–90 minutes of a target's post. Older than ~90 minutes, or 300+ replies already: skip.
+**The new pattern (from 2026-11-28).**
+- *Schedule:* `x-replies-kuoala` fires 4 times a day in Dubai waking hours (10:07, 14:07, 19:07, 22:07 Dubai). Each run starts after a random 0-35 minute wait, skips itself at random 30% of the time, and never runs on Fridays. So there are about 2-3 active runs a day at uneven times, and nothing overnight.
+- *Volume:* at most 1 reply to a target per run. Daily cap: 3 until 2026-12-04, then 5; never more. At least 20 minutes between target replies. Each target at most once per 48 h. Answers to people who replied to us come first (up to 3 per run, 3-8 minutes apart).
+- *Behaviour:* every run reads the home timeline for 1-2 minutes before doing anything, opens at most 6 pages with 15-40 s pauses, opens posts by clicking them, and waits a little before typing and before sending.
+- *Timing:* reply to posts 10-120 minutes old, never in the first 10 minutes. Being first on every mega-account post is a bot signature.
 
-**Every reply adds one specific thing:** a real number (live API, `trades.jsonl`, the report), a chart insight, a counterpoint, a missed risk, or a lesson. 1–2 sentences, under 200 characters. It must only make sense under that post. Agreeing is fine only if it adds something. If nothing good is fresh, post nothing: zero replies is a fine run.
+**Target mix.** Mid-size traders and analysts first (trading-education, derivatives, macro), where a reply actually gets read: the AltcoinSherpa reply (95 views) beat everything else in W46. News wires and alert bots (WatcherGuru, Cointelegraph, CoinDesk, whale_alert, WuBlockchain, Lookonchain): at most 1 reply a day in total. Their replies drown and got 2-5 views.
+
+**Voice and variety.** Rotate the reply type and log it as `type`. Never use the same type as either of the last 2 entries:
+- `question`: a real, specific question to the author ("Does this change if funding flips negative?").
+- `counterpoint`: a polite "the other side is ...".
+- `risk`: the risk the post skips.
+- `lesson`: a short rule or experience from trading ("cut size when a weekly level breaks, don't average down").
+- `number`: one real figure (live API, `trades.jsonl`, the report) and what it means. At most 1 reply in 4. Never "BTC ~$X / Fear & Greed Y" twice in 7 days.
+- `reaction`: a short human take that still says something (e.g. "That 2022 analog is uncomfortably close.").
+
+Vary length across three bands: short (under 70 characters), medium (70-140) and long (140-220). Never use the band of the previous reply. Don't start two replies in a row with a number, "That's", "Worth" or "With". Write like a trader, not a report: contractions, plain words, an occasional lowercase start, 0-1 emoji. Every reply must still only make sense under that post. If nothing good is fresh, post nothing.
+
+**Health check.** The weekly review records the median views of our replies. If, after 2 weeks on the new pattern (by 2026-12-12), it is still 5 or less, or any new warning appears, the task goes back to drafts with owner approval.
 
 **Never:** links, "join my channel", "check our Telegram/bio", hashtags, @-tagging extras, "Great post!", price promises, financial advice, mentioning AI or bots. The profile does the selling (name, bio, pinned post).
 
-**Volume.** At most 3 replies to targets per run and 15 per Dubai day, 2–4 minutes apart (vary it), each target at most once per 24 h. Never the same template, structure or opening twice: check the last 20 entries of `x_replies_log.jsonl` before writing.
-
-**Answer every reply we receive** first, every run (real people only; skip bots, spam and trolls). At most 5 answers per run; these don't count toward the 15.
+**Answer every reply we receive** first, every run (real people only; skip bots, spam and trolls). At most 3 answers per run; these don't count toward the daily cap.
 
 **Skip:** giveaways, airdrops, politics, tragedies, posts about people losing money, paid promos.
 
-**Platform risk (read this).** X's automation rules (help.x.com/en/rules-and-policies/x-automation, updated April 2026) forbid automated replies to posts found by keyword search and treat unsolicited automated replies to many users as abuse. Automatic posting therefore carries a real risk of limits or suspension, and the owner chose it knowingly. The limits above (curated targets only, low volume, human spacing, real content) keep the risk down; they don't remove it. Any warning (§10) stops the task. If one appears, go back to drafts with approval.
+**Platform risk (read this).** X's automation rules (help.x.com/en/rules-and-policies/x-automation, updated April 2026) forbid automated replies to posts found by keyword search and treat unsolicited automated replies to many users as abuse. Automatic posting therefore carries a real risk of limits or suspension, and the owner chose it knowingly. The limits above (curated targets only, low volume, irregular timing, varied real content) keep the risk down; they don't remove it. The label of 2026-11-18 showed the risk is real. Any new warning (§10) stops the task. If one appears, go back to drafts with approval.
 
-**Log.** Each posted reply or answer is appended to `x_replies_log.jsonl`: `{"ts","kind":"reply"|"answer","target","target_post_id","our_post_id","text","category"}`. Public handles and post IDs only, nothing else about anyone.
+**Log.** Each posted reply or answer is appended to `x_replies_log.jsonl`: `{"ts","kind":"reply"|"answer","target","target_post_id","our_post_id","text","category","type"}` (`type` since 2026-11-28). Public handles and post IDs only, nothing else about anyone.
 
 ### Weekly review (`x-review-kuoala`, Mondays)
 For the last 7 days, per reply and per own post: views, profile visits and new follows (from each post's analytics page, where X shows them; "n/a" otherwise). Compare the averages reply vs own post and by target category, write the numbers to `x_review.jsonl`, and update §2 with what changed (keep it short, with dates). Adjust `x_targets.json` hours from observed post times and drop targets that never gave us views.
