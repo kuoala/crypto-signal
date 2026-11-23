@@ -33,11 +33,13 @@ From 41 posts, 24 Oct – 6 Nov 2026: ~29 views each, 4 likes and 3 replies in t
 - Worst: posts that opened with our losses (13–25).
 - Takeaway: lead with the market or the lesson. Results stay honest, but the hook is the insight, not the score.
 
-Week 2026-W46 (review 2026-11-16; X shows no "new follows" per post, so follows = null everywhere):
-- Replies n=5 (all 15–16 Nov, first days of replying; 3 were under 6 h old): avg views 21.8 (median 3), profile visits 0.2, follows null. Answers n=1: 8 views.
-- Own posts n=14 (originals, self-thread CTAs excluded): avg views 39.6, profile visits 0.0, follows null. Best: weekly results pin (87) and live fear/market data (84, 52); worst: the 15 Nov posts (12–20).
-- Best category: trading-education (AltcoinSherpa reply: 95 views, 1 profile visit, the only profile visit of the week). News 5 avg, on-chain 2.
-- Takeaway: one early reply under a mid-size trader beat every own post; news-wire replies (Cointelegraph, WuBlockchain) got almost nothing. Too few replies to judge; re-check next week.
+Week 2026-W46 (review 2026-11-16): replies n=5, avg views 21.8 (median 3; one AltcoinSherpa reply at 95 made the average), 1 profile visit; own posts n=14, avg views 39.6, 0 profile visits. X shows no per-post "new follows", so follows = null throughout.
+
+Week 2026-W47 (review 2026-11-23; replies 16–18 Nov, then paused after the 18 Nov label; no answers):
+- Replies n=22: avg views 4.0 (median 4, range 3–6), profile visits 0.0, follows null (22/22). Follows per 1,000 views: n/a.
+- Own posts n=5 (originals; self-thread CTA excluded): avg views 13.8 (median 14), profile visits 0.0, follows null (5/5). The 16 Nov results pin 30, the 17 Nov SOL post 15, and 21–22 Nov only 5 each (after the label).
+- By category: macro-etf 6.0 (n=1), trading-education 4.4 (n=7), news 4.3 (n=7), on-chain 3.1 (n=7). Best category: none really; all sit at the 3–6 floor.
+- Takeaway: the old reply pattern stopped working before the label hit (3–6 views each, 0 visits), and own posts fell by two thirds after it. Zero profile visits all week. Judge the 28 Nov pattern against a median-views baseline of 4.
 
 Update this section when a new review finds something.
 
