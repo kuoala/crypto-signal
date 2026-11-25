@@ -295,9 +295,9 @@
 {"trader": "0x5f1055597a652a50c67e62bcf2912dc621bfd49d", "coin": "ZEC", "side": 1, "entry": 794.675, "ts": 1795353541783, "notional": 199750, "exit": 854.655, "ret": 0.07448}
 {"trader": "0x668cec05549105e5b05bcc779a43186735d7ea2e", "coin": "BTC", "side": -1, "entry": 60777.5, "ts": 1795353541783, "notional": 489738, "exit": 62789.5, "ret": -0.0341}
 {"trader": "0xe8e840d49202ca67b74fa41e33011be4f1c23fbd", "coin": "JUP", "side": 1, "entry": 0.2227, "ts": 1795353541783, "notional": 10333, "exit": 0.2235, "ret": 0.00259}
-{"trader": "0x3f3192097db8fc6043e459db7926a4d8a26c155b", "coin": "BTC", "side": 1, "entry": 60777.5, "ts": 1795353541783, "notional": 17790}
+{"trader": "0x3f3192097db8fc6043e459db7926a4d8a26c155b", "coin": "BTC", "side": 1, "entry": 60777.5, "ts": 1795353541783, "notional": 17790, "exit": 58219.5, "ret": -0.04309}
 {"trader": "0x3f3192097db8fc6043e459db7926a4d8a26c155b", "coin": "HYPE", "side": 1, "entry": 62.834, "ts": 1795353541783, "notional": 36520, "exit": 66.78, "ret": 0.0618}
-{"trader": "0x966e96c84577b10b56ae934ab9c0d469b62861ad", "coin": "LIT", "side": 1, "entry": 2.31025, "ts": 1795353541783, "notional": 20000}
+{"trader": "0x966e96c84577b10b56ae934ab9c0d469b62861ad", "coin": "LIT", "side": 1, "entry": 2.31025, "ts": 1795353541783, "notional": 20000, "exit": 2.2021, "ret": -0.04781}
 {"trader": "0x966e96c84577b10b56ae934ab9c0d469b62861ad", "coin": "VVV", "side": -1, "entry": 25.354, "ts": 1795353541783, "notional": 10001, "exit": 25.289, "ret": 0.00156}
 {"trader": "0x7451d7dc1570f2be4aa3eca8d482dff117570ab7", "coin": "LIT", "side": 1, "entry": 2.31025, "ts": 1795353541783, "notional": 50796, "exit": 2.70055, "ret": 0.16794}
 {"trader": "0x7451d7dc1570f2be4aa3eca8d482dff117570ab7", "coin": "ENA", "side": 1, "entry": 0.101515, "ts": 1795353541783, "notional": 50397, "exit": 0.097404, "ret": -0.0415}
@@ -306,7 +306,7 @@
 {"trader": "0xc35bf47aca839e371eb70fc5d16a5b747ad4d8dd", "coin": "BTC", "side": 1, "entry": 62789.5, "ts": 1795449374086, "notional": 645258, "exit": 59877.5, "ret": -0.04738}
 {"trader": "0x5f1055597a652a50c67e62bcf2912dc621bfd49d", "coin": "ZEC", "side": -1, "entry": 854.655, "ts": 1795449374086, "notional": 262500, "exit": 712.575, "ret": 0.16524}
 {"trader": "0x668cec05549105e5b05bcc779a43186735d7ea2e", "coin": "ZEC", "side": 1, "entry": 854.655, "ts": 1795449374086, "notional": 867486, "exit": 712.575, "ret": -0.16724}
-{"trader": "0x926fa6d5a99ca62b5839bc40bb4a4a5c72387725", "coin": "SOL", "side": 1, "entry": 75.4945, "ts": 1795449374086, "notional": 93177}
+{"trader": "0x926fa6d5a99ca62b5839bc40bb4a4a5c72387725", "coin": "SOL", "side": 1, "entry": 75.4945, "ts": 1795449374086, "notional": 93177, "exit": 67.1055, "ret": -0.11212}
 {"trader": "0x37331441dd5aba9f15110d764218d4d4dc0c649a", "coin": "BTC", "side": 1, "entry": 62789.5, "ts": 1795449374086, "notional": 61699}
 {"trader": "0xeb7f3e17a7c525a90010a9c7d99b85006e0c0c01", "coin": "NEAR", "side": 1, "entry": 3.1316, "ts": 1795449374086, "notional": 5987}
 {"trader": "0xeb7f3e17a7c525a90010a9c7d99b85006e0c0c01", "coin": "VVV", "side": 1, "entry": 25.289, "ts": 1795449374086, "notional": 6000}
@@ -322,10 +322,10 @@
 {"trader": "0x668cec05549105e5b05bcc779a43186735d7ea2e", "coin": "HYPE", "side": -1, "entry": 61.2245, "ts": 1795535468623, "notional": 1300912}
 {"trader": "0x668cec05549105e5b05bcc779a43186735d7ea2e", "coin": "BTC", "side": -1, "entry": 59877.5, "ts": 1795535468623, "notional": 1531360}
 {"trader": "0x668cec05549105e5b05bcc779a43186735d7ea2e", "coin": "ZEC", "side": -1, "entry": 712.575, "ts": 1795535468623, "notional": 2407945}
-{"trader": "0x3f3192097db8fc6043e459db7926a4d8a26c155b", "coin": "HYPE", "side": 1, "entry": 61.2245, "ts": 1795535468623, "notional": 100136}
+{"trader": "0x3f3192097db8fc6043e459db7926a4d8a26c155b", "coin": "HYPE", "side": 1, "entry": 61.2245, "ts": 1795535468623, "notional": 100136, "exit": 56.7685, "ret": -0.07378}
 {"trader": "0x37331441dd5aba9f15110d764218d4d4dc0c649a", "coin": "SOL", "side": -1, "entry": 69.0515, "ts": 1795535468623, "notional": 22412}
 {"trader": "0xf83858e57d9f804f5ca1603bce82558119aeac7b", "coin": "MON", "side": 1, "entry": 0.010421, "ts": 1795535468623, "notional": 5007}
-{"trader": "0x2396bc99feedc162af809314257571bb7ff07a36", "coin": "TRUMP", "side": -1, "entry": 0.82366, "ts": 1795535468623, "notional": 40151}
+{"trader": "0x2396bc99feedc162af809314257571bb7ff07a36", "coin": "TRUMP", "side": -1, "entry": 0.82366, "ts": 1795535468623, "notional": 40151, "exit": 0.79759, "ret": 0.03065}
 {"trader": "0xa1d4fc32f21d9d77a4c20a6ac4b748815912c07c", "coin": "SOL", "side": -1, "entry": 69.0515, "ts": 1795535468623, "notional": 66454}
 {"trader": "0xa1d4fc32f21d9d77a4c20a6ac4b748815912c07c", "coin": "SUI", "side": -1, "entry": 0.63982, "ts": 1795535468623, "notional": 49901}
 {"trader": "0xa1d4fc32f21d9d77a4c20a6ac4b748815912c07c", "coin": "ADA", "side": -1, "entry": 0.14307, "ts": 1795535468623, "notional": 51568}
@@ -333,3 +333,13 @@
 {"trader": "0x30372cab9f2f7e4a3bfab04f41b6ee2e14e8c9e1", "coin": "HYPE", "side": 1, "entry": 61.2245, "ts": 1795535468623, "notional": 62392}
 {"trader": "0x966e96c84577b10b56ae934ab9c0d469b62861ad", "coin": "SOL", "side": -1, "entry": 69.0515, "ts": 1795535468623, "notional": 10006}
 {"trader": "0x3ee505ba316879d246a8fd2b3d7ee63b51b44fab", "coin": "PUMP", "side": 1, "entry": 0.002395, "ts": 1795535468623, "notional": 100166}
+{"trader": "0x87a73f5f93a59553dfdf03292e627b9196809fa2", "coin": "VVV", "side": -1, "entry": 24.74, "ts": 1795620832781, "notional": 19848}
+{"trader": "0x2396bc99feedc162af809314257571bb7ff07a36", "coin": "NEAR", "side": -1, "entry": 2.72765, "ts": 1795620832781, "notional": 63799}
+{"trader": "0xb4bfb5f79bf6109ef70edb4c8c1b7c809155629b", "coin": "ZEC", "side": -1, "entry": 683.02, "ts": 1795620832781, "notional": 411099}
+{"trader": "0xb4bfb5f79bf6109ef70edb4c8c1b7c809155629b", "coin": "HYPE", "side": -1, "entry": 56.7685, "ts": 1795620832781, "notional": 196013}
+{"trader": "0x45f717946a3fb49054ebebecbb1ab8ce9325f166", "coin": "CASHCAT", "side": 1, "entry": 0.036991, "ts": 1795620832781, "notional": 25129}
+{"trader": "0x966e96c84577b10b56ae934ab9c0d469b62861ad", "coin": "XRP", "side": -1, "entry": 0.896255, "ts": 1795620832781, "notional": 15000}
+{"trader": "0x966e96c84577b10b56ae934ab9c0d469b62861ad", "coin": "ADA", "side": -1, "entry": 0.13838, "ts": 1795620832781, "notional": 10002}
+{"trader": "0x4594d0b089984277ae64bdea2093c28db66d3e01", "coin": "HYPE", "side": -1, "entry": 56.7685, "ts": 1795620832781, "notional": 7623}
+{"trader": "0x1e5cf44f64a66dae56104ed91bf15f6147200ac1", "coin": "PURR", "side": 1, "entry": 0.063048, "ts": 1795620832781, "notional": 24491}
+{"trader": "0xbd470d2ab7e12b9eb0fc5c820b4c84e202bfd24d", "coin": "HYPE", "side": -1, "entry": 56.7685, "ts": 1795620832781, "notional": 29331}
