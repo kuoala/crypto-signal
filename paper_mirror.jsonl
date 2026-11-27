@@ -187,6 +187,7 @@
 {"id": 88308, "ch": "crypto_musk1", "ms": 1795676486000, "symbol": "XMR", "side": "SHORT", "month": "2026-11", "posted": true, "risk_pct": 4.728, "status": "bad"}
 {"id": 88309, "ch": "crypto_musk1", "ms": 1795676665000, "symbol": "CRV", "side": "LONG", "month": "2026-11", "posted": true, "risk_pct": 4.874, "status": "open"}
 {"id": 88318, "ch": "crypto_musk1", "ms": 1795692025000, "symbol": "BNB", "side": "LONG", "month": "2026-11", "posted": true, "risk_pct": 4.873, "status": "open"}
+{"id": 88345, "ch": "crypto_musk1", "ms": 1795725743000, "symbol": "KAVA", "side": "SHORT", "month": "2026-11", "posted": true, "risk_pct": 4.728, "status": "open"}
 {"id": 6500, "ms": 1788865090000, "symbol": "LTC", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": -1.0265061124694377, "scale_r": -1.0265061124694377, "hit": 0, "ch": "erfann_finance"}
 {"id": 6505, "ms": 1789109078000, "symbol": "ATOM", "side": "SHORT", "month": "2026-09", "status": "unfilled", "ch": "erfann_finance"}
 {"id": 6519, "ms": 1789889856000, "symbol": "CELR", "side": "LONG", "month": "2026-09", "status": "closed", "tp1_r": 1.0278444444444428, "scale_r": 1.0352518518518519, "hit": 2, "ch": "erfann_finance"}
